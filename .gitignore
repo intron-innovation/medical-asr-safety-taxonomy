@@ -8,5 +8,6 @@
 
 # Ignore Archive files
 archive/
-data/
 
+# Ignore all subdirectories in /data
+data/*/
