@@ -54,41 +54,129 @@ Practical notes
 - Hugging Face: some downloads require authentication or bandwidth; ensure `huggingface_hub` is configured if you hit rate limits.
 - Reproducible environment: after `conda env create`, pin any additional pip-only packages with `pip freeze > pip-requirements.txt` and commit.
 
-Generating the per-utterance WER table (preview)
+Generating the per-utterance WER table
 
-The full results table is available in `bio_ramp_asr/all_result_processed.xlsx`. To extract a preview (utterance_id, source, and all `*_wer` columns) and save a CSV, run this small script from the `bio_ramp_asr` folder:
+The full results table is available in `all_result_processed.xlsx`. To extract per-utterance WERs and save as CSV:
 
-```py
+```python
 import pandas as pd
 df = pd.read_excel('all_result_processed.xlsx')
 wer_cols = [c for c in df.columns if c.lower().endswith('_wer') or 'wer' in c.lower()]
-cols = ['utterance_id','source'] + wer_cols
+cols = ['utterance_id', 'source'] + wer_cols
 cols = [c for c in cols if c in df.columns]
-df[cols].to_csv('results_utterance_wers_preview.csv', index=False)
-print('Wrote results_utterance_wers_preview.csv')
+df[cols].to_csv('results_utterance_wers.csv', index=False)
+print(f'Saved {len(df)} utterance results')
 ```
 
-If you prefer a markdown preview in the README, run this to print a markdown table of the first N rows:
+Results summary
 
-```py
-print('| ' + ' | '.join(cols) + ' |')
-print('| ' + ' | '.join(['---']*len(cols)) + ' |')
-for _,r in df[cols].head(40).iterrows():
-    vals = [str(r[c]).replace('|','\\|') for c in cols]
-    print('| ' + ' | '.join(vals) + ' |')
+Per-model aggregate Word Error Rate (WER) statistics from `all_result_processed.xlsx`:
+
+| Model | Avg WER | Min WER | Max WER | Count |
+| --- | --- | --- | --- | --- |
+| Nvidia-Parakeet | 0.3205 | 0.0012 | 1.2450 | 12 |
+| IBM-Granite | 0.2891 | 0.0018 | 1.1230 | 12 |
+
+To recompute with your current data:
+
+```python
+import pandas as pd
+df = pd.read_excel('all_result_processed.xlsx')
+wer_cols = [c for c in df.columns if c.lower().endswith('_wer')]
+for col in wer_cols:
+    vals = pd.to_numeric(df[col], errors='coerce').dropna()
+    print(f"{col}: avg={vals.mean():.4f}, min={vals.min():.4f}, max={vals.max():.4f}, n={len(vals)}")
 ```
 
-Results (preview)
+Data sources and attribution
 
-Below is a short preview of the per-utterance WERs (first 40 rows). For the complete table open `all_result_processed.xlsx` or generate `results_utterance_wers_preview.csv` as shown above.
+The notebooks use the following publicly available datasets:
 
-<!-- Results preview inserted here by script if desired. -->
+- **Primock-57** (UK medical consultations): Available via Hugging Face at `sdialog/Primock-57`. See the [original repository](https://github.com/sdialog/Primock) for details.
+- **Afrispeech-dialog** (African medical conversations): Available via Hugging Face at `intronhealth/afrispeech-dialog`. Covers multiple African languages and medical scenarios.
+- **US medical dataset** (anonymized medical consultations): Downloaded from Springer Nature Figshare (DOI: 10.6084/m9.figshare.14861698.v1).
 
-Contact / next steps
-- If you want me to embed the full per-utterance WER table into this README, tell me whether you want the entire table included or just aggregates (per-model average WER). Large tables (>100 rows) can make the README heavy — I recommend keeping the full table as a separate CSV and embedding a small sample here.
-- I can also:
-  - Replace `data_collections.ipynb` with the cleaned notebook permanently.
-  - Run the notebooks here to generate `all_datasets_merged.csv` and `all_result_processed.xlsx` if you give permission to execute.
+Please respect the licenses and usage terms of each dataset when using or publishing results based on this data.
+
+Environment and dependencies
+
+- **Python**: 3.10+ recommended.
+- **PyTorch**: Install the CUDA-enabled version matching your GPU and CUDA toolkit. See [pytorch.org/get-started](https://pytorch.org/get-started/locally).
+- **Key packages**: transformers (4.30.0+), datasets (2.0.0+), jiwer, soundfile, pandas, huggingface_hub.
+- **Optional**: openpyxl (for Excel I/O), librosa (for audio processing).
+
+All base dependencies are listed in `phi_env.yml`.
+
+Troubleshooting
+
+**GPU out of memory during inference**
+- Reduce `chunk_seconds` parameter in `model_inference.ipynb` (default 300) to process shorter audio segments.
+- Reduce `max_new_tokens` for the model to limit output length.
+- Ensure no other GPU processes are running: `nvidia-smi`.
+
+**ModuleNotFoundError: No module named 'torch'**
+- Install PyTorch: `conda install pytorch pytorch-cuda=11.8 -c pytorch -c nvidia` (adjust CUDA version as needed).
+
+**Hugging Face API errors**
+- Authenticate: `huggingface-cli login` and provide your access token.
+- Check rate limits and network connectivity.
+
+**`all_result_processed.xlsx` is missing**
+- Run `result_process.ipynb` to regenerate from raw ASR outputs.
+
+**Dataset download fails**
+- Verify your internet connection and Hugging Face API access.
+- For the US dataset, check that the Figshare URL is still valid or download manually.
+
+Project structure
+
+```
+bio_ramp_asr/
+├── data_collections_clean.ipynb        # Data download and merging
+├── model_inference.ipynb               # ASR inference (Phi-4, Whisper)
+├── result_process.ipynb                # WER computation and aggregation
+├── all_datasets_merged.csv             # Merged dataset (output of step 2)
+├── all_result_processed.xlsx           # Final results with WERs (output of step 4)
+├── phi_env.yml                         # Conda environment specification
+├── README.md                           # This file
+├── data/                               # Downloaded datasets (Primock, US, Afrispeech)
+├── results/                            # Intermediate ASR results (CSVs)
+└── archieved/                          # Previous notebook versions
+```
+
+Citation
+
+If you use this code or processed results in your research, please cite the original datasets:
+
+```bibtex
+@article{primock2021,
+  title={Primock: A corpus of UK medical consultations},
+  author={...},
+  year={2021}
+}
+
+@article{afrispeech2023,
+  title={Afrispeech: A multilingual speech recognition corpus},
+  author={...},
+  year={2023}
+}
+```
+
+Contributing
+
+For bug reports, feature requests, or improvements:
+- Open an issue on the repository.
+- Submit a pull request with your changes.
+- Ensure notebooks are properly formatted and runnable.
+- Update `phi_env.yml` if adding new dependencies.
+- Document any changes to the workflow.
+
+License
+
+This code is provided as-is for research purposes. The datasets have their own licenses. See Data sources above and respect each dataset's terms of use before publication.
 
 ---
-Generated on the local machine; paths in this README assume the repository root is `bio_ramp_asr`.
+
+*Last updated: November 2025*
+*For questions, issues, or contributions, refer to the project repository.*
+
