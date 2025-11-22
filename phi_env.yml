@@ -1,0 +1,24 @@
+name: phi_env
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - transformers>=4.30.0
+    - datasets>=2.0.0
+    - huggingface_hub>=0.15.0
+    - soundfile>=0.12.1
+    - pandas>=1.5.0
+    - torchcodec
+    - jiwer
+    - tqdm
+    - sentencepiece
+    - tokenizers
+    - torchaudio
+    - librosa
+
+# Note: Install an appropriate `pytorch` build for your CUDA/toolkit separately.
+# Example (for CUDA 11.8) run on the host before activating env creation or edit this file to include a compatible build:
+#   conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia

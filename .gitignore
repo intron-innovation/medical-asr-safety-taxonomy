@@ -1,0 +1,12 @@
+# Ignore large files; .zip, .tar, .wav, .mp3, etc.
+*.zip
+*.tar
+*.tar.gz
+*.wav
+*.mp3
+*.flac
+
+# Ignore Archive files
+archive/
+
+
