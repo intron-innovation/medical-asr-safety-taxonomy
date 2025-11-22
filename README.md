@@ -1,35 +1,94 @@
-# medical-asr-safety-taxonomy (push of local isatasr workspace)
 
-This repository contains data collection and model inference notebooks for medical ASR experiments.
+# BioRAMP ASR — data collection, inference and results
 
-Contents added from the local `isatasr` workspace:
+This folder contains the cleaned data collection, model inference, and result processing notebooks used for the BioRAMP medical ASR experiments.
 
-- `bio_ramp_asr/data_collections_clean.ipynb` — cleaned notebook that downloads/loads Primock, Afrispeech and a US medical dataset, computes audio durations, and merges into `all_datasets_merged.csv`.
-- `bio_ramp_asr/all_datasets_merged.csv` — merged dataset produced by the notebook (if present locally).
-- `bio_ramp_asr/model_inference.ipynb` — model inference notebook (Phi‑4 and Whisper examples) that reads `all_datasets_merged.csv` and runs ASR.
+Files of interest
+- `data_collections_clean.ipynb` — download/load Primock, Afrispeech and US medical datasets, compute durations and produce `all_datasets_merged.csv`.
+- `model_inference.ipynb` — runs ASR inference (Phi‑4 example + Whisper example) over `all_datasets_merged.csv`.
+- `result_process.ipynb` — postprocesses ASR outputs and computes WERs.
+- `all_result_processed.xlsx` — final per-utterance results and WER columns for each model (primary source for the results table).
+- `phi_env.yml` — Conda environment specification (see notes below).
 
-How to reproduce locally
-- Create and activate the conda environment (see `phi_env.yml`) or install the pip requirements.
+Quick start
 
-  Conda (recommended):
+1. Prepare environment
 
-  ```sh
-  conda env create -f phi_env.yml
-  conda activate phi_env
-  ```
+   - Recommended: create the conda environment from `phi_env.yml` and then install an appropriate PyTorch build for your CUDA version.
 
-- Notes about PyTorch/CUDA: install the appropriate `pytorch` and `torchaudio` build for your CUDA version. If you have CUDA installed, follow the instructions at https://pytorch.org/get-started/locally to select the right command and then install the rest of the pip packages (or update `phi_env.yml` accordingly).
+     ```sh
+     conda env create -f phi_env.yml -n phi_env
+     conda activate phi_env
+     # then install CUDA-aware pytorch per https://pytorch.org/get-started/locally
+     ```
 
-Running the notebooks
-- Open the notebooks in JupyterLab/VS Code and run the cells in order.
-- `data_collections_clean.ipynb` will attempt to download datasets via Hugging Face `snapshot_download` and via direct URL for the US dataset. It writes `bio_ramp_asr/all_datasets_merged.csv`.
-- `model_inference.ipynb` reads `bio_ramp_asr/all_datasets_merged.csv` and demonstrates using Phi‑4 and Whisper models to transcribe audio files.
+   - Alternative: export pip reqs via `pip freeze > requirements.txt` then `pip install -r requirements.txt`.
 
-Environment and package requirements
-- See `phi_env.yml` for a reproducible conda environment specification. When installing PyTorch, prefer the official instructions for your platform and CUDA version.
+2. Run data collection
 
-License and data
-- The notebooks reference datasets that may have their own license and usage terms. Make sure you have the right to download and use those datasets for your purposes.
+   - Open `data_collections_clean.ipynb` in Jupyter or VS Code and run the cells in order.
+   - The notebook will attempt to:
+     - Download `Primock-57` from Hugging Face (via `snapshot_download`) if not present locally.
+     - Download and extract the US dataset ZIP and gather transcripts matched to audio files.
+     - Load `afrispeech-dialog` via `datasets.load_dataset` and select the `medical` domain subset.
+     - Compute durations and merge datasets into `all_datasets_merged.csv`.
 
-Contact
-- If you want me to make further adjustments (split notebooks, add CI, or push only specific folders), tell me which parts to change.
+   - Output: `bio_ramp_asr/all_datasets_merged.csv`
+
+3. Run model inference
+
+   - Open `model_inference.ipynb`.
+   - Ensure you have the right hardware and a PyTorch build matching your CUDA driver.
+   - The notebook demonstrates two paths:
+     - Phi‑4 multimodal transcription (device: CUDA if available)
+     - Whisper-based ASR pipeline using `transformers` pipeline for `openai/whisper-large-v3`.
+   - The notebook reads `all_datasets_merged.csv`, runs inference and writes raw ASR outputs.
+
+4. Postprocess results and compute WER
+
+   - Run `result_process.ipynb` (or the archived `archieved/phi_4_inference.ipynb`) to compute per-utterance WERs and aggregate results.
+   - Final sheet is written to `bio_ramp_asr/all_result_processed.xlsx` which contains columns `utterance_id`, `source` and one or more `*_wer` columns (one per model).
+
+Practical notes
+- Large files and git: audio or dataset files often exceed GitHub's 100MB limit. Use Git LFS for audio files or exclude them from the repository and keep only metadata/paths.
+- Hugging Face: some downloads require authentication or bandwidth; ensure `huggingface_hub` is configured if you hit rate limits.
+- Reproducible environment: after `conda env create`, pin any additional pip-only packages with `pip freeze > pip-requirements.txt` and commit.
+
+Generating the per-utterance WER table (preview)
+
+The full results table is available in `bio_ramp_asr/all_result_processed.xlsx`. To extract a preview (utterance_id, source, and all `*_wer` columns) and save a CSV, run this small script from the `bio_ramp_asr` folder:
+
+```py
+import pandas as pd
+df = pd.read_excel('all_result_processed.xlsx')
+wer_cols = [c for c in df.columns if c.lower().endswith('_wer') or 'wer' in c.lower()]
+cols = ['utterance_id','source'] + wer_cols
+cols = [c for c in cols if c in df.columns]
+df[cols].to_csv('results_utterance_wers_preview.csv', index=False)
+print('Wrote results_utterance_wers_preview.csv')
+```
+
+If you prefer a markdown preview in the README, run this to print a markdown table of the first N rows:
+
+```py
+print('| ' + ' | '.join(cols) + ' |')
+print('| ' + ' | '.join(['---']*len(cols)) + ' |')
+for _,r in df[cols].head(40).iterrows():
+    vals = [str(r[c]).replace('|','\\|') for c in cols]
+    print('| ' + ' | '.join(vals) + ' |')
+```
+
+Results (preview)
+
+Below is a short preview of the per-utterance WERs (first 40 rows). For the complete table open `all_result_processed.xlsx` or generate `results_utterance_wers_preview.csv` as shown above.
+
+<!-- Results preview inserted here by script if desired. -->
+
+Contact / next steps
+- If you want me to embed the full per-utterance WER table into this README, tell me whether you want the entire table included or just aggregates (per-model average WER). Large tables (>100 rows) can make the README heavy — I recommend keeping the full table as a separate CSV and embedding a small sample here.
+- I can also:
+  - Replace `data_collections.ipynb` with the cleaned notebook permanently.
+  - Run the notebooks here to generate `all_datasets_merged.csv` and `all_result_processed.xlsx` if you give permission to execute.
+
+---
+Generated on the local machine; paths in this README assume the repository root is `bio_ramp_asr`.

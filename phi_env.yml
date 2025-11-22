@@ -6,13 +6,13 @@ dependencies:
   - python=3.10
   - pip
   - pip:
-    - transformers>=4.30.0
+    - transformers==4.56.2
     - datasets>=2.0.0
     - huggingface_hub>=0.15.0
     - soundfile>=0.12.1
     - pandas>=1.5.0
     - torchcodec
-    - jiwer
+    - jiwer==3.0.3
     - tqdm
     - sentencepiece
     - tokenizers
