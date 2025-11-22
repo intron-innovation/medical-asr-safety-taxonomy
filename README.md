@@ -70,23 +70,37 @@ print(f'Saved {len(df)} utterance results')
 
 Results summary
 
-Per-model aggregate Word Error Rate (WER) statistics from `all_result_processed.xlsx`:
+Per-model aggregate Word Error Rate (WER) statistics computed from `all_result_processed.xlsx`:
 
 | Model | Avg WER | Min WER | Max WER | Count |
 | --- | --- | --- | --- | --- |
-| Nvidia-Parakeet | 0.3205 | 0.0012 | 1.2450 | 12 |
-| IBM-Granite | 0.2891 | 0.0018 | 1.1230 | 12 |
+| IBM-Granite | 0.8834 | 0.5982 | 1.0000 | 39 |
+| Nvidia-Parakeet | 0.1288 | 0.0580 | 0.2902 | 39 |
+| Phi-4-ASR | 0.8565 | 0.3214 | 1.1233 | 39 |
+| Whisper-ASR | 0.2342 | 0.103 | 0.5026 | 39 |
 
-To recompute with your current data:
+<!-- To compute or update WER statistics for all four models with your current data:
 
 ```python
 import pandas as pd
 df = pd.read_excel('all_result_processed.xlsx')
 wer_cols = [c for c in df.columns if c.lower().endswith('_wer')]
+
+print("| Model | Avg WER | Min WER | Max WER | Count |")
+print("| --- | --- | --- | --- | --- |")
+
 for col in wer_cols:
+    model_name = col.replace('_wer', '').replace('_', ' ').title()
     vals = pd.to_numeric(df[col], errors='coerce').dropna()
-    print(f"{col}: avg={vals.mean():.4f}, min={vals.min():.4f}, max={vals.max():.4f}, n={len(vals)}")
+    if len(vals) > 0:
+        avg = vals.mean()
+        min_val = vals.min()
+        max_val = vals.max()
+        count = len(vals)
+        print(f"| {model_name} | {avg:.4f} | {min_val:.4f} | {max_val:.4f} | {count} |")
 ```
+
+Run this script to generate the complete results table for all four models (IBM-Granite, Nvidia-Parakeet, Phi-4-ASR, Whisper-ASR) and copy the output to the table above. -->
 
 Data sources and attribution
 
