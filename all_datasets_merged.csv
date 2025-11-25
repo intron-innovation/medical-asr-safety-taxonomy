@@ -1,50 +1,5 @@
 utterance_id,audio_file,transcript,duration,source
-day5_consultation08_conversation,day5_consultation08_conversation.json,,,uk_medical
-day5_consultation10_conversation,day5_consultation10_conversation.json,,,uk_medical
-day5_consultation07_conversation,day5_consultation07_conversation.json,,,uk_medical
-day1_consultation04_conversation,day1_consultation04_conversation.json,,,uk_medical
-day3_consultation10_conversation,day3_consultation10_conversation.json,,,uk_medical
-day4_consultation01_conversation,day4_consultation01_conversation.json,,,uk_medical
-day5_consultation09_conversation,day5_consultation09_conversation.json,,,uk_medical
-day5_consultation11_conversation,day5_consultation11_conversation.json,,,uk_medical
-day3_consultation02_conversation,day3_consultation02_conversation.json,,,uk_medical
-day1_consultation07_conversation,day1_consultation07_conversation.json,,,uk_medical
-day2_consultation03_conversation,day2_consultation03_conversation.json,,,uk_medical
-day2_consultation09_conversation,day2_consultation09_conversation.json,,,uk_medical
-day1_consultation11_conversation,day1_consultation11_conversation.json,,,uk_medical
-day5_consultation04_conversation,day5_consultation04_conversation.json,,,uk_medical
-day2_consultation06_conversation,day2_consultation06_conversation.json,,,uk_medical
-day3_consultation01_conversation,day3_consultation01_conversation.json,,,uk_medical
-day4_consultation09_conversation,day4_consultation09_conversation.json,,,uk_medical
-day5_consultation03_conversation,day5_consultation03_conversation.json,,,uk_medical
-day1_consultation10_conversation,day1_consultation10_conversation.json,,,uk_medical
-day3_consultation05_conversation,day3_consultation05_conversation.json,,,uk_medical
-day4_consultation04_conversation,day4_consultation04_conversation.json,,,uk_medical
-day3_consultation03_conversation,day3_consultation03_conversation.json,,,uk_medical
-day2_consultation08_conversation,day2_consultation08_conversation.json,,,uk_medical
-day2_consultation10_conversation,day2_consultation10_conversation.json,,,uk_medical
-day2_consultation05_conversation,day2_consultation05_conversation.json,,,uk_medical
-day5_consultation05_conversation,day5_consultation05_conversation.json,,,uk_medical
-day2_consultation07_conversation,day2_consultation07_conversation.json,,,uk_medical
-day1_consultation02_conversation,day1_consultation02_conversation.json,,,uk_medical
-day4_consultation05_conversation,day4_consultation05_conversation.json,,,uk_medical
-day1_consultation03_conversation,day1_consultation03_conversation.json,,,uk_medical
-day2_consultation04_conversation,day2_consultation04_conversation.json,,,uk_medical
-day1_consultation12_conversation,day1_consultation12_conversation.json,,,uk_medical
-day5_consultation01_conversation,day5_consultation01_conversation.json,,,uk_medical
-day4_consultation08_conversation,day4_consultation08_conversation.json,,,uk_medical
-day4_consultation07_conversation,day4_consultation07_conversation.json,,,uk_medical
-day2_consultation01_conversation,day2_consultation01_conversation.json,,,uk_medical
-day1_consultation08_conversation,day1_consultation08_conversation.json,,,uk_medical
-day4_consultation06_conversation,day4_consultation06_conversation.json,,,uk_medical
-day2_consultation02_conversation,day2_consultation02_conversation.json,,,uk_medical
-day3_consultation07_conversation,day3_consultation07_conversation.json,,,uk_medical
-day4_consultation03_conversation,day4_consultation03_conversation.json,,,uk_medical
-day4_consultation02_conversation,day4_consultation02_conversation.json,,,uk_medical
-day1_consultation09_conversation,day1_consultation09_conversation.json,,,uk_medical
-day1_consultation14_conversation,day1_consultation14_conversation.json,,,uk_medical
-day5_consultation02_conversation,day5_consultation02_conversation.json,,,uk_medical
-RES0141,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0141.mp3,"D: How can I uh, help you today?
+RES0141,data/us_datasets/Data/Audio Recordings/RES0141.mp3,"D: How can I uh, help you today?
 
 P: Hi, so I just came in today because I've been just been feeling um, like my head's just been hurting for the past three or four days and I also felt really cold throughout the day for the last few days as well, so, um, I did end up checking my temperature just yesterday afternoon and it was um, 38.7 degrees celsius.
 
@@ -207,7 +162,7 @@ P: Alright.
 D: Good.
 
 P: Thank you.",505.591375,us_medical
-RES0125,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0125.mp3,"D: What brings you in here today?
+RES0125,data/us_datasets/Data/Audio Recordings/RES0125.mp3,"D: What brings you in here today?
 
 P: Hi, I'm um, I'm just, so I am here because I have this cough that I've had for the past um, week and a half, and I'm just uh, I usually don't come in with symptoms this minor, but because it's, because we're in the middle of a pandemic, I thought I should come in and get checked out.
 
@@ -444,7 +399,7 @@ D: Alright, yeah.
 P: Thank you.
 
 D: You're welcome. Take care.",711.420375,us_medical
-CAR0002,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/CAR0002.mp3,"D: What brings you in here today?
+CAR0002,data/us_datasets/Data/Audio Recordings/CAR0002.mp3,"D: What brings you in here today?
 
 P: Yeah, I have this pain in my chest.
 
@@ -609,7 +564,7 @@ D: A couple of times a month, OK. Alright, and for how long have you been using 
 P: Uh for the last seven years.
 
 D: Seven years, OK.",530.3511875,us_medical
-MSK0041,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/MSK0041.mp3,"D: How may I help you? 
+MSK0041,data/us_datasets/Data/Audio Recordings/MSK0041.mp3,"D: How may I help you? 
 
 P: I'm I am here because I've had this intense pain in my right foot for the past six hours or so or so, and I thought it was important to come get it checked out by you guys.
 
@@ -838,7 +793,7 @@ D: Yeah, for sure it's so right now with having a like a red, warm and swollen j
 P: OK, that sounds great. Thank you.
 
 D: Alright, thank you, we will get that started.",921.688,us_medical
-MSK0043,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/MSK0043.mp3,"D: What brings you here today? 
+MSK0043,data/us_datasets/Data/Audio Recordings/MSK0043.mp3,"D: What brings you here today? 
 
 P: I've had this like, pain in my knee. It started within the last few hours and my knee's swollen, it's painful. Um, I can barely move it.
 
@@ -1035,7 +990,7 @@ D: And um, we might also need an x-ray, so just sit tight. We'll, we'll come cal
 P: Okay, thank you.
 
 D: Alright, you're welcome.",884.99325,us_medical
-RES0078,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0078.mp3,"D: How may I help you?
+RES0078,data/us_datasets/Data/Audio Recordings/RES0078.mp3,"D: How may I help you?
 
 P: I've been having difficulties breathing over these last few days.
 
@@ -1236,7 +1191,7 @@ D: Alright, well, so, I think that's all that I wanted to know. I can see that y
 P: Sounds good, thank you.
 
 D: You're welcome.",712.9148125,us_medical
-MSK0028,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/MSK0028.mp3,"D: How may I help you? 
+MSK0028,data/us_datasets/Data/Audio Recordings/MSK0028.mp3,"D: How may I help you? 
 
 P: I just came in because I've been having this just just yesterday it started this sudden just pain over the front of my kind of like a shoulder an also elbow and it was right after doing I was just doing some workout and this pain just started and it's just like a stabbing sharp pain that hasn't really gone away since then.
 
@@ -1469,7 +1424,7 @@ P: Uhm no I think, uh, I don't have any other questions.
 D: OK, alright, so based on the history and what you're telling me for the physical as well of having a history of exercising and also shoulder pain with overhead head movements which are risk factors for developing a biceps, tendon tear or biceps tendon injury. And having the swelling and bruising as well as reduced function of biceps or elbow flexion, they all suggests that there is a biceps, tendon tear, or injury there, and so will want to get an ultrasound or MRI to look at will start with the ultrasound, but then possibly get an MRI as well to look at the extent of the tissue damage, but if there is just a long head of biceps tear, it will usually be treated conservatively. And so we'll just need to look to see what the extent of the injury is.
 
 P: OK.",940.478625,us_medical
-RES0073,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0073.mp3,"D: Would you mind by starting with what brought you in?
+RES0073,data/us_datasets/Data/Audio Recordings/RES0073.mp3,"D: Would you mind by starting with what brought you in?
 
 P: Yeah, so over the last week I've just been feeling some symptoms. It kind of first started with, like a runny nose. That was around like 5 days ago and then it turned into just a lot of congestion, like around my nose and like my throat. And now over the last two days I've been just feeling so much pressure around my nose and around my jaw so I've been getting a lot of pain there as well.
 
@@ -1658,7 +1613,7 @@ D: Yeah, so well, certainly check your temperature to see if you have a fever. A
 P: Alright, sounds good, thank you so much.
 
 D: Thank you.",711.9243125,us_medical
-RES0087,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0087.mp3,"D: What brings you in?
+RES0087,data/us_datasets/Data/Audio Recordings/RES0087.mp3,"D: What brings you in?
 
 P: Yeah, I'm just coming in with my son, he's been having, he's been complaining of just, seems like pain in his right ear for the last I would say three to four days. And it seems like he's just more irritable, just not himself right now.
 
@@ -1851,7 +1806,7 @@ D: Yeah, uhm so I'm gonna have to take a look into his ears first before I can c
 P: Yeah, that sounds good. Thank you.
 
 D: OK yeah, no worries.",675.65225,us_medical
-RES0177,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0177.mp3,"D: What brings you in?
+RES0177,data/us_datasets/Data/Audio Recordings/RES0177.mp3,"D: What brings you in?
 
 P: I brought my son in today because he had a fever that started two days ago and, and then since then he he's had a cough that started as well and it it he's been short of breath. It looks like he's like breathing faster and just having a harder time to breathe.
 
@@ -2032,7 +1987,7 @@ D: OK, OK, yeah, that's good to know. Uhm, so because some of his symptoms overl
 P: That sounds great. Thank you.
 
 D: OK, yeah, no problem.",642.1676875,us_medical
-MSK0001,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/MSK0001.mp3,"D: And what brings you to the emergency department today? 
+MSK0001,data/us_datasets/Data/Audio Recordings/MSK0001.mp3,"D: And what brings you to the emergency department today? 
 
 P: Low back pain.
 
@@ -2221,7 +2176,7 @@ D: OK, and um do you use any kind of protection?
 P: Yes, always use uh condoms.
 
 D: OK. Alright, so now I'm just going to get the patient's vitals.",529.876625,us_medical
-RES0217,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0217.mp3,"D: So I understand you removed insects from your leg earlier today?
+RES0217,data/us_datasets/Data/Audio Recordings/RES0217.mp3,"D: So I understand you removed insects from your leg earlier today?
 
 P: Yes I did, it was uh it was behind my left uh knee kind of in like the joint behind where it bends. Um it was stuck pretty good, it's still kind of red and tender there. I noticed it because the back of my knee was starting to just feel a bit sore, um not the joint itself, but just kind of the skin, the whole area back there. Um and I found this tick, I brought I brought it in with me if you wanted to have a look at it, um it's in like this little plastic container, uh and I don't really know when I got it. I was hiking on Friday um and then Saturday I was out in my garden, I hope they're not around my house, I hope that it was from hiking um and not gardening, but uh I did spend a lot of time outside on Saturday as well.
 
@@ -2310,7 +2265,7 @@ D: No problem. OK, I'll go talk to the doctor, we'll come back and talk to you, 
 P: Great, thanks.
 
 D: Thanks Jean.",513.843125,us_medical
-MSK0046,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/MSK0046.mp3,"D: What brings you here today?
+MSK0046,data/us_datasets/Data/Audio Recordings/MSK0046.mp3,"D: What brings you here today?
 
 P: Um I'm here because my left hand, kind of just like at the base of my thumb, has been hurting for the past two days and it seems to be getting worse, um and I'm left handed so it's really hard for me to write or do anything um where I have to like, clench or grip things.
 
@@ -2485,7 +2440,7 @@ P: OK yeah, that sounds great. Thank you.
 D: Welcome, take care.
 
 P: You too.",620.6140625,us_medical
-RES0104,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0104.mp3,"D: Can you tell me what brings you in here today?
+RES0104,data/us_datasets/Data/Audio Recordings/RES0104.mp3,"D: Can you tell me what brings you in here today?
 
 P: So I've had this, uh, this cough that it started two days ago and it's been getting worse. I've been bringing up this rust colored sputum. 
 
@@ -2688,7 +2643,7 @@ P: OK, thank you, will do.
 D: Thank you, bye.
 
 P: Bye.",767.31775,us_medical
-RES0051,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0051.mp3,"D: Would you mind starting with telling me what brought you in?
+RES0051,data/us_datasets/Data/Audio Recordings/RES0051.mp3,"D: Would you mind starting with telling me what brought you in?
 
 P: Sure I have had this cough for the past five days and it doesn't seem to be getting any better so I'm just here to ask you what it what it possibly could be.
 
@@ -2903,7 +2858,7 @@ P: No, that's it. What do you think I have?
 D: Well, it is sounding like it could be most likely an infectious type of process going on with the possibility of having a fever with a cough and sore throat. So we'll do a physical exam and also some investigations which will include a covid test today. Because some of these symptoms do overlap, but it could be something like the common cold. I don't know the virus that's bringing this on but it's not necessarily covid. But because we're doing the test, it will require 14 days of self isolation. We'll get back to you with the results as quickly as we can.
 
 P: OK, sounds great, thank you.",596.4788125,us_medical
-RES0171,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0171.mp3,"D: What brings you in today?
+RES0171,data/us_datasets/Data/Audio Recordings/RES0171.mp3,"D: What brings you in today?
 
 P: Yeah, I've had a shortness of breath, and even at at rest. Really, feeling like it's difficult to breathe, and when I take a deep breath I get a chest pain.
 
@@ -3037,7 +2992,7 @@ D: OK, good good, as long as you feel that you what you're currently doing is he
 P: OK, yeah, that sounds really good. Thank you.
 
 D: Welcome.",704.36625,us_medical
-RES0096,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0096.mp3,"D: Uh, how can I help you?
+RES0096,data/us_datasets/Data/Audio Recordings/RES0096.mp3,"D: Uh, how can I help you?
 
 P: Uh, I have just been feeling very short of breath recently.
 
@@ -3268,7 +3223,7 @@ P: No.
 D: OK, so that was all the questions I wanted to ask on on history. Uhm certainly it sounds like you're bringing up some blood with, with, with the increased cough and with difficulties breathing so we will get a, uhm, a chest x-ray and possibly a CT image of your chest as well to see if there's anything going on in your lungs and we might do some blood work as well to check a few things so uhm, we'll get those ordered and, and see what, see what that shows.
 
 P: Thank you.",699.520875,us_medical
-GAS0003,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/GAS0003.mp3,"D: What brings you in here today? 
+GAS0003,data/us_datasets/Data/Audio Recordings/GAS0003.mp3,"D: What brings you in here today? 
 
 P: Yeah hi, I'm I I have a pain in my belly. It started a couple hours ago.
 
@@ -3441,7 +3396,7 @@ D: OK. Alright, so um, that's all the questions I have and just to clarify, does
 P: Yes, so initially it would come and go, but now, so for the first 2 hours it would come and go. And when I would have this pain when I was eating, it would come and go. But over the past six hours it's just been constant. 
 
 D: OK. Alright.",522.019375,us_medical
-MSK0045,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/MSK0045.mp3,"D: What brings you here today?
+MSK0045,data/us_datasets/Data/Audio Recordings/MSK0045.mp3,"D: What brings you here today?
 
 P: Um so I'm here because my shoulder has been really painful for the past week um and any movement of that shoulder, of my right shoulder, causes a lot of pain.
 
@@ -3620,7 +3575,7 @@ P: That sounds pretty good. Thank you.
 D: Welcome, alright, so we'll call you for the X-Rays and then we'll go from there.
 
 P: OK, sounds good.",682.612625,us_medical
-RES0094,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0094.mp3,"D: Uh, how may I help you? 
+RES0094,data/us_datasets/Data/Audio Recordings/RES0094.mp3,"D: Uh, how may I help you? 
 
 P: I've, uh, had a runny nose over the last few days and I've started to have a sore throat as well.
 
@@ -3747,7 +3702,7 @@ P: No.
 D: OK alright, well sounds like you have a sore throat and runny nose. You've been a little bit drowsy, had some headaches in the past five days, things were getting a little bit worse early on, but it's been a little bit, it's been more stable now. We'll do a physical exam, see, just listen to your chest, have a look inside your mouth and check your temperature and go from there. It sounds like you probably have a viral infection of some sort that should get, hopefully get better over time. We will also get a covid swab done just in case and if things seem to get worse, we can, you can definitely come back.
 
 P: OK, great, thank you.",430.774625,us_medical
-RES0153,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0153.mp3,"D: Uh how may I help you today?
+RES0153,data/us_datasets/Data/Audio Recordings/RES0153.mp3,"D: Uh how may I help you today?
 
 P: Hi, I've been um just having this just sore throat for the last uh let's say three or four days. 
 
@@ -3922,7 +3877,7 @@ P: Uh no, nothing that I wanted to ask, just uh was just wondering if I need any
 D: OK, yeah, so um it's possible, so based on your symptoms currently it does suggest that uh it it is a bacterial cause with uh, since you don't have a cough and you have um like it sounds like sounds like lymph node enlargement. Um we'll we'll look and see if there's exudates or or purulence on your um, that we can see in your in your throat as well as checking temperature and do a rapid strep test. Um see if um if that's the cause, and if so, um then yeah, there will be a course of antibiotics um will be required, but um we will uh wait for um the physical exam and then the uh the rapid test.
 
 P: Alright, sounds good.",610.482375,us_medical
-RES0179,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0179.mp3,"D: What brings you in?
+RES0179,data/us_datasets/Data/Audio Recordings/RES0179.mp3,"D: What brings you in?
 
 P: Uh, I've had this cough. It's been going on now for like last six months or so and been losing some weight as well. I've lost, I think like 20 or 30 pounds in the last six months.
 
@@ -4147,7 +4102,7 @@ D: Yeah, for sure. So that is quite high on my differential right now just becau
 P: Yeah, that sounds great. Thank you so much.
 
 D: OK yeah, no problem.",704.344375,us_medical
-RES0162,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0162.mp3,"D: What brings you in today?
+RES0162,data/us_datasets/Data/Audio Recordings/RES0162.mp3,"D: What brings you in today?
 
 P: Hi, I am just coming in because for the last couple of months but I've been having this, these coughing fits. Are there like when I'm going to the gym or even at home, like during the weekends when we're vacuuming and cleaning the house.
 
@@ -4294,7 +4249,7 @@ P: No, I haven't.
 D: No, ok. Right, yeah, let's talk a little bit. 
 
 P: OK.",615.834,us_medical
-MSK0038,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/MSK0038.mp3,"D: What brings you in?
+MSK0038,data/us_datasets/Data/Audio Recordings/MSK0038.mp3,"D: What brings you in?
 
 P: Hi, I've I've had um this pain in my left knee that's been going on now for the last uh three or four months um but it's gotten a bit a bit worse, it used to only really bug me while I was doing activity, and now its started to uh hurt even more um afterwards as well, so I'm getting the pain at at rest. and so I wanted to come and get that checked out.
 
@@ -4519,7 +4474,7 @@ D: OK, so that is a positive Ober test. Um OK, so what it sounds like is you, it
 P: It does, yeah, thank you so much.
 
 D: OK yeah, no worries.",1031.072625,us_medical
-RES0147,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0147.mp3,"D: What can I do for you today?
+RES0147,data/us_datasets/Data/Audio Recordings/RES0147.mp3,"D: What can I do for you today?
 
 P: I've just had this cough that it that has gotten a lot worse and really short of breath.
 
@@ -4676,7 +4631,7 @@ D: OK great great yeah so we'll be, we'll be giving you some puffers here as wel
 P: Uh, no, that that sounds good. Thank you.
 
 D: OK, alright.",711.28625,us_medical
-RES0048,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0048.mp3,"D: What brings you in?
+RES0048,data/us_datasets/Data/Audio Recordings/RES0048.mp3,"D: What brings you in?
 
 P: Yeah, so I just came in because I've been having this cough that's getting worse over the last uh one and a half week and uh, I've also just recently in the last few days been getting some shortness of breath. Um and I also noticed uh my bowel movements have changed a little bit as well over the last week.
 
@@ -4913,7 +4868,7 @@ P: OK, sounds good.
 D: Alright, take care. 
 
 P: You too, thank you.",905.3701875,us_medical
-RES0210,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0210.mp3,"D: So can you tell me a little bit about what brought you in here today?
+RES0210,data/us_datasets/Data/Audio Recordings/RES0210.mp3,"D: So can you tell me a little bit about what brought you in here today?
 
 P: Yeah, I've noticed I've had this pretty bad cough for like the last couple of days. A little bit worried. Wanna talk to someone.
 
@@ -5086,7 +5041,7 @@ D: OK. OK, well thank you for sharing all of that with me, so I'm going to go ov
 P: Thank you kindly. 
 
 D: K, thanks.",486.3247845804989,us_medical
-RES0142,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0142.mp3,"D: Uh, what can I do for you?
+RES0142,data/us_datasets/Data/Audio Recordings/RES0142.mp3,"D: Uh, what can I do for you?
 
 P: Hi um, yeah so I, I just came here today um, because I've just been feeling um, like I have this really sore throat for the last uh, week, and I've also been getting some chills over the last few nights as well. Um, so yeah, I just came to check it out.
 
@@ -5193,7 +5148,7 @@ P: Um, just some lozenges.
 D: Yeah, so just continue uh, just drinking water and taking lozenges just to um, provide some comfort for yourself, and we'll do the test, then we can chat a bit more after.
 
 P: Okay, sounds good, thank you so much.",428.746625,us_medical
-RES0181,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0181.mp3,"D: How may I help you?
+RES0181,data/us_datasets/Data/Audio Recordings/RES0181.mp3,"D: How may I help you?
 
 P: Hi, umm, so I've had a sore throat for the past three days and it doesn't seem to be getting any better, and I've also had a fever. So, I thought I should get it checked out by you. 
 
@@ -5410,7 +5365,7 @@ D: So just to make sure that we're being comprehensive.
 P: OK. That sounds good. Thank you so much. 
 
 D: Thank you.",658.1610625,us_medical
-RES0003,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0003.mp3,"D: It's nice to meet you. What's your name? 
+RES0003,data/us_datasets/Data/Audio Recordings/RES0003.mp3,"D: It's nice to meet you. What's your name? 
 
 P: It's nice to meet you as well. My name is Jenn and I'm here with my son Joey here, who he's had a sore throat now for the last couple of days. 
 
@@ -5597,7 +5552,7 @@ D: Did you have any questions or anything that I missed that you wanted to discu
 P: Um, no. We were thinking that it could be, uh, maybe strep throat. So um, yeah, thank you.
 
 D: OK, great, thank you.",660.38575,us_medical
-RES0145,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0145.mp3,"D: What brings you in today?
+RES0145,data/us_datasets/Data/Audio Recordings/RES0145.mp3,"D: What brings you in today?
 
 P: Yeah, I've had a sore throat that's been really bugging me the past four days and I've had a cough as well.
 
@@ -5770,7 +5725,7 @@ D: Alright.
 P: Thank you.
 
 D: Yeah, you're welcome.",711.3874375,us_medical
-RES0055,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0055.mp3,"D: What brings you in?
+RES0055,data/us_datasets/Data/Audio Recordings/RES0055.mp3,"D: What brings you in?
 
 P: Hi, yes I just came in today because I've been a bit concerned about some breathing difficulties over the last few days. It all started out with like a cough over the last week, but now I'm having trouble breathing as well.
 
@@ -5963,7 +5918,7 @@ D: Yeah, so we're definitely going to do a COVID swab on you and those results s
 P: Thank you. 
 
 D: OK yeah no problem.",761.8779375,us_medical
-RES0118,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0118.mp3,"D: What brings you in here today?
+RES0118,data/us_datasets/Data/Audio Recordings/RES0118.mp3,"D: What brings you in here today?
 
 P: Hi I'm coming in because I've had this like on and off runny nose and stuffy nose for the past week. Um and I just came to make sure it's not something serious like Covid.
 
@@ -6142,7 +6097,7 @@ P: Uh no, thank you, that was good.
 D: Take care, bye
 
 P: You too.",477.2186875,us_medical
-RES0170,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0170.mp3,"D: How may I help you today?
+RES0170,data/us_datasets/Data/Audio Recordings/RES0170.mp3,"D: How may I help you today?
 
 P: I'm just bringing my son today because he's been how many episodes where I'm eat hell gets all this coughing fit and become wheezy and become shorter breath and I mean after a period of time it goes away, but it's been happening every so often.
 
@@ -6253,7 +6208,7 @@ P: Yeah, I don't notice that any other times.
 D: Yes, it's possibly, I mean, I would think it's asthma, but then we'll get the testing done and see.
 
 P: OK, great, thank you.",667.563375,us_medical
-RES0216,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0216.mp3,"D: So I understand you're having some chest tightness?
+RES0216,data/us_datasets/Data/Audio Recordings/RES0216.mp3,"D: So I understand you're having some chest tightness?
 
 P: Yeah, it's uh, for the last maybe three days, um it's not really pain, not in any specific spot, it just feels a bit tight in my chest area when I breathe in especially, and it just gets a bit harder to breathe and it feels more tight like especially when I go for my walks, which I do everyday, uh I try to walk my dog. So I was just, you know, worried that it could be something serious and I wanted to come and get checked out.
 
@@ -6400,7 +6355,7 @@ P: Sounds great, thank you.
 D: No problem. OK, I'll go talk to the doctor, I'll be back with you in a moment.
 
 P: Thank you.",627.647125,us_medical
-MSK0013,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/MSK0013.mp3,"D: How may I help you?
+MSK0013,data/us_datasets/Data/Audio Recordings/MSK0013.mp3,"D: How may I help you?
 
 P: Hi, I'm here because I've had this numbness and tingling in my feet for awhile now and I started to notice these open wounds on my feet as well and I'm not feeling it, but it's there.
 
@@ -6675,7 +6630,7 @@ P: Mmmm
 D: Where you lose sensation and you can't feel pain. And so But other things to consider could be. Possibly like vitamin deficiencies or things like that, but I would be much much lower down on the differential. And. So to regain sensation I think. Really, the only thing that can be done now is to help prevent further damage to the nerves, and that would be to make sure that the diabetes is under good control and. Trying to monitor your feet as regularly as you can, making sure that the. There aren't any kind of open wounds or sores that are are not healing. If things are not healing, it will be important to check to see if there is an underlying infection such as osteomyelitis, which will prevent wound healing. And so if there are any, is anything like that it would be important to have that checked out. So feet hygiene is extremely important. As we're working on improving the diabetes control as well as things like cutting down alcohol could could also help as well.
 
 P: OK OK, thank you.",905.4440625,us_medical
-RES0005,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0005.mp3,"D: I was wondering if you could tell us what brought you in to see us.
+RES0005,data/us_datasets/Data/Audio Recordings/RES0005.mp3,"D: I was wondering if you could tell us what brought you in to see us.
 
 P: Yeah, so I just came in. I was a bit worried because I've been having this cough for around two years, which has been getting worse. But recently I've noticed that I see streaks of blood in the sputum that I'm producing. Before it just used to be like white but now I'm seeing over the last, I would say two months occasionally some streaks of blood.
 
@@ -6912,7 +6867,7 @@ D: OK, and um, other things that um to think about this could be, uh, also like 
 P: OK, sounds good. Thank you so much. 
 
 D: Alright, you're welcome, thank you.",821.6769375,us_medical
-MSK0005,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/MSK0005.mp3,"D: What brings you in?
+MSK0005,data/us_datasets/Data/Audio Recordings/MSK0005.mp3,"D: What brings you in?
 
 P: Hi, I've I've had this pain on the outside of my uh right elbow now it's it I first started knowing, noticing it several months ago, but recently it's just been more painful.
 
@@ -7149,7 +7104,7 @@ D: Yeah, so right now it seems like you may have a case of something called um l
 P: Yeah, that that sounds um good, thank you.
 
 D: Yeah, no worries.",825.016125,us_medical
-RES0186,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0186.mp3,"D: What brings you in?
+RES0186,data/us_datasets/Data/Audio Recordings/RES0186.mp3,"D: What brings you in?
 
 P: Hi there, I've been having this uhm, cough that's been ongoing for the past two days, and I've started to become short of breath as well. Even with just a little bit of exertion. I've also been feeling feverish and I checked my temperature and it was 38 point, uh, point 5.
 
@@ -7306,7 +7261,7 @@ D: Yeah, for sure, so that's kind of top on my list right now to rule out, so we
 P: Yeah, it does. Thank you. 
 
 D: OK, yeah, no problem.",532.9710625,us_medical
-MSK0012,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/MSK0012.mp3,"D: What brings you in here today?
+MSK0012,data/us_datasets/Data/Audio Recordings/MSK0012.mp3,"D: What brings you in here today?
 
 P: I've had this pain in my back thats kind of like in my lower back and my buttocks and it's now radiating down to my right leg. I've had this for awhile now, but it's getting worse and I just want to come get it checked out.
 
@@ -7551,7 +7506,7 @@ D: And. Based on what results come back at the same time we will, I will give yo
 P: OK, sounds good. Thank you.
  
 D: You're welcome. Take care.",852.0913125,us_medical
-RES0129,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0129.mp3,"D: What brings you in?
+RES0129,data/us_datasets/Data/Audio Recordings/RES0129.mp3,"D: What brings you in?
 
 P: I just bringing my son in today because he's had this cough that's been going on for a few days now and for these past two days, I've noticed that he's been just tugging at his ear more as well.
 
@@ -7724,7 +7679,7 @@ D: Yeah, for sure, so right now it sounds like a viral picture. It sounds like h
 P: That sounds really good. Thank you.
 
 D: OK, no worries. Take care.",548.7628125,us_medical
-RES0113,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0113.mp3,"D: What can I do for you today?
+RES0113,data/us_datasets/Data/Audio Recordings/RES0113.mp3,"D: What can I do for you today?
 
 P: Um yeah, so I'm here because I've had this fever, this cough, and now my head hurts. That's been going on for about the past four days and I just want to make sure um it's nothing too serious.
 
@@ -7925,7 +7880,7 @@ D: OK alright, and um do you have any questions?
 P: Uh No, that's it. Thank you so much.
 
 D: Great.",522.305375,us_medical
-RES0075,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0075.mp3,"D: What brought you in today?
+RES0075,data/us_datasets/Data/Audio Recordings/RES0075.mp3,"D: What brought you in today?
 
 P: Yeah, so uh, just randomly like 2 days ago I just started having this chest pain when I'm breathing and it's just been getting worse and then because of that, I'm finding that I'm very short of breath as well, so I just got really concerned.
 
@@ -8096,7 +8051,7 @@ P: OK, yeah, sounds good. Should be like, worried at all?
 D: I think right now, you're speaking in full sentences and you're not short of breath at rest, typically, when this this happens, if it's small enough, it'll usually resolve on its own and so we'll get some more information from the imaging and the lab results, but it's reassuring that you haven't been getting worse since it happened.
 
 P: OK, alright, sounds good. Thank you so much.",595.6474375,us_medical
-RES0112,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0112.mp3,"D: What brings you in today?
+RES0112,data/us_datasets/Data/Audio Recordings/RES0112.mp3,"D: What brings you in today?
 
 P: Yeah, I brought my son here. I'm a little bit worried about him because like yesterday he had he had this temperature of like 38.5 um so he's been feeling a little bit hot and he's not swallowing his food, like we've been feeding him some mashed up food but he's not swallowing it. He's just kind of throwing throwing it back out there. Um he's drooling now uh and he sounds kind of muffled um and he's been very short of breath.
 
@@ -8213,7 +8168,7 @@ D: OK alright um well it looks like um I, it's great that you brought him into t
 P: Uh no, thank you. 
 
 D: OK.",450.690875,us_medical
-RES0028,/home/kelechi/bio_ramp_asr/data/us_datasets/Data/Audio Recordings/RES0028.mp3,"D: Can you just tell me what brings you in here today?
+RES0028,data/us_datasets/Data/Audio Recordings/RES0028.mp3,"D: Can you just tell me what brings you in here today?
 
 P: Yeah, my chest is really hurting.
 
