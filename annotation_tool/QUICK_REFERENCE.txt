@@ -1,0 +1,266 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                                                                               ║
+║         🎯 ASR ERROR ANNOTATION TOOL - COMPLETE PACKAGE 🎯                   ║
+║                                                                               ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+📦 WHAT YOU HAVE:
+
+  ✅ annotation_interface.html
+     └─ Professional web interface for annotating ASR errors
+     └─ Features: Side-by-side transcripts, color-coded errors, severity slider
+     └─ Browser-based (no installation needed!)
+
+  ✅ prepare_annotations.py  
+     └─ Convert Excel results → JSON for the web tool
+     └─ Supports: Whisper, Phi-4, Parakeet, Granite, Primock
+
+  ✅ process_annotations.py
+     └─ Convert annotations → Back to Excel/CSV
+     └─ Creates analysis-ready DataFrames
+
+  ✅ Documentation
+     └─ ANNOTATION_TOOL_README.md - Comprehensive guide
+     └─ SETUP_GUIDE.md - This quick reference
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚡ QUICKEST START (3 steps):
+
+  1️⃣  Prepare your data:
+      $ python prepare_annotations.py --input all_result_processed.xlsx --model whisper
+      → Creates: whisper_annotation_data.json
+
+  2️⃣  Open interface and annotate:
+      → Open annotation_interface.html in your browser
+      → Click "📁 Load JSON File"
+      → Select the JSON file from step 1
+      → Click errors and assign taxonomy + severity
+
+  3️⃣  Process results:
+      $ python process_annotations.py --annotations asr_annotations_*.json --original all_result_processed.xlsx
+      → Creates: results_with_annotations.xlsx (ready for analysis!)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎨 THE ANNOTATION INTERFACE:
+
+┌─────────────────────────────────────────────────────────┐
+│                                                         │
+│  Human Transcript         │    ASR Output (Marked Up)  │
+│  ─────────────────────    │    ────────────────────   │
+│                           │                            │
+│  how can i help you       │  how [INS: ++can++] i     │
+│  so i came in today       │  help you [DEL: __um__]   │
+│  because i've been        │                            │
+│  feeling sick             │  so i came [SUB: ~~in~~]  │
+│                           │  today because ive been   │
+│                           │  feeling sick             │
+│                           │                            │
+└─────────────────────────────────────────────────────────┘
+
+Color Legend:
+  🔴 [DEL: __word__]    = Deletion (word was missed)
+  🟡 [SUB: ~~word~~]    = Substitution (wrong word)  
+  🔵 [INS: ++word++]    = Insertion (extra word)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 ERROR TAXONOMY (5 Categories):
+
+  💊 Medication          - Drug names, dosages, interactions, side effects
+  🏥 Clinical Concepts  - Medical terms, conditions, symptoms, procedures
+  ⏱️  Temporal           - Dates, times, durations, frequencies
+  🔢 Numerics           - Numbers, measurements, vital signs, lab values
+  👤 Identity           - Names, IDs, personal identifiers
+
+  ✨ NOTE: One error can have MULTIPLE taxonomy tags!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚠️  SEVERITY SCALE (0-5):
+
+  0: None
+     Impact: ∅ No impact, doesn't matter
+     Example: [DEL: __uh__] (filler word)
+
+  1: Minor  
+     Impact: ≈ Minimal, easily overlooked
+     Example: [SUB: ~~tree~~] for "three" (clear from context)
+
+  2: Low
+     Impact: △ Some impact but context preserved  
+     Example: [SUB: ~~asprin~~] for "aspirin" (recognizable)
+
+  3: Medium
+     Impact: ▲ Notable impact on meaning
+     Example: [SUB: ~~twice~~] for "once" a day (timing matters)
+
+  4: High
+     Impact: ⚠️  Significant impact on clinical information
+     Example: [DEL: __500mg__] from "metformin 500mg" (dosage critical)
+
+  5: Critical
+     Impact: 🚨 SEVERE - patient safety/care concerns
+     Example: [SUB: ~~ibuprofen~~] for "insulin" (wrong drug class!)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔄 COMPLETE WORKFLOW:
+
+  Data Preparation Phase:
+  ┌─────────────────────────────────────┐
+  │ all_result_processed.xlsx          │
+  │ (your original processed results)   │
+  └────────────┬────────────────────────┘
+               │
+               ↓
+  ┌──────────────────────────────────────────┐
+  │ python prepare_annotations.py            │
+  │ --input all_result_processed.xlsx        │
+  │ --model whisper                          │
+  └────────────┬─────────────────────────────┘
+               │
+               ↓
+  ┌──────────────────────────────────────────┐
+  │ whisper_annotation_data.json             │
+  │ (ready for web interface)                │
+  └──────────────────────────────────────────┘
+
+  Annotation Phase:
+  ┌──────────────────────────────────────────┐
+  │ Open annotation_interface.html            │
+  │ → Load JSON file                         │
+  │ → Click & annotate errors                │
+  │ → Review in Summary tab                  │
+  │ → Export annotations                     │
+  └────────────┬─────────────────────────────┘
+               │
+               ↓
+  ┌──────────────────────────────────────────┐
+  │ asr_annotations_TIMESTAMP.json           │
+  │ (your annotation results)                │
+  └──────────────────────────────────────────┘
+
+  Results Processing Phase:
+  ┌──────────────────────────────────────────┐
+  │ python process_annotations.py            │
+  │ --annotations asr_annotations_*.json     │
+  │ --original all_result_processed.xlsx     │
+  │ --report                                 │
+  └────────────┬─────────────────────────────┘
+               │
+               ↓
+  ┌─────────────────────────────────────────────┐
+  │ results_with_annotations.xlsx               │
+  │ → Original data + annotation columns        │
+  │ → Ready for analysis!                       │
+  │                                             │
+  │ annotation_report.csv                       │
+  │ → One row per error                         │
+  │ → Useful for statistical analysis           │
+  └─────────────────────────────────────────────┘
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💻 SYSTEM REQUIREMENTS:
+
+  ✅ Python 3.7+
+  ✅ pandas
+  ✅ openpyxl
+  ✅ Modern web browser (Chrome, Firefox, Safari, Edge)
+
+  Install Python packages:
+  $ pip install pandas openpyxl
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 OUTPUT COLUMNS (in results_with_annotations.xlsx):
+
+  error_taxonomy_annotations
+  └─ Full annotation objects with all metadata
+
+  error_annotation_summary  
+  └─ Summarized: total_errors, average_severity, taxonomy_tags
+
+  deletion_annotations
+  └─ All DEL errors with their taxonomy & severity
+
+  substitution_annotations  
+  └─ All SUB errors with their taxonomy & severity
+
+  insertion_annotations
+  └─ All INS errors with their taxonomy & severity
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 EXAMPLE ANNOTATIONS:
+
+  Error: [DEL: __metformin__]
+  Human Text: "started metformin for diabetes"
+  Human Judgment:
+    Taxonomy: ["Medication"]
+    Severity: 4 (High)
+  Rationale: Missing medication name is critical for patient care
+
+
+  Error: [SUB: ~~tree~~]  
+  Human Text: "once a day" → "tree a day"
+  Human Judgment:
+    Taxonomy: ["Temporal"]
+    Severity: 2 (Low)
+  Rationale: Clear from context, obviously meant "three" 
+
+
+  Error: [INS: ++and++]
+  Human Text: "headache" → "headache and"
+  Human Judgment:
+    Taxonomy: ["Clinical Concepts"]
+    Severity: 1 (Minor)
+  Rationale: Redundant but doesn't change clinical meaning
+
+
+  Error: [SUB: ~~insulin~~]
+  Human Text: "ibuprofen for pain" → "insulin for pain"  
+  Human Judgment:
+    Taxonomy: ["Medication"]
+    Severity: 5 (Critical)
+  Rationale: WRONG DRUG CLASS! Dangerous error for patient safety
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❓ QUICK REFERENCE:
+
+  Q: How do I start?
+  A: python prepare_annotations.py --input all_result_processed.xlsx --model whisper
+
+  Q: What do I open in the browser?
+  A: annotation_interface.html
+
+  Q: How do I save my work?
+  A: Click the "💾 Export Annotations" button when done
+
+  Q: Can I annotate multiple models?
+  A: Yes! Run prepare_annotations.py for each model (whisper, phi4, parakeet, granite)
+
+  Q: How do I get my data back into Excel?
+  A: python process_annotations.py --annotations <file> --original all_result_processed.xlsx
+
+  Q: Can I see statistics while annotating?
+  A: Yes! Click the "Summary" tab in the interface
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 YOU'RE READY!
+
+  1. Run: python prepare_annotations.py --input all_result_processed.xlsx --model whisper
+  2. Open: annotation_interface.html (just double-click it)
+  3. Load: The JSON file you just created
+  4. Annotate: Click on errors and assign taxonomy + severity
+  5. Export: Click 💾 when done
+  6. Process: python process_annotations.py --annotations <file> --original all_result_processed.xlsx
+  7. Analyze: Use results_with_annotations.xlsx for your analysis!
+
+For detailed help, see: ANNOTATION_TOOL_README.md
+
+Happy annotating! 🎉
