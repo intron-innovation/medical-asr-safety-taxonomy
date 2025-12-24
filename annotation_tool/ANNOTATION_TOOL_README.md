@@ -7,14 +7,22 @@ A comprehensive web-based interface for annotating ASR errors with error taxonom
 This tool allows human annotators to:
 - View human transcripts and ASR reconstructed output side-by-side
 - Identify and examine errors (Deletions, Substitutions, Insertions)
-- Classify errors into taxonomy categories:
-  - **Medication** 💊
-  - **Clinical Concepts** 🏥
-  - **Temporal** ⏱️
-  - **Numerics** 🔢
-  - **Identity** 👤
+- Classify errors into **11 taxonomy categories** (multi-label supported):
+  - **Medication** 💊 - Drug names, doses, routes, frequency
+  - **Clinical Concepts** 🏥 - Diagnosis, symptoms, procedures, anatomy
+  - **Temporal** ⏱️ - Dates, times, durations, sequences
+  - **Negation / Uncertainty** 🚫 - Negation changes, hedging removal
+  - **Numerics** 🔢 - Vital signs, measurements, decimals
+  - **Speaker & Attribution** 💬 - Patient vs clinician dialogue
+  - **Pragmatics** 📋 - Plan/history/instruction context
+  - **Identity** 👤 - Patient names, locations, identifiers
+  - **Specialty Category** 🩺 - Clinical domain (optional)
+  - **Formatting / Structure** 📄 - Headers, lists, document structure
+  - **Generic ASR** 🔤 - Fallback for non-clinical errors
 - Assign severity scores (0-5) to each error
 - Export annotations for further analysis
+
+**Note:** Errors can be assigned **multiple categories** simultaneously.
 
 ## Files
 
