@@ -566,7 +566,7 @@
     <div class="container">
         <header>
             <h1>🔍 ASR Error Annotation Tool</h1>
-            <p>Annotate ASR errors with taxonomy and severity scores</p>
+            <p>Annotate ASR errors with 11-category taxonomy and severity scores (Multi-label supported)</p>
         </header>
 
         <div class="controls">
@@ -589,7 +589,7 @@
 
             <div id="annotation" class="tab-content active">
                 <div style="display: flex; gap: 15px; margin-bottom: 15px; align-items: center;">
-                    <label for="utteranceSelect" style="margin: 0;">Select Utterance:</label>
+                    <label for="utteranceSelect" style="margin: 0;">Select Conversation:</label>
                     <select id="utteranceSelect" style="padding: 8px; border-radius: 4px; border: 1px solid #ccc; flex: 1; max-width: 300px;">
                         <option>Loading...</option>
                     </select>
@@ -599,11 +599,11 @@
                 <div class="annotation-container">
                     <div class="transcript-panel">
                         <h3>Human Transcript</h3>
-                        <div class="transcript-text" id="humanTranscript">Select an utterance to begin</div>
+                        <div class="transcript-text" id="humanTranscript">Select an Conversation to begin</div>
                     </div>
                     <div class="transcript-panel">
                         <h3>ASR Output (Reconstructed)</h3>
-                        <div class="transcript-text" id="asrTranscript">Select an utterance to begin</div>
+                        <div class="transcript-text" id="asrTranscript">Select an Conversation to begin</div>
                     </div>
                 </div>
 
@@ -644,7 +644,7 @@
             <form id="annotationForm">
                 <div class="form-group">
                     <label>Error Taxonomy (Select one or more):</label>
-                    <div class="taxonomy-options">
+                    <div class="taxonomy-options" style="grid-template-columns: 1fr 1fr;">
                         <label class="checkbox-label">
                             <input type="checkbox" name="taxonomy" value="Medication"> <span>💊 Medication</span>
                         </label>
@@ -655,10 +655,28 @@
                             <input type="checkbox" name="taxonomy" value="Temporal"> <span>⏱️ Temporal</span>
                         </label>
                         <label class="checkbox-label">
+                            <input type="checkbox" name="taxonomy" value="Negation / Uncertainty"> <span>🚫 Negation / Uncertainty</span>
+                        </label>
+                        <label class="checkbox-label">
                             <input type="checkbox" name="taxonomy" value="Numerics"> <span>🔢 Numerics</span>
                         </label>
                         <label class="checkbox-label">
+                            <input type="checkbox" name="taxonomy" value="Speaker & Attribution"> <span>💬 Speaker & Attribution</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="taxonomy" value="Pragmatics"> <span>📋 Pragmatics</span>
+                        </label>
+                        <label class="checkbox-label">
                             <input type="checkbox" name="taxonomy" value="Identity"> <span>👤 Identity</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="taxonomy" value="Specialty Category"> <span>🩺 Specialty Category</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="taxonomy" value="Formatting / Structure"> <span>📄 Formatting / Structure</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="taxonomy" value="Generic ASR"> <span>🔤 Generic ASR</span>
                         </label>
                     </div>
                 </div>
@@ -696,8 +714,14 @@
             'Medication': '💊',
             'Clinical Concepts': '🏥',
             'Temporal': '⏱️',
+            'Negation / Uncertainty': '🚫',
             'Numerics': '🔢',
-            'Identity': '👤'
+            'Speaker & Attribution': '💬',
+            'Pragmatics': '📋',
+            'Identity': '👤',
+            'Specialty Category': '🩺',
+            'Formatting / Structure': '📄',
+            'Generic ASR': '🔤'
         };
 
         const severityLabels = ['None', 'Minor', 'Low', 'Medium', 'High', 'Critical'];
@@ -915,7 +939,7 @@
             document.getElementById('errorContext').innerHTML = `
                 <strong>Error Type:</strong> ${errorType}<br/>
                 <strong>Error Text:</strong> "${escapeHtml(errorText)}"<br/>
-                <strong>Utterance:</strong> ${allData[utteranceIndex].utterance_id}
+                <strong>Conversation:</strong> ${allData[utteranceIndex].utterance_id}
             `;
 
             const existingAnnotation = annotations[currentErrorIndex];
@@ -1040,7 +1064,7 @@
             stats.innerHTML = `
                 <div class="stat-card">
                     <div class="number">${allData.length}</div>
-                    <div class="label">Total Utterances</div>
+                    <div class="label">Total Conversations</div>
                 </div>
                 <div class="stat-card">
                     <div class="number">${totalErrors}</div>
