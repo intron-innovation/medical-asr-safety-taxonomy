@@ -18,6 +18,20 @@ python prepare_annotations.py --input ../all_result_processed.xlsx --model whisp
 ### Step 3: Open the annotation interface
 Open `annotation_interface.html` in your web browser
 
+### Step 3.5: Optional (Recommended) — Enable Auto-Save to Local JSON
+To automatically persist all annotators' work into a single local JSON file, start the lightweight save server:
+
+```bash
+cd annotation_tool
+python -m pip install -r requirements.txt  # installs Flask
+python annotations_server.py               # starts http://127.0.0.1:5000
+```
+
+When running, every annotation save in the web interface is auto-synced to:
+- `annotation_tool/annotations_store.json` (shared file for all annotators)
+
+If the server is offline, saves are queued in the browser and auto-synced once the server is back online.
+
 ### Step 4: Process results
 ```bash
 python process_annotations.py --annotations asr_annotations_*.json --original ../all_result_processed.xlsx
@@ -82,8 +96,61 @@ cd annotation_tool && python example_annotation_analysis.py
 ### Output (created in annotation_tool/):
 - `{model}_annotation_data.json` - Prepared data for annotation
 - `asr_annotations_TIMESTAMP.json` - Your annotations (export from web interface)
+- `annotations_store.json` - Shared auto-saved JSON (all annotators; created by save server)
 - `results_with_annotations.xlsx` - Final results with annotations
 - `annotation_report.csv` - Optional detailed report
+
+## 🔄 Auto-Save Details
+
+- The interface saves locally per-user for resilience, then attempts a POST to the local save server at `http://127.0.0.1:5000/annotations`.
+- The server upserts records into `annotations_store.json`, keyed by `annotatorId + utteranceId + errorType + errorMatch`.
+- If offline, the client queues saves in `localStorage` (`pendingSyncAnnotations`) and flushes them automatically on next load.
+
+### JSON Schema (annotations_store.json)
+
+```json
+{
+	"version": "1.0",
+	"updatedAt": "2025-12-24T12:00:00Z",
+	"annotators": {
+		"ANN001": {
+			"name": "Dr. Sarah Johnson",
+			"email": "sarah.johnson@example.com",
+			"affiliation": "Stanford Medical Center",
+			"annotations": [
+				{
+					"utteranceId": "...",
+					"errorType": "DEL|SUB|INS",
+					"errorMatch": "[DEL:foo]",
+					"taxonomy": ["meaning", "fluency"],
+					"severity": 3,
+					"timestamp": "2025-12-24T12:00:00Z",
+					"context": {
+						"humanTranscript": "...",
+						"asrReconstructed": "...",
+						"utteranceIndex": 0
+					}
+				}
+			]
+		}
+	}
+}
+```
+
+### Quick Commands
+
+```bash
+# Start the save server (recommended)
+cd annotation_tool
+python -m pip install -r requirements.txt
+python annotations_server.py
+
+# Check server health
+python - <<'PY'
+import json,urllib.request
+print(urllib.request.urlopen('http://127.0.0.1:5000/health').read().decode())
+PY
+```
 
 ## 🎯 3-Step Workflow
 

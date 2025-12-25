@@ -17,6 +17,69 @@
             color: #333;
         }
 
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-links a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .navbar-links a.active {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .navbar-user {
+            color: white;
+            font-size: 13px;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 6px;
+        }
+
+        .navbar-logout {
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 16px;
+            background: rgba(255,0,0,0.3);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-logout:hover {
+            background: rgba(255,0,0,0.5);
+        }
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
@@ -563,10 +626,23 @@
     </style>
 </head>
 <body>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand">🔍 ASR Annotation System</a>
+        <div class="navbar-links">
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="instructions.html">Instructions</a>
+            <a href="annotation_interface.html" class="active">Annotate</a>
+            <div class="navbar-user" id="navbarUserInfo"></div>
+            <a href="#" onclick="logoutFromNav(); return false;" class="navbar-logout">Logout</a>
+        </div>
+    </nav>
+
     <div class="container">
         <header>
             <h1>🔍 ASR Error Annotation Tool</h1>
             <p>Annotate ASR errors with 11-category taxonomy and severity scores (Multi-label supported)</p>
+            <div id="userSession" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 13px; opacity: 0.9;"></div>
         </header>
 
         <div class="controls">
@@ -576,6 +652,7 @@
             </div>
             <button class="btn btn-secondary" id="exportBtn">💾 Export Annotations</button>
             <button class="btn btn-danger" id="clearBtn">🗑️ Clear All</button>
+            <button class="btn btn-danger" id="logoutBtn" style="margin-left: auto;">🚪 Logout</button>
             <div class="status" id="status">Ready for data</div>
         </div>
 
@@ -709,6 +786,7 @@
         let annotations = {};
         let currentErrorIndex = null;
         let currentUtteranceIndex = 0;
+        let currentUser = null;
 
         const taxonomyLabels = {
             'Medication': '💊',
@@ -725,6 +803,160 @@
         };
 
         const severityLabels = ['None', 'Minor', 'Low', 'Medium', 'High', 'Critical'];
+
+        // Initialize app and check for user session
+        window.addEventListener('load', function() {
+            const userSession = sessionStorage.getItem('currentUser');
+            if (!userSession) {
+                alert('Please login first');
+                window.location.href = 'login.html';
+                return;
+            }
+
+            currentUser = JSON.parse(userSession);
+            displayUserSession();
+            displayNavbarUserInfo();
+            loadUserAnnotations();
+            // Try syncing any pending annotations from offline queue
+            syncPendingAnnotations();
+        });
+
+        function displayNavbarUserInfo() {
+            const navbarUserInfo = document.getElementById('navbarUserInfo');
+            navbarUserInfo.textContent = `👤 ${currentUser.annotatorName}`;
+        }
+
+        function logoutFromNav() {
+            if (confirm('Are you sure you want to logout?')) {
+                sessionStorage.removeItem('currentUser');
+                window.location.href = 'index.html';
+            }
+        }
+
+        function displayUserSession() {
+            const userSessionDiv = document.getElementById('userSession');
+            userSessionDiv.innerHTML = `
+                👤 <strong>${currentUser.annotatorName}</strong> | 
+                📧 ${currentUser.annotatorEmail} | 
+                🆔 ${currentUser.annotatorId}
+            `;
+        }
+
+        function loadUserAnnotations() {
+            const storageKey = `annotations_${currentUser.annotatorId}`;
+            const stored = localStorage.getItem(storageKey);
+            if (stored) {
+                try {
+                    annotations = JSON.parse(stored);
+                    updateStatus(`Loaded ${Object.keys(annotations).length} previous annotations`);
+                } catch (e) {
+                    updateStatus('Could not load previous annotations', true);
+                }
+            }
+        }
+
+        const SERVER_URL = 'http://127.0.0.1:5000';
+
+        function saveUserAnnotations() {
+            const storageKey = `annotations_${currentUser.annotatorId}`;
+            localStorage.setItem(storageKey, JSON.stringify(annotations));
+        }
+
+        async function syncAnnotationToServer(uttIdx, errType, fullMatch) {
+            const utt = allData[parseInt(uttIdx)];
+            const ann = annotations[`${uttIdx}_${errType}_${fullMatch}`];
+            if (!ann || !utt) return;
+
+            const payload = {
+                annotatorId: currentUser.annotatorId,
+                annotatorName: currentUser.annotatorName,
+                annotatorEmail: currentUser.annotatorEmail,
+                affiliation: currentUser.affiliation || undefined,
+                utteranceId: utt.utterance_id,
+                utteranceIndex: parseInt(uttIdx),
+                errorType: errType,
+                errorMatch: fullMatch,
+                taxonomy: ann.taxonomy,
+                severity: ann.severity,
+                timestamp: ann.timestamp,
+                humanTranscript: utt.human_transcript,
+                asrReconstructed: utt.asr_reconstructed
+            };
+
+            try {
+                const res = await fetch(`${SERVER_URL}/annotations`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                if (!res.ok) throw new Error(`Server responded ${res.status}`);
+                const data = await res.json();
+                updateStatus(`Cloud sync ${data.action}. Total for you: ${data.count}`);
+                // Clear any matching pending sync
+                clearPendingSync(uttIdx, errType, fullMatch);
+            } catch (err) {
+                queuePendingSync(payload);
+                updateStatus('Server unreachable. Queued for sync later.', true);
+            }
+        }
+
+        function queuePendingSync(payload) {
+            const key = 'pendingSyncAnnotations';
+            const list = JSON.parse(localStorage.getItem(key) || '[]');
+            // Replace if same key exists
+            const idx = list.findIndex(p => 
+                p.annotatorId === payload.annotatorId &&
+                p.utteranceId === payload.utteranceId &&
+                p.errorType === payload.errorType &&
+                p.errorMatch === payload.errorMatch
+            );
+            if (idx >= 0) list[idx] = payload; else list.push(payload);
+            localStorage.setItem(key, JSON.stringify(list));
+        }
+
+        function clearPendingSync(uttIdx, errType, fullMatch) {
+            const key = 'pendingSyncAnnotations';
+            const list = JSON.parse(localStorage.getItem(key) || '[]');
+            const utt = allData[parseInt(uttIdx)];
+            const filtered = list.filter(p => 
+                !(p.annotatorId === currentUser.annotatorId &&
+                  p.utteranceId === utt.utterance_id &&
+                  p.errorType === errType &&
+                  p.errorMatch === fullMatch)
+            );
+            localStorage.setItem(key, JSON.stringify(filtered));
+        }
+
+        async function syncPendingAnnotations() {
+            const key = 'pendingSyncAnnotations';
+            const list = JSON.parse(localStorage.getItem(key) || '[]');
+            if (list.length === 0) return;
+            for (const payload of list) {
+                try {
+                    const res = await fetch(`${SERVER_URL}/annotations`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (res.ok) {
+                        // Remove this payload from queue
+                        const remaining = JSON.parse(localStorage.getItem(key) || '[]')
+                            .filter(p => !(p.annotatorId === payload.annotatorId && p.utteranceId === payload.utteranceId && p.errorType === payload.errorType && p.errorMatch === payload.errorMatch));
+                        localStorage.setItem(key, JSON.stringify(remaining));
+                    }
+                } catch (e) {
+                    // Stop if still offline
+                    break;
+                }
+            }
+        }
+
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            if (confirm('Are you sure you want to logout? Your annotations have been saved.')) {
+                sessionStorage.removeItem('currentUser');
+                window.location.href = 'index.html';
+            }
+        });
 
         // Load JSON file
         document.getElementById('jsonFile').addEventListener('change', function(e) {
@@ -785,9 +1017,9 @@
         }
 
         function highlightErrors(text) {
-            const delPattern = /\[DEL: __([^_]+)(?:_([^_]+))*__\]/g;
-            const subPattern = /\[SUB: ~~([^~]+)(?:~([^~]+))*~~\]/g;
-            const insPattern = /\[INS: \+\+([^+]+)(?:\+([^+]+))*\+\+\]/g;
+            const delPattern = /\[DEL:([^_]+)(?:_([^_]+))*\]/g;
+            const subPattern = /\[SUB:([^~]+)(?:~([^~]+))*\]/g;
+            const insPattern = /\[INS:([^+]+)(?:\+([^+]+))*\]/g;
 
             let html = text;
             
@@ -832,7 +1064,7 @@
             let tempText = text;
             
             html = text
-                .replace(/\[DEL: __(.*?)__\]/g, (match, text) => {
+                .replace(/\[DEL:(.*?)\]/g, (match, text) => {
                     const idx = errors.findIndex(e => e.type === 'DEL' && e.text === match);
                     const isAnnotated = isErrorAnnotated(currentUtteranceIndex, 'DEL', match);
                     return `<span class="error-highlight del-error ${isAnnotated ? 'annotated' : 'unannotated'}" 
@@ -840,14 +1072,14 @@
                         title="Click to annotate">
                         <span class="error-status-indicator"></span>[DEL: <strong>${escapeHtml(text)}</strong>]</span>`;
                 })
-                .replace(/\[SUB: ~~(.*?)~~\]/g, (match, text) => {
+                .replace(/\[SUB:(.*?)\]/g, (match, text) => {
                     const isAnnotated = isErrorAnnotated(currentUtteranceIndex, 'SUB', match);
                     return `<span class="error-highlight sub-error ${isAnnotated ? 'annotated' : 'unannotated'}" 
                         onclick="openAnnotationModal(event, ${currentUtteranceIndex}, 'SUB', '${escapeHtml(match)}', '${escapeHtml(text)}')" 
                         title="Click to annotate">
                         <span class="error-status-indicator"></span>[SUB: <strong>${escapeHtml(text)}</strong>]</span>`;
                 })
-                .replace(/\[INS: \+\+(.*?)\+\+\]/g, (match, text) => {
+                .replace(/\[INS:(.*?)\]/g, (match, text) => {
                     const isAnnotated = isErrorAnnotated(currentUtteranceIndex, 'INS', match);
                     return `<span class="error-highlight ins-error ${isAnnotated ? 'annotated' : 'unannotated'}" 
                         onclick="openAnnotationModal(event, ${currentUtteranceIndex}, 'INS', '${escapeHtml(match)}', '${escapeHtml(text)}')" 
@@ -863,7 +1095,7 @@
             const errors = [];
 
             // Extract errors
-            const delPattern = /\[DEL: __(.*?)__\]/g;
+            const delPattern = /\[DEL:(.*?)\]/g;
             let match;
             while ((match = delPattern.exec(reconstructed)) !== null) {
                 errors.push({
@@ -873,7 +1105,7 @@
                 });
             }
 
-            const subPattern = /\[SUB: ~~(.*?)~~\]/g;
+            const subPattern = /\[SUB:(.*?)\]/g;
             while ((match = subPattern.exec(reconstructed)) !== null) {
                 errors.push({
                     type: 'SUB',
@@ -882,7 +1114,7 @@
                 });
             }
 
-            const insPattern = /\[INS: \+\+(.*?)\+\+\]/g;
+            const insPattern = /\[INS:(.*?)\]/g;
             while ((match = insPattern.exec(reconstructed)) !== null) {
                 errors.push({
                     type: 'INS',
@@ -977,7 +1209,7 @@
             document.getElementById('severityDisplay').textContent = `Severity: ${labels[value]}`;
         }
 
-        document.getElementById('annotationForm').addEventListener('submit', function(e) {
+        document.getElementById('annotationForm').addEventListener('submit', async function(e) {
             e.preventDefault();
 
             const selectedTaxonomy = Array.from(document.querySelectorAll('input[name="taxonomy"]:checked'))
@@ -993,10 +1225,20 @@
             annotations[currentErrorIndex] = {
                 taxonomy: selectedTaxonomy,
                 severity: severity,
-                timestamp: new Date().toISOString()
+                timestamp: new Date().toISOString(),
+                annotatorId: currentUser.annotatorId
             };
 
+            saveUserAnnotations();
             updateStatus(`Annotation saved: ${currentErrorIndex}`);
+
+            // Sync to server
+            try {
+                const [uttIdx, errType, fullMatch] = currentErrorIndex.split('_', 3);
+                await syncAnnotationToServer(uttIdx, errType, fullMatch);
+            } catch (syncErr) {
+                // Status already updated in sync function
+            }
             loadUtterance(currentUtteranceIndex);
             closeModal();
             updateStats();
@@ -1010,6 +1252,9 @@
         document.getElementById('exportBtn').addEventListener('click', function() {
             const exportData = {
                 exported_at: new Date().toISOString(),
+                annotator_id: currentUser.annotatorId,
+                annotator_name: currentUser.annotatorName,
+                annotator_email: currentUser.annotatorEmail,
                 total_annotations: Object.keys(annotations).length,
                 annotations: {}
             };
@@ -1032,7 +1277,7 @@
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `asr_annotations_${Date.now()}.json`;
+            a.download = `asr_annotations_${currentUser.annotatorId}_${Date.now()}.json`;
             a.click();
             URL.revokeObjectURL(url);
             updateStatus('Annotations exported successfully');
@@ -1041,6 +1286,7 @@
         document.getElementById('clearBtn').addEventListener('click', function() {
             if (confirm('Are you sure you want to clear all annotations? This cannot be undone.')) {
                 annotations = {};
+                saveUserAnnotations();
                 updateStatus('All annotations cleared');
                 loadUtterance(currentUtteranceIndex);
                 updateStats();

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - ASR Annotation System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .navbar {
+            background: rgba(0,0,0,0.2);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar-brand {
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-links a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .navbar-links a.active {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .login-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 100%;
+            margin: 40px auto;
+            overflow: hidden;
+        }
+
+        .login-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .login-header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .login-header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .login-form {
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            background-color: #f9f9f9;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #667eea;
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .message {
+            padding: 12px 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .message.error {
+            background-color: #fee;
+            border: 1px solid #fcc;
+            color: #c33;
+        }
+
+        .message.success {
+            background-color: #efe;
+            border: 1px solid #cfc;
+            color: #3c3;
+        }
+
+        .info-box {
+            background: #f0f7ff;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+        }
+
+        .info-box h3 {
+            color: #667eea;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .info-box p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .login-container {
+                margin: 20px;
+            }
+
+            .login-form {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand">🔍 ASR Annotation System</a>
+        <div class="navbar-links">
+            <a href="index.html">Home</a>
+            <a href="login.html" class="active">Login</a>
+            <a href="#" onclick="checkAuthAndNavigate('instructions.html'); return false;">Instructions</a>
+            <a href="#" onclick="checkAuthAndNavigate('annotation_interface.html'); return false;">Annotate</a>
+        </div>
+    </nav>
+
+    <div class="login-container">
+        <div class="login-header">
+            <h1>👤 Annotator Login</h1>
+            <p>Enter your pre-registered credentials to continue</p>
+        </div>
+
+        <div class="login-form">
+            <div class="info-box">
+                <h3>Pre-Registered Annotators Only</h3>
+                <p>Use the email address and Annotator ID provided to you by the system administrator. If you haven't received your credentials, please contact the administrator.</p>
+            </div>
+
+            <div id="messageBox" class="message"></div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="input-field" required placeholder="your.email@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="annotatorId">Annotator ID</label>
+                    <input type="text" id="annotatorId" class="input-field" required placeholder="ANN001">
+                </div>
+
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Load annotators database
+        let annotatorsDB = [];
+
+        // Load annotators from JSON file
+        fetch('annotators.json')
+            .then(response => response.json())
+            .then(data => {
+                annotatorsDB = data.annotators;
+            })
+            .catch(error => {
+                console.error('Error loading annotators database:', error);
+                showError('Could not load annotators database. Please refresh the page.');
+            });
+
+        function checkAuthAndNavigate(page) {
+            const currentUser = sessionStorage.getItem('currentUser');
+            if (!currentUser) {
+                showError('Please login first to access this page');
+                return false;
+            }
+            window.location.href = page;
+            return false;
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value.trim().toLowerCase();
+            const annotatorId = document.getElementById('annotatorId').value.trim().toUpperCase();
+
+            // Validate inputs
+            if (!email || !annotatorId) {
+                showError('Please fill in all fields');
+                return;
+            }
+
+            if (!isValidEmail(email)) {
+                showError('Please enter a valid email address');
+                return;
+            }
+
+            // Find matching annotator
+            const annotator = annotatorsDB.find(ann => 
+                ann.email.toLowerCase() === email && 
+                ann.annotatorId.toUpperCase() === annotatorId
+            );
+
+            if (!annotator) {
+                showError('Invalid credentials. Please check your email and Annotator ID.');
+                return;
+            }
+
+            // Create session
+            const userSession = {
+                annotatorId: annotator.annotatorId,
+                annotatorName: annotator.name,
+                annotatorEmail: annotator.email,
+                affiliation: annotator.affiliation,
+                loginAt: new Date().toISOString()
+            };
+
+            // Store in session storage
+            sessionStorage.setItem('currentUser', JSON.stringify(userSession));
+
+            // Store in local storage for resume capability
+            localStorage.setItem(`session_${annotator.annotatorId}`, JSON.stringify(userSession));
+
+            showSuccess(`Welcome, ${annotator.name}! Redirecting to instructions...`);
+
+            // Redirect after short delay
+            setTimeout(() => {
+                window.location.href = 'instructions.html';
+            }, 1500);
+        });
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function showError(message) {
+            const messageBox = document.getElementById('messageBox');
+            messageBox.className = 'message error';
+            messageBox.textContent = message;
+            messageBox.style.display = 'block';
+            
+            setTimeout(() => {
+                messageBox.style.display = 'none';
+            }, 5000);
+        }
+
+        function showSuccess(message) {
+            const messageBox = document.getElementById('messageBox');
+            messageBox.className = 'message success';
+            messageBox.textContent = message;
+            messageBox.style.display = 'block';
+        }
+
+        // Check if user is already logged in
+        window.addEventListener('load', function() {
+            const currentUser = sessionStorage.getItem('currentUser');
+            if (currentUser) {
+                const user = JSON.parse(currentUser);
+                showSuccess(`Already logged in as ${user.annotatorName}. Redirecting...`);
+                setTimeout(() => {
+                    window.location.href = 'instructions.html';
+                }, 1500);
+            }
+        });
+    </script>
+</body>
+</html>

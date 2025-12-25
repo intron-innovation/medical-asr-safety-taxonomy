@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructions - ASR Annotation System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .navbar {
+            background: rgba(0,0,0,0.2);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .navbar-brand {
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-links a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .navbar-links a.active {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .navbar-user {
+            color: white;
+            font-size: 13px;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 6px;
+        }
+
+        .navbar-logout {
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 16px;
+            background: rgba(255,0,0,0.3);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-logout:hover {
+            background: rgba(255,0,0,0.5);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .content {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            line-height: 1.8;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 22px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            color: #555;
+            margin: 20px 0 10px;
+            font-size: 16px;
+        }
+
+        .section p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .step-box {
+            background: #f9f9f9;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+
+        .taxonomy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .taxonomy-item {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+        }
+
+        .taxonomy-item strong {
+            color: #667eea;
+        }
+
+        .severity-scale {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .severity-level {
+            background: #f9f9f9;
+            padding: 12px;
+            border-radius: 6px;
+            text-align: center;
+            border-top: 4px solid #ccc;
+        }
+
+        .severity-level.level-0 {
+            border-top-color: #48bb78;
+        }
+
+        .severity-level.level-1 {
+            border-top-color: #68d391;
+        }
+
+        .severity-level.level-2 {
+            border-top-color: #f6e05e;
+        }
+
+        .severity-level.level-3 {
+            border-top-color: #ed8936;
+        }
+
+        .severity-level.level-4 {
+            border-top-color: #f56565;
+        }
+
+        .severity-level.level-5 {
+            border-top-color: #c53030;
+        }
+
+        .severity-number {
+            font-weight: 700;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .severity-label {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .example-box {
+            background: #f0f7ff;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .example-box h4 {
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+
+        .example-item {
+            background: white;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 4px;
+            border-left: 3px solid #667eea;
+            font-size: 14px;
+        }
+
+        .error-types {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .error-type {
+            background: white;
+            border: 2px solid #e0e0e0;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .error-type.del {
+            border-color: #fc8181;
+            background: #fed7d7;
+        }
+
+        .error-type.sub {
+            border-color: #f8c471;
+            background: #fef5e7;
+        }
+
+        .error-type.ins {
+            border-color: #76e4f7;
+            background: #d5f4e6;
+        }
+
+        .error-type h4 {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .error-type p {
+            font-size: 13px;
+            margin: 0;
+        }
+
+        .checklist {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .checklist li {
+            padding: 10px;
+            margin: 8px 0;
+            background: #f9f9f9;
+            border-left: 3px solid #667eea;
+            border-radius: 4px;
+        }
+
+        .checklist li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .tip-box {
+            background: #fffbf0;
+            border-left: 4px solid #ed8936;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .tip-box strong {
+            color: #ed8936;
+        }
+
+        .warning-box {
+            background: #fee;
+            border-left: 4px solid #c33;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .warning-box strong {
+            color: #c33;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-start {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-start:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn-back {
+            background: #f0f0f0;
+            color: #333;
+            border: 2px solid #e0e0e0;
+        }
+
+        .btn-back:hover {
+            background: #e0e0e0;
+        }
+
+        .user-info {
+            background: #f0f7ff;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .user-info p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .user-info strong {
+            color: #667eea;
+        }
+
+        .toc {
+            background: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+        }
+
+        .toc h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .toc ol {
+            margin-left: 20px;
+            color: #666;
+        }
+
+        .toc li {
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 1000px) {
+            .taxonomy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .error-types {
+                grid-template-columns: 1fr;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand">🔍 ASR Annotation System</a>
+        <div class="navbar-links">
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="instructions.html" class="active">Instructions</a>
+            <a href="#" onclick="navigateToAnnotation(); return false;">Annotate</a>
+            <div class="navbar-user" id="userInfo"></div>
+            <a href="#" onclick="logout(); return false;" class="navbar-logout">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>📖 Annotation Instructions & Guide</h1>
+            <p>Complete guide to annotating ASR errors in medical conversations</p>
+        </header>
+
+        <div class="content">
+            <!-- User Info -->
+            <div class="user-info" id="userInfo" style="display: none;">
+                <p>👤 <strong>Logged in as:</strong> <span id="userName"></span></p>
+                <p>🆔 <strong>Annotator ID:</strong> <span id="userID"></span></p>
+            </div>
+
+            <!-- Table of Contents -->
+            <div class="toc">
+                <h3>📑 Table of Contents</h3>
+                <ol>
+                    <li><a href="#overview">Annotation Overview</a></li>
+                    <li><a href="#workflow">Your Annotation Workflow</a></li>
+                    <li><a href="#errors">Understanding Error Types</a></li>
+                    <li><a href="#taxonomy">Error Taxonomy (11 Categories)</a></li>
+                    <li><a href="#severity">Severity Scoring</a></li>
+                    <li><a href="#interface">Using the Interface</a></li>
+                    <li><a href="#bestpractices">Best Practices</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ol>
+            </div>
+
+            <!-- Section 1: Overview -->
+            <div class="section" id="overview">
+                <h2>1. Annotation Overview</h2>
+                <p>
+                    Your task is to analyze errors in Automatic Speech Recognition (ASR) output from medical conversations. 
+                    You will compare human transcriptions with ASR output and classify each error according to clinical significance and error type.
+                </p>
+                <p>
+                    Each error will be assigned:
+                </p>
+                <ul style="margin-left: 30px; color: #666;">
+                    <li><strong>Error Type:</strong> DEL (Deletion), SUB (Substitution), or INS (Insertion)</li>
+                    <li><strong>Taxonomy Categories:</strong> Multiple categories from 11 options (select all that apply)</li>
+                    <li><strong>Severity Score:</strong> 0-5 scale based on clinical impact</li>
+                </ul>
+            </div>
+
+            <!-- Section 2: Workflow -->
+            <div class="section" id="workflow">
+                <h2>2. Your Annotation Workflow</h2>
+                <div class="step-box">
+                    <span class="step-number">1</span>
+                    <strong>Load Data</strong> - Click "Load JSON File" to select the annotation data file
+                </div>
+                <div class="step-box">
+                    <span class="step-number">2</span>
+                    <strong>Select Utterance</strong> - Choose a conversation from the dropdown menu
+                </div>
+                <div class="step-box">
+                    <span class="step-number">3</span>
+                    <strong>Review Transcripts</strong> - Compare human transcript (left) with ASR output (right)
+                </div>
+                <div class="step-box">
+                    <span class="step-number">4</span>
+                    <strong>Identify Errors</strong> - Errors are color-coded in the ASR output
+                </div>
+                <div class="step-box">
+                    <span class="step-number">5</span>
+                    <strong>Click & Annotate</strong> - Click on each error to open the annotation modal
+                </div>
+                <div class="step-box">
+                    <span class="step-number">6</span>
+                    <strong>Assign Categories</strong> - Select all applicable taxonomy categories
+                </div>
+                <div class="step-box">
+                    <span class="step-number">7</span>
+                    <strong>Rate Severity</strong> - Use the slider to score error severity (0-5)
+                </div>
+                <div class="step-box">
+                    <span class="step-number">8</span>
+                    <strong>Save & Continue</strong> - Click "Save Annotation" to store your work
+                </div>
+                <div class="step-box">
+                    <span class="step-number">9</span>
+                    <strong>Export Results</strong> - When finished, click "Export Annotations" to download
+                </div>
+            </div>
+
+            <!-- Section 3: Error Types -->
+            <div class="section" id="errors">
+                <h2>3. Understanding Error Types</h2>
+                <p>ASR errors come in three main types, each color-coded for easy identification:</p>
+                <div class="error-types">
+                    <div class="error-type del">
+                        <h4>🔴 DEL (Deletion)</h4>
+                        <p>ASR missed or deleted words that were in the human transcript</p>
+                    </div>
+                    <div class="error-type sub">
+                        <h4>🟡 SUB (Substitution)</h4>
+                        <p>ASR output wrong word instead of the correct word</p>
+                    </div>
+                    <div class="error-type ins">
+                        <h4>🔵 INS (Insertion)</h4>
+                        <p>ASR added extra words that weren't in the human transcript</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Taxonomy -->
+            <div class="section" id="taxonomy">
+                <h2>4. Error Taxonomy (11 Categories)</h2>
+                <p>
+                    <strong>Important:</strong> An error can belong to MULTIPLE categories. 
+                    Select all categories that apply to each error.
+                </p>
+                <div class="taxonomy-grid">
+                    <div class="taxonomy-item">
+                        <strong>💊 Medication</strong>
+                        <p>Drug names, doses, units, routes, frequency, duration</p>
+                    </div>
+                    <div class="taxonomy-item">
+                        <strong>🏥 Clinical Concepts</strong>
+                        <p>Diagnosis, symptoms, procedures, anatomy, laterality, lab values</p>
+                    </div>
+                    <div class="taxonomy-item">
+                        <strong>⏱️ Temporal</strong>
+                        <p>Dates, times, durations, event sequences</p>
+                    </div>
+                    <div class="taxonomy-item">
+                        <strong>🚫 Negation / Uncertainty</strong>
+                        <p>Loss/addition of negation, removed hedging</p>
+                    </div>
+                    <div class="taxonomy-item">
+                        <strong>🔢 Numerics</strong>
+                        <p>Vital signs, measurements, decimals, ranges, comparators</p>
+                    </div>
+                    <div class="taxonomy-item">
+                        <strong>💬 Speaker & Attribution</strong>
+                        <p>Patient vs clinician dialogue confusion</p>
+                    </div>
+                    <div class="taxonomy-item">
+                        <strong>📋 Pragmatics</strong>
+                        <p>Mixed assessment, plan, history, instructions</p>
+                    </div>
+                    <div class="taxonomy-item">
+                        <strong>👤 Identity</strong>
+                        <p>Patient names, locations, personal identifiers</p>
+                    </div>
+                    <div class="taxonomy-item">
+                        <strong>🩺 Specialty Category</strong>
+                        <p>Clinical domain (optional): Cardiology, Oncology, etc.</p>
+                    </div>
+                    <div class="taxonomy-item">
+                        <strong>📄 Formatting / Structure</strong>
+                        <p>Section headers, bullet points, structured lists</p>
+                    </div>
+                    <div class="taxonomy-item">
+                        <strong>🔤 Generic ASR</strong>
+                        <p>Fallback: DEL/SUB/INS without clear clinical category</p>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4>Multi-Label Examples</h4>
+                    <div class="example-item">
+                        <strong>"metformin 500mg" → "metformin"</strong><br>
+                        Categories: 💊 Medication + 🔢 Numerics
+                    </div>
+                    <div class="example-item">
+                        <strong>"no fever" → "fever"</strong><br>
+                        Categories: 🚫 Negation / Uncertainty + 🏥 Clinical Concepts
+                    </div>
+                    <div class="example-item">
+                        <strong>"follow up in 2 weeks" → "2 months"</strong><br>
+                        Categories: ⏱️ Temporal + 📋 Pragmatics
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5: Severity -->
+            <div class="section" id="severity">
+                <h2>5. Severity Scoring (0-5 Scale)</h2>
+                <p>
+                    Assign severity based on the clinical impact of the error. 
+                    Higher scores indicate greater impact on patient care.
+                </p>
+                <div class="severity-scale">
+                    <div class="severity-level level-0">
+                        <div class="severity-number">0</div>
+                        <div class="severity-label">None</div>
+                    </div>
+                    <div class="severity-level level-1">
+                        <div class="severity-number">1</div>
+                        <div class="severity-label">Minor</div>
+                    </div>
+                    <div class="severity-level level-2">
+                        <div class="severity-number">2</div>
+                        <div class="severity-label">Low</div>
+                    </div>
+                    <div class="severity-level level-3">
+                        <div class="severity-number">3</div>
+                        <div class="severity-label">Medium</div>
+                    </div>
+                    <div class="severity-level level-4">
+                        <div class="severity-number">4</div>
+                        <div class="severity-label">High</div>
+                    </div>
+                    <div class="severity-level level-5">
+                        <div class="severity-number">5</div>
+                        <div class="severity-label">Critical</div>
+                    </div>
+                </div>
+
+                <h3>Severity Descriptions</h3>
+                <ul class="checklist">
+                    <li><strong>0 (None):</strong> No impact on understanding (e.g., filler word "um")</li>
+                    <li><strong>1 (Minor):</strong> Minimal impact, easily overlooked (e.g., "tree" for "three")</li>
+                    <li><strong>2 (Low):</strong> Some impact but context preserved (e.g., "asprin" for "aspirin")</li>
+                    <li><strong>3 (Medium):</strong> Notable impact on meaning (e.g., "once" → "twice" daily)</li>
+                    <li><strong>4 (High):</strong> Significant impact on clinical information (e.g., wrong dosage)</li>
+                    <li><strong>5 (Critical):</strong> SEVERE - patient safety concerns (e.g., wrong drug class)</li>
+                </ul>
+            </div>
+
+            <!-- Section 6: Interface -->
+            <div class="section" id="interface">
+                <h2>6. Using the Interface</h2>
+                <h3>Main Components</h3>
+                <ul style="margin-left: 30px; color: #666;">
+                    <li><strong>Status Bar:</strong> Shows current task and progress updates</li>
+                    <li><strong>Statistics:</strong> Total utterances, errors, progress percentage</li>
+                    <li><strong>Conversation Selector:</strong> Choose which conversation to annotate</li>
+                    <li><strong>Human Transcript (Left):</strong> Reference text</li>
+                    <li><strong>ASR Output (Right):</strong> Text with color-coded errors</li>
+                    <li><strong>Error List:</strong> All errors in current conversation</li>
+                    <li><strong>Summary Tab:</strong> Charts showing annotation patterns</li>
+                </ul>
+
+                <h3>Keyboard Shortcuts</h3>
+                <ul style="margin-left: 30px; color: #666;">
+                    <li><strong>Arrow Keys (← →):</strong> Navigate between conversations</li>
+                    <li><strong>Escape:</strong> Close annotation modal</li>
+                    <li><strong>Click on error:</strong> Open annotation modal for that error</li>
+                </ul>
+
+                <div class="tip-box">
+                    <strong>💡 Tip:</strong> Green dot = annotated error, Orange dot = needs annotation
+                </div>
+            </div>
+
+            <!-- Section 7: Best Practices -->
+            <div class="section" id="bestpractices">
+                <h2>7. Best Practices</h2>
+                <h3>For Accuracy</h3>
+                <ul class="checklist">
+                    <li>Read the human transcript carefully FIRST</li>
+                    <li>Understand the clinical context of the conversation</li>
+                    <li>Consider what the error means for patient care</li>
+                    <li>Check ALL applicable taxonomy categories (don't limit to one)</li>
+                    <li>Be consistent in severity scoring</li>
+                    <li>Re-read difficult errors before saving</li>
+                </ul>
+
+                <h3>For Speed</h3>
+                <ul class="checklist">
+                    <li>Batch similar errors together</li>
+                    <li>Use keyboard navigation for faster movement</li>
+                    <li>Click error list items instead of text</li>
+                    <li>Take breaks every hour to avoid fatigue</li>
+                </ul>
+
+                <h3>For Quality</h3>
+                <ul class="checklist">
+                    <li>Review your Summary tab periodically</li>
+                    <li>Check for patterns in your annotations</li>
+                    <li>Export and spot-check a sample of your work</li>
+                    <li>Use the instructions as reference while annotating</li>
+                </ul>
+
+                <div class="warning-box">
+                    <strong>⚠️ Remember:</strong> Save your work frequently by exporting annotations. 
+                    Browser storage can be cleared. Use the export button!
+                </div>
+            </div>
+
+            <!-- Section 8: FAQ -->
+            <div class="section" id="faq">
+                <h2>8. Frequently Asked Questions</h2>
+
+                <h3>Q: Can an error have multiple categories?</h3>
+                <p>
+                    <strong>A:</strong> YES! This is encouraged. For example, "metformin 500mg" → "metformin" 
+                    affects both Medication and Numerics. Select all applicable categories.
+                </p>
+
+                <h3>Q: What if I'm unsure about severity?</h3>
+                <p>
+                    <strong>A:</strong> Consider: Would a clinician catch this error? Would it affect treatment decisions? 
+                    Start with your best judgment and move on.
+                </p>
+
+                <h3>Q: When should I use Generic ASR?</h3>
+                <p>
+                    <strong>A:</strong> Only when the error is purely technical (DEL/SUB/INS) with no clinical significance 
+                    or when no other category clearly fits.
+                </p>
+
+                <h3>Q: How do I save my progress?</h3>
+                <p>
+                    <strong>A:</strong> Annotations save automatically in your browser. Click "Export Annotations" 
+                    to download a backup file. Your session is saved per Annotator ID.
+                </p>
+
+                <h3>Q: Can I resume work later?</h3>
+                <p>
+                    <strong>A:</strong> YES! Go back to login.html and enter your Annotator ID in "Load Previous Session". 
+                    All your previous annotations will be restored.
+                </p>
+
+                <h3>Q: What if I make a mistake?</h3>
+                <p>
+                    <strong>A:</strong> Click on the error again to re-open it. Modify the categories or severity and save. 
+                    Your previous annotation will be overwritten.
+                </p>
+            </div>
+
+            <!-- Buttons -->
+            <div class="buttons">
+                <button class="btn btn-back" onclick="window.location.href='index.html'">
+                    ← Back to Home
+                </button>
+                <button class="btn btn-start" onclick="navigateToAnnotation()">
+                    Start Annotating →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check if user is authenticated
+        window.addEventListener('load', function() {
+            const currentUser = sessionStorage.getItem('currentUser');
+            if (!currentUser) {
+                alert('Please login first');
+                window.location.href = 'login.html';
+                return;
+            }
+
+            const user = JSON.parse(currentUser);
+            document.getElementById('userInfo').textContent = `👤 ${user.annotatorName}`;
+        });
+
+        function navigateToAnnotation() {
+            const currentUser = sessionStorage.getItem('currentUser');
+            if (!currentUser) {
+                alert('Please login first');
+                window.location.href = 'login.html';
+                return;
+            }
+            window.location.href = 'annotation_interface.html';
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                sessionStorage.removeItem('currentUser');
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
+</body>
+</html>
