@@ -1,0 +1,109 @@
+# 🚀 Quick Start - Authentication System
+
+## 5-Minute Setup
+
+### Files You Have:
+- ✅ index.html - Landing page
+- ✅ login.html - Authentication
+- ✅ instructions.html - Annotation guide
+- ✅ annotation_interface.html - Main tool (with user sessions integrated)
+
+---
+
+## First Time: New User
+
+1. **Open** `index.html` in your browser
+2. **Click** "Login & Begin"
+3. **Fill form**:
+   - Full Name: Your name
+   - Email: your@email.com
+   - Annotator ID: MyID001 (alphanumeric only)
+   - Institution: (optional)
+4. **Click** "Create New Session"
+5. **Read** the instructions
+6. **Click** "Start Annotating"
+7. **Load** your JSON file
+8. **Annotate** - click errors, select categories, rate severity
+9. **Export** when done (automatically saves per user)
+
+---
+
+## Returning User
+
+1. **Open** `index.html`
+2. **Click** "Login & Begin"
+3. **Enter** your Annotator ID (same as before)
+4. **Click** "Load Previous Session"
+5. **All previous annotations reload** ✨
+6. **Continue** annotating where you left off
+
+---
+
+## Key Points
+
+| What | Where | How |
+|------|-------|-----|
+| **Login** | index.html → login.html | Fill form with Annotator ID |
+| **Learn** | instructions.html | Read complete guide |
+| **Annotate** | annotation_interface.html | Load JSON, click errors, save |
+| **Export** | annotation_interface.html | Button at top, downloads JSON |
+| **Logout** | annotation_interface.html | Red "Logout" button, top right |
+| **Resume** | login.html | Enter your Annotator ID, load session |
+
+---
+
+## Data Saved Where?
+
+- 📱 **Browser Storage**: Your computer (localStorage)
+- 🔄 **Per Annotator**: Each ID keeps separate annotations
+- ⏱️ **Automatically**: Saves every time you annotate
+- 📥 **Export**: Download JSON file for backup
+
+---
+
+## Important
+
+✅ **Automatically saved** → No manual save needed  
+✅ **Per-user storage** → Each annotator ID is separate  
+✅ **Survives browser restart** → Close and reopen, data still there  
+✅ **Multiple annotators** → Each person uses different ID  
+⚠️ **Browser storage only** → Clear cache = loss of local data  
+📥 **Export regularly** → Download JSON to backup  
+
+---
+
+## Troubleshooting
+
+**"Can't login"** → Check email format (needs @) and ID is alphanumeric only  
+**"Session not loading"** → Wrong Annotator ID? Try previous one  
+**"Annotations gone"** → Browser storage cleared? Check exported JSON files  
+**"Export file empty"** → Ensure you saved at least one annotation first  
+**"Stuck on login"** → Try clearing browser cache and refresh  
+
+---
+
+## Example Annotator IDs
+
+✅ Valid:
+- ANN001
+- MyInitials2024
+- Annotator1
+
+❌ Invalid:
+- ann-001 (has dash)
+- ann 001 (has space)
+- ann@001 (has special char)
+
+---
+
+## Next Steps
+
+1. Create annotator account (or resume with existing ID)
+2. Read instructions thoroughly
+3. Start annotating
+4. Export results regularly
+5. Use process_annotations.py to analyze results (optional)
+
+---
+
+**Status**: Ready to use! Open index.html to begin →  🚀

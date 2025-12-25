@@ -46,7 +46,7 @@ def prepare_annotation_data(excel_file: str, model: str, output_file: str = None
     required_cols = {
         'utterance_id': 'utterance_id',
         'human': 'human-transcript',
-        'asr': f'norm_{model}_asr_reconstructed_human'
+        'asr': f'{model}_reconstructed_ref'
     }
     
     for col_key, col_name in required_cols.items():
@@ -60,7 +60,7 @@ def prepare_annotation_data(excel_file: str, model: str, output_file: str = None
         entry = {
             'utterance_id': str(row['utterance_id']),
             'human_transcript': str(row['human-transcript']) if pd.notna(row['human-transcript']) else "",
-            'asr_reconstructed': str(row[f'norm_{model}_asr_reconstructed_human']) if pd.notna(row[f'norm_{model}_asr_reconstructed_human']) else "",
+            'asr_reconstructed': str(row[f'{model}_reconstructed_ref']) if pd.notna(row[f'{model}_reconstructed_ref']) else "",
             'model': model,
             'wer': float(row[f'norm_{model}_asr_wer']) if pd.notna(row[f'norm_{model}_asr_wer']) else None,
             'index': idx
@@ -107,7 +107,7 @@ def prepare_primock_annotation_data(excel_file: str, output_file: str = None) ->
     
     # Validate required columns
     required_cols = ['conversation_id', 'turns', 'doctor_utterances', 'patient_utterances',
-                     'norm_whisper_doctor_reconstructed_human', 'norm_whisper_patient_reconstructed_human']
+                     'whisper_doctor_reconstructed_human', 'whisper_patient_reconstructed_human']
     
     for col in required_cols:
         if col not in df.columns:
@@ -123,7 +123,7 @@ def prepare_primock_annotation_data(excel_file: str, output_file: str = None) ->
             'turns': int(row['turns']) if pd.notna(row['turns']) else 0,
             'speaker': 'doctor',
             'human_transcript': str(row['doctor_utterances']) if pd.notna(row['doctor_utterances']) else "",
-            'asr_reconstructed': str(row['norm_whisper_doctor_reconstructed_human']) if pd.notna(row['norm_whisper_doctor_reconstructed_human']) else "",
+            'asr_reconstructed': str(row['whisper_doctor_reconstructed_human']) if pd.notna(row['whisper_doctor_reconstructed_human']) else "",
             'index': idx * 2
         }
         annotation_data.append(doc_entry)
@@ -134,7 +134,7 @@ def prepare_primock_annotation_data(excel_file: str, output_file: str = None) ->
             'turns': int(row['turns']) if pd.notna(row['turns']) else 0,
             'speaker': 'patient',
             'human_transcript': str(row['patient_utterances']) if pd.notna(row['patient_utterances']) else "",
-            'asr_reconstructed': str(row['norm_whisper_patient_reconstructed_human']) if pd.notna(row['norm_whisper_patient_reconstructed_human']) else "",
+            'asr_reconstructed': str(row['whisper_patient_reconstructed_human']) if pd.notna(row['whisper_patient_reconstructed_human']) else "",
             'index': idx * 2 + 1
         }
         annotation_data.append(pat_entry)
