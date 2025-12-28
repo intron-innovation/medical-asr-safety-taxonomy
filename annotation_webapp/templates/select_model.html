@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}Select ASR Model - ASR Annotation Tool{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2>Select ASR Model to Annotate</h2>
+            <p class="text-muted">Choose a model to start annotating errors</p>
+        </div>
+    </div>
+
+    {% if models %}
+    <div class="row">
+        {% for model in models %}
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <h5 class="card-title mb-0">{{ model.display_name }}</h5>
+                        {% if model.loaded %}
+                        <span class="badge bg-success">Loaded</span>
+                        {% else %}
+                        <span class="badge bg-secondary">Not Loaded</span>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="mb-3">
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <div class="p-2 bg-light rounded">
+                                    <small class="text-muted d-block">Total Utterances</small>
+                                    <strong class="fs-5">{{ model.total_utterances }}</strong>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-2 bg-light rounded">
+                                    <small class="text-muted d-block">Your Annotations</small>
+                                    <strong class="fs-5 text-primary">{{ model.user_annotations }}</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% if model.total_utterances > 0 %}
+                    <div class="progress mb-3" style="height: 8px;">
+                        {% set progress_pct = (model.user_annotations / (model.total_utterances * 3) * 100)|int %}
+                        <div class="progress-bar bg-primary" role="progressbar" 
+                             style="width: {{ progress_pct }}%"
+                             aria-valuenow="{{ progress_pct }}" 
+                             aria-valuemin="0" 
+                             aria-valuemax="100"></div>
+                    </div>
+                    <small class="text-muted">
+                        {{ progress_pct }}% complete (approx. 3 errors per utterance)
+                    </small>
+                    {% endif %}
+                    
+                    <div class="mt-3">
+                        <a href="{{ url_for('annotate', model_name=model.name) }}" 
+                           class="btn btn-primary w-100">
+                            {% if model.user_annotations > 0 %}
+                            Continue Annotating
+                            {% else %}
+                            Start Annotating
+                            {% endif %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="row">
+        <div class="col-12">
+            <div class="alert alert-warning" role="alert">
+                <h5 class="alert-heading">No Models Available</h5>
+                <p>No annotation data files found in the <code>data/annotation_data/</code> directory.</p>
+                <hr>
+                <p class="mb-0">Please add model JSON files in the format: <code>{model}_annotation_data.json</code></p>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<style>
+.card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15)!important;
+}
+
+.progress {
+    border-radius: 10px;
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    border-radius: 10px;
+}
+</style>
+{% endblock %}

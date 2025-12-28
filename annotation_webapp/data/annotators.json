@@ -1,0 +1,34 @@
+{
+  "annotators": [
+    {
+      "annotatorId": "ANN001",
+      "name": "Dr. Sarah Johnson",
+      "email": "sarah.johnson@example.com",
+      "affiliation": "Stanford Medical Center"
+    },
+    {
+      "annotatorId": "ANN002",
+      "name": "Dr. Michael Chen",
+      "email": "michael.chen@example.com",
+      "affiliation": "Johns Hopkins Hospital"
+    },
+    {
+      "annotatorId": "ANN003",
+      "name": "Dr. Emily Rodriguez",
+      "email": "emily.rodriguez@example.com",
+      "affiliation": "Mayo Clinic"
+    },
+    {
+      "annotatorId": "ANN004",
+      "name": "Dr. James Wilson",
+      "email": "james.wilson@example.com",
+      "affiliation": "Cleveland Clinic"
+    },
+    {
+      "annotatorId": "ANN005",
+      "name": "Dr. Maria Garcia",
+      "email": "maria.garcia@example.com",
+      "affiliation": "Massachusetts General Hospital"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome - ASR Annotation Tool{% endblock %}
+
+{% block content %}
+<div class="page-wrapper">
+    <div class="hero-section">
+        <h1>🔍 ASR Error Annotation Tool</h1>
+        <p class="subtitle">Medical Speech Recognition Quality Assessment</p>
+    </div>
+
+    <div class="info-section">
+        <div class="info-card">
+            <div class="icon">📊</div>
+            <h2>Comprehensive Taxonomy</h2>
+            <p>Annotate errors across 11 specialized categories including Medical Terminology, Medications, Demographics, and more.</p>
+        </div>
+
+        <div class="info-card">
+            <div class="icon">🎯</div>
+            <h2>Severity Scoring</h2>
+            <p>Rate clinical impact from 0 (no impact) to 5 (critical), helping prioritize system improvements.</p>
+        </div>
+
+        <div class="info-card">
+            <div class="icon">💾</div>
+            <h2>Auto-Save Progress</h2>
+            <p>Your annotations are automatically saved to the server. Resume anytime from where you left off.</p>
+        </div>
+
+        <div class="info-card">
+            <div class="icon">📈</div>
+            <h2>Real-Time Statistics</h2>
+            <p>Track your progress with live stats showing annotated errors, completion rate, and distribution.</p>
+        </div>
+    </div>
+
+    <div class="workflow-section">
+        <h2>📋 Quick Workflow</h2>
+        <div class="workflow-steps">
+            <div class="workflow-step">
+                <div class="step-number">1</div>
+                <h3>Login</h3>
+                <p>Use your pre-registered email and annotator ID</p>
+            </div>
+            <div class="workflow-arrow">→</div>
+            <div class="workflow-step">
+                <div class="step-number">2</div>
+                <h3>Review Instructions</h3>
+                <p>Understand the taxonomy and severity guidelines</p>
+            </div>
+            <div class="workflow-arrow">→</div>
+            <div class="workflow-step">
+                <div class="step-number">3</div>
+                <h3>Annotate</h3>
+                <p>Click errors, select categories, rate severity</p>
+            </div>
+            <div class="workflow-arrow">→</div>
+            <div class="workflow-step">
+                <div class="step-number">4</div>
+                <h3>Auto-Save</h3>
+                <p>Progress saved automatically after each annotation</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        {% if session.annotator_id %}
+            <a href="{{ url_for('annotate') }}" class="btn btn-primary btn-large">Continue Annotating →</a>
+            <a href="{{ url_for('instructions') }}" class="btn btn-secondary btn-large">View Instructions</a>
+        {% else %}
+            <a href="{{ url_for('login') }}" class="btn btn-primary btn-large">Get Started →</a>
+        {% endif %}
+    </div>
+
+    <div class="features-section">
+        <h2>✨ Features</h2>
+        <ul class="features-list">
+            <li>✅ <strong>Multi-user support</strong> with separate accounts and progress tracking</li>
+            <li>✅ <strong>Server-side storage</strong> for reliable data persistence</li>
+            <li>✅ <strong>Click-to-annotate</strong> interface with highlighted errors</li>
+            <li>✅ <strong>Error visualization</strong> with color-coded types (DEL/SUB/INS)</li>
+            <li>✅ <strong>Export capabilities</strong> for analysis and reporting</li>
+            <li>✅ <strong>Responsive design</strong> works on desktop and tablet</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
