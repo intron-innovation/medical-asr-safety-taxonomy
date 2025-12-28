@@ -1,0 +1,233 @@
+{% extends "base.html" %}
+
+{% block title %}Instructions - ASR Annotation Tool{% endblock %}
+
+{% block content %}
+<div class="instructions-container">
+    <h1>📖 Annotation Instructions</h1>
+    <p class="subtitle">Comprehensive guide to error taxonomy and annotation workflow</p>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+        <h3>Table of Contents</h3>
+        <ul>
+            <li><a href="#overview">1. Overview</a></li>
+            <li><a href="#taxonomy">2. Error Taxonomy (11 Categories)</a></li>
+            <li><a href="#examples">3. Detailed Examples</a></li>
+            <li><a href="#workflow">4. Annotation Workflow</a></li>
+            <li><a href="#severity">5. Severity Guidelines</a></li>
+            <li><a href="#interface">6. Using the Interface</a></li>
+            <li><a href="#bestpractices">7. Best Practices</a></li>
+            <li><a href="#faq">8. FAQ</a></li>
+        </ul>
+    </div>
+
+    <!-- Section 1: Overview -->
+    <div class="section" id="overview">
+        <h2>1. Overview</h2>
+        <p>
+            You will annotate errors in ASR (Automatic Speech Recognition) transcripts of medical conversations.
+            Each error is tagged with its type (<strong>DEL</strong> = deletion, <strong>SUB</strong> = substitution, 
+            <strong>INS</strong> = insertion) and displayed in color-coded format.
+        </p>
+        <p><strong>Your Task:</strong></p>
+        <ul class="checklist">
+            <li>Click on each highlighted error</li>
+            <li>Select ALL applicable taxonomy categories</li>
+            <li>Rate the clinical severity (0-5 scale)</li>
+            <li>Save to auto-sync to server</li>
+        </ul>
+    </div>
+
+    <!-- Section 2: Taxonomy -->
+    <div class="section" id="taxonomy">
+        <h2>2. Error Taxonomy (11 Categories)</h2>
+        
+        <div class="taxonomy-grid">
+            <div class="taxonomy-card">
+                <h3>1. Medical Terminology</h3>
+                <p>Diagnoses, procedures, anatomical terms, medical jargon</p>
+                <div class="example">Example: "hypertension" → "hypotension"</div>
+            </div>
+
+            <div class="taxonomy-card">
+                <h3>2. Medication</h3>
+                <p>Drug names, classes, brand/generic names</p>
+                <div class="example">Example: "metformin" → "met form in"</div>
+            </div>
+
+            <div class="taxonomy-card">
+                <h3>3. Numerics</h3>
+                <p>Dosages, measurements, lab values, counts</p>
+                <div class="example">Example: "500 mg" → "5 mg"</div>
+            </div>
+
+            <div class="taxonomy-card">
+                <h3>4. Temporal</h3>
+                <p>Time, dates, duration, frequency (daily, weekly)</p>
+                <div class="example">Example: "twice daily" → "once daily"</div>
+            </div>
+
+            <div class="taxonomy-card">
+                <h3>5. Demographics</h3>
+                <p>Age, gender, ethnicity, occupation</p>
+                <div class="example">Example: "45 year old" → "55 year old"</div>
+            </div>
+
+            <div class="taxonomy-card">
+                <h3>6. Negation</h3>
+                <p>Missing or added "no", "not", "never", etc.</p>
+                <div class="example">Example: "no pain" → "pain"</div>
+            </div>
+
+            <div class="taxonomy-card">
+                <h3>7. Meaning</h3>
+                <p>Semantic changes affecting understanding</p>
+                <div class="example">Example: "increasing pain" → "decreasing pain"</div>
+            </div>
+
+            <div class="taxonomy-card">
+                <h3>8. Fluency</h3>
+                <p>Grammar, readability, sentence structure</p>
+                <div class="example">Example: "he said he was" → "he said was"</div>
+            </div>
+
+            <div class="taxonomy-card">
+                <h3>9. Proper Names</h3>
+                <p>Patient names, doctor names, locations</p>
+                <div class="example">Example: "Dr. Smith" → "Dr. Schmidt"</div>
+            </div>
+
+            <div class="taxonomy-card">
+                <h3>10. Redundancy</h3>
+                <p>Repeated words, unnecessary duplication</p>
+                <div class="example">Example: "the the patient" (repeated "the")</div>
+            </div>
+
+            <div class="taxonomy-card">
+                <h3>11. Generic ASR</h3>
+                <p>Technical ASR errors with no clinical impact</p>
+                <div class="example">Example: "um" → "" (filler word removal)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 3: Examples -->
+    <div class="section" id="examples">
+        <h2>3. Detailed Examples</h2>
+        
+        <h3>Multi-Category Errors</h3>
+        <div class="example-box">
+            <strong>Error:</strong> [SUB:metformin 500mg->metformin]<br>
+            <strong>Categories:</strong> Medication + Numerics<br>
+            <strong>Severity:</strong> 4 (High) - Missing dosage is clinically significant
+        </div>
+
+        <div class="example-box">
+            <strong>Error:</strong> [SUB:no chest pain->chest pain]<br>
+            <strong>Categories:</strong> Negation + Meaning<br>
+            <strong>Severity:</strong> 5 (Critical) - Reverses symptom status
+        </div>
+
+        <div class="example-box">
+            <strong>Error:</strong> [DEL:daily]<br>
+            <strong>Context:</strong> "Take medication ___"<br>
+            <strong>Categories:</strong> Temporal<br>
+            <strong>Severity:</strong> 3 (Medium) - Missing frequency instruction
+        </div>
+    </div>
+
+    <!-- Section 4: Workflow -->
+    <div class="section" id="workflow">
+        <h2>4. Annotation Workflow</h2>
+        <ol class="workflow-steps-vertical">
+            <li><strong>Load Data:</strong> Upload your JSON file in the annotation interface</li>
+            <li><strong>Read:</strong> Review the human transcript (left) to understand context</li>
+            <li><strong>Compare:</strong> Review the ASR output (right) with highlighted errors</li>
+            <li><strong>Click:</strong> Click on a colored error to open the annotation modal</li>
+            <li><strong>Categorize:</strong> Check ALL applicable taxonomy boxes</li>
+            <li><strong>Rate:</strong> Set severity slider (0-5)</li>
+            <li><strong>Save:</strong> Click "Save Annotation" - auto-syncs to server</li>
+            <li><strong>Continue:</strong> Move to next error until conversation is complete</li>
+        </ol>
+    </div>
+
+    <!-- Section 5: Severity -->
+    <div class="section" id="severity">
+        <h2>5. Severity Guidelines</h2>
+        <div class="severity-scale">
+            <div class="severity-level level-0">
+                <div class="severity-number">0</div>
+                <div class="severity-label">None</div>
+            </div>
+            <div class="severity-level level-1">
+                <div class="severity-number">1</div>
+                <div class="severity-label">Minor</div>
+            </div>
+            <div class="severity-level level-2">
+                <div class="severity-number">2</div>
+                <div class="severity-label">Low</div>
+            </div>
+            <div class="severity-level level-3">
+                <div class="severity-number">3</div>
+                <div class="severity-label">Medium</div>
+            </div>
+            <div class="severity-level level-4">
+                <div class="severity-number">4</div>
+                <div class="severity-label">High</div>
+            </div>
+            <div class="severity-level level-5">
+                <div class="severity-number">5</div>
+                <div class="severity-label">Critical</div>
+            </div>
+        </div>
+
+        <h3>Severity Descriptions</h3>
+        <ul class="checklist">
+            <li><strong>0 (None):</strong> No impact on understanding (e.g., filler word "um")</li>
+            <li><strong>1 (Minor):</strong> Minimal impact, easily overlooked (e.g., "tree" for "three")</li>
+            <li><strong>2 (Low):</strong> Some impact but context preserved (e.g., "asprin" for "aspirin")</li>
+            <li><strong>3 (Medium):</strong> Notable impact on meaning (e.g., "once" → "twice" daily)</li>
+            <li><strong>4 (High):</strong> Significant impact on clinical information (e.g., wrong dosage)</li>
+            <li><strong>5 (Critical):</strong> SEVERE - patient safety concerns (e.g., wrong drug class)</li>
+        </ul>
+    </div>
+
+    <!-- Section 6: Best Practices -->
+    <div class="section" id="bestpractices">
+        <h2>6. Best Practices</h2>
+        <div class="tip-box">
+            <strong>💡 Tips for Accuracy:</strong>
+            <ul>
+                <li>Read the human transcript carefully FIRST</li>
+                <li>Consider clinical context for severity rating</li>
+                <li>Check ALL applicable taxonomy categories</li>
+                <li>Be consistent in severity scoring</li>
+                <li>Take breaks every hour to avoid fatigue</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Section 7: FAQ -->
+    <div class="section" id="faq">
+        <h2>7. FAQ</h2>
+        
+        <h3>Q: Can an error have multiple categories?</h3>
+        <p><strong>A:</strong> YES! Select all applicable categories. Many errors span multiple dimensions.</p>
+
+        <h3>Q: What if I make a mistake?</h3>
+        <p><strong>A:</strong> Click the error again to re-open and modify your annotation.</p>
+
+        <h3>Q: How is my progress saved?</h3>
+        <p><strong>A:</strong> Annotations auto-save to the server after each save. Your progress persists across sessions.</p>
+
+        <h3>Q: Can I export my annotations?</h3>
+        <p><strong>A:</strong> Yes! Use the "Export" button in the annotation interface to download your work.</p>
+    </div>
+
+    <div class="buttons">
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">← Back to Home</a>
+        <a href="{{ url_for('annotate') }}" class="btn btn-primary">Start Annotating →</a>
+    </div>
+</div>
+{% endblock %}

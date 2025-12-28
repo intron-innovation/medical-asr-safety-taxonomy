@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ASR Annotation Tool{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}" class="navbar-brand">🔍 ASR Annotation System</a>
+        <div class="navbar-links">
+            <a href="{{ url_for('index') }}" {% if request.endpoint == 'index' %}class="active"{% endif %}>Home</a>
+            {% if session.annotator_id %}
+                <a href="{{ url_for('instructions') }}" {% if request.endpoint == 'instructions' %}class="active"{% endif %}>Instructions</a>
+                <a href="{{ url_for('annotate') }}" {% if request.endpoint == 'annotate' %}class="active"{% endif %}>Annotate</a>
+                <span class="navbar-user">👤 {{ session.annotator_name }}</span>
+                <a href="{{ url_for('logout') }}" class="navbar-logout">Logout</a>
+            {% else %}
+                <a href="{{ url_for('login') }}" {% if request.endpoint == 'login' %}class="active"{% endif %}>Login</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="flash-message flash-{{ category }}">
+                        {{ message }}
+                        <button onclick="this.parentElement.remove()">×</button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Main Content -->
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 ASR Error Annotation Tool | Medical Speech Recognition Research</p>
+    </footer>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
