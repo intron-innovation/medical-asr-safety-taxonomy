@@ -2,12 +2,11 @@
 *.zip
 *.tar
 *.tar.gz
-*.wav
-*.mp3
 *.flac
 
 # Ignore Archive files
 archive/
 
 # Ignore all subdirectories in /data
-data/*/
+data/Primock-57/*
+data/us_datasets/*
