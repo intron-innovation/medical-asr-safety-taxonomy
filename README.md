@@ -158,23 +158,7 @@ bio_ramp_asr/
 └── archieved/                          # Previous notebook versions
 ```
 
-Citation
 
-If you use this code or processed results in your research, please cite the original datasets:
-
-```bibtex
-@article{primock2021,
-  title={Primock: A corpus of UK medical consultations},
-  author={...},
-  year={2021}
-}
-
-@article{afrispeech2023,
-  title={Afrispeech: A multilingual speech recognition corpus},
-  author={...},
-  year={2023}
-}
-```
 
 Contributing
 
@@ -191,6 +175,5 @@ This code is provided as-is for research purposes. The datasets have their own l
 
 ---
 
-*Last updated: November 2025*
-*For questions, issues, or contributions, refer to the project repository.*
+
 
