@@ -10,3 +10,7 @@ archive/
 # Ignore all subdirectories in /data
 data/Primock-57/*
 data/us_datasets/*
+
+# Ignore logs and shell scripts
+logs/
+*.sh
