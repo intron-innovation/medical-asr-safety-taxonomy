@@ -4,30 +4,33 @@
 
 {% block content %}
 <div class="instructions-container">
-    <h1>📖 Annotation Instructions</h1>
-    <p class="subtitle">Comprehensive guide to error taxonomy and annotation workflow</p>
+        <header>
+            <h1>📖 Annotation Instructions & Guide</h1>
+            <p>Complete guide to annotating ASR errors in medical conversations</p>
+        </header>
+
 
     <!-- Table of Contents -->
-    <div class="toc">
-        <h3>Table of Contents</h3>
-        <ul>
-            <li><a href="#overview">1. Overview</a></li>
-            <li><a href="#taxonomy">2. Error Taxonomy (11 Categories)</a></li>
-            <li><a href="#examples">3. Detailed Examples</a></li>
-            <li><a href="#workflow">4. Annotation Workflow</a></li>
-            <li><a href="#severity">5. Severity Guidelines</a></li>
-            <li><a href="#interface">6. Using the Interface</a></li>
-            <li><a href="#bestpractices">7. Best Practices</a></li>
-            <li><a href="#faq">8. FAQ</a></li>
-        </ul>
-    </div>
+    <!--<div class="toc">-->
+    <!--    <h3>Table of Contents</h3>-->
+    <!--    <ul>-->
+    <!--        <li><a href="#overview">1. Overview</a></li>-->
+    <!--        <li><a href="#taxonomy">2. Error Taxonomy (11 Categories)</a></li>-->
+    <!--        <li><a href="#examples">3. Detailed Examples</a></li>-->
+    <!--        <li><a href="#workflow">4. Annotation Workflow</a></li>-->
+    <!--        <li><a href="#severity">5. Severity Guidelines</a></li>-->
+    <!--        <li><a href="#interface">6. Using the Interface</a></li>-->
+    <!--        <li><a href="#bestpractices">7. Best Practices</a></li>-->
+    <!--        <li><a href="#faq">8. FAQ</a></li>-->
+    <!--    </ul>-->
+    <!--</div>-->
 
     <!-- Section 1: Overview -->
     <div class="section" id="overview">
         <h2>1. Overview</h2>
         <p>
-            You will annotate errors in ASR (Automatic Speech Recognition) transcripts of medical conversations.
-            Each error is tagged with its type (<strong>DEL</strong> = deletion, <strong>SUB</strong> = substitution, 
+            You will annotate saftey related errors in ASR (Automatic Speech Recognition) transcripts of medical conversations.
+            Each error is tagged with its type (<strong>DEL</strong> = deletion, <strong>SUB</strong> = substitution,
             <strong>INS</strong> = insertion) and displayed in color-coded format.
         </p>
         <p><strong>Your Task:</strong></p>
@@ -37,12 +40,29 @@
             <li>Rate the clinical severity (0-5 scale)</li>
             <li>Save to auto-sync to server</li>
         </ul>
+
+    <h2>2. Understanding Error Types</h2>
+    <p>ASR errors come in three main types, each color-coded for easy identification:</p>
+    <div class="error-types">
+        <div class="error-type del">
+            <h4>🔴 DEL (Deletion)</h4>
+            <p>ASR missed or deleted words that were in the human transcript</p>
+        </div>
+        <div class="error-type sub">
+            <h4>🟡 SUB (Substitution)</h4>
+            <p>ASR output wrong word instead of the correct word</p>
+        </div>
+        <div class="error-type ins">
+            <h4>🔵 INS (Insertion)</h4>
+            <p>ASR added extra words that weren't in the human transcript</p>
+        </div>
     </div>
+</div>
 
     <!-- Section 2: Taxonomy -->
     <div class="section" id="taxonomy">
-        <h2>2. Error Taxonomy (11 Categories)</h2>
-        
+        <h2>3. Error Taxonomy (11 Categories)</h2>
+
         <div class="taxonomy-grid">
             <div class="taxonomy-card">
                 <h3>1. Medical Terminology</h3>
@@ -105,17 +125,22 @@
             </div>
 
             <div class="taxonomy-card">
-                <h3>11. Generic ASR</h3>
-                <p>Technical ASR errors with no clinical impact</p>
+                <h3>11. Disfluency/Hesitation</h3>
+                <p>Interruptions of speech, use of filler-word pauses ("um," "uh"), stuttering, repetitions </p>
                 <div class="example">Example: "um" → "" (filler word removal)</div>
+            </div>
+            <div class="taxonomy-card">
+                <h3>12. Contraction</h3>
+                <p> Shortened form of two words combined with an apostrophe </p>
+                <div class="example">Example: "I am" → "I'm"</div>
             </div>
         </div>
     </div>
 
     <!-- Section 3: Examples -->
     <div class="section" id="examples">
-        <h2>3. Detailed Examples</h2>
-        
+        <h2>4. Detailed Examples</h2>
+
         <h3>Multi-Category Errors</h3>
         <div class="example-box">
             <strong>Error:</strong> [SUB:metformin 500mg->metformin]<br>
@@ -139,9 +164,9 @@
 
     <!-- Section 4: Workflow -->
     <div class="section" id="workflow">
-        <h2>4. Annotation Workflow</h2>
+        <h2>5. Annotation Workflow</h2>
         <ol class="workflow-steps-vertical">
-            <li><strong>Load Data:</strong> Upload your JSON file in the annotation interface</li>
+            <!--<li><strong>Load Data:</strong> Upload your JSON file in the annotation interface</li>-->
             <li><strong>Read:</strong> Review the human transcript (left) to understand context</li>
             <li><strong>Compare:</strong> Review the ASR output (right) with highlighted errors</li>
             <li><strong>Click:</strong> Click on a colored error to open the annotation modal</li>
@@ -154,7 +179,7 @@
 
     <!-- Section 5: Severity -->
     <div class="section" id="severity">
-        <h2>5. Severity Guidelines</h2>
+        <h2>6. Severity Guidelines</h2>
         <div class="severity-scale">
             <div class="severity-level level-0">
                 <div class="severity-number">0</div>
@@ -195,23 +220,30 @@
 
     <!-- Section 6: Best Practices -->
     <div class="section" id="bestpractices">
-        <h2>6. Best Practices</h2>
+        <h2>7. Best Practices</h2>
         <div class="tip-box">
             <strong>💡 Tips for Accuracy:</strong>
             <ul>
-                <li>Read the human transcript carefully FIRST</li>
+                <li>Review the human transcript carefully.</li>
                 <li>Consider clinical context for severity rating</li>
                 <li>Check ALL applicable taxonomy categories</li>
                 <li>Be consistent in severity scoring</li>
                 <li>Take breaks every hour to avoid fatigue</li>
             </ul>
         </div>
+        <div class="tip-box">
+    <strong>💡 Tip:</strong> 
+    <span style="display: inline-block; width: 10px; height: 10px; background: #48bb78; border-radius: 50%; margin: 0 5px; vertical-align: middle;"></span>
+    <span style="vertical-align: middle;">Annotated error</span>
+    <span style="display: inline-block; width: 10px; height: 10px; background: #ed8936; border-radius: 50%; margin: 0 5px; vertical-align: middle;"></span>
+    <span style="vertical-align: middle;">Needs annotation</span>
+</div>
     </div>
 
     <!-- Section 7: FAQ -->
     <div class="section" id="faq">
-        <h2>7. FAQ</h2>
-        
+        <h2>8. FAQ</h2>
+
         <h3>Q: Can an error have multiple categories?</h3>
         <p><strong>A:</strong> YES! Select all applicable categories. Many errors span multiple dimensions.</p>
 
@@ -221,13 +253,13 @@
         <h3>Q: How is my progress saved?</h3>
         <p><strong>A:</strong> Annotations auto-save to the server after each save. Your progress persists across sessions.</p>
 
-        <h3>Q: Can I export my annotations?</h3>
-        <p><strong>A:</strong> Yes! Use the "Export" button in the annotation interface to download your work.</p>
+        <!--<h3>Q: Can I export my annotations?</h3>-->
+        <!--<p><strong>A:</strong> Yes! Use the "Export" button in the annotation interface to download your work.</p>-->
     </div>
 
     <div class="buttons">
         <a href="{{ url_for('index') }}" class="btn btn-secondary">← Back to Home</a>
-        <a href="{{ url_for('annotate') }}" class="btn btn-primary">Start Annotating →</a>
+        <a href="{{ url_for('select_model') }}" class="btn btn-primary">Start Annotating →</a>
     </div>
 </div>
 {% endblock %}
