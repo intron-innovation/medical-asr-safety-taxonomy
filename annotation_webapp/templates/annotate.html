@@ -169,29 +169,30 @@
     
     <!-- Controls -->
     <div class="controls-bar">
-        <select id="utteranceSelect" class="form-control" style="flex: 2; min-width: 300px;"></select>
-        <button id="prevBtn" class="btn btn-secondary">← Previous</button>
-        <button id="nextBtn" class="btn btn-secondary">Next →</button>
-        <button id="exportBtn" class="btn btn-info">💾 Export</button>
+        <div style="flex: 1; text-align: center;">
+            <span id="sessionCounter" style="font-weight: bold; font-size: 16px; color: #333;"></span>
+        </div>
+        <button id="prevBtn" class="btn btn-secondary">← Previous Session</button>
+        <button id="nextBtn" class="btn btn-secondary">Next Session →</button>
     </div>
 
     <!-- Stats -->
     <div class="stats-bar" id="statsBar">
         <div class="stat-item">
             <div class="stat-number" id="totalUtterances">0</div>
-            <div class="stat-label">Total Utterances</div>
+            <div class="stat-label">Total Sessions</div>
         </div>
         <div class="stat-item">
             <div class="stat-number" id="totalErrors">0</div>
-            <div class="stat-label">Total Errors</div>
+            <div class="stat-label">Errors in Current Session</div>
         </div>
         <div class="stat-item">
             <div class="stat-number" id="totalAnnotations">0</div>
-            <div class="stat-label">Annotated</div>
+            <div class="stat-label">Annotated in Current Session</div>
         </div>
         <div class="stat-item">
             <div class="stat-number" id="progressPercent">0%</div>
-            <div class="stat-label">Progress</div>
+            <div class="stat-label">Current Session Progress</div>
         </div>
     </div>
 
@@ -262,9 +263,29 @@
                     <label for="tax-redundancy">Redundancy</label>
                 </div>
                 <div class="taxonomy-item">
-                    <input type="checkbox" name="taxonomy" value="generic_asr" id="tax-generic">
-                    <label for="tax-generic">Generic ASR</label>
+                    <input type="checkbox" name="taxonomy" value="disfluency_hesitation" id="tax-disfluency">
+                    <label for="tax-disfluency">Disfluency/Hesitation</label>
                 </div>
+                <div class="taxonomy-item">
+                    <input type="checkbox" name="taxonomy" value="contraction" id="tax-contraction">
+                    <label for="tax-contraction">Contraction</label>
+                </div>
+            </div>
+
+            <div style="margin: 15px 0;">
+                <label for="customTaxonomy" style="font-weight: bold; margin-bottom: 5px; display: block;">
+                    Other (Custom Category):
+                </label>
+                <input 
+                    type="text" 
+                    id="customTaxonomy" 
+                    class="form-control" 
+                    placeholder="Enter custom taxonomy category (optional)"
+                    style="padding: 10px; border: 1px solid #ddd; border-radius: 6px; width: 100%;"
+                >
+                <small style="color: #666; display: block; margin-top: 5px;">
+                    Use this for error types not covered by the categories above
+                </small>
             </div>
 
             <h3>Rate Severity</h3>

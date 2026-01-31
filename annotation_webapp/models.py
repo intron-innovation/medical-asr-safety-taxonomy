@@ -62,6 +62,7 @@ class Annotation(db.Model):
     __tablename__ = 'annotations'
     
     id = db.Column(db.Integer, primary_key=True)
+    error_id = db.Column(db.String(36), nullable=False, index=True)  # UUID: unique ID for each error occurrence
     annotator_id = db.Column(db.String(50), db.ForeignKey('annotators.annotator_id'), nullable=False, index=True)
     model_name = db.Column(db.String(50), nullable=False, index=True)  # whisper, phi4, etc.
     utterance_id = db.Column(db.String(200), nullable=False, index=True)
@@ -76,15 +77,17 @@ class Annotation(db.Model):
     human_transcript = db.Column(db.Text)
     asr_reconstructed = db.Column(db.Text)
     
-    # Unique constraint: one annotation per error per annotator per model
+    # Unique constraint: one annotation per error instance per annotator
+    # error_id allows multiple occurrences of the same word to be annotated separately
     __table_args__ = (
-        db.UniqueConstraint('annotator_id', 'model_name', 'utterance_id', 'error_type', 'error_match', 
-                           name='_annotator_model_error_uc'),
+        db.UniqueConstraint('annotator_id', 'error_id', 
+                           name='_annotator_error_instance_uc'),
     )
     
     def to_dict(self):
         return {
             'id': self.id,
+            'errorId': self.error_id,
             'annotatorId': self.annotator_id,
             'modelName': self.model_name,
             'utteranceId': self.utterance_id,

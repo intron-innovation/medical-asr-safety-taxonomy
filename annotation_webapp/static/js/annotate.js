@@ -1,9 +1,21 @@
 // Annotation Interface JavaScript
 let allData = [];
-let currentUtteranceIndex = 0;
-let currentErrorKey = null;
+let randomizedIndices = [];  // Randomized session order
+let currentPositionInRandomized = 0;  // Current position in randomized array
+let currentErrorId = null;  // Changed: now using error_id instead of error key
 let userAnnotations = {};
 let modelName = null;
+let errorIdMap = {};  // Map from error_id to annotation data
+
+// Shuffle function to randomize session order
+function shuffleArray(array) {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}
 
 // Initialize on page load
 window.addEventListener('load', function() {
@@ -21,25 +33,23 @@ window.addEventListener('load', function() {
     loadAnnotations();
     loadStats();
     
-    document.getElementById('utteranceSelect').addEventListener('change', function() {
-        loadUtterance(parseInt(this.value));
-    });
-    
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     if (prevBtn) prevBtn.addEventListener('click', () => navigateUtterance(-1));
     if (nextBtn) nextBtn.addEventListener('click', () => navigateUtterance(1));
     
-    document.getElementById('exportBtn').addEventListener('click', exportAnnotations);
     document.getElementById('severitySlider').addEventListener('input', updateSeverityDisplay);
     document.getElementById('annotationForm').addEventListener('submit', handleAnnotationSubmit);
 });
 
 function navigateUtterance(direction) {
-    const newIndex = currentUtteranceIndex + direction;
-    if (newIndex >= 0 && newIndex < allData.length) {
-        loadUtterance(newIndex);
-        document.getElementById('utteranceSelect').value = newIndex;
+    const newPosition = currentPositionInRandomized + direction;
+    if (newPosition >= 0 && newPosition < randomizedIndices.length) {
+        currentPositionInRandomized = newPosition;
+        const actualIndex = randomizedIndices[currentPositionInRandomized];
+        loadUtterance(actualIndex);
+        updateSessionCounter();
+        loadStats();
     }
 }
 
@@ -54,25 +64,25 @@ async function loadUtterances() {
             return;
         }
         
-        populateUtteranceSelect();
+        // Create randomized order of sessions
+        randomizedIndices = shuffleArray(Array.from({length: allData.length}, (_, i) => i));
+        currentPositionInRandomized = 0;
+        
         document.getElementById('transcriptsContainer').style.display = 'grid';
-        loadUtterance(0);
+        loadUtterance(randomizedIndices[currentPositionInRandomized]);
+        updateSessionCounter();
         loadStats();
     } catch (error) {
         console.error('Error loading utterances:', error);
     }
 }
 
-function populateUtteranceSelect() {
-    const select = document.getElementById('utteranceSelect');
-    select.innerHTML = '';
-    
-    allData.forEach((utt, index) => {
-        const option = document.createElement('option');
-        option.value = index;
-        option.textContent = `${index + 1}. ${utt.utterance_id.substring(0, 40)}...`;
-        select.appendChild(option);
-    });
+function updateSessionCounter() {
+    const totalSessions = allData.length;
+    const currentSessionNum = currentPositionInRandomized + 1;
+    const utteranceId = allData[randomizedIndices[currentPositionInRandomized]].utterance_id;
+    document.getElementById('sessionCounter').textContent = 
+        `Session ${currentSessionNum} of ${totalSessions} - ${utteranceId}`;
 }
 
 function loadUtterance(index) {
@@ -83,10 +93,58 @@ function loadUtterance(index) {
     
     document.getElementById('humanTranscript').textContent = utterance.human_transcript;
     document.getElementById('asrTranscript').innerHTML = highlightErrors(utterance.asr_reconstructed, utterance.utterance_id);
-    document.getElementById('utteranceSelect').value = index;
 }
 
 function highlightErrors(text, utteranceId) {
+    const utterance = allData[currentUtteranceIndex];
+    const errors = utterance.metadata?.errors || [];
+    
+    if (errors.length === 0) {
+        // Fallback to old method if no errors in metadata
+        return highlightErrorsLegacy(text, utteranceId);
+    }
+    
+    let html = text;
+    const replacements = [];
+    
+    // Use the start_idx and end_idx from error data for accurate positioning
+    errors.forEach((error) => {
+        const fullMatch = error.error_match;
+        const content = error.error_text;
+        const errorId = error.error_id;
+        const errorType = error.error_type;
+        const isAnnotated = userAnnotations[errorId] ? 'annotated' : 'unannotated';
+        
+        // Use start_idx and end_idx if available, otherwise fall back to search
+        let startIdx = error.start_idx;
+        let endIdx = error.end_idx;
+        
+        if (startIdx !== undefined && endIdx !== undefined) {
+            const errorClass = errorType === 'DEL' ? 'del-error' : errorType === 'INS' ? 'ins-error' : 'sub-error';
+            const replacement = `<span class="error-highlight ${errorClass} ${isAnnotated}" ` +
+                `onclick="openAnnotationModal('${escapeHtml(errorId)}', '${escapeHtml(errorType)}', '${escapeHtml(fullMatch)}', '${escapeHtml(content)}')">` +
+                `<span class="error-status-indicator"></span>${escapeHtml(fullMatch)}</span>`;
+            
+            replacements.push({
+                start: startIdx,
+                end: endIdx,
+                replacement: replacement,
+                errorId: errorId
+            });
+        }
+    });
+    
+    // Sort by position (descending) and apply replacements
+    replacements.sort((a, b) => b.start - a.start);
+    replacements.forEach(r => {
+        html = html.substring(0, r.start) + r.replacement + html.substring(r.end);
+    });
+    
+    return html;
+}
+
+function highlightErrorsLegacy(text, utteranceId) {
+    // Fallback for backward compatibility
     const patterns = [
         { regex: /\[DEL:([^\]]+)\]/g, type: 'DEL', class: 'del-error' },
         { regex: /\[SUB:([^\]]+)\]/g, type: 'SUB', class: 'sub-error' },
@@ -94,7 +152,6 @@ function highlightErrors(text, utteranceId) {
     ];
     
     let html = text;
-    let offset = 0;
     const replacements = [];
     
     patterns.forEach(pattern => {
@@ -107,7 +164,7 @@ function highlightErrors(text, utteranceId) {
             const isAnnotated = userAnnotations[key] ? 'annotated' : 'unannotated';
             
             const replacement = `<span class="error-highlight ${pattern.class} ${isAnnotated}" ` +
-                `onclick="openAnnotationModal('${escapeHtml(pattern.type)}', '${escapeHtml(fullMatch)}', '${escapeHtml(content)}')">` +
+                `onclick="openAnnotationModalLegacy('${escapeHtml(pattern.type)}', '${escapeHtml(fullMatch)}', '${escapeHtml(content)}')">` +
                 `<span class="error-status-indicator"></span>${escapeHtml(fullMatch)}</span>`;
             
             replacements.push({
@@ -127,9 +184,46 @@ function highlightErrors(text, utteranceId) {
     return html;
 }
 
-function openAnnotationModal(errorType, fullMatch, errorText) {
+function openAnnotationModal(errorId, errorType, fullMatch, errorText) {
     const utterance = allData[currentUtteranceIndex];
-    currentErrorKey = `${utterance.utterance_id}_${errorType}_${fullMatch}`;
+    currentErrorId = errorId;  // Store the error_id
+    
+    document.getElementById('errorContext').innerHTML = `
+        <strong>Error Type:</strong> ${errorType}<br>
+        <strong>Error Text:</strong> "${errorText}"<br>
+        <strong>Utterance:</strong> ${utterance.utterance_id}<br>
+        <strong>Error ID:</strong> <code style="font-size: 0.9em;">${errorId}</code>
+    `;
+    
+    // Reset form
+    document.getElementById('annotationForm').reset();
+    document.getElementById('severitySlider').value = 0;
+    document.getElementById('customTaxonomy').value = '';
+    updateSeverityDisplay();
+    
+    // Load existing annotation if present
+    const existing = userAnnotations[errorId];
+    if (existing) {
+        existing.taxonomy.forEach(tax => {
+            if (tax.startsWith('custom:')) {
+                // Extract custom taxonomy value
+                document.getElementById('customTaxonomy').value = tax.substring(7);
+            } else {
+                const checkbox = document.getElementById(`tax-${tax}`);
+                if (checkbox) checkbox.checked = true;
+            }
+        });
+        document.getElementById('severitySlider').value = existing.severity;
+        updateSeverityDisplay();
+    }
+    
+    document.getElementById('annotationModal').style.display = 'block';
+}
+
+function openAnnotationModalLegacy(errorType, fullMatch, errorText) {
+    // Fallback for backward compatibility
+    const utterance = allData[currentUtteranceIndex];
+    currentErrorId = `${utterance.utterance_id}_${errorType}_${fullMatch}`;  // Legacy key format
     
     document.getElementById('errorContext').innerHTML = `
         <strong>Error Type:</strong> ${errorType}<br>
@@ -140,14 +234,20 @@ function openAnnotationModal(errorType, fullMatch, errorText) {
     // Reset form
     document.getElementById('annotationForm').reset();
     document.getElementById('severitySlider').value = 0;
+    document.getElementById('customTaxonomy').value = '';
     updateSeverityDisplay();
     
     // Load existing annotation if present
-    const existing = userAnnotations[currentErrorKey];
+    const existing = userAnnotations[currentErrorId];
     if (existing) {
         existing.taxonomy.forEach(tax => {
-            const checkbox = document.getElementById(`tax-${tax}`);
-            if (checkbox) checkbox.checked = true;
+            if (tax.startsWith('custom:')) {
+                // Extract custom taxonomy value
+                document.getElementById('customTaxonomy').value = tax.substring(7);
+            } else {
+                const checkbox = document.getElementById(`tax-${tax}`);
+                if (checkbox) checkbox.checked = true;
+            }
         });
         document.getElementById('severitySlider').value = existing.severity;
         updateSeverityDisplay();
@@ -158,7 +258,7 @@ function openAnnotationModal(errorType, fullMatch, errorText) {
 
 function closeModal() {
     document.getElementById('annotationModal').style.display = 'none';
-    currentErrorKey = null;
+    currentErrorId = null;
 }
 
 function updateSeverityDisplay() {
@@ -173,19 +273,33 @@ async function handleAnnotationSubmit(e) {
     const selectedTaxonomy = Array.from(document.querySelectorAll('input[name="taxonomy"]:checked'))
         .map(el => el.value);
     
+    // Add custom taxonomy if provided
+    const customTaxonomy = document.getElementById('customTaxonomy').value.trim();
+    if (customTaxonomy) {
+        selectedTaxonomy.push(`custom:${customTaxonomy}`);
+    }
+    
     if (selectedTaxonomy.length === 0) {
-        alert('Please select at least one taxonomy category');
+        alert('Please select at least one taxonomy category or enter a custom category');
         return;
     }
     
     const severity = parseInt(document.getElementById('severitySlider').value);
     const utterance = allData[currentUtteranceIndex];
-    const [uttId, errType, errMatch] = currentErrorKey.split('_', 3);
+    const errors = utterance.metadata?.errors || [];
+    
+    // Find error metadata by error_id
+    const errorData = errors.find(e => e.error_id === currentErrorId);
+    if (!errorData) {
+        alert('Error: Could not find error data');
+        return;
+    }
     
     const payload = {
+        errorId: currentErrorId,
         utteranceId: utterance.utterance_id,
-        errorType: errType,
-        errorMatch: errMatch,
+        errorType: errorData.error_type,
+        errorMatch: errorData.error_match,
         taxonomy: selectedTaxonomy,
         severity: severity,
         utteranceIndex: currentUtteranceIndex,
@@ -202,8 +316,8 @@ async function handleAnnotationSubmit(e) {
         
         const result = await response.json();
         if (result.success) {
-            // Update local cache
-            userAnnotations[currentErrorKey] = {
+            // Update local cache with error_id as key
+            userAnnotations[currentErrorId] = {
                 taxonomy: selectedTaxonomy,
                 severity: severity
             };
@@ -224,11 +338,17 @@ async function loadAnnotations() {
         const response = await fetch(`/api/annotations/${modelName}`);
         const annotations = await response.json();
         
-        // Build local cache
+        // Build local cache indexed by error_id
         userAnnotations = {};
         annotations.forEach(ann => {
-            const key = `${ann.utteranceId}_${ann.errorType}_${ann.errorMatch}`;
-            userAnnotations[key] = {
+            userAnnotations[ann.errorId] = {
+                taxonomy: ann.taxonomy,
+                severity: ann.severity
+            };
+            
+            // Also maintain legacy keys for backward compatibility
+            const legacyKey = `${ann.utteranceId}_${ann.errorType}_${ann.errorMatch}`;
+            userAnnotations[legacyKey] = {
                 taxonomy: ann.taxonomy,
                 severity: ann.severity
             };
@@ -240,32 +360,36 @@ async function loadAnnotations() {
 
 async function loadStats() {
     try {
-        const response = await fetch(`/api/stats/${modelName}`);
-        const stats = await response.json();
+        // Get current session data
+        const actualIndex = randomizedIndices[currentPositionInRandomized];
+        const currentUtterance = allData[actualIndex];
         
-        document.getElementById('totalUtterances').textContent = stats.totalUtterances;
-        document.getElementById('totalErrors').textContent = stats.totalErrors;
-        document.getElementById('totalAnnotations').textContent = stats.totalAnnotations;
-        document.getElementById('progressPercent').textContent = stats.progress + '%';
+        // Get total sessions (all utterances)
+        const totalSessions = allData.length;
+        
+        // Get errors in current session
+        const errors = currentUtterance.metadata?.errors || [];
+        const totalErrorsInSession = errors.length;
+        
+        // Get annotated errors in current session
+        const annotatedInSession = errors.filter(e => userAnnotations[e.error_id]).length;
+        
+        // Calculate progress percentage
+        const progressPercent = totalErrorsInSession > 0 
+            ? Math.round((annotatedInSession / totalErrorsInSession) * 100)
+            : 0;
+        
+        // Update UI
+        document.getElementById('totalUtterances').textContent = totalSessions;
+        document.getElementById('totalErrors').textContent = totalErrorsInSession;
+        document.getElementById('totalAnnotations').textContent = annotatedInSession;
+        document.getElementById('progressPercent').textContent = progressPercent + '%';
     } catch (error) {
         console.error('Error loading stats:', error);
-    }
-}
-
-async function exportAnnotations() {
-    try {
-        const response = await fetch(`/api/export?model=${modelName}`);
-        const data = await response.json();
-        
-        const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `annotations_${modelName}_${Date.now()}.json`;
-        a.click();
-        URL.revokeObjectURL(url);
-    } catch (error) {
-        alert('Error exporting annotations: ' + error.message);
+        // Set default values on error
+        document.getElementById('totalErrors').textContent = '0';
+        document.getElementById('totalAnnotations').textContent = '0';
+        document.getElementById('progressPercent').textContent = '0%';
     }
 }
 

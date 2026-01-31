@@ -2,8 +2,9 @@
 """
 Initialize or reset the database with the new multi-model schema.
 """
-
 import sys
+import json
+import argparse
 from pathlib import Path
 
 # Add parent directory to path
@@ -11,7 +12,6 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from app import app, db
 from models import Annotator, AnnotationData, Annotation, AnnotationProgress
-import json
 
 def init_database(reset=False):
     """Initialize the database."""
@@ -31,13 +31,20 @@ def init_database(reset=False):
             with open(annotators_file) as f:
                 annotators_data = json.load(f)
             
+            # Handle both list and dict formats
+            if isinstance(annotators_data, dict):
+                annotators_data = annotators_data.get('annotators', [])
+            
             for ann_data in annotators_data:
-                existing = Annotator.query.filter_by(email=ann_data['email']).first()
+                # Check if annotator already exists
+                existing = Annotator.query.filter_by(email=ann_data.get('email')).first()
+                
                 if not existing:
                     annotator = Annotator(
-                        name=ann_data['name'],
-                        email=ann_data['email'],
-                        annotator_id=ann_data['annotator_id']
+                        annotator_id=ann_data.get('annotator_id'),
+                        name=ann_data.get('name'),
+                        email=ann_data.get('email'),
+                        affiliation=ann_data.get('affiliation', '')
                     )
                     db.session.add(annotator)
             
@@ -73,7 +80,7 @@ def show_stats():
             ).group_by(AnnotationData.model_name).all()
             
             for model, count in models:
-                print(f"  • {model}: {count}")
+                print(f"  {model}: {count}")
         
         if annotations > 0:
             print("\nAnnotations by model:")
@@ -83,11 +90,9 @@ def show_stats():
             ).group_by(Annotation.model_name).all()
             
             for model, count in models:
-                print(f"  • {model}: {count}")
+                print(f"  {model}: {count}")
 
 if __name__ == '__main__':
-    import argparse
-    
     parser = argparse.ArgumentParser(description='Initialize annotation database')
     parser.add_argument('--reset', action='store_true', 
                        help='Reset database (WARNING: deletes all data)')

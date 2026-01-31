@@ -9,6 +9,7 @@ from werkzeug.utils import secure_filename
 
 from models import db, Annotator, Annotation, AnnotationData, AnnotationProgress
 from config import config
+from error_extractor import ErrorExtractor
 
 
 def get_available_models(app):
@@ -56,11 +57,19 @@ def load_model_data(app, model_name):
             if existing:
                 continue
             
+            # Extract errors with unique IDs
+            asr_text = item.get('asr_reconstructed', '')
+            errors = ErrorExtractor.extract_errors(asr_text)
+            
+            # Store errors in extra_data
+            item['errors'] = errors
+            item['error_count'] = len(errors)
+            
             utterance = AnnotationData(
                 utterance_id=utterance_id,
                 model_name=model_name,
                 human_transcript=item.get('human_transcript', ''),
-                asr_reconstructed=item.get('asr_reconstructed', ''),
+                asr_reconstructed=asr_text,
                 extra_data=item
             )
             db.session.add(utterance)
@@ -289,13 +298,15 @@ def handle_annotations(model_name):
         data = request.get_json()
         
         try:
-            # Upsert annotation
+            # Each error must have an error_id to support multiple annotations of the same text
+            error_id = data.get('errorId')
+            if not error_id:
+                return jsonify({'error': 'error_id is required'}), 400
+            
+            # Upsert annotation using error_id as unique identifier
             existing = Annotation.query.filter_by(
                 annotator_id=session['annotator_id'],
-                model_name=model_name,
-                utterance_id=data['utteranceId'],
-                error_type=data['errorType'],
-                error_match=data['errorMatch']
+                error_id=error_id
             ).first()
             
             if existing:
@@ -309,6 +320,7 @@ def handle_annotations(model_name):
             else:
                 annotation = Annotation(
                     annotator_id=session['annotator_id'],
+                    error_id=error_id,
                     model_name=model_name,
                     utterance_id=data['utteranceId'],
                     error_type=data['errorType'],

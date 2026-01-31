@@ -1,108 +1,444 @@
 {% extends "base.html" %}
 
-{% block title %}Select ASR Model - ASR Annotation Tool{% endblock %}
+{% block title %}Instructions - ASR Annotation Tool{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-    <div class="row mb-4">
-        <div class="col-12">
-            <h2>Select ASR Model to Annotate</h2>
-            <p class="text-muted">Choose a model to start annotating errors</p>
+<div class="container">
+    <div class="select-model-header">
+        <div class="header-content">
+            <h1>📊 Select ASR Model to Annotate</h1>
+            <p class="subtitle">Choose a model and continue your annotation work</p>
+            <div class="annotator-info">
+                <span class="badge badge-annotator">👤 {{ session.get('annotator_name', 'Annotator') }}</span>
+            </div>
         </div>
     </div>
 
     {% if models %}
-    <div class="row">
+    <div class="models-grid">
         {% for model in models %}
-        <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-start mb-3">
-                        <h5 class="card-title mb-0">{{ model.display_name }}</h5>
-                        {% if model.loaded %}
-                        <span class="badge bg-success">Loaded</span>
-                        {% else %}
-                        <span class="badge bg-secondary">Not Loaded</span>
-                        {% endif %}
-                    </div>
-                    
-                    <div class="mb-3">
-                        <div class="row g-2">
-                            <div class="col-6">
-                                <div class="p-2 bg-light rounded">
-                                    <small class="text-muted d-block">Total Utterances</small>
-                                    <strong class="fs-5">{{ model.total_utterances }}</strong>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="p-2 bg-light rounded">
-                                    <small class="text-muted d-block">Your Annotations</small>
-                                    <strong class="fs-5 text-primary">{{ model.user_annotations }}</strong>
-                                </div>
-                            </div>
+        <div class="model-card">
+            <div class="card-header">
+                <div class="header-left">
+                    <h3 class="model-title">{{ model.display_name }}</h3>
+                    <p class="model-code">{{ model.name }}</p>
+                </div>
+                <div class="header-right">
+                    {% if model.loaded %}
+                    <span class="status-badge loaded">✓ Loaded</span>
+                    {% else %}
+                    <span class="status-badge pending">⏳ Loading...</span>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div class="stats-row">
+                    <div class="stat-box total">
+                        <div class="stat-icon">📄</div>
+                        <div class="stat-content">
+                            <div class="stat-label">Total Utterances</div>
+                            <div class="stat-value">{{ model.total_utterances }}</div>
                         </div>
                     </div>
-
-                    {% if model.total_utterances > 0 %}
-                    <div class="progress mb-3" style="height: 8px;">
-                        {% set progress_pct = (model.user_annotations / (model.total_utterances * 3) * 100)|int %}
-                        <div class="progress-bar bg-primary" role="progressbar" 
-                             style="width: {{ progress_pct }}%"
-                             aria-valuenow="{{ progress_pct }}" 
-                             aria-valuemin="0" 
-                             aria-valuemax="100"></div>
+                    <div class="stat-box annotated">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-content">
+                            <div class="stat-label">Your Annotations</div>
+                            <div class="stat-value text-primary">{{ model.user_annotations }}</div>
+                        </div>
                     </div>
-                    <small class="text-muted">
-                        {{ progress_pct }}% complete (approx. 3 errors per utterance)
-                    </small>
-                    {% endif %}
-                    
-                    <div class="mt-3">
-                        <a href="{{ url_for('annotate', model_name=model.name) }}" 
-                           class="btn btn-primary w-100">
-                            {% if model.user_annotations > 0 %}
-                            Continue Annotating
-                            {% else %}
-                            Start Annotating
-                            {% endif %}
-                        </a>
+                </div>
+
+                {% if model.total_utterances > 0 %}
+                <div class="progress-section">
+                    {% set progress_pct = (model.user_annotations / (model.total_utterances * 3) * 100)|int %}
+                    <div class="progress-info">
+                        <span class="progress-label">Progress</span>
+                        <span class="progress-percentage">{{ progress_pct }}%</span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill" style="width: {{ progress_pct }}%"></div>
+                    </div>
+                    <div class="progress-details">
+                        <small>{{ model.user_annotations }} of {{ model.total_utterances * 3 }} errors annotated</small>
+                        <small class="text-muted">(approx. 3 errors per utterance)</small>
+                    </div>
+                </div>
+                {% endif %}
+
+                <div class="card-actions">
+                    <a href="{{ url_for('annotate', model_name=model.name) }}" class="btn btn-primary btn-block">
+                        {% if model.user_annotations > 0 %}
+                        <span class="btn-icon">▶️</span> Resume Annotating
+                        {% else %}
+                        <span class="btn-icon">▶️</span> Start Annotating
+                        {% endif %}
+                    </a>
+                </div>
+
+                <div class="card-footer">
+                    <div class="footer-info">
+                        {% if model.user_annotations > 0 %}
+                        <span class="badge-info">🔄 In Progress</span>
+                        {% else %}
+                        <span class="badge-info">⭕ Not Started</span>
+                        {% endif %}
                     </div>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
+
+    <div class="info-section">
+        <div class="info-box">
+            <h4>💡 Tips</h4>
+            <ul>
+                <li>Your progress is automatically saved after each annotation</li>
+                <li>You can switch between models anytime</li>
+                <li>Start with the instructions if you're new to annotation</li>
+                <li>Each error requires a category selection and severity rating</li>
+            </ul>
+        </div>
+    </div>
+
     {% else %}
-    <div class="row">
-        <div class="col-12">
-            <div class="alert alert-warning" role="alert">
-                <h5 class="alert-heading">No Models Available</h5>
-                <p>No annotation data files found in the <code>data/annotation_data/</code> directory.</p>
-                <hr>
-                <p class="mb-0">Please add model JSON files in the format: <code>{model}_annotation_data.json</code></p>
-            </div>
+    <div class="empty-state">
+        <div class="empty-icon">📁</div>
+        <h3>No Models Available</h3>
+        <p>No annotation data files found in the <code>data/annotation_data/</code> directory.</p>
+        <div class="empty-help">
+            <p><strong>How to fix:</strong></p>
+            <ol>
+                <li>Add model JSON files to <code>data/annotation_data/</code></li>
+                <li>Use the format: <code>{model}_annotation_data.json</code></li>
+                <li>Reload this page</li>
+            </ol>
         </div>
     </div>
     {% endif %}
 </div>
 
 <style>
-.card {
-    transition: transform 0.2s, box-shadow 0.2s;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15)!important;
+.select-model-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #f0f0f0;
 }
 
-.progress {
+.header-content h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+.annotator-info {
+    margin-top: 15px;
+}
+
+.badge-annotator {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.models-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.model-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.model-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border-color: #667eea;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header-left h3.model-title {
+    margin: 0 0 5px 0;
+    font-size: 1.3rem;
+    color: #2c3e50;
+}
+
+.model-code {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    font-family: 'Courier New', monospace;
+}
+
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.status-badge.loaded {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-badge.pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.stats-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.stat-box:hover {
+    background: #e9ecef;
+}
+
+.stat-box.total {
+    border-left: 4px solid #667eea;
+}
+
+.stat-box.annotated {
+    border-left: 4px solid #28a745;
+}
+
+.stat-icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.stat-content {
+    flex: 1;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 3px;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.progress-section {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.progress-label {
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+.progress-percentage {
+    color: #667eea;
+    font-weight: 700;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
     border-radius: 10px;
-    background-color: #e9ecef;
+    overflow: hidden;
+    margin: 10px 0;
 }
 
-.progress-bar {
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
     border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.progress-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+}
+
+.card-actions {
+    margin-top: 15px;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.btn-block:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-icon {
+    margin-right: 8px;
+}
+
+.card-footer {
+    padding: 12px 20px;
+    background: #f8f9fa;
+    border-top: 1px solid #e0e0e0;
+}
+
+.badge-info {
+    font-size: 0.85rem;
+    padding: 4px 8px;
+    background: #e9ecef;
+    color: #495057;
+    border-radius: 4px;
+}
+
+.info-section {
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.info-box {
+    background: #e7f3ff;
+    border-left: 4px solid #667eea;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.info-box h4 {
+    color: #667eea;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.info-box ul {
+    margin: 0;
+    padding-left: 20px;
+    list-style: none;
+}
+
+.info-box li {
+    padding: 5px 0;
+    color: #2c3e50;
+}
+
+.info-box li:before {
+    content: "✓ ";
+    color: #28a745;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+}
+
+.empty-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.empty-state h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.empty-state p {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+.empty-help {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    display: inline-block;
+}
+
+.empty-help code {
+    background: #f0f0f0;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: monospace;
+    color: #667eea;
 }
 </style>
 {% endblock %}
