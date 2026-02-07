@@ -62,7 +62,7 @@ def prepare_annotation_data(excel_file: str, model: str, output_file: str = None
             'human_transcript': str(row['human-transcript']) if pd.notna(row['human-transcript']) else "",
             'asr_reconstructed': str(row[f'{model}_reconstructed_ref']) if pd.notna(row[f'{model}_reconstructed_ref']) else "",
             'model': model,
-            'wer': float(row[f'norm_{model}_wer']) if pd.notna(row[f'norm_{model}_wer']) else None,
+            'wer': float(row[f'norm_{model}_asr_wer']) if pd.notna(row[f'norm_{model}_asr_wer']) else None,
             'index': idx
         }
         annotation_data.append(entry)
