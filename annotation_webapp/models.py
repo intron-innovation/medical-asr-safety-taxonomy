@@ -38,6 +38,7 @@ class AnnotationData(db.Model):
     utterance_id = db.Column(db.String(200), nullable=False, index=True)
     model_name = db.Column(db.String(50), nullable=False, index=True)  # whisper, phi4, etc.
     human_transcript = db.Column(db.Text, nullable=False)
+    asr_transcript = db.Column(db.Text, nullable=False)
     asr_reconstructed = db.Column(db.Text, nullable=False)
     extra_data = db.Column(JSON)  # Store additional fields
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
@@ -52,6 +53,7 @@ class AnnotationData(db.Model):
             'utterance_id': self.utterance_id,
             'model_name': self.model_name,
             'human_transcript': self.human_transcript,
+            'asr_transcript': self.asr_transcript,
             'asr_reconstructed': self.asr_reconstructed,
             'metadata': self.extra_data or {}
         }
@@ -75,6 +77,7 @@ class Annotation(db.Model):
     # Context information
     utterance_index = db.Column(db.Integer)
     human_transcript = db.Column(db.Text)
+    asr_transcript = db.Column(db.Text)
     asr_reconstructed = db.Column(db.Text)
     
     # Unique constraint: one annotation per error instance per annotator
@@ -99,6 +102,7 @@ class Annotation(db.Model):
             'utteranceIndex': self.utterance_index,
             'context': {
                 'humanTranscript': self.human_transcript,
+                'asrTranscript': self.asr_transcript,
                 'asrReconstructed': self.asr_reconstructed
             }
         }

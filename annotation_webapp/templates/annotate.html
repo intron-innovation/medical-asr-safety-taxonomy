@@ -36,7 +36,7 @@
     .stat-label { font-size: 12px; color: #666; margin-top: 5px; }
     .transcripts-container {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 20px;
         margin-bottom: 20px;
     }
@@ -199,11 +199,15 @@
     <!-- Transcripts -->
     <div class="transcripts-container" id="transcriptsContainer" style="display: none;">
         <div class="transcript-box">
+            <h3>🤖 Reconstructed ASR Output (Click errors to annotate)</h3>
+            <div class="transcript-content" id="asrReconstructed"></div>
+        </div>
+        <div class="transcript-box">
             <h3>👤 Human Transcript (Reference)</h3>
             <div class="transcript-content" id="humanTranscript"></div>
         </div>
         <div class="transcript-box">
-            <h3>🤖 ASR Output (Click errors to annotate)</h3>
+            <h3>🤖 ASR Output</h3>
             <div class="transcript-content" id="asrTranscript"></div>
         </div>
     </div>
@@ -223,56 +227,52 @@
             <h3>Select Taxonomy Categories</h3>
             <div class="taxonomy-grid">
                 <div class="taxonomy-item">
-                    <input type="checkbox" name="taxonomy" value="medical" id="tax-medical">
-                    <label for="tax-medical">Medical Terminology</label>
-                </div>
-                <div class="taxonomy-item">
                     <input type="checkbox" name="taxonomy" value="medication" id="tax-medication">
                     <label for="tax-medication">Medication</label>
                 </div>
                 <div class="taxonomy-item">
-                    <input type="checkbox" name="taxonomy" value="numerics" id="tax-numerics">
-                    <label for="tax-numerics">Numerics</label>
+                    <input type="checkbox" name="taxonomy" value="medical_procedure" id="tax-medical_procedure">
+                    <label for="tax-medical_procedure">Medical procedure</label>
                 </div>
                 <div class="taxonomy-item">
-                    <input type="checkbox" name="taxonomy" value="temporal" id="tax-temporal">
-                    <label for="tax-temporal">Temporal</label>
+                    <input type="checkbox" name="taxonomy" value="anatomical_references" id="tax-anatomical_references">
+                    <label for="tax-anatomical_references">Anatomical references</label>
                 </div>
                 <div class="taxonomy-item">
-                    <input type="checkbox" name="taxonomy" value="demographics" id="tax-demographics">
-                    <label for="tax-demographics">Demographics</label>
+                    <input type="checkbox" name="taxonomy" value="patient_vitals" id="tax-patient_vitals">
+                    <label for="tax-patient_vitals">Patient vitals</label>
                 </div>
                 <div class="taxonomy-item">
-                    <input type="checkbox" name="taxonomy" value="negation" id="tax-negation">
-                    <label for="tax-negation">Negation</label>
+                    <input type="checkbox" name="taxonomy" value="clinical_signs_symptoms" id="tax-clinical_signs_symptoms">
+                    <label for="tax-clinical_signs_symptoms">Clinical Signs/Symptoms</label>
                 </div>
                 <div class="taxonomy-item">
-                    <input type="checkbox" name="taxonomy" value="meaning" id="tax-meaning">
-                    <label for="tax-meaning">Meaning</label>
+                    <input type="checkbox" name="taxonomy" value="diagnostic_errors" id="tax-diagnostic_errors">
+                    <label for="tax-diagnostic_errors">Diagnostic Errors</label>
                 </div>
                 <div class="taxonomy-item">
-                    <input type="checkbox" name="taxonomy" value="fluency" id="tax-fluency">
-                    <label for="tax-fluency">Fluency</label>
+                    <input type="checkbox" name="taxonomy" value="bio_data" id="tax-bio_data">
+                    <label for="tax-bio_data">Bio Data</label>
                 </div>
                 <div class="taxonomy-item">
-                    <input type="checkbox" name="taxonomy" value="proper_names" id="tax-proper">
-                    <label for="tax-proper">Proper Names</label>
+                    <input type="checkbox" name="taxonomy" value="semantics" id="tax-semantics">
+                    <label for="tax-semantics">Semantics</label>
                 </div>
                 <div class="taxonomy-item">
-                    <input type="checkbox" name="taxonomy" value="redundancy" id="tax-redundancy">
-                    <label for="tax-redundancy">Redundancy</label>
+                    <input type="checkbox" name="taxonomy" value="none_error" id="tax-none_error">
+                    <label for="tax-none_error">Not an Error</label>
                 </div>
-                <div class="taxonomy-item">
+                <!-- <div class="taxonomy-item">
                     <input type="checkbox" name="taxonomy" value="disfluency_hesitation" id="tax-disfluency">
                     <label for="tax-disfluency">Disfluency/Hesitation</label>
                 </div>
                 <div class="taxonomy-item">
                     <input type="checkbox" name="taxonomy" value="contraction" id="tax-contraction">
                     <label for="tax-contraction">Contraction</label>
-                </div>
+                </div> -->
             </div>
 
-            <div style="margin: 15px 0;">
+            <!-- <div style="margin: 15px 0;">
                 <label for="customTaxonomy" style="font-weight: bold; margin-bottom: 5px; display: block;">
                     Other (Custom Category):
                 </label>
@@ -286,12 +286,12 @@
                 <small style="color: #666; display: block; margin-top: 5px;">
                     Use this for error types not covered by the categories above
                 </small>
-            </div>
+            </div> -->
 
             <h3>Rate Severity</h3>
             <div class="severity-slider-container">
-                <input type="range" id="severitySlider" min="0" max="5" value="0" class="severity-slider">
-                <div class="severity-display" id="severityDisplay">Severity: 0 (None)</div>
+                <input type="range" id="severitySlider" min="1" max="3" value="1" class="severity-slider">
+                <div class="severity-display" id="severityDisplay">Severity: 1 (Minor)</div>
             </div>
 
             <div style="display: flex; gap: 10px; margin-top: 20px;">

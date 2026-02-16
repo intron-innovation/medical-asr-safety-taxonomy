@@ -92,7 +92,8 @@ function loadUtterance(index) {
     const utterance = allData[index];
     
     document.getElementById('humanTranscript').textContent = utterance.human_transcript;
-    document.getElementById('asrTranscript').innerHTML = highlightErrors(utterance.asr_reconstructed, utterance.utterance_id);
+    document.getElementById('asrTranscript').textContent = utterance.asr_transcript;
+    document.getElementById('asrReconstructed').innerHTML = highlightErrors(utterance.asr_reconstructed, utterance.utterance_id);
 }
 
 function highlightErrors(text, utteranceId) {
@@ -197,7 +198,7 @@ function openAnnotationModal(errorId, errorType, fullMatch, errorText) {
     
     // Reset form
     document.getElementById('annotationForm').reset();
-    document.getElementById('severitySlider').value = 0;
+    document.getElementById('severitySlider').value = 1;
     document.getElementById('customTaxonomy').value = '';
     updateSeverityDisplay();
     
@@ -233,7 +234,7 @@ function openAnnotationModalLegacy(errorType, fullMatch, errorText) {
     
     // Reset form
     document.getElementById('annotationForm').reset();
-    document.getElementById('severitySlider').value = 0;
+    document.getElementById('severitySlider').value = 1;
     document.getElementById('customTaxonomy').value = '';
     updateSeverityDisplay();
     
@@ -262,9 +263,14 @@ function closeModal() {
 }
 
 function updateSeverityDisplay() {
-    const value = document.getElementById('severitySlider').value;
-    const labels = ['None (0)', 'Minor (1)', 'Low (2)', 'Medium (3)', 'High (4)', 'Critical (5)'];
-    document.getElementById('severityDisplay').textContent = `Severity: ${labels[value]}`;
+    const value = parseInt(document.getElementById('severitySlider').value, 10);
+    const labels = {
+        1: 'Minor',
+        2: 'Moderate',
+        3: 'High'
+    };
+    const label = labels[value] ? `${value} (${labels[value]})` : `${value}`;
+    document.getElementById('severityDisplay').textContent = `Severity: ${label}`;
 }
 
 async function handleAnnotationSubmit(e) {
