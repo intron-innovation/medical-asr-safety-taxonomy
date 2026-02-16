@@ -314,6 +314,7 @@ def handle_annotations(model_name):
                 existing.severity = data['severity']
                 existing.timestamp = datetime.utcnow()
                 existing.human_transcript = data.get('humanTranscript')
+                existing.asr_transcript = data.get('asrTranscript')
                 existing.asr_reconstructed = data.get('asrReconstructed')
                 existing.utterance_index = data.get('utteranceIndex')
                 action = 'updated'
@@ -329,6 +330,7 @@ def handle_annotations(model_name):
                     severity=data['severity'],
                     utterance_index=data.get('utteranceIndex'),
                     human_transcript=data.get('humanTranscript'),
+                    asr_transcript=data.get('asrTranscript'),
                     asr_reconstructed=data.get('asrReconstructed')
                 )
                 db.session.add(annotation)

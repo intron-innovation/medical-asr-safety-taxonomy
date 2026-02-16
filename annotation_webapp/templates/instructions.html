@@ -29,7 +29,7 @@
     <div class="section" id="overview">
         <h2>1. Overview</h2>
         <p>
-            You will annotate saftey related errors in ASR (Automatic Speech Recognition) transcripts of medical conversations.
+            You will annotate safety related errors in ASR (Automatic Speech Recognition) transcripts of medical conversations.
             Each error is tagged with its type (<strong>DEL</strong> = deletion, <strong>SUB</strong> = substitution,
             <strong>INS</strong> = insertion) and displayed in color-coded format.
         </p>
@@ -37,7 +37,7 @@
         <ul class="checklist">
             <li>Click on each highlighted error</li>
             <li>Select ALL applicable taxonomy categories</li>
-            <li>Rate the clinical severity (0-5 scale)</li>
+            <li>Rate the clinical severity (1-3 scale)</li>
             <li>Save to auto-sync to server</li>
         </ul>
 
@@ -61,78 +61,61 @@
 
     <!-- Section 2: Taxonomy -->
     <div class="section" id="taxonomy">
-        <h2>3. Error Taxonomy (11 Categories)</h2>
+        <h2>3. Error Taxonomy (9 Categories, including Not an Error)</h2>
 
         <div class="taxonomy-grid">
             <div class="taxonomy-card">
-                <h3>1. Medical Terminology</h3>
-                <p>Diagnoses, procedures, anatomical terms, medical jargon</p>
-                <div class="example">Example: "hypertension" → "hypotension"</div>
-            </div>
-
-            <div class="taxonomy-card">
-                <h3>2. Medication</h3>
+                <h3>1. Medication</h3>
                 <p>Drug names, classes, brand/generic names</p>
-                <div class="example">Example: "metformin" → "met form in"</div>
+                <div class="example">Example: "naproxen" → "proxen"</div>
             </div>
 
             <div class="taxonomy-card">
-                <h3>3. Numerics</h3>
-                <p>Dosages, measurements, lab values, counts</p>
-                <div class="example">Example: "500 mg" → "5 mg"</div>
+                <h3>2. Medical Procedure</h3>
+                <p>Procedures, imaging, tests, treatments</p>
+                <div class="example">Example: "biopsy" → "biospeed "</div>
             </div>
 
             <div class="taxonomy-card">
-                <h3>4. Temporal</h3>
-                <p>Time, dates, duration, frequency (daily, weekly)</p>
-                <div class="example">Example: "twice daily" → "once daily"</div>
+                <h3>3. Anatomical References</h3>
+                <p>Body parts, organs, anatomical landmarks</p>
+                <div class="example">Example: "runny nose" → "renny knows"</div>
             </div>
 
             <div class="taxonomy-card">
-                <h3>5. Demographics</h3>
-                <p>Age, gender, ethnicity, occupation</p>
-                <div class="example">Example: "45 year old" → "55 year old"</div>
+                <h3>4. Patient Vitals</h3>
+                <p>Vital signs and measurements (BP, HR, temperature)</p>
+                <div class="example">Example: "120 over 80" → "120 over 8"</div>
             </div>
 
             <div class="taxonomy-card">
-                <h3>6. Negation</h3>
-                <p>Missing or added "no", "not", "never", etc.</p>
-                <div class="example">Example: "no pain" → "pain"</div>
+                <h3>5. Clinical Signs/Symptoms</h3>
+                <p>Symptoms, complaints, clinical findings</p>
+                <div class="example">Example: "middle ear effusion" → "middle ear fusion"</div>
             </div>
 
             <div class="taxonomy-card">
-                <h3>7. Meaning</h3>
-                <p>Semantic changes affecting understanding</p>
-                <div class="example">Example: "increasing pain" → "decreasing pain"</div>
+                <h3>6. Diagnostic Errors</h3>
+                <p>Diagnoses, diagnostic conclusions, test results</p>
+                <div class="example">Example: "Quervains tenosynovitis" → "quarvains tinosinovitis"</div>
             </div>
 
             <div class="taxonomy-card">
-                <h3>8. Fluency</h3>
-                <p>Grammar, readability, sentence structure</p>
-                <div class="example">Example: "he said he was" → "he said was"</div>
+                <h3>7. Bio Data</h3>
+                <p>Patient identifiers and demographics (name, location, sex)</p>
+                <div class="example">Example: "Ekiti" → "Nkita"</div>
             </div>
 
             <div class="taxonomy-card">
-                <h3>9. Proper Names</h3>
-                <p>Patient names, doctor names, locations</p>
-                <div class="example">Example: "Dr. Smith" → "Dr. Schmidt"</div>
+                <h3>8. Semantics</h3>
+                <p>Meaning changes that alter intent or interpretation</p>
+                <div class="example">Example: "cigarette pack" → "cigarette back"</div>
             </div>
 
             <div class="taxonomy-card">
-                <h3>10. Redundancy</h3>
-                <p>Repeated words, unnecessary duplication</p>
-                <div class="example">Example: "the the patient" (repeated "the")</div>
-            </div>
-
-            <div class="taxonomy-card">
-                <h3>11. Disfluency/Hesitation</h3>
-                <p>Interruptions of speech, use of filler-word pauses ("um," "uh"), stuttering, repetitions </p>
-                <div class="example">Example: "um" → "" (filler word removal)</div>
-            </div>
-            <div class="taxonomy-card">
-                <h3>12. Contraction</h3>
-                <p> Shortened form of two words combined with an apostrophe </p>
-                <div class="example">Example: "I am" → "I'm"</div>
+                <h3>9. Not an Error</h3>
+                <p>Mark when the highlight is not actually an error</p>
+                <div class="example">Example: "uh" retained exactly as spoken</div>
             </div>
         </div>
     </div>
@@ -143,22 +126,22 @@
 
         <h3>Multi-Category Errors</h3>
         <div class="example-box">
-            <strong>Error:</strong> [SUB:metformin 500mg->metformin]<br>
-            <strong>Categories:</strong> Medication + Numerics<br>
-            <strong>Severity:</strong> 4 (High) - Missing dosage is clinically significant
+            <strong>Error:</strong> [SUB:naproxen 500mg->proxen]<br>
+            <strong>Categories:</strong> Medication + Semantics<br>
+            <strong>Severity:</strong> 2 (Moderate) - Missing dosage changes intent
         </div>
 
         <div class="example-box">
             <strong>Error:</strong> [SUB:no chest pain->chest pain]<br>
-            <strong>Categories:</strong> Negation + Meaning<br>
-            <strong>Severity:</strong> 5 (Critical) - Reverses symptom status
+            <strong>Categories:</strong> Clinical Signs/Symptoms + Semantics<br>
+            <strong>Severity:</strong> 3 (Severe) - Reverses symptom status
         </div>
 
         <div class="example-box">
-            <strong>Error:</strong> [DEL:daily]<br>
-            <strong>Context:</strong> "Take medication ___"<br>
-            <strong>Categories:</strong> Temporal<br>
-            <strong>Severity:</strong> 3 (Medium) - Missing frequency instruction
+            <strong>Error:</strong> [SUB:120/80->120/8]<br>
+            <strong>Context:</strong> "BP is ___"<br>
+            <strong>Categories:</strong> Patient Vitals<br>
+            <strong>Severity:</strong> 3 (Severe) - Incorrect vital sign
         </div>
     </div>
 
@@ -181,40 +164,25 @@
     <div class="section" id="severity">
         <h2>6. Severity Guidelines</h2>
         <div class="severity-scale">
-            <div class="severity-level level-0">
-                <div class="severity-number">0</div>
-                <div class="severity-label">None</div>
-            </div>
             <div class="severity-level level-1">
                 <div class="severity-number">1</div>
                 <div class="severity-label">Minor</div>
             </div>
             <div class="severity-level level-2">
                 <div class="severity-number">2</div>
-                <div class="severity-label">Low</div>
+                <div class="severity-label">Moderate</div>
             </div>
             <div class="severity-level level-3">
                 <div class="severity-number">3</div>
-                <div class="severity-label">Medium</div>
-            </div>
-            <div class="severity-level level-4">
-                <div class="severity-number">4</div>
-                <div class="severity-label">High</div>
-            </div>
-            <div class="severity-level level-5">
-                <div class="severity-number">5</div>
-                <div class="severity-label">Critical</div>
+                <div class="severity-label">Severe</div>
             </div>
         </div>
 
         <h3>Severity Descriptions</h3>
         <ul class="checklist">
-            <li><strong>0 (None):</strong> No impact on understanding (e.g., filler word "um")</li>
-            <li><strong>1 (Minor):</strong> Minimal impact, easily overlooked (e.g., "tree" for "three")</li>
-            <li><strong>2 (Low):</strong> Some impact but context preserved (e.g., "asprin" for "aspirin")</li>
-            <li><strong>3 (Medium):</strong> Notable impact on meaning (e.g., "once" → "twice" daily)</li>
-            <li><strong>4 (High):</strong> Significant impact on clinical information (e.g., wrong dosage)</li>
-            <li><strong>5 (Critical):</strong> SEVERE - patient safety concerns (e.g., wrong drug class)</li>
+            <li><strong>1 (Minor):</strong> Minimal impact, easily inferred (e.g., slight mispronunciation)</li>
+            <li><strong>2 (Moderate):</strong> Noticeable impact, context still partly preserved (e.g., missing dosage)</li>
+            <li><strong>3 (Severe):</strong> Significant clinical impact or safety concern (e.g., wrong drug or vital sign)</li>
         </ul>
     </div>
 
