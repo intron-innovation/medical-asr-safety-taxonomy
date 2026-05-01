@@ -69,6 +69,7 @@ def load_model_data(app, model_name):
                 utterance_id=utterance_id,
                 model_name=model_name,
                 human_transcript=item.get('human_transcript', ''),
+                asr_transcript=item.get('asr_transcript', ''),
                 asr_reconstructed=asr_text,
                 extra_data=item
             )

@@ -29,9 +29,11 @@ window.addEventListener('load', function() {
         return;
     }
     
-    loadUtterances();
-    loadAnnotations();
-    loadStats();
+    // Load utterances and wait for completion
+    loadUtterances().then(() => {
+        loadAnnotations();
+        loadStats();
+    });
     
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
@@ -71,7 +73,6 @@ async function loadUtterances() {
         document.getElementById('transcriptsContainer').style.display = 'grid';
         loadUtterance(randomizedIndices[currentPositionInRandomized]);
         updateSessionCounter();
-        loadStats();
     } catch (error) {
         console.error('Error loading utterances:', error);
     }
@@ -91,6 +92,15 @@ function loadUtterance(index) {
     currentUtteranceIndex = index;
     const utterance = allData[index];
     
+    // Debug: Log the utterance structure
+    console.log('Loaded utterance index:', index);
+    console.log('Utterance keys:', Object.keys(utterance));
+    console.log('Metadata exists:', !!utterance.metadata);
+    if (utterance.metadata) {
+        console.log('Metadata keys:', Object.keys(utterance.metadata));
+        console.log('Errors found:', utterance.metadata.errors?.length || 0);
+    }
+    
     document.getElementById('humanTranscript').textContent = utterance.human_transcript;
     document.getElementById('asrTranscript').textContent = utterance.asr_transcript;
     document.getElementById('asrReconstructed').innerHTML = highlightErrors(utterance.asr_reconstructed, utterance.utterance_id);
@@ -100,7 +110,12 @@ function highlightErrors(text, utteranceId) {
     const utterance = allData[currentUtteranceIndex];
     const errors = utterance.metadata?.errors || [];
     
+    console.log('highlightErrors called:');
+    console.log('  - utterance.metadata:', !!utterance.metadata);
+    console.log('  - errors array length:', errors.length);
+    
     if (errors.length === 0) {
+        console.log('  - No errors in metadata, falling back to legacy method');
         // Fallback to old method if no errors in metadata
         return highlightErrorsLegacy(text, utteranceId);
     }
@@ -134,6 +149,8 @@ function highlightErrors(text, utteranceId) {
             });
         }
     });
+    
+    console.log('  - replacements created:', replacements.length);
     
     // Sort by position (descending) and apply replacements
     replacements.sort((a, b) => b.start - a.start);
@@ -199,17 +216,13 @@ function openAnnotationModal(errorId, errorType, fullMatch, errorText) {
     // Reset form
     document.getElementById('annotationForm').reset();
     document.getElementById('severitySlider').value = 1;
-    document.getElementById('customTaxonomy').value = '';
     updateSeverityDisplay();
     
     // Load existing annotation if present
     const existing = userAnnotations[errorId];
     if (existing) {
         existing.taxonomy.forEach(tax => {
-            if (tax.startsWith('custom:')) {
-                // Extract custom taxonomy value
-                document.getElementById('customTaxonomy').value = tax.substring(7);
-            } else {
+            if (!tax.startsWith('custom:')) {
                 const checkbox = document.getElementById(`tax-${tax}`);
                 if (checkbox) checkbox.checked = true;
             }
@@ -235,17 +248,13 @@ function openAnnotationModalLegacy(errorType, fullMatch, errorText) {
     // Reset form
     document.getElementById('annotationForm').reset();
     document.getElementById('severitySlider').value = 1;
-    document.getElementById('customTaxonomy').value = '';
     updateSeverityDisplay();
     
     // Load existing annotation if present
     const existing = userAnnotations[currentErrorId];
     if (existing) {
         existing.taxonomy.forEach(tax => {
-            if (tax.startsWith('custom:')) {
-                // Extract custom taxonomy value
-                document.getElementById('customTaxonomy').value = tax.substring(7);
-            } else {
+            if (!tax.startsWith('custom:')) {
                 const checkbox = document.getElementById(`tax-${tax}`);
                 if (checkbox) checkbox.checked = true;
             }
@@ -279,14 +288,8 @@ async function handleAnnotationSubmit(e) {
     const selectedTaxonomy = Array.from(document.querySelectorAll('input[name="taxonomy"]:checked'))
         .map(el => el.value);
     
-    // Add custom taxonomy if provided
-    const customTaxonomy = document.getElementById('customTaxonomy').value.trim();
-    if (customTaxonomy) {
-        selectedTaxonomy.push(`custom:${customTaxonomy}`);
-    }
-    
     if (selectedTaxonomy.length === 0) {
-        alert('Please select at least one taxonomy category or enter a custom category');
+        alert('Please select at least one taxonomy category');
         return;
     }
     
@@ -369,6 +372,15 @@ async function loadStats() {
         // Get current session data
         const actualIndex = randomizedIndices[currentPositionInRandomized];
         const currentUtterance = allData[actualIndex];
+        
+        // Safety check - if no current utterance, set defaults
+        if (!currentUtterance) {
+            console.warn('No current utterance available for stats');
+            document.getElementById('totalErrors').textContent = '0';
+            document.getElementById('totalAnnotations').textContent = '0';
+            document.getElementById('progressPercent').textContent = '0%';
+            return;
+        }
         
         // Get total sessions (all utterances)
         const totalSessions = allData.length;
