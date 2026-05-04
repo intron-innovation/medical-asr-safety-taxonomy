@@ -315,6 +315,7 @@ def handle_annotations(model_name):
                 existing.severity = data['severity']
                 existing.timestamp = datetime.utcnow()
                 existing.human_transcript = data.get('humanTranscript')
+                existing.human_transcript_ner = data.get('humanTranscriptNER')
                 existing.asr_transcript = data.get('asrTranscript')
                 existing.asr_reconstructed = data.get('asrReconstructed')
                 existing.utterance_index = data.get('utteranceIndex')
@@ -331,6 +332,7 @@ def handle_annotations(model_name):
                     severity=data['severity'],
                     utterance_index=data.get('utteranceIndex'),
                     human_transcript=data.get('humanTranscript'),
+                    human_transcript_ner=data.get('humanTranscriptNER'),
                     asr_transcript=data.get('asrTranscript'),
                     asr_reconstructed=data.get('asrReconstructed')
                 )

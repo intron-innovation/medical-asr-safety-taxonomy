@@ -101,9 +101,20 @@ function loadUtterance(index) {
         console.log('Errors found:', utterance.metadata.errors?.length || 0);
     }
     
-    document.getElementById('humanTranscript').textContent = utterance.human_transcript;
-    document.getElementById('asrTranscript').textContent = utterance.asr_transcript;
-    document.getElementById('asrReconstructed').innerHTML = highlightErrors(utterance.asr_reconstructed, utterance.utterance_id);
+    const humanEl = document.getElementById('humanTranscript');
+    if (humanEl) humanEl.textContent = utterance.human_transcript || '';
+
+    const humanNerEl = document.getElementById('humanTranscriptNER');
+    // Resolve NER text from several possible locations (top-level or metadata)
+    const humanNerText = utterance.human_transcript_ner || utterance.humanTranscriptNER ||
+        utterance.metadata?.human_transcript_ner || utterance.metadata?.humanTranscriptNER || '';
+    if (humanNerEl) humanNerEl.textContent = humanNerText;
+
+    const asrEl = document.getElementById('asrTranscript');
+    if (asrEl) asrEl.textContent = utterance.asr_transcript || '';
+
+    const asrRecEl = document.getElementById('asrReconstructed');
+    if (asrRecEl) asrRecEl.innerHTML = highlightErrors(utterance.asr_reconstructed, utterance.utterance_id);
 }
 
 function highlightErrors(text, utteranceId) {
@@ -313,6 +324,7 @@ async function handleAnnotationSubmit(e) {
         severity: severity,
         utteranceIndex: currentUtteranceIndex,
         humanTranscript: utterance.human_transcript,
+        humanTranscriptNER: humanNerText,
         asrReconstructed: utterance.asr_reconstructed
     };
     

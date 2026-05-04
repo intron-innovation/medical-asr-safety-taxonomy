@@ -79,6 +79,7 @@ class Annotation(db.Model):
     human_transcript = db.Column(db.Text)
     asr_transcript = db.Column(db.Text)
     asr_reconstructed = db.Column(db.Text)
+    human_transcript_ner = db.Column(db.Text)
     
     # Unique constraint: one annotation per error instance per annotator
     # error_id allows multiple occurrences of the same word to be annotated separately
@@ -102,6 +103,7 @@ class Annotation(db.Model):
             'utteranceIndex': self.utterance_index,
             'context': {
                 'humanTranscript': self.human_transcript,
+                'humanTranscriptNER': self.human_transcript_ner,
                 'asrTranscript': self.asr_transcript,
                 'asrReconstructed': self.asr_reconstructed
             }
