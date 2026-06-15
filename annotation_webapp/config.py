@@ -6,6 +6,10 @@ BASE_DIR = Path(__file__).parent
 DATA_DIR = BASE_DIR / 'data'
 ANNOTATION_DATA_DIR = DATA_DIR / 'annotation_data'  # New: stores model JSON files
 
+# Base directory for resolving relative audio paths like data/final_audio/foo.wav
+# Defaults to the bio_ramp_asr project root (parent of annotation_webapp)
+AUDIO_BASE_DIR = Path(os.environ.get('AUDIO_BASE_DIR', str(BASE_DIR.parent))).resolve()
+
 
 class Config:
     """Base configuration."""
@@ -26,6 +30,9 @@ class Config:
     
     # Annotation data directory
     ANNOTATION_DATA_DIR = ANNOTATION_DATA_DIR
+
+    # Base directory for serving session audio files
+    AUDIO_BASE_DIR = AUDIO_BASE_DIR
     
     # Pagination
     ITEMS_PER_PAGE = 50

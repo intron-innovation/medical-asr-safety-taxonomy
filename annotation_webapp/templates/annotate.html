@@ -17,6 +17,18 @@
         flex-wrap: wrap;
     }
     .file-upload { flex: 1; min-width: 300px; }
+    .audio-bar { gap: 12px; }
+    .audio-bar-label {
+        font-weight: bold;
+        font-size: 14px;
+        color: #333;
+        white-space: nowrap;
+    }
+    .audio-bar audio { height: 40px; }
+    @media (max-width: 600px) {
+        .audio-bar { flex-direction: column; align-items: stretch; }
+        .audio-bar audio { width: 100%; }
+    }
     .stats-bar {
         display: flex;
         gap: 15px;
@@ -70,6 +82,7 @@
     .del-error { background: #fee; border-left: 3px solid #f56565; }
     .sub-error { background: #fef6e0; border-left: 3px solid #ed8936; }
     .ins-error { background: #e6f7ff; border-left: 3px solid #4299e1; }
+    .manual-error { background: #ede9fe; border-left: 3px solid #8b5cf6; }
     .annotated { border-left-color: #48bb78; }
     .unannotated { border-left-color: #ed8936; }
     .error-status-indicator {
@@ -176,6 +189,15 @@
         <button id="nextBtn" class="btn btn-secondary">Next Session →</button>
     </div>
 
+    <!-- Session Audio -->
+    <div class="audio-bar controls-bar" id="audioBar">
+        <div class="audio-bar-label">
+            <i class="bi bi-headphones"></i> Session Audio
+        </div>
+        <audio id="sessionAudio" controls preload="metadata" style="flex: 1; max-width: 100%;"></audio>
+        <span id="audioUnavailable" class="text-muted" style="display: none;">No audio available for this session</span>
+    </div>
+
     <!-- Stats -->
     <div class="stats-bar" id="statsBar">
         <div class="stat-item">
@@ -199,7 +221,7 @@
     <!-- Transcripts -->
     <div class="transcripts-container" id="transcriptsContainer" style="display: none;">
         <div class="transcript-box">
-            <h3>🤖 Reconstructed ASR Output (Click errors to annotate)</h3>
+            <h3>🤖 Reconstructed ASR Output (Click errors to annotate, select text to add a manual span, click anywhere to seek audio)</h3>
             <div class="transcript-content" id="asrReconstructed"></div>
         </div>
         <div class="transcript-box">

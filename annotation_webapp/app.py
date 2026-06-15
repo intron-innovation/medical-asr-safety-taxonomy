@@ -4,7 +4,7 @@ from datetime import datetime
 from pathlib import Path
 from functools import wraps
 
-from flask import Flask, render_template, request, jsonify, session, redirect, url_for, flash
+from flask import Flask, render_template, request, jsonify, session, redirect, url_for, flash, send_file
 from werkzeug.utils import secure_filename
 
 from models import db, Annotator, Annotation, AnnotationData, AnnotationProgress
@@ -282,6 +282,27 @@ def get_utterance_by_index(model_name, index):
     return jsonify({'error': 'Index out of range'}), 404
 
 
+@app.route('/api/audio')
+@login_required
+def get_audio():
+    """Serve a session audio file from within the configured audio base directory."""
+    rel_path = request.args.get('path', '').strip()
+    if not rel_path:
+        return jsonify({'error': 'path is required'}), 400
+
+    audio_base = app.config['AUDIO_BASE_DIR']
+    requested = (audio_base / rel_path).resolve()
+
+    # Prevent path traversal outside the audio base directory
+    if not requested.is_relative_to(audio_base):
+        return jsonify({'error': 'Invalid audio path'}), 403
+
+    if not requested.is_file():
+        return jsonify({'error': 'Audio file not found'}), 404
+
+    return send_file(requested, mimetype='audio/wav', conditional=True)
+
+
 @app.route('/api/annotations/<model_name>', methods=['GET', 'POST'])
 @login_required
 def handle_annotations(model_name):
@@ -319,6 +340,9 @@ def handle_annotations(model_name):
                 existing.asr_transcript = data.get('asrTranscript')
                 existing.asr_reconstructed = data.get('asrReconstructed')
                 existing.utterance_index = data.get('utteranceIndex')
+                existing.start_idx = data.get('startIdx')
+                existing.end_idx = data.get('endIdx')
+                existing.source = data.get('source', 'auto')
                 action = 'updated'
             else:
                 annotation = Annotation(
@@ -334,7 +358,10 @@ def handle_annotations(model_name):
                     human_transcript=data.get('humanTranscript'),
                     human_transcript_ner=data.get('humanTranscriptNER'),
                     asr_transcript=data.get('asrTranscript'),
-                    asr_reconstructed=data.get('asrReconstructed')
+                    asr_reconstructed=data.get('asrReconstructed'),
+                    start_idx=data.get('startIdx'),
+                    end_idx=data.get('endIdx'),
+                    source=data.get('source', 'auto')
                 )
                 db.session.add(annotation)
                 action = 'created'

@@ -55,6 +55,7 @@ class AnnotationData(db.Model):
             'human_transcript': self.human_transcript,
             'asr_transcript': self.asr_transcript,
             'asr_reconstructed': self.asr_reconstructed,
+            'audio_file': (self.extra_data or {}).get('audio_file', ''),
             'metadata': self.extra_data or {}
         }
 
@@ -80,6 +81,11 @@ class Annotation(db.Model):
     asr_transcript = db.Column(db.Text)
     asr_reconstructed = db.Column(db.Text)
     human_transcript_ner = db.Column(db.Text)
+
+    # Span location + provenance (manual selections store char offsets; source='manual')
+    start_idx = db.Column(db.Integer)
+    end_idx = db.Column(db.Integer)
+    source = db.Column(db.String(10), default='auto')  # 'auto' | 'manual'
     
     # Unique constraint: one annotation per error instance per annotator
     # error_id allows multiple occurrences of the same word to be annotated separately
@@ -101,6 +107,9 @@ class Annotation(db.Model):
             'severity': self.severity,
             'timestamp': self.timestamp.isoformat() if self.timestamp else None,
             'utteranceIndex': self.utterance_index,
+            'startIdx': self.start_idx,
+            'endIdx': self.end_idx,
+            'source': self.source or 'auto',
             'context': {
                 'humanTranscript': self.human_transcript,
                 'humanTranscriptNER': self.human_transcript_ner,
