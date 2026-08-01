@@ -447,21 +447,46 @@ function highlightErrors(text, utteranceId) {
         let startIdx = error.start_idx;
         let endIdx = error.end_idx;
         
-        if (startIdx !== undefined && endIdx !== undefined) {
+        if (startIdx === undefined || endIdx === undefined) return;
+        
+        // Manual spans are always required (the annotator chose to flag them).
+        // Auto-detected errors are only required/highlighted if they overlap a
+        // tagged medical entity - non-medical ones carry no visual marker at all
+        // (no color, no border, not clickable) so they read as normal text and
+        // don't add cognitive load; annotators only need to focus on medical
+        // entity errors.
+        const isRequired = errorType === 'MANUAL' || error.is_medical;
+        
+        let replacement;
+        if (isRequired) {
             const errorClass = errorType === 'MANUAL' ? 'manual-error'
                 : errorType === 'DEL' ? 'del-error'
                 : errorType === 'INS' ? 'ins-error' : 'sub-error';
-            const replacement = `<span class="error-highlight ${errorClass} ${isAnnotated}" ` +
+            replacement = `<span class="error-highlight ${errorClass} ${isAnnotated}" ` +
                 `onclick="openAnnotationModal('${escapeHtml(errorId)}', '${escapeHtml(errorType)}', '${escapeHtml(fullMatch)}', '${escapeHtml(content)}')">` +
                 `<span class="error-status-indicator"></span>${escapeHtml(fullMatch)}</span>`;
-            
-            replacements.push({
-                start: startIdx,
-                end: endIdx,
-                replacement: replacement,
-                errorId: errorId
-            });
+        } else {
+            // Render as the plain word the ASR actually produced, with no markup:
+            // DEL words were never in the ASR output (omit), SUB shows the ASR's
+            // side ("after"), INS shows the ASR's inserted word as-is.
+            let plainText;
+            if (errorType === 'DEL') {
+                plainText = '';
+            } else if (errorType === 'SUB') {
+                const parts = content.split('->');
+                plainText = parts.length > 1 ? parts[1] : content;
+            } else {
+                plainText = content;
+            }
+            replacement = escapeHtml(plainText);
         }
+        
+        replacements.push({
+            start: startIdx,
+            end: endIdx,
+            replacement: replacement,
+            errorId: errorId
+        });
     });
     
     // Sort by position (descending) and apply replacements
