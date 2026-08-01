@@ -1,5 +1,6 @@
 """Main Flask application for ASR Annotation Tool."""
 import json
+import os
 from datetime import datetime
 from pathlib import Path
 from functools import wraps
@@ -171,7 +172,7 @@ def create_app(config_name='development'):
     return app
 
 
-app = create_app()
+app = create_app(os.environ.get('APP_CONFIG', 'development'))
 
 
 def login_required(f):
