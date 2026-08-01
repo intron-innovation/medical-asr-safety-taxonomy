@@ -1,5 +1,6 @@
 """Main Flask application for ASR Annotation Tool."""
 import json
+import mimetypes
 import os
 from datetime import datetime
 from pathlib import Path
@@ -578,7 +579,8 @@ def get_audio():
     if not requested.is_file():
         return jsonify({'error': 'Audio file not found'}), 404
 
-    return send_file(requested, mimetype='audio/wav', conditional=True)
+    guessed_type, _ = mimetypes.guess_type(str(requested))
+    return send_file(requested, mimetype=guessed_type or 'application/octet-stream', conditional=True)
 
 
 @app.route('/api/annotations/<model_name>', methods=['GET', 'POST'])
