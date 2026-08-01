@@ -89,6 +89,30 @@ def load_model_data(app, model_name):
         return {'error': str(e)}, 400
 
 
+def _has_audio_file(app, audio_file_rel):
+    """Check whether a session's audio_file actually exists on disk."""
+    if not audio_file_rel:
+        return False
+    audio_base = app.config['AUDIO_BASE_DIR']
+    try:
+        resolved = (audio_base / audio_file_rel).resolve()
+        return resolved.is_relative_to(audio_base) and resolved.is_file()
+    except (OSError, ValueError):
+        return False
+
+
+def get_visible_utterances(app, model_name):
+    """Utterances for a model that are ready to annotate (audio present on disk).
+
+    Restricts the front end to the curated subset of sessions that already
+    have finalized audio; any others are silently hidden (not deleted) until
+    their audio is added, so the annotator-facing list never shows a session
+    with no player to listen along with.
+    """
+    utterances = AnnotationData.query.filter_by(model_name=model_name).order_by(AnnotationData.id).all()
+    return [u for u in utterances if _has_audio_file(app, (u.extra_data or {}).get('audio_file', ''))]
+
+
 def load_annotators(app):
     """Load pre-registered annotators from JSON file.
 
@@ -268,7 +292,7 @@ def select_model():
     
     # Get stats for each model
     for model in models:
-        total_utterances = AnnotationData.query.filter_by(model_name=model['name']).count()
+        total_utterances = len(get_visible_utterances(app, model['name']))
         user_annotations = Annotation.query.filter_by(
             annotator_id=session['annotator_id'],
             model_name=model['name']
@@ -297,7 +321,7 @@ def compute_progress_overview():
     overview = []
     
     for model in models:
-        utterances = AnnotationData.query.filter_by(model_name=model['name']).order_by(AnnotationData.id).all()
+        utterances = get_visible_utterances(app, model['name'])
         session_error_ids = {}
         total_errors = 0
         for utt in utterances:
@@ -496,8 +520,8 @@ def annotate(model_name):
         db.session.add(progress)
         db.session.commit()
     
-    # Get total utterances for this model
-    total_utterances = AnnotationData.query.filter_by(model_name=model_name).count()
+    # Get total utterances for this model (only sessions with audio present)
+    total_utterances = len(get_visible_utterances(app, model_name))
     
     # Get annotation stats for this user and model
     total_annotations = Annotation.query.filter_by(
@@ -521,16 +545,16 @@ def annotate(model_name):
 @app.route('/api/utterances/<model_name>')
 @login_required
 def get_utterances(model_name):
-    """Get all utterances for a specific model."""
-    utterances = AnnotationData.query.filter_by(model_name=model_name).order_by(AnnotationData.id).all()
+    """Get all utterances for a specific model (only sessions with audio present)."""
+    utterances = get_visible_utterances(app, model_name)
     return jsonify([utt.to_dict() for utt in utterances])
 
 
 @app.route('/api/utterance/<model_name>/<int:index>')
 @login_required
 def get_utterance_by_index(model_name, index):
-    """Get utterance by index for a specific model."""
-    utterances = AnnotationData.query.filter_by(model_name=model_name).order_by(AnnotationData.id).all()
+    """Get utterance by index for a specific model (only sessions with audio present)."""
+    utterances = get_visible_utterances(app, model_name)
     if 0 <= index < len(utterances):
         return jsonify(utterances[index].to_dict())
     return jsonify({'error': 'Index out of range'}), 404
