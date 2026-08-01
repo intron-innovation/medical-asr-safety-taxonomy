@@ -4,7 +4,8 @@
       "annotatorId": "ANN001",
       "name": "Dr. Sarah Johnson",
       "email": "sarah.johnson@example.com",
-      "affiliation": "Stanford Medical Center"
+      "affiliation": "Stanford Medical Center",
+      "isAdmin": true
     },
     {
       "annotatorId": "ANN002",

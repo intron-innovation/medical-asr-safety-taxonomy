@@ -146,20 +146,66 @@
         width: 18px;
         height: 18px;
     }
-    .severity-slider-container { margin: 20px 0; }
-    .severity-slider {
-        width: 100%;
-        height: 8px;
-        border-radius: 4px;
-        background: linear-gradient(to right, #48bb78, #ed8936, #f56565);
+    .severity-btn-group {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin: 15px 0 5px;
     }
+    .severity-btn {
+        border: 3px solid transparent;
+        border-radius: 10px;
+        padding: 14px 8px;
+        cursor: pointer;
+        text-align: center;
+        font-weight: bold;
+        font-size: 15px;
+        transition: all 0.15s ease;
+        background: #f8f9fa;
+        color: #333;
+    }
+    .severity-btn .severity-btn-sub {
+        display: block;
+        font-weight: normal;
+        font-size: 12px;
+        margin-top: 4px;
+        color: #555;
+    }
+    .severity-btn[data-value="1"] { background: #e6f7ee; }
+    .severity-btn[data-value="2"] { background: #fff6e0; }
+    .severity-btn[data-value="3"] { background: #fdeceb; }
+    .severity-btn[data-value="1"].active { background: #48bb78; color: #fff; border-color: #2f855a; }
+    .severity-btn[data-value="2"].active { background: #ed8936; color: #fff; border-color: #c05621; }
+    .severity-btn[data-value="3"].active { background: #f56565; color: #fff; border-color: #c53030; }
+    .severity-btn:hover { transform: scale(1.03); }
     .severity-display {
         text-align: center;
-        font-size: 18px;
+        font-size: 16px;
         font-weight: bold;
-        margin-top: 10px;
+        margin-top: 6px;
         color: #667eea;
     }
+    .severity-rubric {
+        background: #f8f9fa;
+        border-left: 4px solid #667eea;
+        padding: 12px 15px;
+        border-radius: 6px;
+        font-size: 13px;
+        line-height: 1.5;
+        color: #444;
+        margin-bottom: 15px;
+    }
+    .severity-rubric strong { color: #222; }
+    .session-status-badge {
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+    .session-status-badge.complete { background: #d4edda; color: #22543d; }
+    .session-status-badge.incomplete { background: #ffe4e0; color: #9b2c2c; }
+    #nextBtn:disabled { opacity: 0.5; cursor: not-allowed; }
 </style>
 {% endblock %}
 
@@ -185,8 +231,10 @@
         <div style="flex: 1; text-align: center;">
             <span id="sessionCounter" style="font-weight: bold; font-size: 16px; color: #333;"></span>
         </div>
+        <span id="sessionTracker" style="font-weight: bold; font-size: 14px; color: #444;">0 / 0 errors annotated</span>
+        <span id="sessionStatusBadge" class="session-status-badge incomplete">INCOMPLETE</span>
         <button id="prevBtn" class="btn btn-secondary">← Previous Session</button>
-        <button id="nextBtn" class="btn btn-secondary">Next Session →</button>
+        <button id="nextBtn" class="btn btn-secondary" title="All flagged errors in this session must be annotated first">Next Session →</button>
     </div>
 
     <!-- Session Audio -->
@@ -247,7 +295,12 @@
         <div id="errorContext" style="background: #f8f9fa; padding: 15px; border-radius: 6px; margin-bottom: 20px;"></div>
         
         <form id="annotationForm">
-            <h3>Select Taxonomy Categories</h3>
+            <!--
+            Clinical taxonomy categories are DEPRECATED as of Aug 2026 per team decision:
+            annotation now uses ASR Error Class only (see below). Kept here commented
+            out in case we need to re-enable clinical taxonomy tagging later.
+
+            <h3>Select Clinical Taxonomy Categories</h3>
             <div class="taxonomy-grid">
                 <div class="taxonomy-item">
                     <input type="checkbox" name="taxonomy" value="medication" id="tax-medication">
@@ -271,7 +324,7 @@
                 </div>
                 <div class="taxonomy-item">
                     <input type="checkbox" name="taxonomy" value="diagnostic_errors" id="tax-diagnostic_errors">
-                    <label for="tax-diagnostic_errors">Diagnostic Errors</label>
+                    <label for="tax-diagnostic_errors">Diagnosis</label>
                 </div>
                 <div class="taxonomy-item">
                     <input type="checkbox" name="taxonomy" value="bio_data" id="tax-bio_data">
@@ -285,15 +338,49 @@
                     <input type="checkbox" name="taxonomy" value="none_error" id="tax-none_error">
                     <label for="tax-none_error">Not an Error</label>
                 </div>
-                <!-- <div class="taxonomy-item">
-                    <input type="checkbox" name="taxonomy" value="disfluency_hesitation" id="tax-disfluency">
-                    <label for="tax-disfluency">Disfluency/Hesitation</label>
+            </div>
+            -->
+
+            <h3>Select ASR Error Class</h3>
+            <div class="taxonomy-grid">
+                <div class="taxonomy-item">
+                    <input type="checkbox" name="errorClass" value="stop_words" id="ec-stop_words">
+                    <label for="ec-stop_words">Stop Words (Added/Deleted/Substituted)</label>
                 </div>
                 <div class="taxonomy-item">
-                    <input type="checkbox" name="taxonomy" value="contraction" id="tax-contraction">
-                    <label for="tax-contraction">Contraction</label>
-                </div> -->
+                    <input type="checkbox" name="errorClass" value="suffix_error" id="ec-suffix_error">
+                    <label for="ec-suffix_error">Suffix Errors</label>
+                </div>
+                <div class="taxonomy-item">
+                    <input type="checkbox" name="errorClass" value="homonym_rhyme" id="ec-homonym_rhyme">
+                    <label for="ec-homonym_rhyme">Homonym Errors/Rhyming Words</label>
+                </div>
+                <div class="taxonomy-item">
+                    <input type="checkbox" name="errorClass" value="word_added" id="ec-word_added">
+                    <label for="ec-word_added">Words Added</label>
+                </div>
+                <div class="taxonomy-item">
+                    <input type="checkbox" name="errorClass" value="word_deleted" id="ec-word_deleted">
+                    <label for="ec-word_deleted">Words Deleted</label>
+                </div>
+                <div class="taxonomy-item">
+                    <input type="checkbox" name="errorClass" value="dictionary_error" id="ec-dictionary_error">
+                    <label for="ec-dictionary_error">Dictionary Errors</label>
+                </div>
+                <div class="taxonomy-item">
+                    <input type="checkbox" name="errorClass" value="spelling_error" id="ec-spelling_error">
+                    <label for="ec-spelling_error">Spelling Errors</label>
+                </div>
+                <div class="taxonomy-item">
+                    <input type="checkbox" name="errorClass" value="nonsense_error" id="ec-nonsense_error">
+                    <label for="ec-nonsense_error">Nonsense Errors</label>
+                </div>
+                <div class="taxonomy-item" style="background:#fff6e0;">
+                    <input type="checkbox" name="errorClass" value="not_an_error" id="ec-not_an_error">
+                    <label for="ec-not_an_error">Not an Error</label>
+                </div>
             </div>
+            <small style="color:#666; display:block; margin: -8px 0 15px;">Select all ASR Error Class categories that apply, or check "Not an Error" if this highlight isn't actually an error.</small>
 
             <!-- <div style="margin: 15px 0;">
                 <label for="customTaxonomy" style="font-weight: bold; margin-bottom: 5px; display: block;">
@@ -311,11 +398,19 @@
                 </small>
             </div> -->
 
-            <h3>Rate Severity</h3>
-            <div class="severity-slider-container">
-                <input type="range" id="severitySlider" min="1" max="3" value="1" class="severity-slider">
-                <div class="severity-display" id="severityDisplay">Severity: 1 (Minor)</div>
+            <h3>Rate Clinical Severity</h3>
+            <div class="severity-rubric">
+                <strong>Minor:</strong> Little or no chance of impacting the practitioner's understanding of the conversation or the management plan for the patient.<br>
+                <strong>Moderate:</strong> Some chance of impacting the practitioner's understanding of the conversation or the management plan for the patient.<br>
+                <strong>Severe:</strong> Likely to lead to an egregious clinical error, e.g. omission/inclusion of a key life-impacting detail.
             </div>
+            <input type="hidden" id="severitySlider" value="">
+            <div class="severity-btn-group" id="severityBtnGroup">
+                <div class="severity-btn" data-value="1" onclick="selectSeverity(1)">Minor<span class="severity-btn-sub">Little/no impact</span></div>
+                <div class="severity-btn" data-value="2" onclick="selectSeverity(2)">Moderate<span class="severity-btn-sub">Some impact</span></div>
+                <div class="severity-btn" data-value="3" onclick="selectSeverity(3)">Severe<span class="severity-btn-sub">Egregious/life-impacting</span></div>
+            </div>
+            <div class="severity-display" id="severityDisplay">Severity: not yet selected</div>
 
             <div style="display: flex; gap: 10px; margin-top: 20px;">
                 <button type="submit" class="btn btn-primary" style="flex: 1;">Save Annotation</button>

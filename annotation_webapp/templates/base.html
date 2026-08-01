@@ -16,6 +16,9 @@
         {% if session.get('annotator_id') %}
             <a href="{{ url_for('instructions') }}" {% if request.endpoint == 'instructions' %}class="active"{% endif %}>Instructions</a>
             <a href="{{ url_for('select_model') }}" {% if request.endpoint in ['select_model', 'annotate'] %}class="active"{% endif %}>Annotate</a>
+            {% if session.get('is_admin') %}
+                <a href="{{ url_for('admin_dashboard') }}" {% if request.endpoint and request.endpoint.startswith('admin') %}class="active"{% endif %}>🛠️ Admin</a>
+            {% endif %}
             <span class="navbar-user">👤 {{ session.get('annotator_name') }}</span>
             <a href="{{ url_for('logout') }}" class="navbar-logout">Logout</a>
         {% else %}

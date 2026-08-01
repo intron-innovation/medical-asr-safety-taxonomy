@@ -45,8 +45,22 @@ window.addEventListener('load', function() {
     if (prevBtn) prevBtn.addEventListener('click', () => navigateUtterance(-1));
     if (nextBtn) nextBtn.addEventListener('click', () => navigateUtterance(1));
     
-    document.getElementById('severitySlider').addEventListener('input', updateSeverityDisplay);
     document.getElementById('annotationForm').addEventListener('submit', handleAnnotationSubmit);
+
+    // "Not an Error" is mutually exclusive with the other ASR Error Class options -
+    // checking it clears the rest and vice versa, since they're contradictory.
+    document.querySelectorAll('input[name="errorClass"]').forEach(cb => {
+        cb.addEventListener('change', function() {
+            if (this.value === 'not_an_error' && this.checked) {
+                document.querySelectorAll('input[name="errorClass"]').forEach(other => {
+                    if (other.value !== 'not_an_error') other.checked = false;
+                });
+            } else if (this.value !== 'not_an_error' && this.checked) {
+                const notAnError = document.getElementById('ec-not_an_error');
+                if (notAnError) notAnError.checked = false;
+            }
+        });
+    });
 
     // Click-anywhere seek + text-selection manual annotation on the ASR Reconstructed box
     const asrRecEl = document.getElementById('asrReconstructed');
@@ -56,7 +70,27 @@ window.addEventListener('load', function() {
     }
 });
 
+// Returns { total, annotated, complete } for the auto-detected errors in a session.
+// Manual (annotator-added) spans are always annotated at creation time, so only
+// the auto-detected flagged errors need to be checked for completion.
+function getSessionCompletion(utterance) {
+    const autoErrors = (utterance && utterance.metadata && utterance.metadata.errors) || [];
+    const annotated = autoErrors.filter(e => userAnnotations[e.error_id]).length;
+    return { total: autoErrors.length, annotated, complete: annotated === autoErrors.length };
+}
+
 function navigateUtterance(direction) {
+    if (direction > 0) {
+        const currentUtterance = allData[randomizedIndices[currentPositionInRandomized]];
+        const status = getSessionCompletion(currentUtterance);
+        if (!status.complete) {
+            alert(
+                `This session is INCOMPLETE: ${status.total - status.annotated} of ${status.total} ` +
+                `flagged error(s) still need to be annotated before moving to the next session.`
+            );
+            return;
+        }
+    }
     const newPosition = currentPositionInRandomized + direction;
     if (newPosition >= 0 && newPosition < randomizedIndices.length) {
         currentPositionInRandomized = newPosition;
@@ -389,20 +423,22 @@ function openAnnotationModal(errorId, errorType, fullMatch, errorText) {
     
     // Reset form
     document.getElementById('annotationForm').reset();
-    document.getElementById('severitySlider').value = 1;
-    updateSeverityDisplay();
+    clearSeveritySelection();
     
     // Load existing annotation if present
     const existing = userAnnotations[errorId];
     if (existing) {
-        existing.taxonomy.forEach(tax => {
+        (existing.taxonomy || []).forEach(tax => {
             if (!tax.startsWith('custom:')) {
                 const checkbox = document.getElementById(`tax-${tax}`);
                 if (checkbox) checkbox.checked = true;
             }
         });
-        document.getElementById('severitySlider').value = existing.severity;
-        updateSeverityDisplay();
+        (existing.errorClass || []).forEach(cls => {
+            const checkbox = document.getElementById(`ec-${cls}`);
+            if (checkbox) checkbox.checked = true;
+        });
+        selectSeverity(existing.severity);
     }
     
     document.getElementById('annotationModal').style.display = 'block';
@@ -421,20 +457,22 @@ function openAnnotationModalLegacy(errorType, fullMatch, errorText) {
     
     // Reset form
     document.getElementById('annotationForm').reset();
-    document.getElementById('severitySlider').value = 1;
-    updateSeverityDisplay();
+    clearSeveritySelection();
     
     // Load existing annotation if present
     const existing = userAnnotations[currentErrorId];
     if (existing) {
-        existing.taxonomy.forEach(tax => {
+        (existing.taxonomy || []).forEach(tax => {
             if (!tax.startsWith('custom:')) {
                 const checkbox = document.getElementById(`tax-${tax}`);
                 if (checkbox) checkbox.checked = true;
             }
         });
-        document.getElementById('severitySlider').value = existing.severity;
-        updateSeverityDisplay();
+        (existing.errorClass || []).forEach(cls => {
+            const checkbox = document.getElementById(`ec-${cls}`);
+            if (checkbox) checkbox.checked = true;
+        });
+        selectSeverity(existing.severity);
     }
     
     document.getElementById('annotationModal').style.display = 'block';
@@ -446,29 +484,62 @@ function closeModal() {
     pendingManualSpan = null;
 }
 
+const SEVERITY_LABELS = { 1: 'Minor', 2: 'Moderate', 3: 'Severe' };
+
+// Select a severity level (1-3) via the button group and update the hidden
+// input + display text used elsewhere (submit handler, loadStats, etc).
+function selectSeverity(value) {
+    value = parseInt(value, 10);
+    document.getElementById('severitySlider').value = value;
+    document.querySelectorAll('.severity-btn').forEach(btn => {
+        btn.classList.toggle('active', parseInt(btn.dataset.value, 10) === value);
+    });
+    updateSeverityDisplay();
+}
+
+// Clear the severity selection so the annotator must explicitly click a level -
+// no default is pre-selected, so severity can no longer be silently skipped.
+function clearSeveritySelection() {
+    document.getElementById('severitySlider').value = '';
+    document.querySelectorAll('.severity-btn').forEach(btn => btn.classList.remove('active'));
+    updateSeverityDisplay();
+}
+
 function updateSeverityDisplay() {
-    const value = parseInt(document.getElementById('severitySlider').value, 10);
-    const labels = {
-        1: 'Minor',
-        2: 'Moderate',
-        3: 'High'
-    };
-    const label = labels[value] ? `${value} (${labels[value]})` : `${value}`;
+    const raw = document.getElementById('severitySlider').value;
+    if (raw === '' || raw === null) {
+        document.getElementById('severityDisplay').textContent = 'Severity: not yet selected';
+        return;
+    }
+    const value = parseInt(raw, 10);
+    const label = SEVERITY_LABELS[value] ? `${value} (${SEVERITY_LABELS[value]})` : `${value}`;
     document.getElementById('severityDisplay').textContent = `Severity: ${label}`;
 }
 
 async function handleAnnotationSubmit(e) {
     e.preventDefault();
     
+    // Clinical taxonomy is deprecated (commented out of the form) - classification
+    // is now driven entirely by ASR Error Class. selectedTaxonomy will be empty
+    // since no `taxonomy` checkboxes exist in the DOM anymore; kept for payload
+    // shape / backward compatibility with the Annotation.taxonomy column.
     const selectedTaxonomy = Array.from(document.querySelectorAll('input[name="taxonomy"]:checked'))
         .map(el => el.value);
     
-    if (selectedTaxonomy.length === 0) {
-        alert('Please select at least one taxonomy category');
+    const selectedErrorClass = Array.from(document.querySelectorAll('input[name="errorClass"]:checked'))
+        .map(el => el.value);
+    
+    if (selectedErrorClass.length === 0) {
+        alert('Please select at least one ASR Error Class (or "Not an Error")');
         return;
     }
     
-    const severity = parseInt(document.getElementById('severitySlider').value);
+    const severityRaw = document.getElementById('severitySlider').value;
+    if (severityRaw === '' || severityRaw === null) {
+        alert('Please select a severity rating (Minor / Moderate / Severe)');
+        return;
+    }
+    const severity = parseInt(severityRaw, 10);
     const utterance = allData[currentUtteranceIndex];
     
     // Resolve the span: auto error, saved manual span, or pending selection
@@ -484,6 +555,7 @@ async function handleAnnotationSubmit(e) {
         errorType: errorData.error_type,
         errorMatch: errorData.error_match,
         taxonomy: selectedTaxonomy,
+        errorClass: selectedErrorClass,
         severity: severity,
         utteranceIndex: currentUtteranceIndex,
         humanTranscript: utterance.human_transcript,
@@ -508,6 +580,7 @@ async function handleAnnotationSubmit(e) {
             // Update local cache with error_id as key
             userAnnotations[currentErrorId] = {
                 taxonomy: selectedTaxonomy,
+                errorClass: selectedErrorClass,
                 severity: severity
             };
 
@@ -551,6 +624,7 @@ async function loadAnnotations() {
         annotations.forEach(ann => {
             userAnnotations[ann.errorId] = {
                 taxonomy: ann.taxonomy,
+                errorClass: ann.errorClass,
                 severity: ann.severity
             };
             
@@ -558,6 +632,7 @@ async function loadAnnotations() {
             const legacyKey = `${ann.utteranceId}_${ann.errorType}_${ann.errorMatch}`;
             userAnnotations[legacyKey] = {
                 taxonomy: ann.taxonomy,
+                errorClass: ann.errorClass,
                 severity: ann.severity
             };
 
@@ -618,6 +693,27 @@ async function loadStats() {
         document.getElementById('totalErrors').textContent = totalErrorsInSession;
         document.getElementById('totalAnnotations').textContent = annotatedInSession;
         document.getElementById('progressPercent').textContent = progressPercent + '%';
+        
+        // Session completion badge + gate the Next button (auto-detected errors only)
+        const status = getSessionCompletion(currentUtterance);
+        const badge = document.getElementById('sessionStatusBadge');
+        const tracker = document.getElementById('sessionTracker');
+        const nextBtn = document.getElementById('nextBtn');
+        if (tracker) {
+            tracker.textContent = `${status.annotated} / ${status.total} errors annotated`;
+        }
+        if (badge) {
+            if (status.complete) {
+                badge.textContent = 'COMPLETE';
+                badge.classList.remove('incomplete');
+                badge.classList.add('complete');
+            } else {
+                badge.textContent = `INCOMPLETE (${status.total - status.annotated} left)`;
+                badge.classList.remove('complete');
+                badge.classList.add('incomplete');
+            }
+        }
+        if (nextBtn) nextBtn.disabled = !status.complete;
     } catch (error) {
         console.error('Error loading stats:', error);
         // Set default values on error

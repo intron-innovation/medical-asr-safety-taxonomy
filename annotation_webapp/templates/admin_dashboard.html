@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard - ASR Annotation Tool{% endblock %}
+
+{% block extra_css %}
+<style>
+    .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px; }
+    .admin-tabs { display: flex; gap: 10px; margin-bottom: 20px; }
+    .admin-tabs a { padding: 8px 18px; border-radius: 6px; background: #e2e8f0; color: #2d3748; text-decoration: none; font-weight: 600; }
+    .admin-tabs a.active, .admin-tabs a:hover { background: #667eea; color: white; }
+    .admin-summary { display: flex; gap: 15px; margin-bottom: 25px; flex-wrap: wrap; }
+    .admin-card { flex: 1; min-width: 180px; background: white; border-radius: 10px; padding: 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); text-align: center; }
+    .admin-card .num { font-size: 28px; font-weight: bold; color: #667eea; }
+    .admin-card .label { font-size: 13px; color: #666; margin-top: 4px; }
+    .model-block { background: white; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); }
+    .model-block h3 { margin-bottom: 4px; }
+    .model-block .sub { color: #666; font-size: 13px; margin-bottom: 15px; }
+    table.progress-table { width: 100%; border-collapse: collapse; }
+    table.progress-table th, table.progress-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #eee; font-size: 14px; }
+    table.progress-table th { color: #555; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+    .progress-bar-outer { background: #eee; border-radius: 6px; height: 14px; width: 160px; overflow: hidden; display: inline-block; vertical-align: middle; }
+    .progress-bar-inner { background: linear-gradient(135deg, #667eea, #764ba2); height: 100%; }
+    .badge-disabled { background: #ffe4e0; color: #9b2c2c; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: bold; }
+    .no-data { color: #888; font-style: italic; padding: 10px 0; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="admin-header">
+    <h1>🛠️ Admin Dashboard</h1>
+</div>
+
+<div class="admin-tabs">
+    <a href="{{ url_for('admin_dashboard') }}" class="active">Progress Overview</a>
+    <a href="{{ url_for('admin_annotators') }}">Manage Annotators</a>
+    <a href="{{ url_for('admin_annotations') }}">Browse Annotations</a>
+</div>
+
+<div class="admin-summary">
+    <div class="admin-card"><div class="num">{{ total_annotators }}</div><div class="label">Total Annotators</div></div>
+    <div class="admin-card"><div class="num">{{ active_annotators }}</div><div class="label">Active Annotators</div></div>
+    <div class="admin-card"><div class="num">{{ total_annotations }}</div><div class="label">Total Annotations Saved</div></div>
+    <div class="admin-card"><div class="num">{{ overview|length }}</div><div class="label">Models Loaded</div></div>
+</div>
+
+{% if overview %}
+    {% for model in overview %}
+    <div class="model-block">
+        <h3>{{ model.display_name }}</h3>
+        <div class="sub">{{ model.total_sessions }} session(s) · {{ model.total_errors }} flagged errors total</div>
+        {% if model.annotators %}
+        <table class="progress-table">
+            <thead>
+                <tr>
+                    <th>Annotator</th>
+                    <th>Status</th>
+                    <th>Sessions Complete</th>
+                    <th>Errors Annotated</th>
+                    <th>Progress</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for a in model.annotators %}
+                <tr>
+                    <td>{{ a.name }} <span style="color:#999; font-size:12px;">({{ a.annotator_id }})</span></td>
+                    <td>{% if not a.is_active %}<span class="badge-disabled">DISABLED</span>{% else %}—{% endif %}</td>
+                    <td>{{ a.sessions_complete }} / {{ a.sessions_total }}</td>
+                    <td>{{ a.total_annotations }}</td>
+                    <td>
+                        <div class="progress-bar-outer">
+                            <div class="progress-bar-inner" style="width: {{ a.progress_pct }}%;"></div>
+                        </div>
+                        {{ a.progress_pct }}%
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p class="no-data">No annotators registered yet.</p>
+        {% endif %}
+    </div>
+    {% endfor %}
+{% else %}
+    <p class="no-data">No model data has been loaded yet. Visit the Annotate page as a regular user to auto-load a model's data file.</p>
+{% endif %}
+{% endblock %}

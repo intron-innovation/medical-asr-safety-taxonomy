@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}Browse Annotations - ASR Annotation Tool{% endblock %}
+
+{% block extra_css %}
+<style>
+    .admin-tabs { display: flex; gap: 10px; margin-bottom: 20px; }
+    .admin-tabs a { padding: 8px 18px; border-radius: 6px; background: #e2e8f0; color: #2d3748; text-decoration: none; font-weight: 600; }
+    .admin-tabs a.active, .admin-tabs a:hover { background: #667eea; color: white; }
+    .filter-bar { background: white; border-radius: 10px; padding: 15px 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); display: flex; gap: 15px; align-items: end; flex-wrap: wrap; }
+    .filter-bar label { display: block; font-size: 12px; font-weight: 600; color: #555; margin-bottom: 4px; }
+    .filter-bar select { padding: 8px 10px; border: 1px solid #ddd; border-radius: 6px; min-width: 180px; }
+    .truncated-note { color: #9b2c2c; font-size: 13px; margin-bottom: 10px; }
+    table.annotations-table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.08); }
+    table.annotations-table th, table.annotations-table td { text-align: left; padding: 9px 12px; border-bottom: 1px solid #eee; font-size: 13px; vertical-align: top; }
+    table.annotations-table th { background: #f8f9fa; font-size: 11px; text-transform: uppercase; color: #555; }
+    .tag { display: inline-block; background: #edf2f7; color: #2d3748; padding: 2px 7px; border-radius: 5px; font-size: 11px; margin: 1px; }
+    .sev-1 { color: #2f855a; font-weight: bold; }
+    .sev-2 { color: #c05621; font-weight: bold; }
+    .sev-3 { color: #c53030; font-weight: bold; }
+    .error-text { font-family: monospace; background: #f8f9fa; padding: 2px 6px; border-radius: 4px; }
+</style>
+{% endblock %}
+
+{% block content %}
+<h1>🛠️ Admin Dashboard</h1>
+<div class="admin-tabs">
+    <a href="{{ url_for('admin_dashboard') }}">Progress Overview</a>
+    <a href="{{ url_for('admin_annotators') }}">Manage Annotators</a>
+    <a href="{{ url_for('admin_annotations') }}" class="active">Browse Annotations</a>
+</div>
+
+<form class="filter-bar" method="GET" action="{{ url_for('admin_annotations') }}">
+    <div>
+        <label for="model">Model</label>
+        <select id="model" name="model" onchange="this.form.submit()">
+            <option value="">All models</option>
+            {% for m in models %}
+            <option value="{{ m.name }}" {% if model_filter == m.name %}selected{% endif %}>{{ m.display_name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <label for="annotator">Annotator</label>
+        <select id="annotator" name="annotator" onchange="this.form.submit()">
+            <option value="">All annotators</option>
+            {% for a in annotators %}
+            <option value="{{ a.annotator_id }}" {% if annotator_filter == a.annotator_id %}selected{% endif %}>{{ a.name }} ({{ a.annotator_id }})</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <a class="btn btn-primary" href="{{ url_for('admin_export', model=model_filter, annotator=annotator_filter) }}" target="_blank">⬇️ Export JSON</a>
+    </div>
+</form>
+
+{% if truncated %}
+<p class="truncated-note">Showing the most recent 500 matching annotations. Narrow the filters or use Export for the full set.</p>
+{% endif %}
+
+<table class="annotations-table">
+    <thead>
+        <tr>
+            <th>Timestamp</th>
+            <th>Annotator</th>
+            <th>Model</th>
+            <th>Session</th>
+            <th>Error</th>
+            <th>Taxonomy</th>
+            <th>ASR Error Class</th>
+            <th>Severity</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ann in annotations %}
+        <tr>
+            <td>{{ ann.timestamp.strftime('%Y-%m-%d %H:%M') if ann.timestamp else '—' }}</td>
+            <td>{{ ann.annotator_id }}</td>
+            <td>{{ ann.model_name }}</td>
+            <td>{{ ann.utterance_id }}</td>
+            <td><span class="error-text">{{ ann.error_match }}</span></td>
+            <td>{% for t in (ann.taxonomy or []) %}<span class="tag">{{ t }}</span>{% endfor %}</td>
+            <td>{% for c in (ann.error_class or []) %}<span class="tag">{{ c }}</span>{% endfor %}</td>
+            <td class="sev-{{ ann.severity }}">{{ ann.severity }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="8" style="text-align:center; color:#888; font-style:italic;">No annotations match these filters yet.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

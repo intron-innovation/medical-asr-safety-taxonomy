@@ -15,6 +15,8 @@ class Annotator(db.Model):
     name = db.Column(db.String(200), nullable=False)
     email = db.Column(db.String(200), unique=True, nullable=False, index=True)
     affiliation = db.Column(db.String(200))
+    is_admin = db.Column(db.Boolean, default=False, nullable=False)
+    is_active = db.Column(db.Boolean, default=True, nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     
     # Relationships
@@ -26,7 +28,9 @@ class Annotator(db.Model):
             'annotatorId': self.annotator_id,
             'name': self.name,
             'email': self.email,
-            'affiliation': self.affiliation
+            'affiliation': self.affiliation,
+            'isAdmin': self.is_admin,
+            'isActive': self.is_active
         }
 
 
@@ -71,7 +75,8 @@ class Annotation(db.Model):
     utterance_id = db.Column(db.String(200), nullable=False, index=True)
     error_type = db.Column(db.String(10), nullable=False)  # DEL, SUB, INS
     error_match = db.Column(db.String(500), nullable=False)
-    taxonomy = db.Column(JSON, nullable=False)  # List of taxonomy categories
+    taxonomy = db.Column(JSON, nullable=False)  # List of clinical taxonomy categories
+    error_class = db.Column(JSON)  # List of ASR error class categories (stop_words, suffix_error, etc.)
     severity = db.Column(db.Integer, nullable=False)  # 0-5
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
     
@@ -104,6 +109,7 @@ class Annotation(db.Model):
             'errorType': self.error_type,
             'errorMatch': self.error_match,
             'taxonomy': self.taxonomy,
+            'errorClass': self.error_class or [],
             'severity': self.severity,
             'timestamp': self.timestamp.isoformat() if self.timestamp else None,
             'utteranceIndex': self.utterance_index,

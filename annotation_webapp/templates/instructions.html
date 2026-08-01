@@ -36,10 +36,15 @@
         <p><strong>Your Task:</strong></p>
         <ul class="checklist">
             <li>Click on each highlighted error</li>
-            <li>Select ALL applicable taxonomy categories</li>
-            <li>Rate the clinical severity (1-3 scale)</li>
+            <li>Select ALL applicable ASR Error Class categories (or check "Not an Error")</li>
+            <li>Rate the clinical severity (Minor / Moderate / Severe) — you must click one, there is no default</li>
             <li>Save to auto-sync to server</li>
         </ul>
+        <p>
+            <strong>Note:</strong> a running tracker shows how many errors you've annotated in the current session
+            (e.g. "5 / 10 errors annotated"). A session is marked <strong>INCOMPLETE</strong> until every flagged
+            error in it has been annotated, and you cannot advance to the next session until it is complete.
+        </p>
 
     <h2>2. Understanding Error Types</h2>
     <p>ASR errors come in three main types, each color-coded for easy identification:</p>
@@ -60,6 +65,11 @@
 </div>
 
     <!-- Section 2: Taxonomy -->
+    <!--
+    Clinical taxonomy is DEPRECATED as of Aug 2026 per team decision: annotation now
+    uses ASR Error Class only (see the section below). Left here commented out in
+    case we need to re-enable clinical taxonomy tagging later.
+
     <div class="section" id="taxonomy">
         <h2>3. Error Taxonomy (9 Categories, including Not an Error)</h2>
 
@@ -95,8 +105,8 @@
             </div>
 
             <div class="taxonomy-card">
-                <h3>6. Diagnostic Errors</h3>
-                <p>Diagnoses, diagnostic conclusions, test results</p>
+                <h3>6. Diagnosis</h3>
+                <p>Errors affecting a stated diagnosis or diagnostic conclusion (not a request for you to diagnose)</p>
                 <div class="example">Example: "Quervains tenosynovitis" → "quarvains tinosinovitis"</div>
             </div>
 
@@ -119,6 +129,52 @@
             </div>
         </div>
     </div>
+    -->
+
+    <!-- Section 2b: ASR Error Class -->
+    <div class="section" id="error-class">
+        <h2>3. ASR Error Class (9 Categories, including Not an Error)</h2>
+        <p>Classify <strong>how</strong> the ASR system failed. Select all that apply, or check "Not an Error" if the highlight isn't actually an error.</p>
+        <div class="taxonomy-grid">
+            <div class="taxonomy-card">
+                <h3>Stop Words</h3>
+                <p>Stop word added, deleted, or substituted (e.g. "a", "the", "is")</p>
+            </div>
+            <div class="taxonomy-card">
+                <h3>Suffix Errors</h3>
+                <p>Incorrect word ending/suffix (e.g. tense, plurality)</p>
+            </div>
+            <div class="taxonomy-card">
+                <h3>Homonym Errors/Rhyming Words</h3>
+                <p>ASR substituted a word that sounds the same or similar</p>
+            </div>
+            <div class="taxonomy-card">
+                <h3>Words Added</h3>
+                <p>ASR inserted word(s) not present in the human transcript</p>
+            </div>
+            <div class="taxonomy-card">
+                <h3>Words Deleted</h3>
+                <p>ASR omitted word(s) present in the human transcript</p>
+            </div>
+            <div class="taxonomy-card">
+                <h3>Dictionary Errors</h3>
+                <p>ASR produced a real but incorrect dictionary word</p>
+            </div>
+            <div class="taxonomy-card">
+                <h3>Spelling Errors</h3>
+                <p>Misspelled output</p>
+            </div>
+            <div class="taxonomy-card">
+                <h3>Nonsense Errors</h3>
+                <p>Output is not a real word / is nonsensical</p>
+            </div>
+            <div class="taxonomy-card">
+                <h3>Not an Error</h3>
+                <p>Mark when the highlight is not actually an error (mutually exclusive with the other categories)</p>
+                <div class="example">Example: "uh" retained exactly as spoken</div>
+            </div>
+        </div>
+    </div>
 
     <!-- Section 3: Examples -->
     <div class="section" id="examples">
@@ -127,21 +183,21 @@
         <h3>Multi-Category Errors</h3>
         <div class="example-box">
             <strong>Error:</strong> [SUB:naproxen 500mg->proxen]<br>
-            <strong>Categories:</strong> Medication + Semantics<br>
-            <strong>Severity:</strong> 2 (Moderate) - Missing dosage changes intent
+            <strong>ASR Error Class:</strong> Dictionary Error<br>
+            <strong>Severity:</strong> Moderate - Missing dosage changes intent
         </div>
 
         <div class="example-box">
             <strong>Error:</strong> [SUB:no chest pain->chest pain]<br>
-            <strong>Categories:</strong> Clinical Signs/Symptoms + Semantics<br>
-            <strong>Severity:</strong> 3 (Severe) - Reverses symptom status
+            <strong>ASR Error Class:</strong> Words Deleted<br>
+            <strong>Severity:</strong> Severe - Reverses symptom status
         </div>
 
         <div class="example-box">
             <strong>Error:</strong> [SUB:120/80->120/8]<br>
             <strong>Context:</strong> "BP is ___"<br>
-            <strong>Categories:</strong> Patient Vitals<br>
-            <strong>Severity:</strong> 3 (Severe) - Incorrect vital sign
+            <strong>ASR Error Class:</strong> Suffix Errors<br>
+            <strong>Severity:</strong> Severe - Incorrect vital sign
         </div>
     </div>
 
@@ -153,10 +209,10 @@
             <li><strong>Read:</strong> Review the human transcript (left) to understand context</li>
             <li><strong>Compare:</strong> Review the ASR output (right) with highlighted errors</li>
             <li><strong>Click:</strong> Click on a colored error to open the annotation modal</li>
-            <li><strong>Categorize:</strong> Check ALL applicable taxonomy boxes</li>
-            <li><strong>Rate:</strong> Set severity slider (0-5)</li>
+            <li><strong>Categorize:</strong> Check ALL applicable ASR Error Class boxes (or "Not an Error")</li>
+            <li><strong>Rate:</strong> Click Minor, Moderate, or Severe — nothing is pre-selected</li>
             <li><strong>Save:</strong> Click "Save Annotation" - auto-syncs to server</li>
-            <li><strong>Continue:</strong> Move to next error until conversation is complete</li>
+            <li><strong>Continue:</strong> Move to next error until the session tracker shows all errors annotated</li>
         </ol>
     </div>
 
@@ -180,10 +236,11 @@
 
         <h3>Severity Descriptions</h3>
         <ul class="checklist">
-            <li><strong>1 (Minor):</strong> Minimal impact, easily inferred (e.g., slight mispronunciation)</li>
-            <li><strong>2 (Moderate):</strong> Noticeable impact, context still partly preserved (e.g., missing dosage)</li>
-            <li><strong>3 (Severe):</strong> Significant clinical impact or safety concern (e.g., wrong drug or vital sign)</li>
+            <li><strong>Minor:</strong> Little or no chance of impacting the health practitioner's understanding of the conversation and/or line of management for the patient.</li>
+            <li><strong>Moderate:</strong> Some chance of impacting the health practitioner's understanding of the conversation and/or line of management for the patient.</li>
+            <li><strong>Severe:</strong> Likely to lead to an egregious clinical error — possibly omission/inclusion of a key life-impacting detail in the conversation.</li>
         </ul>
+        <p>These ratings are inherently subjective — different annotators may rate the same error differently. Use your clinical judgment and be internally consistent.</p>
     </div>
 
     <!-- Section 6: Best Practices -->
