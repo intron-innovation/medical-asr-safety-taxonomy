@@ -68,6 +68,20 @@ window.addEventListener('load', function() {
         asrRecEl.addEventListener('click', handleSeekClick);
         asrRecEl.addEventListener('mouseup', handleTextSelection);
     }
+
+    // If a word is clicked before the audio's metadata (duration) has finished
+    // loading - e.g. right after switching sessions - the seek is queued in
+    // pendingSeekCharIdx and replayed here instead of silently doing nothing.
+    const audioEl = document.getElementById('sessionAudio');
+    if (audioEl) {
+        audioEl.addEventListener('loadedmetadata', () => {
+            if (pendingSeekCharIdx !== null) {
+                const charIdx = pendingSeekCharIdx;
+                pendingSeekCharIdx = null;
+                seekToPosition(charIdx);
+            }
+        });
+    }
 });
 
 // Returns { total, annotated, complete } for the auto-detected errors in a session.
@@ -180,8 +194,10 @@ function loadSessionAudio(utterance) {
 
     const audioFile = utterance.audio_file || utterance.metadata?.audio_file || '';
 
-    // Stop any audio from the previous session before swapping sources
+    // Stop any audio from the previous session before swapping sources, and drop
+    // any seek that was queued while the previous session's audio was loading.
     audioEl.pause();
+    pendingSeekCharIdx = null;
 
     if (audioFile) {
         const src = audioFile.startsWith('http')
@@ -208,13 +224,97 @@ function domPointToCharIdx(container, node, offset) {
     return r.toString().length;
 }
 
+// Cache of clean-text maps (see buildCleanTextMap) keyed by utterance_id, so we
+// don't recompute one on every single click.
+const cleanTextMapCache = {};
+
+// A raw char position queued for seeking while audio metadata isn't loaded yet
+// (see the 'loadedmetadata' listener registered on page load).
+let pendingSeekCharIdx = null;
+
+// asr_reconstructed contains [DEL:word]/[SUB:before->after]/[INS:word] markup
+// that was never actually spoken (or, for SUB, only the "before"/reference side
+// was spoken) - a naive proportional mapping of raw character index to audio
+// duration is skewed by this extra bracket-tag noise, especially in sessions
+// with many errors. This builds a mapping to a "clean" spoken-only text so
+// seeking lines up much closer to the real audio position: DEL/SUB contribute
+// only their spoken reference word, and INS (hallucinated by the ASR, never
+// actually spoken) contributes zero length.
+function buildCleanTextMap(rawText) {
+    const pattern = /\[(DEL|SUB|INS):([^\]]+)\]/g;
+    let clean = '';
+    const blocks = []; // { rawStart, rawEnd, cleanStart, cleanLen }
+    let lastRawEnd = 0;
+    let match;
+    while ((match = pattern.exec(rawText)) !== null) {
+        const fullMatch = match[0];
+        const type = match[1];
+        const content = match[2];
+        const rawStart = match.index;
+
+        if (rawStart > lastRawEnd) {
+            const plain = rawText.slice(lastRawEnd, rawStart);
+            blocks.push({ rawStart: lastRawEnd, rawEnd: rawStart, cleanStart: clean.length, cleanLen: plain.length });
+            clean += plain;
+        }
+
+        const spokenWord = type === 'SUB' ? content.split('->')[0] : (type === 'DEL' ? content : '');
+        blocks.push({ rawStart: rawStart, rawEnd: rawStart + fullMatch.length, cleanStart: clean.length, cleanLen: spokenWord.length });
+        clean += spokenWord;
+
+        lastRawEnd = rawStart + fullMatch.length;
+    }
+    if (lastRawEnd < rawText.length) {
+        const plain = rawText.slice(lastRawEnd);
+        blocks.push({ rawStart: lastRawEnd, rawEnd: rawText.length, cleanStart: clean.length, cleanLen: plain.length });
+        clean += plain;
+    }
+
+    return { cleanLength: clean.length || 1, blocks: blocks };
+}
+
+function getCleanTextMap(utteranceId, rawText) {
+    const cached = cleanTextMapCache[utteranceId];
+    if (cached && cached._rawText === rawText) return cached;
+    const map = buildCleanTextMap(rawText);
+    map._rawText = rawText;
+    cleanTextMapCache[utteranceId] = map;
+    return map;
+}
+
+// Convert a raw character index (in the markup-included asr_reconstructed text)
+// into a 0-1 fraction of the "clean" spoken-only text.
+function rawIdxToCleanFraction(rawIdx, map) {
+    for (let i = 0; i < map.blocks.length; i++) {
+        const b = map.blocks[i];
+        if (rawIdx >= b.rawStart && rawIdx <= b.rawEnd) {
+            const rawSpan = b.rawEnd - b.rawStart;
+            const t = rawSpan > 0 ? (rawIdx - b.rawStart) / rawSpan : 0;
+            return (b.cleanStart + t * b.cleanLen) / map.cleanLength;
+        }
+    }
+    const lastBlockEnd = map.blocks.length ? map.blocks[map.blocks.length - 1].rawEnd : 1;
+    return Math.min(1, Math.max(0, rawIdx / lastBlockEnd));
+}
+
 // Proportionally seek the session audio to a character position in the text.
+// If the audio's duration isn't known yet (metadata still loading, e.g. right
+// after switching sessions), the seek is queued instead of silently dropped -
+// see the 'loadedmetadata' listener registered on page load.
 function seekToPosition(charIdx) {
     const audio = document.getElementById('sessionAudio');
-    if (!audio || !isFinite(audio.duration) || audio.duration <= 0) return;
-    const text = allData[currentUtteranceIndex]?.asr_reconstructed || '';
+    if (!audio) return;
+    const utterance = allData[currentUtteranceIndex];
+    const text = (utterance && utterance.asr_reconstructed) || '';
     if (!text.length || charIdx === undefined || charIdx === null) return;
-    const frac = Math.min(1, Math.max(0, charIdx / text.length));
+
+    if (!isFinite(audio.duration) || audio.duration <= 0) {
+        pendingSeekCharIdx = charIdx;
+        return;
+    }
+
+    const map = getCleanTextMap(utterance.utterance_id, text);
+    const frac = rawIdxToCleanFraction(charIdx, map);
     audio.currentTime = Math.max(0, frac * audio.duration - 0.25); // small lead-in
     audio.play().catch(() => {}); // ignore browser autoplay rejection
 }
@@ -351,12 +451,7 @@ function highlightErrors(text, utteranceId) {
             const errorClass = errorType === 'MANUAL' ? 'manual-error'
                 : errorType === 'DEL' ? 'del-error'
                 : errorType === 'INS' ? 'ins-error' : 'sub-error';
-            // Auto-detected errors that don't overlap a tagged medical entity are
-            // optional - still visible/clickable, but styled as non-required and
-            // excluded from the completion gate (see getRequiredAutoErrors).
-            const optionalClass = (errorType !== 'MANUAL' && !error.is_medical) ? 'optional-error' : '';
-            const title = optionalClass ? 'title="Optional: not a tagged medical entity"' : '';
-            const replacement = `<span class="error-highlight ${errorClass} ${isAnnotated} ${optionalClass}" ${title} ` +
+            const replacement = `<span class="error-highlight ${errorClass} ${isAnnotated}" ` +
                 `onclick="openAnnotationModal('${escapeHtml(errorId)}', '${escapeHtml(errorType)}', '${escapeHtml(fullMatch)}', '${escapeHtml(content)}')">` +
                 `<span class="error-status-indicator"></span>${escapeHtml(fullMatch)}</span>`;
             
