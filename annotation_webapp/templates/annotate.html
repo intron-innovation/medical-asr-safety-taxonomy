@@ -52,6 +52,12 @@
         gap: 20px;
         margin-bottom: 20px;
     }
+    /* The Reconstructed ASR Output box is the primary editing surface (click to
+       annotate, select text to add a manual span), so give it the full row
+       width instead of squeezing it into a 1/3 column like the reference boxes. */
+    .transcript-box:first-child {
+        grid-column: 1 / -1;
+    }
     .transcript-box {
         background: white;
         padding: 20px;
@@ -70,6 +76,13 @@
         white-space: pre-wrap;
         max-height: 400px;
         overflow-y: auto;
+    }
+    /* Reconstructed ASR Output gets more breathing room since it's wider and
+       is where annotators actively click/select text. */
+    #asrReconstructed {
+        font-size: 17px;
+        line-height: 2;
+        max-height: 500px;
     }
     .error-highlight {
         cursor: pointer;
