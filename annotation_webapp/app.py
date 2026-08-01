@@ -6,6 +6,7 @@ from pathlib import Path
 from functools import wraps
 
 from flask import Flask, render_template, request, jsonify, session, redirect, url_for, flash, send_file
+from sqlalchemy.orm.attributes import flag_modified
 from werkzeug.utils import secure_filename
 
 from models import db, Annotator, Annotation, AnnotationData, AnnotationProgress
@@ -58,9 +59,12 @@ def load_model_data(app, model_name):
             if existing:
                 continue
             
-            # Extract errors with unique IDs
+            # Extract errors with unique IDs. human_transcript_ner (inline
+            # [PROBLEM: ...]/[MEDICINE: ...]/etc tags) flags which errors are
+            # medically relevant via is_medical - annotators are only required
+            # to annotate those, not every trivial word-level diff.
             asr_text = item.get('asr_reconstructed', '')
-            errors = ErrorExtractor.extract_errors(asr_text)
+            errors = ErrorExtractor.extract_errors(asr_text, item.get('human_transcript_ner'))
             
             # Store errors in extra_data
             item['errors'] = errors
@@ -297,7 +301,12 @@ def compute_progress_overview():
         session_error_ids = {}
         total_errors = 0
         for utt in utterances:
-            error_ids = [e['error_id'] for e in (utt.extra_data or {}).get('errors', [])]
+            # Only medically-relevant errors are required/counted, matching the
+            # client-side completion gate in annotate.js.
+            error_ids = [
+                e['error_id'] for e in (utt.extra_data or {}).get('errors', [])
+                if e.get('is_medical')
+            ]
             session_error_ids[utt.utterance_id] = error_ids
             total_errors += len(error_ids)
         
@@ -755,6 +764,44 @@ def init_db():
     db.create_all()
     load_annotators()
     print("Database initialized successfully!")
+
+
+@app.cli.command()
+def backfill_medical_flags():
+    """Add is_medical to already-loaded AnnotationData rows' error metadata.
+
+    Needed because load_model_data() only computes errors (with is_medical)
+    for newly-ingested utterances - existing rows keep whatever was stored at
+    ingestion time. This updates extra_data['errors'] in place, preserving the
+    original error_id/start_idx/etc for every error so previously-submitted
+    Annotation rows (which reference error_id) are never orphaned; it only
+    adds/refreshes the is_medical key.
+    """
+    updated_utterances = 0
+    updated_errors = 0
+    for utt in AnnotationData.query.all():
+        extra_data = utt.extra_data or {}
+        errors = extra_data.get('errors')
+        if not errors:
+            continue
+        medical_vocab = ErrorExtractor.build_medical_vocab(extra_data.get('human_transcript_ner'))
+        changed = False
+        for error in errors:
+            is_medical = ErrorExtractor._is_medical_error(
+                error.get('error_type'), error.get('error_text', ''), medical_vocab
+            )
+            if error.get('is_medical') != is_medical:
+                error['is_medical'] = is_medical
+                changed = True
+                updated_errors += 1
+        if changed:
+            extra_data['errors'] = errors
+            utt.extra_data = extra_data
+            flag_modified(utt, 'extra_data')
+            db.session.add(utt)
+            updated_utterances += 1
+    db.session.commit()
+    print(f"Backfilled is_medical on {updated_errors} error(s) across {updated_utterances} utterance(s).")
 
 
 @app.cli.command()

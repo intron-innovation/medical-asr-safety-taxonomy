@@ -12,15 +12,79 @@ from typing import List, Dict, Tuple
 
 class ErrorExtractor:
     """Extract and assign unique IDs to each error occurrence."""
-    
+
+    # Matches inline NER tags produced by the medical-entity tagging pipeline,
+    # e.g. "[PROBLEM: difficulty in urinating]" inside human_transcript_ner.
+    _NER_TAG_PATTERN = re.compile(r'\[([A-Z_]+):\s*([^\]]+)\]')
+
     @staticmethod
-    def extract_errors(asr_text: str) -> List[Dict]:
+    def build_medical_vocab(human_transcript_ner: str) -> set:
+        """
+        Build a lowercase word-token vocabulary from every NER-tagged medical
+        entity span in the human transcript (PROBLEM, MEDICINE, ANATOMICAL_STRUCTURE,
+        etc). Used to decide which auto-detected ASR errors are medically relevant
+        and therefore actually require annotator attention.
+
+        Args:
+            human_transcript_ner: human transcript with inline [TYPE: span] tags
+
+        Returns:
+            Set of lowercase word tokens drawn from all tagged entity spans.
+        """
+        vocab = set()
+        if not human_transcript_ner:
+            return vocab
+        for match in ErrorExtractor._NER_TAG_PATTERN.finditer(human_transcript_ner):
+            entity_text = match.group(2)
+            vocab.update(re.findall(r"[a-zA-Z']+", entity_text.lower()))
+        return vocab
+
+    @staticmethod
+    def _words_overlap_medical_vocab(words, medical_vocab) -> bool:
+        """
+        Check whether any word overlaps the medical vocabulary, either exactly
+        or via a shared word-stem (e.g. "urinal"/"urinary" both share a stem
+        with "urinating"). ASR errors are frequently morphological variants of
+        the reference word rather than exact matches, so a pure set-membership
+        check misses many real medical corrections.
+        """
+        for word in words:
+            if word in medical_vocab:
+                return True
+            if len(word) < 4:
+                continue
+            for vocab_word in medical_vocab:
+                if len(vocab_word) < 4:
+                    continue
+                prefix_len = min(5, len(word), len(vocab_word))
+                if word[:prefix_len] == vocab_word[:prefix_len]:
+                    return True
+        return False
+
+    @staticmethod
+    def _is_medical_error(error_type: str, error_content: str, medical_vocab: set) -> bool:
+        """Check whether an error's text overlaps the medical entity vocabulary."""
+        if not medical_vocab:
+            return False
+        if error_type == 'SUB' and '->' in error_content:
+            before, after = error_content.split('->', 1)
+            words = re.findall(r"[a-zA-Z']+", before.lower())
+            words += re.findall(r"[a-zA-Z']+", after.lower())
+        else:
+            words = re.findall(r"[a-zA-Z']+", error_content.lower())
+        return ErrorExtractor._words_overlap_medical_vocab(words, medical_vocab)
+
+    @staticmethod
+    def extract_errors(asr_text: str, human_transcript_ner: str = None) -> List[Dict]:
         """
         Extract all errors from ASR reconstructed text with unique IDs.
         
         Args:
             asr_text: ASR reconstructed text with error annotations
                      e.g., "hello [DEL:world] [INS:foo] [SUB:bar->baz]"
+            human_transcript_ner: optional human transcript with inline NER tags
+                     (e.g. "[PROBLEM: difficulty in urinating]"), used to flag
+                     which errors are medically relevant via is_medical.
         
         Returns:
             List of dicts containing:
@@ -31,8 +95,12 @@ class ErrorExtractor:
                 - position: Position in the text
                 - start_idx: Start index in original text
                 - end_idx: End index in original text
+                - is_medical: True if the error's text overlaps a tagged medical
+                     entity in human_transcript_ner (annotators are only
+                     required to annotate is_medical=True errors)
         """
         errors = []
+        medical_vocab = ErrorExtractor.build_medical_vocab(human_transcript_ner)
         
         # Pattern to match [TYPE:content] or [TYPE:before->after]
         pattern = r'\[([A-Z]+):([^\]]+)\]'
@@ -51,7 +119,8 @@ class ErrorExtractor:
                 'error_text': error_content,
                 'position': len(errors),  # Sequential position for this occurrence
                 'start_idx': match.start(),
-                'end_idx': match.end()
+                'end_idx': match.end(),
+                'is_medical': ErrorExtractor._is_medical_error(error_type, error_content, medical_vocab)
             })
         
         return errors
@@ -69,7 +138,10 @@ class ErrorExtractor:
         """
         for item in data_list:
             if 'asr_reconstructed' in item:
-                errors = ErrorExtractor.extract_errors(item['asr_reconstructed'])
+                errors = ErrorExtractor.extract_errors(
+                    item['asr_reconstructed'],
+                    item.get('human_transcript_ner')
+                )
                 item['errors'] = errors
                 item['error_count'] = len(errors)
         

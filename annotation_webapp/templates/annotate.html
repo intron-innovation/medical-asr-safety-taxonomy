@@ -107,6 +107,14 @@
     }
     .annotated .error-status-indicator { background: #48bb78; }
     .unannotated .error-status-indicator { background: #ed8936; }
+    /* Non-medical auto-detected errors (no overlap with a tagged medical entity)
+       are optional - still visible/clickable but visually de-emphasized and
+       excluded from the required annotation count / session completion gate. */
+    .optional-error {
+        opacity: 0.55;
+        border-left-style: dashed;
+    }
+    .optional-error:hover { opacity: 0.85; }
     
     /* Modal */
     .modal {

@@ -72,11 +72,19 @@ window.addEventListener('load', function() {
 
 // Returns { total, annotated, complete } for the auto-detected errors in a session.
 // Manual (annotator-added) spans are always annotated at creation time, so only
-// the auto-detected flagged errors need to be checked for completion.
-function getSessionCompletion(utterance) {
+// the auto-detected flagged errors need to be checked for completion. Only
+// medically-relevant errors (is_medical, based on overlap with the tagged
+// medical entities in human_transcript_ner) are required - trivial non-medical
+// word diffs are still shown in the transcript but don't block completion.
+function getRequiredAutoErrors(utterance) {
     const autoErrors = (utterance && utterance.metadata && utterance.metadata.errors) || [];
-    const annotated = autoErrors.filter(e => userAnnotations[e.error_id]).length;
-    return { total: autoErrors.length, annotated, complete: annotated === autoErrors.length };
+    return autoErrors.filter(e => e.is_medical);
+}
+
+function getSessionCompletion(utterance) {
+    const requiredErrors = getRequiredAutoErrors(utterance);
+    const annotated = requiredErrors.filter(e => userAnnotations[e.error_id]).length;
+    return { total: requiredErrors.length, annotated, complete: annotated === requiredErrors.length };
 }
 
 function navigateUtterance(direction) {
@@ -343,7 +351,12 @@ function highlightErrors(text, utteranceId) {
             const errorClass = errorType === 'MANUAL' ? 'manual-error'
                 : errorType === 'DEL' ? 'del-error'
                 : errorType === 'INS' ? 'ins-error' : 'sub-error';
-            const replacement = `<span class="error-highlight ${errorClass} ${isAnnotated}" ` +
+            // Auto-detected errors that don't overlap a tagged medical entity are
+            // optional - still visible/clickable, but styled as non-required and
+            // excluded from the completion gate (see getRequiredAutoErrors).
+            const optionalClass = (errorType !== 'MANUAL' && !error.is_medical) ? 'optional-error' : '';
+            const title = optionalClass ? 'title="Optional: not a tagged medical entity"' : '';
+            const replacement = `<span class="error-highlight ${errorClass} ${isAnnotated} ${optionalClass}" ${title} ` +
                 `onclick="openAnnotationModal('${escapeHtml(errorId)}', '${escapeHtml(errorType)}', '${escapeHtml(fullMatch)}', '${escapeHtml(content)}')">` +
                 `<span class="error-status-indicator"></span>${escapeHtml(fullMatch)}</span>`;
             
@@ -674,10 +687,12 @@ async function loadStats() {
         // Get total sessions (all utterances)
         const totalSessions = allData.length;
         
-        // Get errors in current session (auto-detected + manual spans)
-        const autoErrors = currentUtterance.metadata?.errors || [];
+        // Get errors in current session (medically-relevant auto-detected + manual spans).
+        // Non-medical auto-detected errors are shown in the transcript but are optional,
+        // so they're excluded from the required/total count.
+        const requiredAutoErrors = getRequiredAutoErrors(currentUtterance);
         const manualSpans = getManualSpans(currentUtterance.utterance_id);
-        const errors = [...autoErrors, ...manualSpans];
+        const errors = [...requiredAutoErrors, ...manualSpans];
         const totalErrorsInSession = errors.length;
         
         // Get annotated errors in current session (manual spans are always annotated)
