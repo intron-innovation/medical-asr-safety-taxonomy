@@ -3,6 +3,12 @@
 *.tar
 *.tar.gz
 *.flac
+*.wav
+*.mp3
+
+# Audio is hosted in GCS now (see annotation_webapp audio_file URLs) - never
+# commit raw session audio to this repo, it blows up clone/pull size.
+data/final_audio/
 
 # Ignore Archive files
 archive/
