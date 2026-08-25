@@ -160,6 +160,35 @@
         padding: 10px;
         background: #f8f9fa;
         border-radius: 6px;
+        position: relative;
+        cursor: help;
+        transition: background-color 0.2s, box-shadow 0.2s;
+    }
+    .taxonomy-item:hover {
+        background: #eef4ff;
+        box-shadow: 0 0 0 2px #c7d7fe;
+    }
+    .taxonomy-item[data-description]::after {
+        content: attr(data-description);
+        position: absolute;
+        left: 0;
+        bottom: calc(100% + 8px);
+        z-index: 20;
+        width: min(340px, 80vw);
+        padding: 9px 11px;
+        border-radius: 6px;
+        background: #263238;
+        color: #fff;
+        font-size: 12px;
+        line-height: 1.4;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(4px);
+        transition: opacity 0.15s, transform 0.15s;
+    }
+    .taxonomy-item[data-description]:hover::after {
+        opacity: 1;
+        transform: translateY(0);
     }
     .taxonomy-item input[type="checkbox"] {
         width: 18px;
@@ -362,44 +391,52 @@
 
             <h3>Select ASR Error Class</h3>
             <div class="taxonomy-grid">
-                <div class="taxonomy-item">
+                <div class="taxonomy-item" data-description="A phonetic or pronunciation-like error where the spoken form is heard as a different word or phrase.">
+                    <input type="checkbox" name="errorClass" value="annunciation_errors" id="ec-annunciation_errors">
+                    <label for="ec-annunciation_errors">Annunciation errors</label>
+                </div>
+                <div class="taxonomy-item" data-description="An error involving a short function word such as a, an, the, has, or if; includes adding, deleting, or substituting it.">
                     <input type="checkbox" name="errorClass" value="stop_words" id="ec-stop_words">
-                    <label for="ec-stop_words">Stop Words (Added/Deleted/Substituted)</label>
+                    <label for="ec-stop_words">Stop words (Add/del/substituted)</label>
                 </div>
-                <div class="taxonomy-item">
-                    <input type="checkbox" name="errorClass" value="suffix_error" id="ec-suffix_error">
-                    <label for="ec-suffix_error">Suffix Errors</label>
+                <div class="taxonomy-item" data-description="The word stem is recognized, but the ending is incorrect, missing, or changed, such as marked versus markedly.">
+                    <input type="checkbox" name="errorClass" value="suffix_errors" id="ec-suffix_errors">
+                    <label for="ec-suffix_errors">Suffix errors</label>
                 </div>
-                <div class="taxonomy-item">
-                    <input type="checkbox" name="errorClass" value="homonym_rhyme" id="ec-homonym_rhyme">
-                    <label for="ec-homonym_rhyme">Homonym Errors/Rhyming Words</label>
+                <div class="taxonomy-item" data-description="A sound-alike or rhyming-word substitution where the recognized word differs in meaning from the intended word.">
+                    <input type="checkbox" name="errorClass" value="homonym_errors_rhyming_words" id="ec-homonym_errors_rhyming_words">
+                    <label for="ec-homonym_errors_rhyming_words">Homonym errors/rhyming words</label>
                 </div>
-                <div class="taxonomy-item">
-                    <input type="checkbox" name="errorClass" value="word_added" id="ec-word_added">
-                    <label for="ec-word_added">Words Added</label>
+                <div class="taxonomy-item" data-description="The ASR includes a word that was not spoken or intended in the reference.">
+                    <input type="checkbox" name="errorClass" value="words_added" id="ec-words_added">
+                    <label for="ec-words_added">Words added</label>
                 </div>
-                <div class="taxonomy-item">
-                    <input type="checkbox" name="errorClass" value="word_deleted" id="ec-word_deleted">
-                    <label for="ec-word_deleted">Words Deleted</label>
+                <div class="taxonomy-item" data-description="The ASR omits a word that was spoken or present in the reference.">
+                    <input type="checkbox" name="errorClass" value="words_deleted" id="ec-words_deleted">
+                    <label for="ec-words_deleted">Words deleted</label>
                 </div>
-                <div class="taxonomy-item">
-                    <input type="checkbox" name="errorClass" value="dictionary_error" id="ec-dictionary_error">
-                    <label for="ec-dictionary_error">Dictionary Errors</label>
+                <div class="taxonomy-item" data-description="A domain term, drug, procedure, or other word is not recognized as the intended dictionary entry.">
+                    <input type="checkbox" name="errorClass" value="dictionary_errors" id="ec-dictionary_errors">
+                    <label for="ec-dictionary_errors">Dictionary errors</label>
                 </div>
-                <div class="taxonomy-item">
-                    <input type="checkbox" name="errorClass" value="spelling_error" id="ec-spelling_error">
-                    <label for="ec-spelling_error">Spelling Errors</label>
+                <div class="taxonomy-item" data-description="The output represents the intended word incorrectly in its written form, while the intended word is otherwise clear.">
+                    <input type="checkbox" name="errorClass" value="spelling_errors" id="ec-spelling_errors">
+                    <label for="ec-spelling_errors">Spelling errors</label>
                 </div>
-                <div class="taxonomy-item">
-                    <input type="checkbox" name="errorClass" value="nonsense_error" id="ec-nonsense_error">
-                    <label for="ec-nonsense_error">Nonsense Errors</label>
+                <div class="taxonomy-item" data-description="An output that changes the clinical meaning or could plausibly lead to a serious patient-care misunderstanding.">
+                    <input type="checkbox" name="errorClass" value="critical_errors" id="ec-critical_errors">
+                    <label for="ec-critical_errors">Critical errors*</label>
                 </div>
-                <div class="taxonomy-item" style="background:#fff6e0;">
+                <div class="taxonomy-item" data-description="The ASR output is unintelligible or does not form a meaningful word or phrase in context.">
+                    <input type="checkbox" name="errorClass" value="nonsense_errors" id="ec-nonsense_errors">
+                    <label for="ec-nonsense_errors">Nonsense errors</label>
+                </div>
+                <div class="taxonomy-item" data-description="Use when review confirms that the highlighted difference is acceptable and should not be counted as an ASR error." style="background:#fff6e0;">
                     <input type="checkbox" name="errorClass" value="not_an_error" id="ec-not_an_error">
                     <label for="ec-not_an_error">Not an Error</label>
                 </div>
             </div>
-            <small style="color:#666; display:block; margin: -8px 0 15px;">Select all ASR Error Class categories that apply, or check "Not an Error" if this highlight isn't actually an error.</small>
+            <small style="color:#666; display:block; margin: -8px 0 15px;">Select all Tab 1 ASR Error Taxonomy categories that apply, or check "Not an Error" if this highlight is not an error.</small>
 
             <!-- <div style="margin: 15px 0;">
                 <label for="customTaxonomy" style="font-weight: bold; margin-bottom: 5px; display: block;">

@@ -14,6 +14,12 @@ from models import db, Annotator, Annotation, AnnotationData, AnnotationProgress
 from config import config
 from error_extractor import ErrorExtractor
 
+MODEL_DISPLAY_NAMES = {
+    'qwen3': 'Qwen3 ASR',
+    'nemotron35': 'Nemotron 3.5 ASR',
+    'gemma3n': 'Gemma 3n E4B',
+}
+
 
 def get_available_models(app):
     """Get list of available ASR models from annotation_data directory."""
@@ -26,7 +32,7 @@ def get_available_models(app):
         model_name = json_file.stem.replace('_annotation_data', '')
         models.append({
             'name': model_name,
-            'display_name': model_name.upper(),
+            'display_name': MODEL_DISPLAY_NAMES.get(model_name, model_name.upper()),
             'file': json_file.name,
             'path': json_file
         })
@@ -94,6 +100,8 @@ def _has_audio_file(app, audio_file_rel):
     """Check whether a session's audio_file actually exists on disk."""
     if not audio_file_rel:
         return False
+    if app.config.get('AUDIO_STORAGE') == 'gcs':
+        return bool(app.config.get('GCS_BUCKET'))
     audio_base = app.config['AUDIO_BASE_DIR']
     try:
         resolved = (audio_base / audio_file_rel).resolve()
@@ -293,6 +301,8 @@ def select_model():
     
     # Get stats for each model
     for model in models:
+        if AnnotationData.query.filter_by(model_name=model['name']).count() == 0:
+            load_model_data(app, model['name'])
         total_utterances = len(get_visible_utterances(app, model['name']))
         user_annotations = Annotation.query.filter_by(
             annotator_id=session['annotator_id'],
@@ -568,6 +578,36 @@ def get_audio():
     rel_path = request.args.get('path', '').strip()
     if not rel_path:
         return jsonify({'error': 'path is required'}), 400
+
+    if app.config.get('AUDIO_STORAGE') == 'gcs':
+        bucket_name = app.config.get('GCS_BUCKET')
+        if not bucket_name:
+            return jsonify({'error': 'GCS_BUCKET is not configured'}), 503
+        try:
+            from google.cloud import storage
+            from datetime import timedelta
+
+            object_name = rel_path.replace('\\', '/').lstrip('/')
+            if object_name.startswith('data/final_audio/'):
+                object_name = object_name[len('data/final_audio/'):]
+            elif object_name.startswith('final_audio/'):
+                object_name = object_name[len('final_audio/'):]
+            if not object_name or '..' in Path(object_name).parts:
+                return jsonify({'error': 'Invalid audio path'}), 403
+
+            client = storage.Client()
+            blob = client.bucket(bucket_name).blob(
+                f"{app.config.get('GCS_PREFIX', 'final_audio').strip('/')}/{object_name}"
+            )
+            signed_url = blob.generate_signed_url(
+                version='v4',
+                expiration=timedelta(seconds=app.config.get('GCS_SIGNED_URL_TTL', 900)),
+                method='GET',
+            )
+            return redirect(signed_url)
+        except Exception as e:
+            app.logger.exception('Unable to create signed audio URL')
+            return jsonify({'error': f'Unable to serve audio: {e}'}), 503
 
     audio_base = app.config['AUDIO_BASE_DIR']
     requested = (audio_base / rel_path).resolve()

@@ -9,6 +9,10 @@ ANNOTATION_DATA_DIR = DATA_DIR / 'annotation_data'  # New: stores model JSON fil
 # Base directory for resolving relative audio paths like data/final_audio/foo.wav
 # Defaults to the bio_ramp_asr project root (parent of annotation_webapp)
 AUDIO_BASE_DIR = Path(os.environ.get('AUDIO_BASE_DIR', str(BASE_DIR.parent))).resolve()
+AUDIO_STORAGE = os.environ.get('AUDIO_STORAGE', 'local').lower()
+GCS_BUCKET = os.environ.get('GCS_BUCKET', '')
+GCS_PREFIX = os.environ.get('GCS_PREFIX', 'final_audio').strip('/')
+GCS_SIGNED_URL_TTL = int(os.environ.get('GCS_SIGNED_URL_TTL', '900'))
 
 
 class Config:
@@ -33,6 +37,10 @@ class Config:
 
     # Base directory for serving session audio files
     AUDIO_BASE_DIR = AUDIO_BASE_DIR
+    AUDIO_STORAGE = AUDIO_STORAGE
+    GCS_BUCKET = GCS_BUCKET
+    GCS_PREFIX = GCS_PREFIX
+    GCS_SIGNED_URL_TTL = GCS_SIGNED_URL_TTL
     
     # Pagination
     ITEMS_PER_PAGE = 50

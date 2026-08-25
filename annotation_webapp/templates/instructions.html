@@ -133,44 +133,52 @@
 
     <!-- Section 2b: ASR Error Class -->
     <div class="section" id="error-class">
-        <h2>3. ASR Error Class (9 Categories, including Not an Error)</h2>
+        <h2>3. ASR Error Class (11 Categories, including Not an Error)</h2>
         <p>Classify <strong>how</strong> the ASR system failed. Select all that apply, or check "Not an Error" if the highlight isn't actually an error.</p>
         <div class="taxonomy-grid">
             <div class="taxonomy-card">
+                <h3>Annunciation Errors</h3>
+                <p>A phonetic or pronunciation-like error where the spoken form is heard as a different word or phrase.</p>
+            </div>
+            <div class="taxonomy-card">
                 <h3>Stop Words</h3>
-                <p>Stop word added, deleted, or substituted (e.g. "a", "the", "is")</p>
+                <p>An error involving a short function word such as a, an, the, has, or if; includes adding, deleting, or substituting it.</p>
             </div>
             <div class="taxonomy-card">
                 <h3>Suffix Errors</h3>
-                <p>Incorrect word ending/suffix (e.g. tense, plurality)</p>
+                <p>The word stem is recognized, but the ending is incorrect, missing, or changed, such as marked versus markedly.</p>
             </div>
             <div class="taxonomy-card">
                 <h3>Homonym Errors/Rhyming Words</h3>
-                <p>ASR substituted a word that sounds the same or similar</p>
+                <p>A sound-alike or rhyming-word substitution where the recognized word differs in meaning from the intended word.</p>
             </div>
             <div class="taxonomy-card">
                 <h3>Words Added</h3>
-                <p>ASR inserted word(s) not present in the human transcript</p>
+                <p>The ASR includes a word that was not spoken or intended in the reference.</p>
             </div>
             <div class="taxonomy-card">
                 <h3>Words Deleted</h3>
-                <p>ASR omitted word(s) present in the human transcript</p>
+                <p>The ASR omits a word that was spoken or present in the reference.</p>
             </div>
             <div class="taxonomy-card">
                 <h3>Dictionary Errors</h3>
-                <p>ASR produced a real but incorrect dictionary word</p>
+                <p>A domain term, drug, procedure, or other word is not recognized as the intended dictionary entry.</p>
             </div>
             <div class="taxonomy-card">
                 <h3>Spelling Errors</h3>
-                <p>Misspelled output</p>
+                <p>The output represents the intended word incorrectly in its written form, while the intended word is otherwise clear.</p>
+            </div>
+            <div class="taxonomy-card">
+                <h3>Critical Errors*</h3>
+                <p>An output that changes the clinical meaning or could plausibly lead to a serious patient-care misunderstanding.</p>
             </div>
             <div class="taxonomy-card">
                 <h3>Nonsense Errors</h3>
-                <p>Output is not a real word / is nonsensical</p>
+                <p>The ASR output is unintelligible or does not form a meaningful word or phrase in context.</p>
             </div>
             <div class="taxonomy-card">
                 <h3>Not an Error</h3>
-                <p>Mark when the highlight is not actually an error (mutually exclusive with the other categories)</p>
+                <p>Use when review confirms that the highlighted difference is acceptable and should not be counted as an ASR error (mutually exclusive with the other categories).</p>
                 <div class="example">Example: "uh" retained exactly as spoken</div>
             </div>
         </div>
