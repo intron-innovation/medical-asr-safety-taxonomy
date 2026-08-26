@@ -10,6 +10,13 @@
 # commit raw session audio to this repo, it blows up clone/pull size.
 data/final_audio/
 
+# Live SQLite DB + its backups are runtime state, NOT code. Tracking the DB in
+# git meant every `git reset --hard`/pull on the server could clobber real
+# annotator data (and a truncated copy once corrupted it). Keep it untracked so
+# deploys only touch code. Back the DB up out-of-band, not via git.
+annotation_webapp/*.db
+annotation_webapp/*.db.*
+
 # Ignore Archive files
 archive/
 
