@@ -258,7 +258,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="annotation-interface" data-model-name="{{ model_name }}">
+<div class="annotation-interface" data-model-name="{{ model_name }}" data-annotator-id="{{ session.get('annotator_id', '') }}">
     <!-- Model Info Header -->
     <div class="model-info-bar mb-3">
         <div class="d-flex justify-content-between align-items-center p-3 bg-primary text-white rounded">

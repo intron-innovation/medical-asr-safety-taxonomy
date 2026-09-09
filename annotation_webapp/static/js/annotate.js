@@ -5,15 +5,42 @@ let currentPositionInRandomized = 0;  // Current position in randomized array
 let currentErrorId = null;  // Changed: now using error_id instead of error key
 let userAnnotations = {};
 let modelName = null;
+let annotatorId = null;
 let errorIdMap = {};  // Map from error_id to annotation data
 let manualSpansByUtterance = {};  // utterance_id -> [manual span objects]
 let pendingManualSpan = null;  // Manual span awaiting save (from a fresh selection)
 
-// Shuffle function to randomize session order
-function shuffleArray(array) {
+// Small deterministic string hash (djb2), used to seed the shuffle below.
+function hashStringToSeed(str) {
+    let hash = 5381;
+    for (let i = 0; i < str.length; i++) {
+        hash = ((hash << 5) + hash) + str.charCodeAt(i);
+        hash |= 0; // force 32-bit int
+    }
+    return hash >>> 0;
+}
+
+// Deterministic PRNG (mulberry32) so the same seed always produces the same
+// sequence - this is what makes the per-annotator session order stable.
+function mulberry32(seed) {
+    let a = seed;
+    return function () {
+        a |= 0; a = (a + 0x6D2B79F5) | 0;
+        let t = Math.imul(a ^ (a >>> 15), 1 | a);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+}
+
+// Shuffle session order deterministically per (annotator, model) so that
+// reloading the page - or logging back in later to resume an unfinished
+// session - always reproduces the exact same order instead of a fresh
+// random one. Falls back to Math.random if no seed is available.
+function shuffleArray(array, seed) {
     const shuffled = [...array];
+    const rand = (seed === undefined || seed === null) ? Math.random : mulberry32(seed);
     for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
+        const j = Math.floor(rand() * (i + 1));
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
     return shuffled;
@@ -21,9 +48,10 @@ function shuffleArray(array) {
 
 // Initialize on page load
 window.addEventListener('load', function() {
-    // Get model name from data attribute
+    // Get model name and annotator id from data attributes
     const interfaceDiv = document.querySelector('.annotation-interface');
     modelName = interfaceDiv ? interfaceDiv.dataset.modelName : null;
+    annotatorId = interfaceDiv ? interfaceDiv.dataset.annotatorId : null;
     
     if (!modelName) {
         alert('Model name not found. Please select a model.');
@@ -120,6 +148,54 @@ function navigateUtterance(direction) {
         loadUtterance(actualIndex);
         updateSessionCounter();
         loadStats();
+        saveProgress();
+    }
+}
+
+// Compute the list of utterance_ids whose sessions are fully annotated so
+// far, for persisting alongside the resume position.
+function computeCompletedUtteranceIds() {
+    return allData
+        .filter(u => getSessionCompletion(u).complete)
+        .map(u => u.utterance_id);
+}
+
+// Persist the annotator's current session (by its stable index into allData,
+// not the randomized display position) so that logging back in - or simply
+// reloading the page - resumes on the same unfinished session instead of
+// jumping to a freshly shuffled one. Best-effort: failures are logged but
+// never block the UI.
+async function saveProgress() {
+    const actualIndex = randomizedIndices[currentPositionInRandomized];
+    if (actualIndex === undefined) return;
+    try {
+        await fetch(`/api/progress/${modelName}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                currentUtteranceIndex: actualIndex,
+                completedUtterances: computeCompletedUtteranceIds()
+            })
+        });
+    } catch (error) {
+        console.error('Error saving progress:', error);
+    }
+}
+
+// Fetch the annotator's last-saved position (an index into allData) for this
+// model, and return its position within randomizedIndices, or null if there
+// is no saved progress / the saved index no longer exists in the data.
+async function loadSavedPosition() {
+    try {
+        const response = await fetch(`/api/progress/${modelName}`);
+        const progress = await response.json();
+        const savedIndex = progress.currentUtteranceIndex;
+        if (savedIndex === undefined || savedIndex === null) return null;
+        const position = randomizedIndices.indexOf(savedIndex);
+        return position >= 0 ? position : null;
+    } catch (error) {
+        console.error('Error loading saved progress:', error);
+        return null;
     }
 }
 
@@ -134,9 +210,16 @@ async function loadUtterances() {
             return;
         }
         
-        // Create randomized order of sessions
-        randomizedIndices = shuffleArray(Array.from({length: allData.length}, (_, i) => i));
-        currentPositionInRandomized = 0;
+        // Deterministic per-(annotator, model) order: same seed -> same shuffle
+        // every time, so the session list an annotator sees never changes
+        // between logins/reloads.
+        const seed = annotatorId ? hashStringToSeed(`${annotatorId}::${modelName}`) : undefined;
+        randomizedIndices = shuffleArray(Array.from({length: allData.length}, (_, i) => i), seed);
+
+        // Resume on the last unfinished session the annotator was viewing,
+        // instead of always restarting at position 0.
+        const savedPosition = await loadSavedPosition();
+        currentPositionInRandomized = savedPosition !== null ? savedPosition : 0;
         
         document.getElementById('transcriptsContainer').style.display = 'grid';
         loadUtterance(randomizedIndices[currentPositionInRandomized]);
@@ -738,6 +821,7 @@ async function handleAnnotationSubmit(e) {
             closeModal();
             loadUtterance(currentUtteranceIndex); // Refresh to show updated status
             loadStats();
+            saveProgress(); // Keep completedUtterances in sync as sessions get finished
         } else {
             alert('Error saving annotation: ' + result.error);
         }

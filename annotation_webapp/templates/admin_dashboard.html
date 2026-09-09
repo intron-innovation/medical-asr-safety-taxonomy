@@ -18,6 +18,8 @@
     table.progress-table { width: 100%; border-collapse: collapse; }
     table.progress-table th, table.progress-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #eee; font-size: 14px; }
     table.progress-table th { color: #555; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+    table.progress-table td a { color: #2d3748; text-decoration: none; font-weight: 600; }
+    table.progress-table td a:hover { color: #667eea; text-decoration: underline; }
     .progress-bar-outer { background: #eee; border-radius: 6px; height: 14px; width: 160px; overflow: hidden; display: inline-block; vertical-align: middle; }
     .progress-bar-inner { background: linear-gradient(135deg, #667eea, #764ba2); height: 100%; }
     .badge-disabled { background: #ffe4e0; color: #9b2c2c; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: bold; }
@@ -62,7 +64,12 @@
             <tbody>
                 {% for a in model.annotators %}
                 <tr>
-                    <td>{{ a.name }} <span style="color:#999; font-size:12px;">({{ a.annotator_id }})</span></td>
+                    <td>
+                        <a href="{{ url_for('admin_annotations', annotator=a.annotator_id, model=model.name) }}"
+                           title="Browse {{ a.name }}'s annotations for {{ model.display_name }}">
+                            {{ a.name }} <span style="color:#999; font-size:12px;">({{ a.annotator_id }})</span>
+                        </a>
+                    </td>
                     <td>{% if not a.is_active %}<span class="badge-disabled">DISABLED</span>{% else %}—{% endif %}</td>
                     <td>{{ a.sessions_complete }} / {{ a.sessions_total }}</td>
                     <td>{{ a.total_annotations }}</td>
