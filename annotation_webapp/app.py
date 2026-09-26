@@ -15,16 +15,23 @@ from config import config
 from error_extractor import ErrorExtractor
 
 MODEL_DISPLAY_NAMES = {
-    'qwen3': 'Qwen3 ASR (truncated run)',
     'qwen3_fixed': 'Qwen3 ASR',
     'nemotron35': 'Nemotron 3.5 ASR',
     'gemma3n': 'Gemma 3n E4B',
 }
 
-# Models offered on /annotate_subset: the best and worst performers, annotated as a
-# focused round. Order here is the order they appear on the page.
+# Models offered on /annotate_subset: the best and worst performers.
 # qwen3_fixed is best (WER 0.127), gemma3n worst (0.191) over the 120-session set.
 SUBSET_MODELS = ['qwen3_fixed', 'gemma3n']
+
+# The inter-annotator agreement subset: one session per dataset group, the same
+# three for both subset models so two annotators can be compared on identical
+# material. 126 medical errors per annotator in total, roughly two hours.
+SUBSET_SESSIONS = [
+    '13_Hyperthyroidism',    # med-convo-nig (African)
+    'day1_consultation03',   # UK-Dataset
+    'GAS0002',               # us_medical
+]
 
 
 def get_available_models(app):
@@ -123,8 +130,14 @@ def get_visible_utterances(app, model_name):
     have finalized audio; any others are silently hidden (not deleted) until
     their audio is added, so the annotator-facing list never shows a session
     with no player to listen along with.
+
+    Models in SUBSET_MODELS are further restricted to SUBSET_SESSIONS: they
+    exist for the inter-annotator agreement round, where every annotator must
+    see the same sessions.
     """
     utterances = AnnotationData.query.filter_by(model_name=model_name).order_by(AnnotationData.id).all()
+    if model_name in SUBSET_MODELS:
+        utterances = [u for u in utterances if u.utterance_id in SUBSET_SESSIONS]
     return [u for u in utterances if _has_audio_file(app, (u.extra_data or {}).get('audio_file', ''))]
 
 
