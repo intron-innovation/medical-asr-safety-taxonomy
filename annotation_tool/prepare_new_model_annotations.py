@@ -21,6 +21,10 @@ OUTPUT_DIR = ROOT / "annotation_webapp" / "data" / "annotation_data"
 
 MODELS = {
     "qwen3": (ROOT / "results" / "qwen3_asr_results.csv", "Qwen3-ASR"),
+    # Re-run with max_new_tokens=2048. The original qwen3 run capped generation at
+    # 512 tokens on 300s chunks, truncating ~1/3 of every consultation (WER 0.42).
+    # Kept as a separate model so the original data and its annotations stay intact.
+    "qwen3_fixed": (ROOT / "results" / "qwen3_asr_results_fixed.csv", "Qwen3-ASR"),
     "nemotron35": (ROOT / "results" / "nemotron35_asr_results.csv", "Nemotron3.5-ASR"),
     "gemma3n": (ROOT / "results" / "gemma3n_e4b_asr_results.csv", "Gemma3n-E4B-ASR"),
     "whisper": (ROOT / "results" / "whisper_phi4_asr_results_all.csv", "Whisper-ASR"),

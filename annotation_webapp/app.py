@@ -15,14 +15,16 @@ from config import config
 from error_extractor import ErrorExtractor
 
 MODEL_DISPLAY_NAMES = {
-    'qwen3': 'Qwen3 ASR',
+    'qwen3': 'Qwen3 ASR (truncated run)',
+    'qwen3_fixed': 'Qwen3 ASR',
     'nemotron35': 'Nemotron 3.5 ASR',
     'gemma3n': 'Gemma 3n E4B',
 }
 
 # Models offered on /annotate_subset: the best and worst performers, annotated as a
 # focused round. Order here is the order they appear on the page.
-SUBSET_MODELS = ['whisper', 'qwen3']
+# qwen3_fixed is best (WER 0.127), gemma3n worst (0.191) over the 120-session set.
+SUBSET_MODELS = ['qwen3_fixed', 'gemma3n']
 
 
 def get_available_models(app):
