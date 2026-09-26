@@ -20,6 +20,10 @@ MODEL_DISPLAY_NAMES = {
     'gemma3n': 'Gemma 3n E4B',
 }
 
+# Models offered on /annotate_subset: the best and worst performers, annotated as a
+# focused round. Order here is the order they appear on the page.
+SUBSET_MODELS = ['whisper', 'qwen3']
+
 
 def get_available_models(app):
     """Get list of available ASR models from annotation_data directory."""
@@ -314,6 +318,30 @@ def select_model():
         model['loaded'] = total_utterances > 0
     
     return render_template('select_model.html', models=models)
+
+
+@app.route('/annotate_subset')
+@login_required
+def annotate_subset():
+    """Model selection restricted to SUBSET_MODELS (the best/worst pair).
+
+    Same page and same annotation flow as /select_model; only the model list
+    differs. Annotation itself still goes through /annotate/<model_name>.
+    """
+    available = {m['name']: m for m in get_available_models(app)}
+    models = [available[n] for n in SUBSET_MODELS if n in available]
+
+    for model in models:
+        if AnnotationData.query.filter_by(model_name=model['name']).count() == 0:
+            load_model_data(app, model['name'])
+        model['total_utterances'] = len(get_visible_utterances(app, model['name']))
+        model['user_annotations'] = Annotation.query.filter_by(
+            annotator_id=session['annotator_id'],
+            model_name=model['name']
+        ).count()
+        model['loaded'] = model['total_utterances'] > 0
+
+    return render_template('select_model.html', models=models, subset=True)
 
 
 # ============================================================================

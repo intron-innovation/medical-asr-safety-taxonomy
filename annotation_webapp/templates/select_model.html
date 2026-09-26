@@ -6,8 +6,13 @@
 <div class="container">
     <div class="select-model-header">
         <div class="header-content">
+            {%- if subset %}
+            <h1>📊 Annotate Subset</h1>
+            <p class="subtitle">{{ models | map(attribute='display_name') | join(' and ') }} — the focused annotation round</p>
+            {%- else %}
             <h1>📊 Select ASR Model to Annotate</h1>
             <p class="subtitle">Choose a model and continue your annotation work</p>
+            {%- endif %}
             <div class="annotator-info">
                 <span class="badge badge-annotator">👤 {{ session.get('annotator_name', 'Annotator') }}</span>
             </div>

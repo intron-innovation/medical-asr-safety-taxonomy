@@ -33,18 +33,28 @@
             Each error is tagged with its type (<strong>DEL</strong> = deletion, <strong>SUB</strong> = substitution,
             <strong>INS</strong> = insertion) and displayed in color-coded format.
         </p>
+        <p>
+            Things to note: Errors have been filtered using medical named-entity recognition (NER), which identifies the clinically relevant terms in the reference transcript — problems, medications, anatomical structures,
+            procedures and laboratory information — and only errors touching those terms are kept. Everything
+            highlighted should mostly be medically relevant words, so you are not being asked to judge whether an
+            error is clinically relevant, only <em>what</em> led to each error and <em>how severe</em> it is.
+        </p>
         <p><strong>Your Task:</strong></p>
         <ul class="checklist">
             <li>Click on each highlighted error</li>
             <li><strong>Listen to the audio.</strong> Clicking an error automatically moves the audio player to
-                that part of the recording — press play and listen to how the word was actually pronounced by the
+                that part of the recording. Listen to how the word was actually pronounced by the
                 speaker before deciding the error type</li>
             <li>Select ALL applicable ASR Error Class categories (or check "Not an Error")</li>
-            <li>Rate the clinical severity (Minor / Moderate / Severe) — you must click one, there is no default</li>
+            <li>Rate the clinical severity (Minor / Moderate / Severe) — you must click one, there is no default
+                <br><strong>A practical test for severity:</strong> "If this went uncorrected, and if you could only
+            read the transcript alone, would it have changed your understanding of the patient's clinical
+            condition?"
+            </li>
             <li>Save to auto-sync to server</li>
         </ul>
         <p>
-            <strong>Why listen?</strong> Many categories (Annunciation, Homonym/Rhyming, Nonsense) can only be
+            <strong>Why listen?</strong> Some categories (Annunciation and Homonym/Rhyming) can only be
             judged by hearing the utterance. When you click an error the player seeks to roughly where it occurs,
             so you can hear the speaker's actual pronunciation and match it to the right category — for example,
             telling apart a sound-alike substitution ("exertion" → "extortion") from a genuine nonsense output.
@@ -55,7 +65,7 @@
             error in it has been annotated, and you cannot advance to the next session until it is complete.
         </p>
 
-    <h2>2. Understanding Error Types</h2>
+    <!-- <h2>2. Understanding Error Types</h2>
     <p>ASR errors come in three main types, each color-coded for easy identification:</p>
     <div class="error-types">
         <div class="error-type del">
@@ -70,7 +80,7 @@
             <h4>🔵 INS (Insertion)</h4>
             <p>ASR added extra words that weren't in the human transcript</p>
         </div>
-    </div>
+    </div> -->
 </div>
 
     <!-- Section 2: Taxonomy -->
@@ -143,62 +153,72 @@
     <!-- Section 2b: ASR Error Class -->
     <div class="section" id="error-class">
         <h2>3. ASR Error Class (11 Categories, including Not an Error)</h2>
-        <p>Classify <strong>how</strong> the ASR system failed. Select all that apply, or check "Not an Error" if the highlight isn't actually an error.</p>
+        <p>Classify <strong>how</strong> the ASR system failed. The taxonomy is adapted from
+           <a href="https://pubmed.ncbi.nlm.nih.gov/15325329/" target="_blank" rel="noopener noreferrer">Zafar et al. (2004), <em>A simple error classification system for understanding sources of
+           error in automatic speech recognition and human transcription</em></a></p>
+        <p><strong>Each error is multi-class.</strong> A single error may belong to more than one
+           category &mdash; select every category that applies rather than choosing only the best fit.
+           For example,  <em>swampy region &rarr; iswampimidio</em> is both an annunciation error and a nonsense error; since the misrecognition involves both pronunciation and nonsensical transformation.
+           <em>urethra &rarr; ureteral</em> is both a dictionary and a an annunciation error, since the misrecognition involves both medical knowledge and pronunciation.
+           "Not an Error" is the exception: it is mutually exclusive with the other ten.
+           Assign <strong>one</strong> severity level per error, reflecting the combined impact of
+           everything you selected.</p>
         <div class="taxonomy-grid">
             <div class="taxonomy-card">
                 <h3>Annunciation Errors</h3>
-                <p>A pronunciation or phonetic error where the spoken word is heard as a different word or phrase</p>
-                <div class="example">cigarette pack → cigarette back &nbsp;•&nbsp; nausea → nuisance &nbsp;•&nbsp; abdominal pain → abnormal pain &nbsp;•&nbsp; recreational drugs → nutritional drugs</div>
-            </div>
-            <div class="taxonomy-card">
-                <h3>Stop Words</h3>
-                <p>An error involving a short function word such as a, an, the, has, or if; includes adding, deleting, or substituting it.</p>
-                <div class="example">e.g. "has a cough" → "a cough" (dropped "has"), or an added/changed "the"/"a"/"is"</div>
-            </div>
-            <div class="taxonomy-card">
-                <h3>Suffix Errors</h3>
-                <p>The word stem is recognized, but the ending is incorrect, missing, or changed, such as marked versus markedly.</p>
-                <div class="example">breathless → breathlessness</div>
+                <p>Errors caused by how the speaker pronounced the word &mdash; accented speech, pausing in the middle of a sentence, speaking too fast, slurring words, or disfluencies. Listen to the audio before selecting this.</p>
+                <div class="example">large intestine → large intensity &nbsp;•&nbsp; nausea → nuisance &nbsp;•&nbsp; abdominal pain → abnormal pain &nbsp;•&nbsp; cigarette pack → cigarette back &nbsp;•&nbsp; recreational drugs → nutritional drugs &nbsp;•&nbsp; night sweats → night sets</div>
             </div>
             <div class="taxonomy-card">
                 <h3>Homonym Errors/Rhyming Words</h3>
-                <p>A sound-alike or rhyming-word substitution where the recognized word differs in meaning from the intended word.</p>
-                <div class="example">middle ear effusion → middle ear fusion &nbsp;•&nbsp; exertion → extortion &nbsp;•&nbsp; cough → curve &nbsp;•&nbsp; fainting → painting</div>
-            </div>
-            <div class="taxonomy-card">
-                <h3>Words Added</h3>
-                <p>The ASR includes a word that was not spoken or intended in the reference.</p>
-                <div class="example">e.g. "chest pain" → "sharp chest pain" (ASR inserts a word that was never spoken)</div>
-            </div>
-            <div class="taxonomy-card">
-                <h3>Words Deleted</h3>
-                <p>The ASR omits a word that was spoken or present in the reference.</p>
-                <div class="example">e.g. "no chest pain" → "chest pain" (ASR drops a spoken word)</div>
+                <p>Errors where the misrecognised word or phrase <strong>sounds similar</strong> to the intended one but is spelled differently. This covers both identical-sounding words and near-sounding or rhyming words.</p>
+                <div class="example">pus → pulse &nbsp;•&nbsp; middle ear effusion → middle ear fusion &nbsp;•&nbsp; exertion → extortion &nbsp;•&nbsp; fainting → painting &nbsp;•&nbsp; weight loss → waste loss &nbsp;•&nbsp; stool → stew</div>
             </div>
             <div class="taxonomy-card">
                 <h3>Dictionary Errors</h3>
-                <p>A domain term, drug, procedure, or other word is not recognized as the intended dictionary entry.</p>
-                <div class="example">naproxen → proxen &nbsp;•&nbsp; amlodipine → amelodipine &nbsp;•&nbsp; lisinopril → lesetapril &nbsp;•&nbsp; Ekiti → Nkita</div>
+                <p>Phrases recognised in place of a word missing from the dictionary. These are typically a medical drug entity or a proper noun which is not in the ASR system's dictionary. The result sounds very similar to, but not always exactly like, the intended word. Examples include misrecognitions of drug names and proper nouns.</p>
+                <div class="example">naproxen → proxen &nbsp;•&nbsp; metformin → bombetformin &nbsp;•&nbsp; lisinopril → lesetapril &nbsp;•&nbsp; amlodipine → amelodipine &nbsp;•&nbsp; Chidinma → Chidima &nbsp;•&nbsp; Igbo → evil &nbsp;•&nbsp; Ekiti → Nkita</div>
             </div>
             <div class="taxonomy-card">
-                <h3>Spelling Errors</h3>
-                <p>The output represents the intended word incorrectly in its written form, while the intended word is otherwise clear.</p>
-                <div class="example">podagra → podegra &nbsp;•&nbsp; biopsy → biospeed</div>
+                <h3>Stop Words</h3>
+                <p>An error involving a short function word such as <em>a, an, the, has</em> or <em>if</em>, whether added, deleted or substituted.</p>
+                <div class="example">[SUB:a-&gt;the] &nbsp;•&nbsp; [DEL:a] &nbsp;•&nbsp; [SUB:or-&gt;so] &nbsp;•&nbsp; [INS:in] &nbsp;•&nbsp; [INS:the] &nbsp;•&nbsp; [DEL:a bit]</div>
+            </div>
+            <div class="taxonomy-card">
+                <h3>Suffix Errors</h3>
+                <p>Errors caused by substituting an incorrect ending on the intended word. The stem is right; the ending is wrong.</p>
+                <div class="example">breathless → breathlessness &nbsp;•&nbsp; [SUB:vomit-&gt;vomits] &nbsp;•&nbsp; [SUB:nauseated-&gt;nauseous] &nbsp;•&nbsp; [SUB:problem-&gt;problems]</div>
+            </div>
+            <div class="taxonomy-card">
+                <h3>Human Spelling Errors</h3>
+                <p>Errors that occur only in the <strong>human transcription</strong> and not in the ASR output &mdash; i.e. the speech recogniser is correct in this case and the human transcriber is wrong. Use this when the reference transcript contains the mistake.</p>
+                <div class="example">reference "catherization" → ASR "catheterization" &nbsp;•&nbsp; reference "urinal" → ASR "urinary" &nbsp;•&nbsp; podagra → podegra</div>
             </div>
             <div class="taxonomy-card">
                 <h3>Critical Errors*</h3>
-                <p>An output that changes the clinical meaning or could plausibly lead to a serious patient-care misunderstanding.</p>
-                <div class="example">e.g. "no chest pain" → "chest pain" (reverses meaning) &nbsp;•&nbsp; sling → splint (changes recommended care)</div>
+                <p>Errors that could change the meaning of the intended utterance. Most result when a positive is changed to a negative (or vice versa), or when a number is misrecognised. This can also occur when the ASR deletes a large chunk of the transcript.</p>
+                <div class="example">[SUB:dripples-&gt;bubbles] &nbsp;•&nbsp; [SUB:urethra-&gt;ureteral] &nbsp;•&nbsp; [DEL:recreational] &nbsp;•&nbsp; [DEL:okay and do you take any medications i had a a drug history of thyroxine]</div>
             </div>
             <div class="taxonomy-card">
                 <h3>Nonsense Errors</h3>
-                <p>The ASR output is unintelligible or does not form a meaningful word or phrase in context.</p>
-                <div class="example">wisdom teeth → visimteeth &nbsp;•&nbsp; feverish → beverish &nbsp;•&nbsp; swampy region → iswampimidio</div>
+                <p>A recognised word or phrase that does not make grammatical or lexical sense, even after a possible correction has been hypothesised from context.</p>
+                <div class="example">wisdom teeth → visimteeth &nbsp;•&nbsp; swampy region → iswampimidio &nbsp;•&nbsp; feverish → beverish</div>
             </div>
             <div class="taxonomy-card">
+                <h3>Words Added</h3>
+                <p>A word is inserted that was not spoken (cases of insertion). This may also be a repeated insertion.</p>
+                <div class="example">[INS:for you] &nbsp;•&nbsp; [INS:one thousand nine] &nbsp;•&nbsp; [INS:of july]</div>
+            </div>
+            <div class="taxonomy-card">
+                <h3>Words Deleted</h3>
+                <p>A word that was spoken is omitted (cases of deletion). This may also be a chunk of a sentence being deleted.</p>
+                <div class="example">[DEL:urine] &nbsp;•&nbsp; [DEL:recreational] &nbsp;•&nbsp; [DEL:in] &nbsp;•&nbsp; [DEL:okay and do you take any medications i had a a drug history of thyroxine]</div>
+            </div>
+
+            <div class="taxonomy-card">
                 <h3>Not an Error</h3>
-                <p>Use when review confirms that the highlighted difference is acceptable and should not be counted as an ASR error (mutually exclusive with the other categories).</p>
-                <div class="example">Example: "uh" retained exactly as spoken</div>
+                <p>The flagged difference is acceptable and should not be counted as an ASR error: fillers, plural variants and alternate spellings where neither transcript is wrong. Mutually exclusive with the other categories.</p>
+                <div class="example">uh &nbsp;•&nbsp; like</div>
             </div>
         </div>
     </div>
@@ -268,6 +288,11 @@
             <li><strong>Moderate:</strong> Some chance of impacting the health practitioner's understanding of the conversation and/or line of management for the patient.</li>
             <li><strong>Severe:</strong> Likely to lead to an egregious clinical error — possibly omission/inclusion of a key life-impacting detail in the conversation.</li>
         </ul>
+        <div class="tip-box">
+            <strong>A practical test for severity:</strong> "If this went uncorrected, and if you could only
+            read the transcript alone, would it have changed your understanding of the patient's clinical
+            condition?"
+        </div>
         <p>These ratings are inherently subjective — different annotators may rate the same error differently. Use your clinical judgment and be internally consistent.</p>
     </div>
 

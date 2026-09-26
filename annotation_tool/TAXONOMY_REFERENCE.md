@@ -1,318 +1,177 @@
-# ASR Error Taxonomy Reference Guide
+# BioRAMP ASR Error Taxonomy — Annotator Reference
 
-## Overview
+This file mirrors the annotator-facing guide served at `/instructions`
+(`annotation_webapp/templates/instructions.html`) and the hover descriptions on the annotation
+screen (`annotation_webapp/templates/annotate.html`). **If you change one, change all three.**
 
-This is a **multi-label taxonomy** system. Annotators may assign **multiple categories** to the same error. Use all categories that apply.
+## Scope
 
----
+This project evaluates errors in ASR transcripts of medical conversations. Errors are filtered
+before annotation: medical NER identifies the clinically relevant terms in the reference
+transcript — problems, medications, anatomical structures, procedures and laboratory information —
+and only errors touching those terms are kept. Everything shown to an annotator has already passed
+that filter, so annotators are not asked to judge clinical relevance, only **what led to the
+error** and **how severe** it is.
 
-## Error Categories
+Each error is tagged by the aligner with its type (`DEL`, `SUB`, `INS`) and presented inline as
+`[DEL:word]`, `[SUB:reference->hypothesis]`, `[INS:word]`.
 
-### 1. 💊 Medication
-**Errors affecting medication-related information:**
+## Source
 
-- Drug name
-- Dose
-- Unit
-- Route (IV/PO/etc.)
-- Frequency
-- Duration
+Adapted from **Zafar A, Mamlin B, Perkins S, Belsito AM, Overhage JM, McDonald CJ (2004), "A simple
+error classification system for understanding sources of error in automatic speech recognition and
+human transcription"**, Int J Med Inform 73:719–730
+([PMID 15325329](https://pubmed.ncbi.nlm.nih.gov/15325329/)).
 
-**Examples:**
-- "amLODIPine" → "amitriptyline"
-- "5 mg" → "50 mg"
-- "once daily" → "twice daily"
+## Multi-class rule
 
----
+A single error may belong to more than one category — select every category that applies rather
+than choosing only the best fit.
 
-### 2. 🏥 Clinical Concepts
-**Errors altering clinical information:**
+- *swampy region → iswampimidio* is both an **annunciation** error and a **nonsense** error: the
+  misrecognition involves both pronunciation and a nonsensical transformation.
+- *urethra → ureteral* is both a **dictionary** error and an **annunciation** error: it involves
+  both medical vocabulary and pronunciation.
 
-- Diagnosis
-- Symptom
-- Procedure
-- Anatomy
-- Laterality
-- Laboratory value (including units)
+**Not an Error** is the exception — it is mutually exclusive with the other ten.
 
-**Examples:**
-- "abdominal pain" → "back pain"
-- "left knee" → "right knee"
-- "potassium 3.5" → "potassium 5.5"
+Assign **one** severity level per error, reflecting the combined impact of everything selected.
 
 ---
 
-### 3. ⏱️ Temporal
-**Errors affecting time-related information:**
+## The 11 Categories
 
-- Date
-- Time
-- Duration
-- Event sequence (before / after)
+Order matches the annotator guide.
 
-**Examples:**
-- "two days ago" → "today"
-- "follow-up in 2 weeks" → "2 months"
+### 1. Annunciation errors
+Errors caused by how the speaker pronounced the word — accented speech, pausing in the middle of a
+sentence, speaking too fast, slurring words, or disfluencies. Listen to the audio before selecting
+this.
 
----
+> large intestine → large intensity · nausea → nuisance · abdominal pain → abnormal pain ·
+> cigarette pack → cigarette back · recreational drugs → nutritional drugs · night sweats → night sets
 
-### 4. 🚫 Negation / Uncertainty
-**Errors involving negation or uncertainty:**
+### 2. Homonym errors / rhyming words
+Errors where the misrecognised word or phrase **sounds similar** to the intended one but is spelled
+differently. Covers both identical-sounding words and near-sounding or rhyming words.
 
-- Loss of negation
-- Added negation
-- Removal of hedging / uncertainty
+> pus → pulse · middle ear effusion → middle ear fusion · exertion → extortion · fainting → painting ·
+> weight loss → waste loss · stool → stew
 
-**Examples:**
-- "no chest pain" → "chest pain"
-- "possibly pregnant" → "pregnant"
+### 3. Dictionary errors
+Phrases recognised in place of a word missing from the dictionary. These are typically a medical
+drug entity or a proper noun that is not in the ASR system's dictionary. The result sounds very
+similar to, but not always exactly like, the intended word.
 
----
+> naproxen → proxen · metformin → bombetformin · lisinopril → lesetapril · amlodipine → amelodipine ·
+> Chidinma → Chidima · Igbo → evil · Ekiti → Nkita
 
-### 5. 🔢 Numerics
-**Errors involving numerical values:**
+### 4. Stop words (added / deleted / substituted)
+An error involving a short function word such as *a, an, the, has* or *if*, whether added, deleted
+or substituted.
 
-- Vital signs
-- Measurements
-- Decimals
-- Ranges
-- Comparators ("greater than", "less than")
+> `[SUB:a->the]` · `[DEL:a]` · `[SUB:or->so]` · `[INS:in]` · `[INS:the]` · `[DEL:a bit]`
 
-**Examples:**
-- "BP 120/80" → "200/80"
-- "O₂ sat 98%" → "88%"
+### 5. Suffix errors
+Errors caused by substituting an incorrect ending on the intended word. The stem is right; the
+ending is wrong.
 
----
+> breathless → breathlessness · `[SUB:vomit->vomits]` · `[SUB:nauseated->nauseous]` ·
+> `[SUB:problem->problems]`
 
-### 6. 💬 Speaker & Attribution
-**Errors regarding who said what (patient vs clinician):**
+### 6. Human spelling errors
+Errors that occur only in the **human transcription** and not in the ASR output — the speech
+recogniser is correct in this case and the human transcriber is wrong. Use this when the reference
+transcript contains the mistake.
 
-**Examples:**
-- Patient fear attributed to clinician
-- Clinician instruction labeled as patient dialogue
+> reference "catherization" → ASR "catheterization" · reference "urinal" → ASR "urinary" ·
+> podagra → podegra
 
----
+### 7. Critical errors
+Errors that could change the meaning of the intended utterance. Most result when a positive is
+changed to a negative (or vice versa), or when a number is misrecognised. This can also occur when
+the ASR deletes a large chunk of the transcript.
 
-### 7. 📋 Pragmatics (Plan–History–Instruction)
-**Errors mixing different clinical contexts:**
+> `[SUB:dripples->bubbles]` · `[SUB:urethra->ureteral]` · `[DEL:recreational]` ·
+> `[DEL:okay and do you take any medications i had a a drug history of thyroxine]`
 
-- Assessment
-- Plan
-- Past history
-- Instructions
+### 8. Nonsense errors
+A recognised word or phrase that does not make grammatical or lexical sense, even after a possible
+correction has been hypothesised from context.
 
-**Examples:**
-- "start metformin" → "stop metformin"
-- "we will order labs" → "ordered labs previously"
+> wisdom teeth → visimteeth · swampy region → iswampimidio · feverish → beverish
 
----
+### 9. Words added
+A word is inserted that was not spoken (cases of insertion). This may also be a repeated insertion.
 
-### 8. 👤 Identity (Patient / Location)
-**Errors affecting identification information:**
+> `[INS:for you]` · `[INS:one thousand nine]` · `[INS:of july]`
 
-- Patient name
-- Key personal identifiers
-- Important location (clinic, hospital, city)
+### 10. Words deleted
+A word that was spoken is omitted (cases of deletion). This may also be a chunk of a sentence being
+deleted.
 
-**Examples:**
-- "Johnson" → "Jordan"
-- "Los Angeles" → "loss angles"
+> `[DEL:urine]` · `[DEL:recreational]` · `[DEL:in]` ·
+> `[DEL:okay and do you take any medications i had a a drug history of thyroxine]`
 
----
+### 11. Not an error
+The flagged difference is acceptable and should not be counted as an ASR error: fillers, plural
+variants and alternate spellings where neither transcript is wrong. Mutually exclusive with the
+other categories.
 
-### 9. 🩺 Specialty Category
-**Optional secondary tag indicating clinical domain:**
-
-- Cardiology
-- Oncology
-- Psychiatry
-- Neurology
-- etc.
-
-**Use when helpful for downstream stratification.**
+> uh · like
 
 ---
 
-### 10. 📄 Formatting / Structure
-**Errors affecting document structure:**
+## Severity
 
-- Section headers
-- Bullet points
-- Structured lists (AST-specific)
+| Level | Label | Meaning |
+|---|---|---|
+| 1 | Minor | Little or no chance of impacting the health practitioner's understanding of the conversation and/or line of management for the patient. |
+| 2 | Moderate | Some chance of impacting the health practitioner's understanding of the conversation and/or line of management for the patient. |
+| 3 | Severe | Likely to lead to an egregious clinical error — possibly omission or inclusion of a key life-impacting detail in the conversation. |
 
-**Examples:**
-- "Plan:" header missing
-- ROS list collapsed into a paragraph
+**Practical test:** *"If this went uncorrected, and if you could only read the transcript alone,
+would it have changed your understanding of the patient's clinical condition?"*
 
----
-
-### 11. 🔤 Generic ASR
-**Use when the error is primarily:**
-
-- Substitution
-- Insertion
-- Deletion
-- without a clear clinical category
-
-**This functions as a fallback category.**
+Ratings are inherently subjective. Annotators should use clinical judgment and be internally
+consistent.
 
 ---
 
-## Multi-Label Guidelines
+## Storage Schema
 
-### When to Use Multiple Categories
+Written by the annotation interface to `completed_annotation/*.json` under `annotations`, one
+record per error:
 
-An error may belong to **multiple categories simultaneously**. For example:
+| Field | Meaning |
+|---|---|
+| `errorClass` | **List of category slugs — this is the label field.** |
+| `taxonomy` | Unused; empty on all records to date. Do not read. |
+| `severity` | Integer 1–3 |
+| `errorType` | `INS` / `DEL` / `SUB`, from the aligner |
+| `errorMatch` | The inline edit tag, e.g. `[SUB:dripples->bubbles]` |
+| `startIdx`, `endIdx` | Character offsets into `context.asrReconstructed` |
+| `annotatorId`, `modelName`, `utteranceId`, `errorId` | Provenance |
+| `context.humanTranscript` | Reference, speaker-diarized |
+| `context.asrReconstructed` | ASR hypothesis with inline edit tags |
+| `context.humanTranscriptNER` | Reference with clinical entity spans tagged |
 
-**Example 1:**
-- Error: "metformin 500mg" → "metformin"
-- Categories: ✅ **Medication** (drug info) + ✅ **Numerics** (dose value)
-
-**Example 2:**
-- Error: "no history of diabetes" → "history of diabetes"
-- Categories: ✅ **Negation / Uncertainty** + ✅ **Clinical Concepts** (diagnosis)
-
-**Example 3:**
-- Error: "left atrium" → "right atrium"
-- Categories: ✅ **Clinical Concepts** (anatomy + laterality)
-
-**Example 4:**
-- Error: "potassium 3.5 mmol/L" → "potassium 5.5 mmol/L"
-- Categories: ✅ **Clinical Concepts** (lab value) + ✅ **Numerics** (measurement)
-
-### Priority Guidelines
-
-1. **Always tag all applicable categories** - don't limit yourself to one
-2. **Use Generic ASR as fallback** - only when no clinical categories apply
-3. **Specialty Category is optional** - use for domain-specific analysis
-4. **Be specific first** - prefer specific categories (Medication, Temporal) over generic
+Category slugs (unchanged — renaming a label does **not** change its slug):
+`annunciation_errors`, `homonym_errors_rhyming_words`, `dictionary_errors`, `stop_words`,
+`suffix_errors`, `spelling_errors` *(displayed as "Human Spelling Errors")*, `critical_errors`,
+`nonsense_errors`, `words_added`, `words_deleted`, `not_an_error`.
 
 ---
 
-## Decision Tree
+## Re-annotation note
 
-```
-Start: Is this error clinically significant?
-│
-├─ YES → Choose all specific categories that apply:
-│   ├─ Drug info? → Medication
-│   ├─ Clinical term? → Clinical Concepts
-│   ├─ Time/date? → Temporal
-│   ├─ Negation changed? → Negation / Uncertainty
-│   ├─ Number changed? → Numerics
-│   ├─ Speaker confused? → Speaker & Attribution
-│   ├─ Context mixed? → Pragmatics
-│   ├─ Name/location? → Identity
-│   ├─ Format issue? → Formatting / Structure
-│   └─ Medical domain? → Specialty Category (optional)
-│
-└─ NO → Generic ASR
-```
+The `spelling_errors` label previously read as an ASR-side misspelling. It now means the **reference**
+is wrong and the recogniser is right. All 9 records carrying this slug in the first annotation batch
+were assigned under the old reading and need re-review; conversely, reference errors such as
+`[SUB:catherization->catheterization]` were filed under `not_an_error` and should move here.
 
 ---
 
-## Common Combinations
-
-### Frequently Co-occurring Categories
-
-| Primary | Often With | Example |
-|---------|-----------|---------|
-| Medication | Numerics | "aspirin 81mg" → "aspirin 80mg" |
-| Clinical Concepts | Negation / Uncertainty | "no fever" → "fever" |
-| Clinical Concepts | Numerics | "glucose 120" → "glucose 220" |
-| Temporal | Pragmatics | "start tomorrow" → "started yesterday" |
-| Identity | Clinical Concepts | "Dr. Smith's patient" → "Dr. Jones's patient" |
-
----
-
-## Annotation Workflow
-
-1. **Read the error carefully** - understand what changed
-2. **Identify primary impact** - what's the main clinical concern?
-3. **Check all categories** - does it fit multiple?
-4. **Select all that apply** - don't limit to one
-5. **Assign severity** - based on combined impact
-6. **Add specialty tag** - if relevant for your analysis
-
----
-
-## Quality Checks
-
-### Before Submitting Each Annotation:
-
-✅ Did I check all 11 categories?
-✅ Did I select **all** that apply (not just one)?
-✅ Is Generic ASR only used when nothing else fits?
-✅ Does the severity reflect the combined impact?
-✅ Are medication errors tagged appropriately?
-✅ Are negation changes captured?
-
----
-
-## Examples by Severity
-
-### Severity 5 (Critical) - Multi-Label
-
-**Error:** "no allergy to penicillin" → "allergy to penicillin"
-- Categories: 🚫 Negation / Uncertainty + 💊 Medication
-- Impact: Could cause withholding necessary antibiotic
-
-**Error:** "metformin 500mg" → "metformin 5000mg"
-- Categories: 💊 Medication + 🔢 Numerics
-- Impact: 10x overdose
-
-### Severity 3 (Medium) - Multi-Label
-
-**Error:** "follow up in 2 weeks" → "follow up in 2 months"
-- Categories: ⏱️ Temporal + 📋 Pragmatics
-- Impact: Delayed follow-up could miss condition changes
-
-**Error:** "potassium 3.5" → "potassium 5.5"
-- Categories: 🏥 Clinical Concepts + 🔢 Numerics
-- Impact: Changes interpretation from normal to high
-
-### Severity 1 (Minor) - Single Label
-
-**Error:** "um" → "and"
-- Categories: 🔤 Generic ASR
-- Impact: Filler word, no clinical meaning
-
----
-
-## Tips for Annotators
-
-### Maximize Accuracy
-- Take your time with each error
-- Consider the full clinical context
-- When in doubt, select multiple categories
-- Don't overthink - if it fits, tag it
-
-### Speed Tips
-- Start with the most obvious category
-- Then quickly scan remaining categories
-- Use keyboard for navigation
-- Batch similar errors together
-
-### Common Mistakes to Avoid
-- ❌ Selecting only one category when multiple apply
-- ❌ Using Generic ASR for medication/temporal errors
-- ❌ Ignoring negation changes
-- ❌ Missing numerical changes in clinical values
-- ❌ Forgetting speaker attribution errors
-
----
-
-## Contact & Questions
-
-If you're unsure about a category assignment:
-1. Check the examples above
-2. Consider the clinical impact
-3. When in doubt, tag multiple categories
-4. Document unclear cases for team review
-
-Remember: **It's better to over-tag than under-tag!**
-
----
-
-**Last Updated:** December 22, 2024
-**Version:** 2.0 - Full 11-Category Taxonomy
+**Version:** 3.1 — mirrors the live annotator guide. Replaces the earlier clinical-domain scheme
+(medication / clinical concepts / temporal / negation / numerics / …), which was never used by
+annotators and is retired.
