@@ -1,0 +1,2944 @@
+[
+  {
+    "utterance_id": "13_Hyperthyroidism",
+    "human_transcript": "good evening sir good evening doctor all right i am fine thank you sir can i get your name please all right so i am tolulope olabode okay is that mr or mrs mrs tolulope olabode how old are you can i get your age fortytwo year old you are fortytwo fortytwo year old yes hello yeah what do you do yes i am a sales rep okay okay nice to meet you ma so my name is doctor adelaja yes please okay so what is your complaint today well i noticed that my heart has been beating against my chest very heavily and that is been going on for about three months now okay aside do you have any other complaints or it is just the beating the heartbeat shake also your cheek my hands okay shake alot when you mean your your palms or my hands generally okay both palms both both okay that has been going on for a month okay so the heart beating fast when you noticed this three months ago yes okay was it a sudden thing yes it started suddenly err started suddenly do you notice it is when you are at rest or when you are doing activities maybe you just finished taking the stairs and then it starts or when you are at rest you notice it well i i both actually when i am at rest okay it although when i engage in any activity i noticed that it also worsens okay okay i understand that okay any cough is there any cough associated no cough any chest pain no no is there any difficulty breathing no not at all any leg swelling no okay any are you on any medications at the moment no all right so for this your complaint of your heart beating first have you noticed any neck swelling has anyone told you that there was but when you look in the mirror did you notice any swelling on your neck no neck swelling okay have you noticed maybe in recent times since the palpitations started i mean the beating fast the heart beating fast do you notice maybe you have been sweating more than normal or you feel cold easily maybe in an environment and people are sitting and yes i i noticed that i have been sweating way more than usual and then i get really hot in rooms and whenever i whoever i am with or the people around me whether they feel the same they do not so i i noticed that it is just me okay what about weight loss have you noticed any weight loss or weight gain yes i i lost some weight you lost some can you quantify this sorry i did not get that doctor yeah so the weight loss was it from lose clothes did you notice it that your clothes your clothes getting loose or from family members people tell you they have noticed you lose weight i noticed that the waistline of some of my clothes have been looks like they are bigger so and it is not just one clothes so i i am certain that that would have been from weight loss on my end and although i i noticed that i have not been eating as much as usual also okay the way i eat before okay okay family member complaining that i have lost some weight okay do you have you noticed diarrhea maybe you are purging more than usual no or you let more than normal okay you have not noticed that no not at all okay okay what about menstruation are have your periods still been regular or you have noticed maybe some one or two irregularities in your period my periods are fine no okay okay so you also mentioned that your hands have been shaking recently yeah they have been shaking apart from your hands do you feel yourself more anxious lately or more you know have you noticed any anxiety lately yes actually when someone slams the door beside me i noticed that that palpitation gets worse okay what about any muscle pain any muscle weakness oh well not that i i have noticed i have not noticed anything like that so far okay okay that is good any speech or writing difficulties well so far no no no speech difficulties and i have been writing fine okay well how is your balance maybe do you stand up do you feel maybe dizzy or anything like that when you stand suddenly not at all no dizziness okay then if i may ask how is your vision been too sometimes i find it difficult to see oh okay yes okay what about when you are in sunlight do you feel you know do you feel that you react to sunlight these days yes i do i do anyone told you they notice your eyes bulging or is have you noticed that maybe your eye looks like it is bigger than eyeball yes that is my my husband noticed that as a personally i cannot really see but my husband has been telling me that my eyes protrude more than it used to okay i see i understand yes doctor okay but there are no muscle pains let me get that no muscle pain no muscle weakness either no no no doctor yeah okay any discharge from your breast anything like that no okay all right sir alright ma i will just ask you a few questions about your personal health are you hypertensive no i am not are you diabetic i am not diabetic how about asthma no i am not okay any history of ulcer no all right have you done any surgeries before no at all okay any known allergies no i do not i do not have any allergies okay i did not get that alcohol no i do not i do not drink okay do you smoke no i do not either oh okay are you you mentioned your husband do you live together with your husband no i do not okay so do you live alone do you have kids yes i have a thirteen year old i have a thirteen year old sorry i did not get that a daughter or son a daughter a daughter i have a thirteen year old daughter okay okay okay do you have any known drug allergies no i do not is there any routine drug you are on currently i am not on any medications right now okay all right mrs tolulope i have been able to listen to all your complaints no not not really okay so we have a thyroid gland that is located in our neck and the anterior part of our neck that helps with our body metabolism it helps to keep our body regulation in check you understand so it produces some hormones and in that case it looks like one of the hormones is overproduced means it is produced more than what it should produce that is why it is given some of the symptoms you have complained of today what i would need to do for you is i am going to carry out some investigations for you it is first investigation is going to be the thyroid function test which we are going to look at all the thyroid hormones to be sure if the hormone is actually there is an imbalance in the thyroid hormones then i am also all right i am also going to do just in thyroid scan just look at the thyroid gland in case there is an enlargement although you did mention that there is no neck swelling but it will also be good to also have a look at thyroid grand okay and also given the issue of the palpitations that you mentioned that is your heart beating fast it would also be safe to just look at the ecg to just be sure that the heart cont everything is going on fine there as well okay so we will carry out all these tests and given your age and and well i think after we do the thyroid gland it might not be out of place to also do you know maybe a just an aspiration of the thyroid gland but i think we should do the scan first and whatever the result says we would know what to do further from there but pending the time i am going to place you on some beta blockers just to you know relieve the palpitations that you are feeling okay okay so i am going to write out some prescriptions for you just to so that you do not stay it will stop it will reduce the anxiety and the palpitations you are feeling like atenolol and then i am also going to give you some antithyroid drugs as well all right all right i hope they are not too expensive oh not at all but i would write them out for you so do you have any other questions no no for now but if i do i would i would definitely reach out okay so if i may add too you know because given the age you are fortytwo it is actually very common you know in women at this age range but just we can also want to rule out a thyroid cancer too okay so after we carry out all these tests we will be able to figure out what we are dealing with here so starting with a thyroid hormone so do i have your go ahead yes please all right sir okay thank you okay doctor",
+    "human_transcript_ner": "good evening sir good evening doctor all right i am fine thank you sir can i get your name please all right so i am [MEDICINE: tolulope olabode] okay is that mr or mrs mrs [MEDICINE: tolulope olabode] how old are you can i get your age fortytwo year old you are fortytwo fortytwo year old yes hello yeah what do you do yes i am a sales rep okay okay nice to meet you ma so my name is doctor adelaja yes please okay so what is your complaint today well i noticed that my [ANATOMICAL_STRUCTURE: heart] has been [PROBLEM: beating] against my [ANATOMICAL_STRUCTURE: chest] very heavily and that is been going on for about three months now okay aside do you have any other [PROBLEM: complaints] or it is just the [PROBLEM: beating] the heartbeat shake also your [ANATOMICAL_STRUCTURE: cheek] my [ANATOMICAL_STRUCTURE: hands] okay shake alot when you mean your your [ANATOMICAL_STRUCTURE: palms] or my [ANATOMICAL_STRUCTURE: hands] generally okay both [ANATOMICAL_STRUCTURE: palms] both both okay that has been going on for a month okay so the [ANATOMICAL_STRUCTURE: heart] beating fast when you noticed this three months ago yes okay was it a sudden thing yes it started suddenly err started suddenly do you notice it is when you are at rest or when you are doing activities maybe you just finished taking the stairs and then it starts or when you are at rest you notice it well i i both actually when i am at rest okay it although when i engage in any activity i noticed that it also worsens okay okay i understand that okay any [PROBLEM: cough] is there any [PROBLEM: cough] associated no [PROBLEM: cough] any [ANATOMICAL_STRUCTURE: chest] [PROBLEM: pain] no no is there any [PROBLEM: difficulty breathing] no not at all any [ANATOMICAL_STRUCTURE: leg] [PROBLEM: swelling] no okay any are you on any [MEDICINE: medications] at the moment no all right so for this your complaint of your [ANATOMICAL_STRUCTURE: heart] [PROBLEM: beating] first have you noticed any [ANATOMICAL_STRUCTURE: neck] [PROBLEM: swelling] has anyone told you that there was but when you look in the mirror did you notice any [PROBLEM: swelling] on your [ANATOMICAL_STRUCTURE: neck] no [ANATOMICAL_STRUCTURE: neck] [PROBLEM: swelling] okay have you noticed maybe in recent times since the [PROBLEM: palpitations] started i mean the beating fast the [PROBLEM: heart beating] fast do you notice maybe you have been [PROBLEM: sweating] more than normal or you feel cold easily maybe in an environment and people are sitting and yes i i noticed that i have been [PROBLEM: sweating] way more than usual and then i get really hot in rooms and whenever i whoever i am with or the people around me whether they feel the same they do not so i i noticed that it is just me okay what about [PROBLEM: weight loss] have you noticed any [PROBLEM: weight loss] or [PROBLEM: weight gain] yes i i lost some [BODY_MEASUREMENT: weight] you lost some can you quantify this sorry i did not get that doctor yeah so the [PROBLEM: weight loss] was it from lose clothes did you notice it that your clothes your clothes getting loose or from family members people tell you they have noticed you [PROBLEM: lose weight] i noticed that the waistline of some of my clothes have been looks like they are bigger so and it is not just one clothes so i i am certain that that would have been from [PROBLEM: weight loss] on my end and although i i noticed that i have not been eating as much as usual also okay the way i eat before okay okay family member complaining that i have lost some [BODY_MEASUREMENT: weight] okay do you have you noticed [PROBLEM: diarrhea] maybe you are purging more than usual no or you let more than normal okay you have not noticed that no not at all okay okay what about [BODY_FUNCTION: menstruation] are have your periods still been regular or you have noticed maybe some one or two [PROBLEM: irregularities] in your period my periods are fine no okay okay so you also mentioned that your [ANATOMICAL_STRUCTURE: hands] have been [PROBLEM: shaking] recently yeah they have been [PROBLEM: shaking] apart from your [ANATOMICAL_STRUCTURE: hands] do you feel yourself more [PROBLEM: anxious] lately or more you know have you noticed any [PROBLEM: anxiety] lately yes actually when someone slams the door beside me i noticed that that [PROBLEM: palpitation] gets [SEVERITY: worse] okay what about any [ANATOMICAL_STRUCTURE: muscle] [PROBLEM: pain] any [ANATOMICAL_STRUCTURE: muscle] [PROBLEM: weakness] oh well not that i i have noticed i have not noticed anything like that so far okay okay that is good any [BODY_FUNCTION: speech] or writing difficulties well so far no no no [PROBLEM: speech difficulties] and i have been writing fine okay well how is your balance maybe do you stand up do you feel maybe [PROBLEM: dizzy] or anything like that when you stand suddenly not at all no [PROBLEM: dizziness] okay then if i may ask how is your vision been too sometimes i find it difficult to see oh okay yes okay what about when you are in sunlight do you feel you know do you feel that you react to sunlight these days yes i do i do anyone told you they notice your [ANATOMICAL_STRUCTURE: eyes] [PROBLEM: bulging] or is have you noticed that maybe your [ANATOMICAL_STRUCTURE: eye] looks like it is bigger than [ANATOMICAL_STRUCTURE: eyeball] yes that is my my husband noticed that as a personally i cannot really see but my husband has been telling me that my [ANATOMICAL_STRUCTURE: eyes] protrude more than it used to okay i see i understand yes doctor okay but there are no [ANATOMICAL_STRUCTURE: muscle] [PROBLEM: pains] let me get that no [ANATOMICAL_STRUCTURE: muscle] [PROBLEM: pain] no [ANATOMICAL_STRUCTURE: muscle] [PROBLEM: weakness] either no no no doctor yeah okay any discharge from your [ANATOMICAL_STRUCTURE: breast] anything like that no okay all right sir alright ma i will just ask you a few questions about your personal health are you [PROBLEM: hypertensive] no i am not are you [PROBLEM: diabetic] i am not [PROBLEM: diabetic] how about [PROBLEM: asthma] no i am not okay any history of [PROBLEM: ulcer] no all right have you done any [PROCEDURE: surgeries] before no at all okay any known [PROBLEM: allergies] no i do not i do not have any [PROBLEM: allergies] okay i did not get that [SUBSTANCE_ABUSE: alcohol] no i do not i do not [SUBSTANCE_ABUSE: drink] okay do you [SUBSTANCE_ABUSE: smoke] no i do not either oh okay are you you mentioned your husband do you live together with your husband no i do not okay so do you live alone do you have kids yes i have a thirteen year old i have a thirteen year old sorry i did not get that a daughter or son a daughter a daughter i have a thirteen year old daughter okay okay okay do you have any known [PROBLEM: drug allergies] no i do not is there any routine [MEDICINE: drug] you are on currently i am not on any [MEDICINE: medications] right now okay all right mrs tolulope i have been able to listen to all your [PROBLEM: complaints] no not not really okay so we have a [ANATOMICAL_STRUCTURE: thyroid gland] that is located in our [ANATOMICAL_STRUCTURE: neck] and the anterior part of our [ANATOMICAL_STRUCTURE: neck] that helps with our body metabolism it helps to keep our body regulation in check you understand so it produces some [MEDICINE: hormones] and in that case it looks like one of the [MEDICINE: hormones] is overproduced means it is produced more than what it should produce that is why it is given some of the [PROBLEM: symptoms] you have complained of today what i would need to do for you is i am going to carry out some investigations for you it is first investigation is going to be the [LABORATORY_DATA: thyroid function test] which we are going to look at all the thyroid [MEDICINE: hormones] to be sure if the [MEDICINE: hormone] is actually there is an [PROBLEM: imbalance] in the [ANATOMICAL_STRUCTURE: thyroid] [MEDICINE: hormones] then i am also all right i am also going to do just in [ANATOMICAL_STRUCTURE: thyroid] [PROCEDURE: scan] just look at the [ANATOMICAL_STRUCTURE: thyroid gland] in case there is an [PROBLEM: enlargement] although you did mention that there is no [ANATOMICAL_STRUCTURE: neck] [PROBLEM: swelling] but it will also be good to also have a look at [ANATOMICAL_STRUCTURE: thyroid] grand okay and also given the issue of the [PROBLEM: palpitations] that you mentioned that is your [PROBLEM: heart beating] fast it would also be safe to just look at the ecg to just be sure that the [ANATOMICAL_STRUCTURE: heart] cont everything is going on fine there as well okay so we will carry out all these tests and given your age and and well i think after we do the [ANATOMICAL_STRUCTURE: thyroid gland] it might not be out of place to also do you know maybe a just an [PROCEDURE: aspiration] of the [ANATOMICAL_STRUCTURE: thyroid gland] but i think we should do the [PROCEDURE: scan] first and whatever the result says we would know what to do further from there but pending the time i am going to place you on some [MEDICINE: beta blockers] just to you know relieve the [PROBLEM: palpitations] that you are feeling okay okay so i am going to write out some prescriptions for you just to so that you do not stay it will stop it will reduce the [PROBLEM: anxiety] and the [PROBLEM: palpitations] you are feeling like [MEDICINE: atenolol] and then i am also going to give you some [MEDICINE: antithyroid drugs] as well all right all right i hope they are not too expensive oh not at all but i would write them out for you so do you have any other questions no no for now but if i do i would i would definitely reach out okay so if i may add too you know because given the age you are fortytwo it is actually very common you know in women at this age range but just we can also want to rule out a [ANATOMICAL_STRUCTURE: thyroid] [PROBLEM: cancer] too okay so after we carry out all these tests we will be able to figure out what we are dealing with here so starting with a [MEDICINE: thyroid hormone] so do i have your go ahead yes please all right sir okay thank you okay doctor",
+    "asr_transcript": "good evening sir good evening doctor how are you i am fine thank you sir  can i get your name please alright i am tolu ope alabody okay that mister misses misses misses tolu ope alabody oh sorry about that okay misses tolu ope alabody how old are you can i get your age fortytwo year old yeah fortytwo fortytwo year old yes hello yeah what do you do yes i am a sales rep okay okay nice to meet you ma so my name is doctor adelaja i will just be asking you a few questions about your complaints can i go ahead yes please okay so what is your complaint today well i noticed that  my heart has been beating against my chest very heavily and that has been going on for about three months now okay aside do you have any other complaints or is just the beating the heart beating cheek also your cheek my hands okay a lot do you mean your your palms or  my hands generally okay both palms both both okay it has been going on for a month okay so the heart beating fast when you noticed this three months ago yes okay was it a sudden thing yes it started suddenly  started suddenly do you notice this when you are at rest or when you are doing activities maybe you just finish taking the stairs and then it starts or is when you are at rest you notice it well i i both actually  when i am at rest okay is it although when i engage in any activity i notice i also worsens okay okay understand that okay any cough is there any cough associated no cough any chest pain no no is there any difficulty breathing no not at all any leg swelling no okay any are you on any medications at the moment no alright so for this your complaints of your heart beating fast have you noticed any neck swelling has anyone told you that was or when you look in the mirror did you notice any swelling on your neck no neck swelling okay have you noticed maybe in recent times since the palpitation started i mean the beating fast the heart beating fast did you notice maybe even sweating more than normal or you feel cold easily maybe you are in an environment and people are sitting and yes everyone is sitting i i noticed that  i have been sweating way more than usual and then i get really hot in rooms and whenever i whoever i am with or the people around me whether they feel the same they do not so i i notice that it is just me okay what about weight loss have you noticed any weight loss or weight gain yes i i lost some weight i lost some can you quantify this how do how are you about the weight loss eating loose clothes so much sorry i did not get that doctor yeah so the weight loss was it from loose clothes did you notice my your clothes your clothes getting loose or from family members people tell you they have noticed you lose weight i noticed that  the waistline of some of my clothes  have been looks like they are bigger so and it is not just one cloth so i i am certain that that would have been from weight loss on my end and although i i noticed that i have not been eating as much as usual also okay compared to i eat before okay okay family member complaining that i have lost some weight okay  do you have you noticed diarrhea maybe you are pooping more than usual no i let more than normal okay you have not noticed that okay any changes in your voice have you noticed maybe your voice has deepened over time or it still feels the same no not at all okay okay  what about menstruation are your periods still be regular or you have noticed maybe some one or two regularities in your period my peers are fine no okay okay so you also mentioned that your hands have been shaking recently yeah they have been shaking apart from your hands do you feel yourself more anxious lately or more you know have you noticed any anxiety lately yes actually  when someone slams the door beside me i notice that that palpitation gets worse and yeah i just feel uncomfortable okay about any muscle pain any muscle weakness  well not that i have noticed i have not noticed anything like that so far okay okay that is good  any speech or writing difficulties well so far no no what speech difficulties and i have been writing fine yeah well how is your balance maybe do you stand up do you feel maybe dizzy or anything like that when you stand suddenly not at all no dizziness okay then if i may ask how is your vision been too  sometimes i find it difficult to see oh okay yes okay  what about when you are in sunlight do you feel you know do you feel that you react to sunlight these days yes i do oh i do anyone maybe they notice your eyes bulging or or have you noticed that maybe your eye looks like it is bigger than the eyeball yes that my my husband noticed that  although personally i cannot really see but my husband has been telling me that my eyes protrude  more than the just okay i see i understand okay  do you complain of difficulty with vision then your eyes bulging then you also sensitive to light yes doctor okay but there are no muscle pains let me get that no muscle pain no muscle weakness either no okay so there is no nausea or vomiting no okay apart from blurry of visions any persistent headaches no doctor no okay any discharge from your breast anything like that no okay all right sir  more and more i will just ask you a few questions about your personal health are you a paternity no i am not are you diabetic i am not diabetic how about asthma no i am not okay any history of ulcer no all right have you done any surgeries before no at all okay any known allergies no i do not i do not have any allergies okay do you alcohol  i did not get that doctor do you take alcohol alcohol no i do not i do not drink okay do you smoke no i do not see that okay sorry i you mentioned your husband do you live together with your husband no i do not okay so do you live alone do you have kids yes i have a thirteenyearold i have a thirteenyearold son sorry i did not get that a daughter or son  a daughter a daughter i have a thirteenyearold daughter okay okay okay is there any drug do you have any nondrug allergies no i do not yeah any routine drugs you are on currently i am not on any medications right now okay all right mr tolu roke i have been able to listen to all your complaints and from the complaints i am seeing this looks like a case of you know hypothyroidism i do not know if you have heard of the thyroid gland before so we have a thyroid gland that is located in the neck have you heard of it before sir no not no really okay so we have a thyroid gland that is located in our neck at the anterior part of our neck that helps with our body metabolism it helps to keep our body regulation in check you understand so it produces some hormones and in that case it looks like one of the hormones is overproduced it means it is produced more than what it should produce that is why it is giving some of these symptoms you have complained of today okay what i would need to do for you is i am going to carry out some investigations for you it is first investigation was going to be the thyroid function test which we are going to look at all the thyroid hormones to be sure if the hormone is actually there is an hormone imbalance in the thyroid hormone then i am also doing all right i am also going to do a just in thyroid scan just look at the thyroid gland in case there is an enlargement although you did mention that there is no neck swelling but it is also be good to also have a look at thyroid gland okay and also given the history of the palpitations that you mentioned that is your heart beating fast it should also be safe to just look at the ecg to just be sure that the heart everything is going on fine there as well okay so we will carry out all these tests and given your age and and well i think after we do the thyroid gland it might not be out of place to also do you know maybe just an aspiration of the thyroid gland but i think we should do the scan first and whatever the result says we will know what to do further from there but pending the time i am going to place you on some beta blockers just to you know relieve the palpitations that you are feeling okay okay so i am going to write out some prescriptions for you just to so that you do not the it will stop it will reduce the anxiety and palpitations you are feeling like a ten or low and then i am also going to give you some antithyroid drugs as well all right all right i hope i am not too expensive oh not at all but i will write them out for you so do you have any other questions no no for now but if i do i will definitely reach out okay so if i may add to you know because given the age you are fortytwo it is actually very common you know in women at this age range but just we can also want to rule out a thyroid cancer too okay so after we carry out all these tests we will be able to figure out what we are dealing with here so starting with the thyroid gland so do i have your guard yes please all right so okay thank you no problem good doctor",
+    "asr_reconstructed": "good evening sir good evening doctor [INS:how] [SUB:all right->are you] i am fine thank you sir can i get your name please [SUB:all->alright] [DEL:right so] i am [INS:tolu] [SUB:tolulope olabode->ope alabody] okay [INS:that mister misses misses misses tolu ope alabody oh sorry] [SUB:is->about] that [SUB:mr or mrs mrs tolulope->okay misses tolu ope alabody] [DEL:olabode] how old are you can i get your age fortytwo year old [SUB:you->yeah] [DEL:are] fortytwo fortytwo year old yes hello yeah what do you do yes i am a sales rep okay okay nice to meet you ma so my name is doctor adelaja [INS:i will just be asking you a few questions about your complaints can i go ahead] yes please okay so what is your complaint today well i noticed that my heart has been beating against my chest very heavily and that [SUB:is->has] been going on for about three months now okay aside do you have any other complaints or [DEL:it] is just the beating the [INS:heart] [SUB:heartbeat shake->beating cheek] also your cheek my hands okay [SUB:shake alot when->a lot do] you mean your your palms or my hands generally okay both palms both both okay [SUB:that->it] has been going on for a month okay so the heart beating fast when you noticed this three months ago yes okay was it a sudden thing yes it started suddenly [DEL:err] started suddenly do you notice [SUB:it->this] [DEL:is] when you are at rest or when you are doing activities maybe you just [SUB:finished->finish] taking the stairs and then it starts or [INS:is] when you are at rest you notice it well i i both actually when i am at rest okay [INS:is] it although when i engage in any activity i [SUB:noticed that->notice i] [DEL:it] also worsens okay okay [DEL:i] understand that okay any cough is there any cough associated no cough any chest pain no no is there any difficulty breathing no not at all any leg swelling no okay any are you on any medications at the moment no [SUB:all->alright] [DEL:right] so for this your [SUB:complaint->complaints] of your heart beating [SUB:first->fast] have you noticed any neck swelling has anyone told you that [DEL:there] was [SUB:but->or] when you look in the mirror did you notice any swelling on your neck no neck swelling okay have you noticed maybe in recent times since the [SUB:palpitations->palpitation] started i mean the beating fast the heart beating fast [SUB:do->did] you notice maybe [SUB:you->even] [DEL:have been] sweating more than normal or you feel cold easily maybe [INS:you are] in an environment and people are sitting and yes [INS:everyone is sitting] i i noticed that i have been sweating way more than usual and then i get really hot in rooms and whenever i whoever i am with or the people around me whether they feel the same they do not so i i [SUB:noticed->notice] that it is just me okay what about weight loss have you noticed any weight loss or weight gain yes i i lost some weight [SUB:you->i] lost some can you quantify this [INS:how do how are you about the weight loss eating loose clothes so much] sorry i did not get that doctor yeah so the weight loss was it from [SUB:lose->loose] clothes did you notice [SUB:it->my] [DEL:that] your clothes your clothes getting loose or from family members people tell you they have noticed you lose weight i noticed that the waistline of some of my clothes have been looks like they are bigger so and it is not just one [SUB:clothes->cloth] so i i am certain that that would have been from weight loss on my end and although i i noticed that i have not been eating as much as usual also okay [SUB:the way->compared to] i eat before okay okay family member complaining that i have lost some weight okay do you have you noticed diarrhea maybe you are [SUB:purging->pooping] more than usual no [SUB:or->i] [DEL:you] let more than normal okay you have not noticed that [INS:okay any changes in your voice have you noticed maybe your voice has deepened over time or it still feels the same] no not at all okay okay what about menstruation are [DEL:have] your periods still [SUB:been->be] regular or you have noticed maybe some one or two [SUB:irregularities->regularities] in your period my [SUB:periods->peers] are fine no okay okay so you also mentioned that your hands have been shaking recently yeah they have been shaking apart from your hands do you feel yourself more anxious lately or more you know have you noticed any anxiety lately yes actually when someone slams the door beside me i [SUB:noticed->notice] that that palpitation gets worse [INS:and yeah i just feel uncomfortable] okay [DEL:what] about any muscle pain any muscle weakness [DEL:oh] well not that i [DEL:i] have noticed i have not noticed anything like that so far okay okay that is good any speech or writing difficulties well so far no no [SUB:no->what] speech difficulties and i have been writing fine [SUB:okay->yeah] well how is your balance maybe do you stand up do you feel maybe dizzy or anything like that when you stand suddenly not at all no dizziness okay then if i may ask how is your vision been too sometimes i find it difficult to see oh okay yes okay what about when you are in sunlight do you feel you know do you feel that you react to sunlight these days yes i do [INS:oh] i do anyone [SUB:told->maybe] [DEL:you] they notice your eyes bulging or [SUB:is->or] have you noticed that maybe your eye looks like it is bigger than [INS:the] eyeball yes that [DEL:is] my my husband noticed that [SUB:as->although] [DEL:a] personally i cannot really see but my husband has been telling me that my eyes protrude more than [SUB:it used->the just] [DEL:to] okay i see i understand [INS:okay do you complain of difficulty with vision then your eyes bulging then you also sensitive to light] yes doctor okay but there are no muscle pains let me get that no muscle pain no muscle weakness either no [INS:okay so there is] no [INS:nausea or vomiting] no [INS:okay apart from blurry of visions any persistent headaches no] doctor [SUB:yeah->no] okay any discharge from your breast anything like that no okay all right sir [INS:more] [SUB:alright ma->and more] i will just ask you a few questions about your personal health are you [INS:a] [SUB:hypertensive->paternity] no i am not are you diabetic i am not diabetic how about asthma no i am not okay any history of ulcer no all right have you done any surgeries before no at all okay any known allergies no i do not i do not have any allergies okay [INS:do you alcohol] i did not get that [INS:doctor do you take] alcohol [INS:alcohol] no i do not i do not drink okay do you smoke no i do not [SUB:either oh->see that] okay [SUB:are you->sorry i] you mentioned your husband do you live together with your husband no i do not okay so do you live alone do you have kids yes i have a [SUB:thirteen->thirteenyearold] [DEL:year old] i have a [SUB:thirteen year->thirteenyearold son] [DEL:old] sorry i did not get that a daughter or son a daughter a daughter i have a [SUB:thirteen->thirteenyearold] [DEL:year old] daughter okay okay okay [INS:is there any drug] do you have any [SUB:known->nondrug] [DEL:drug] allergies no i do not [SUB:is->yeah] [DEL:there] any routine [SUB:drug->drugs] you are on currently i am not on any medications right now okay all right [INS:mr] [SUB:mrs tolulope->tolu roke] i have been able to listen to all your complaints [INS:and from the complaints i am seeing this looks like a case of you know hypothyroidism i do not know if you have heard of the thyroid gland before so we have a thyroid gland that is located in the neck have you heard of it before sir] no not [SUB:not->no] really okay so we have a thyroid gland that is located in our neck [SUB:and->at] the anterior part of our neck that helps with our body metabolism it helps to keep our body regulation in check you understand so it produces some hormones and in that case it looks like one of the hormones is overproduced [INS:it] means it is produced more than what it should produce that is why it is [SUB:given->giving] some of [SUB:the->these] symptoms you have complained of today [INS:okay] what i would need to do for you is i am going to carry out some investigations for you it is first investigation [SUB:is->was] going to be the thyroid function test which we are going to look at all the thyroid hormones to be sure if the hormone is actually there is an [INS:hormone] imbalance in the thyroid [SUB:hormones->hormone] then i am also [INS:doing] all right i am also going to do [INS:a] just in thyroid scan just look at the thyroid gland in case there is an enlargement although you did mention that there is no neck swelling but it [SUB:will->is] also be good to also have a look at thyroid [SUB:grand->gland] okay and also given the [SUB:issue->history] of the palpitations that you mentioned that is your heart beating fast it [SUB:would->should] also be safe to just look at the ecg to just be sure that the heart [DEL:cont] everything is going on fine there as well okay so we will carry out all these tests and given your age and and well i think after we do the thyroid gland it might not be out of place to also do you know maybe [DEL:a] just an aspiration of the thyroid gland but i think we should do the scan first and whatever the result says we [SUB:would->will] know what to do further from there but pending the time i am going to place you on some beta blockers just to you know relieve the palpitations that you are feeling okay okay so i am going to write out some prescriptions for you just to so that you do not [SUB:stay->the] it will stop it will reduce the anxiety and [DEL:the] palpitations you are feeling like [INS:a ten or] [SUB:atenolol->low] and then i am also going to give you some antithyroid drugs as well all right all right i hope [SUB:they are->i am] not too expensive oh not at all but i [SUB:would->will] write them out for you so do you have any other questions no no for now but if i do i [SUB:would->will] [DEL:i would] definitely reach out okay so if i may add [SUB:too->to] you know because given the age you are fortytwo it is actually very common you know in women at this age range but just we can also want to rule out a thyroid cancer too okay so after we carry out all these tests we will be able to figure out what we are dealing with here so starting with [SUB:a->the] thyroid [SUB:hormone->gland] so do i have your [SUB:go->guard] [DEL:ahead] yes please all right [SUB:sir->so] okay thank you [INS:no problem] [SUB:okay->good] doctor",
+    "audio_file": "data/final_audio/13_Hyperthyroidism.wav",
+    "model": "qwen3_iaa",
+    "wer": 0.1921664626682986,
+    "errors": [
+      {
+        "error_id": "insert_0",
+        "error_type": "INS",
+        "error_match": "[INS:how]",
+        "error_text": "how",
+        "position": 0,
+        "start_idx": 37,
+        "end_idx": 46,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_1",
+        "error_type": "SUB",
+        "error_match": "[SUB:all right->are you]",
+        "error_text": "all right->are you",
+        "position": 1,
+        "start_idx": 47,
+        "end_idx": 71,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_2",
+        "error_type": "SUB",
+        "error_match": "[SUB:all->alright]",
+        "error_text": "all->alright",
+        "position": 2,
+        "start_idx": 123,
+        "end_idx": 141,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_3",
+        "error_type": "DEL",
+        "error_match": "[DEL:right so]",
+        "error_text": "right so",
+        "position": 3,
+        "start_idx": 142,
+        "end_idx": 156,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_4",
+        "error_type": "INS",
+        "error_match": "[INS:tolu]",
+        "error_text": "tolu",
+        "position": 4,
+        "start_idx": 162,
+        "end_idx": 172,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_5",
+        "error_type": "SUB",
+        "error_match": "[SUB:tolulope olabode->ope alabody]",
+        "error_text": "tolulope olabode->ope alabody",
+        "position": 5,
+        "start_idx": 173,
+        "end_idx": 208,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_6",
+        "error_type": "INS",
+        "error_match": "[INS:that mister misses misses misses tolu ope alabody oh sorry]",
+        "error_text": "that mister misses misses misses tolu ope alabody oh sorry",
+        "position": 6,
+        "start_idx": 214,
+        "end_idx": 278,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_7",
+        "error_type": "SUB",
+        "error_match": "[SUB:is->about]",
+        "error_text": "is->about",
+        "position": 7,
+        "start_idx": 279,
+        "end_idx": 294,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_8",
+        "error_type": "SUB",
+        "error_match": "[SUB:mr or mrs mrs tolulope->okay misses tolu ope alabody]",
+        "error_text": "mr or mrs mrs tolulope->okay misses tolu ope alabody",
+        "position": 8,
+        "start_idx": 300,
+        "end_idx": 358,
+        "is_medical": true
+      },
+      {
+        "error_id": "delete_9",
+        "error_type": "DEL",
+        "error_match": "[DEL:olabode]",
+        "error_text": "olabode",
+        "position": 9,
+        "start_idx": 359,
+        "end_idx": 372,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_10",
+        "error_type": "SUB",
+        "error_match": "[SUB:you->yeah]",
+        "error_text": "you->yeah",
+        "position": 10,
+        "start_idx": 426,
+        "end_idx": 441,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_11",
+        "error_type": "DEL",
+        "error_match": "[DEL:are]",
+        "error_text": "are",
+        "position": 11,
+        "start_idx": 442,
+        "end_idx": 451,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_12",
+        "error_type": "INS",
+        "error_match": "[INS:i will just be asking you a few questions about your complaints can i go ahead]",
+        "error_text": "i will just be asking you a few questions about your complaints can i go ahead",
+        "position": 12,
+        "start_idx": 589,
+        "end_idx": 673,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_13",
+        "error_type": "SUB",
+        "error_match": "[SUB:is->has]",
+        "error_text": "is->has",
+        "position": 13,
+        "start_idx": 807,
+        "end_idx": 820,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_14",
+        "error_type": "DEL",
+        "error_match": "[DEL:it]",
+        "error_text": "it",
+        "position": 14,
+        "start_idx": 909,
+        "end_idx": 917,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_15",
+        "error_type": "INS",
+        "error_match": "[INS:heart]",
+        "error_text": "heart",
+        "position": 15,
+        "start_idx": 942,
+        "end_idx": 953,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_16",
+        "error_type": "SUB",
+        "error_match": "[SUB:heartbeat shake->beating cheek]",
+        "error_text": "heartbeat shake->beating cheek",
+        "position": 16,
+        "start_idx": 954,
+        "end_idx": 990,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_17",
+        "error_type": "SUB",
+        "error_match": "[SUB:shake alot when->a lot do]",
+        "error_text": "shake alot when->a lot do",
+        "position": 17,
+        "start_idx": 1021,
+        "end_idx": 1052,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_18",
+        "error_type": "SUB",
+        "error_match": "[SUB:that->it]",
+        "error_text": "that->it",
+        "position": 18,
+        "start_idx": 1131,
+        "end_idx": 1145,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_19",
+        "error_type": "DEL",
+        "error_match": "[DEL:err]",
+        "error_text": "err",
+        "position": 19,
+        "start_idx": 1301,
+        "end_idx": 1310,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_20",
+        "error_type": "SUB",
+        "error_match": "[SUB:it->this]",
+        "error_text": "it->this",
+        "position": 20,
+        "start_idx": 1342,
+        "end_idx": 1356,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_21",
+        "error_type": "DEL",
+        "error_match": "[DEL:is]",
+        "error_text": "is",
+        "position": 21,
+        "start_idx": 1357,
+        "end_idx": 1365,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_22",
+        "error_type": "SUB",
+        "error_match": "[SUB:finished->finish]",
+        "error_text": "finished->finish",
+        "position": 22,
+        "start_idx": 1435,
+        "end_idx": 1457,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_23",
+        "error_type": "INS",
+        "error_match": "[INS:is]",
+        "error_text": "is",
+        "position": 23,
+        "start_idx": 1498,
+        "end_idx": 1506,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_24",
+        "error_type": "INS",
+        "error_match": "[INS:is]",
+        "error_text": "is",
+        "position": 24,
+        "start_idx": 1588,
+        "end_idx": 1596,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_25",
+        "error_type": "SUB",
+        "error_match": "[SUB:noticed that->notice i]",
+        "error_text": "noticed that->notice i",
+        "position": 25,
+        "start_idx": 1641,
+        "end_idx": 1669,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_26",
+        "error_type": "DEL",
+        "error_match": "[DEL:it]",
+        "error_text": "it",
+        "position": 26,
+        "start_idx": 1670,
+        "end_idx": 1678,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_27",
+        "error_type": "DEL",
+        "error_match": "[DEL:i]",
+        "error_text": "i",
+        "position": 27,
+        "start_idx": 1702,
+        "end_idx": 1709,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_28",
+        "error_type": "SUB",
+        "error_match": "[SUB:all->alright]",
+        "error_text": "all->alright",
+        "position": 28,
+        "start_idx": 1922,
+        "end_idx": 1940,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_29",
+        "error_type": "DEL",
+        "error_match": "[DEL:right]",
+        "error_text": "right",
+        "position": 29,
+        "start_idx": 1941,
+        "end_idx": 1952,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_30",
+        "error_type": "SUB",
+        "error_match": "[SUB:complaint->complaints]",
+        "error_text": "complaint->complaints",
+        "position": 30,
+        "start_idx": 1970,
+        "end_idx": 1997,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_31",
+        "error_type": "SUB",
+        "error_match": "[SUB:first->fast]",
+        "error_text": "first->fast",
+        "position": 31,
+        "start_idx": 2020,
+        "end_idx": 2037,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_32",
+        "error_type": "DEL",
+        "error_match": "[DEL:there]",
+        "error_text": "there",
+        "position": 32,
+        "start_idx": 2098,
+        "end_idx": 2109,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_33",
+        "error_type": "SUB",
+        "error_match": "[SUB:but->or]",
+        "error_text": "but->or",
+        "position": 33,
+        "start_idx": 2114,
+        "end_idx": 2127,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_34",
+        "error_type": "SUB",
+        "error_match": "[SUB:palpitations->palpitation]",
+        "error_text": "palpitations->palpitation",
+        "position": 34,
+        "start_idx": 2268,
+        "end_idx": 2299,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_35",
+        "error_type": "SUB",
+        "error_match": "[SUB:do->did]",
+        "error_text": "do->did",
+        "position": 35,
+        "start_idx": 2355,
+        "end_idx": 2368,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_36",
+        "error_type": "SUB",
+        "error_match": "[SUB:you->even]",
+        "error_text": "you->even",
+        "position": 36,
+        "start_idx": 2386,
+        "end_idx": 2401,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_37",
+        "error_type": "DEL",
+        "error_match": "[DEL:have been]",
+        "error_text": "have been",
+        "position": 37,
+        "start_idx": 2402,
+        "end_idx": 2417,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_38",
+        "error_type": "INS",
+        "error_match": "[INS:you are]",
+        "error_text": "you are",
+        "position": 38,
+        "start_idx": 2474,
+        "end_idx": 2487,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_39",
+        "error_type": "INS",
+        "error_match": "[INS:everyone is sitting]",
+        "error_text": "everyone is sitting",
+        "position": 39,
+        "start_idx": 2537,
+        "end_idx": 2562,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_40",
+        "error_type": "SUB",
+        "error_match": "[SUB:noticed->notice]",
+        "error_text": "noticed->notice",
+        "position": 40,
+        "start_idx": 2759,
+        "end_idx": 2780,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_41",
+        "error_type": "SUB",
+        "error_match": "[SUB:you->i]",
+        "error_text": "you->i",
+        "position": 41,
+        "start_idx": 2901,
+        "end_idx": 2913,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_42",
+        "error_type": "INS",
+        "error_match": "[INS:how do how are you about the weight loss eating loose clothes so much]",
+        "error_text": "how do how are you about the weight loss eating loose clothes so much",
+        "position": 42,
+        "start_idx": 2946,
+        "end_idx": 3021,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_43",
+        "error_type": "SUB",
+        "error_match": "[SUB:lose->loose]",
+        "error_text": "lose->loose",
+        "position": 43,
+        "start_idx": 3090,
+        "end_idx": 3107,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_44",
+        "error_type": "SUB",
+        "error_match": "[SUB:it->my]",
+        "error_text": "it->my",
+        "position": 44,
+        "start_idx": 3131,
+        "end_idx": 3143,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_45",
+        "error_type": "DEL",
+        "error_match": "[DEL:that]",
+        "error_text": "that",
+        "position": 45,
+        "start_idx": 3144,
+        "end_idx": 3154,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_46",
+        "error_type": "SUB",
+        "error_match": "[SUB:clothes->cloth]",
+        "error_text": "clothes->cloth",
+        "position": 46,
+        "start_idx": 3382,
+        "end_idx": 3402,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_47",
+        "error_type": "SUB",
+        "error_match": "[SUB:the way->compared to]",
+        "error_text": "the way->compared to",
+        "position": 47,
+        "start_idx": 3554,
+        "end_idx": 3580,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_48",
+        "error_type": "SUB",
+        "error_match": "[SUB:purging->pooping]",
+        "error_text": "purging->pooping",
+        "position": 48,
+        "start_idx": 3711,
+        "end_idx": 3733,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_49",
+        "error_type": "SUB",
+        "error_match": "[SUB:or->i]",
+        "error_text": "or->i",
+        "position": 49,
+        "start_idx": 3753,
+        "end_idx": 3764,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_50",
+        "error_type": "DEL",
+        "error_match": "[DEL:you]",
+        "error_text": "you",
+        "position": 50,
+        "start_idx": 3765,
+        "end_idx": 3774,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_51",
+        "error_type": "INS",
+        "error_match": "[INS:okay any changes in your voice have you noticed maybe your voice has deepened over time or it still feels the same]",
+        "error_text": "okay any changes in your voice have you noticed maybe your voice has deepened over time or it still feels the same",
+        "position": 51,
+        "start_idx": 3827,
+        "end_idx": 3947,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_52",
+        "error_type": "DEL",
+        "error_match": "[DEL:have]",
+        "error_text": "have",
+        "position": 52,
+        "start_idx": 4000,
+        "end_idx": 4010,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_53",
+        "error_type": "SUB",
+        "error_match": "[SUB:been->be]",
+        "error_text": "been->be",
+        "position": 53,
+        "start_idx": 4030,
+        "end_idx": 4044,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_54",
+        "error_type": "SUB",
+        "error_match": "[SUB:irregularities->regularities]",
+        "error_text": "irregularities->regularities",
+        "position": 54,
+        "start_idx": 4095,
+        "end_idx": 4129,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_55",
+        "error_type": "SUB",
+        "error_match": "[SUB:periods->peers]",
+        "error_text": "periods->peers",
+        "position": 55,
+        "start_idx": 4148,
+        "end_idx": 4168,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_56",
+        "error_type": "SUB",
+        "error_match": "[SUB:noticed->notice]",
+        "error_text": "noticed->notice",
+        "position": 56,
+        "start_idx": 4453,
+        "end_idx": 4474,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_57",
+        "error_type": "INS",
+        "error_match": "[INS:and yeah i just feel uncomfortable]",
+        "error_text": "and yeah i just feel uncomfortable",
+        "position": 57,
+        "start_idx": 4508,
+        "end_idx": 4548,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_58",
+        "error_type": "DEL",
+        "error_match": "[DEL:what]",
+        "error_text": "what",
+        "position": 58,
+        "start_idx": 4554,
+        "end_idx": 4564,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_59",
+        "error_type": "DEL",
+        "error_match": "[DEL:oh]",
+        "error_text": "oh",
+        "position": 59,
+        "start_idx": 4607,
+        "end_idx": 4615,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_60",
+        "error_type": "DEL",
+        "error_match": "[DEL:i]",
+        "error_text": "i",
+        "position": 60,
+        "start_idx": 4632,
+        "end_idx": 4639,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_61",
+        "error_type": "SUB",
+        "error_match": "[SUB:no->what]",
+        "error_text": "no->what",
+        "position": 61,
+        "start_idx": 4774,
+        "end_idx": 4788,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_62",
+        "error_type": "SUB",
+        "error_match": "[SUB:okay->yeah]",
+        "error_text": "okay->yeah",
+        "position": 62,
+        "start_idx": 4838,
+        "end_idx": 4854,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_63",
+        "error_type": "INS",
+        "error_match": "[INS:oh]",
+        "error_text": "oh",
+        "position": 63,
+        "start_idx": 5217,
+        "end_idx": 5225,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_64",
+        "error_type": "SUB",
+        "error_match": "[SUB:told->maybe]",
+        "error_text": "told->maybe",
+        "position": 64,
+        "start_idx": 5238,
+        "end_idx": 5255,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_65",
+        "error_type": "DEL",
+        "error_match": "[DEL:you]",
+        "error_text": "you",
+        "position": 65,
+        "start_idx": 5256,
+        "end_idx": 5265,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_66",
+        "error_type": "SUB",
+        "error_match": "[SUB:is->or]",
+        "error_text": "is->or",
+        "position": 66,
+        "start_idx": 5299,
+        "end_idx": 5311,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_67",
+        "error_type": "INS",
+        "error_match": "[INS:the]",
+        "error_text": "the",
+        "position": 67,
+        "start_idx": 5378,
+        "end_idx": 5387,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_68",
+        "error_type": "DEL",
+        "error_match": "[DEL:is]",
+        "error_text": "is",
+        "position": 68,
+        "start_idx": 5405,
+        "end_idx": 5413,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_69",
+        "error_type": "SUB",
+        "error_match": "[SUB:as->although]",
+        "error_text": "as->although",
+        "position": 69,
+        "start_idx": 5441,
+        "end_idx": 5459,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_70",
+        "error_type": "DEL",
+        "error_match": "[DEL:a]",
+        "error_text": "a",
+        "position": 70,
+        "start_idx": 5460,
+        "end_idx": 5467,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_71",
+        "error_type": "SUB",
+        "error_match": "[SUB:it used->the just]",
+        "error_text": "it used->the just",
+        "position": 71,
+        "start_idx": 5566,
+        "end_idx": 5589,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_72",
+        "error_type": "DEL",
+        "error_match": "[DEL:to]",
+        "error_text": "to",
+        "position": 72,
+        "start_idx": 5590,
+        "end_idx": 5598,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_73",
+        "error_type": "INS",
+        "error_match": "[INS:okay do you complain of difficulty with vision then your eyes bulging then you also sensitive to light]",
+        "error_text": "okay do you complain of difficulty with vision then your eyes bulging then you also sensitive to light",
+        "position": 73,
+        "start_idx": 5623,
+        "end_idx": 5731,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_74",
+        "error_type": "INS",
+        "error_match": "[INS:okay so there is]",
+        "error_text": "okay so there is",
+        "position": 74,
+        "start_idx": 5838,
+        "end_idx": 5860,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_75",
+        "error_type": "INS",
+        "error_match": "[INS:nausea or vomiting]",
+        "error_text": "nausea or vomiting",
+        "position": 75,
+        "start_idx": 5864,
+        "end_idx": 5888,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_76",
+        "error_type": "INS",
+        "error_match": "[INS:okay apart from blurry of visions any persistent headaches no]",
+        "error_text": "okay apart from blurry of visions any persistent headaches no",
+        "position": 76,
+        "start_idx": 5892,
+        "end_idx": 5959,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_77",
+        "error_type": "SUB",
+        "error_match": "[SUB:yeah->no]",
+        "error_text": "yeah->no",
+        "position": 77,
+        "start_idx": 5967,
+        "end_idx": 5981,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_78",
+        "error_type": "INS",
+        "error_match": "[INS:more]",
+        "error_text": "more",
+        "position": 78,
+        "start_idx": 6059,
+        "end_idx": 6069,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_79",
+        "error_type": "SUB",
+        "error_match": "[SUB:alright ma->and more]",
+        "error_text": "alright ma->and more",
+        "position": 79,
+        "start_idx": 6070,
+        "end_idx": 6096,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_80",
+        "error_type": "INS",
+        "error_match": "[INS:a]",
+        "error_text": "a",
+        "position": 80,
+        "start_idx": 6168,
+        "end_idx": 6175,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_81",
+        "error_type": "SUB",
+        "error_match": "[SUB:hypertensive->paternity]",
+        "error_text": "hypertensive->paternity",
+        "position": 81,
+        "start_idx": 6176,
+        "end_idx": 6205,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_82",
+        "error_type": "INS",
+        "error_match": "[INS:do you alcohol]",
+        "error_text": "do you alcohol",
+        "position": 82,
+        "start_idx": 6436,
+        "end_idx": 6456,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_83",
+        "error_type": "INS",
+        "error_match": "[INS:doctor do you take]",
+        "error_text": "doctor do you take",
+        "position": 83,
+        "start_idx": 6476,
+        "end_idx": 6500,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_84",
+        "error_type": "INS",
+        "error_match": "[INS:alcohol]",
+        "error_text": "alcohol",
+        "position": 84,
+        "start_idx": 6509,
+        "end_idx": 6522,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_85",
+        "error_type": "SUB",
+        "error_match": "[SUB:either oh->see that]",
+        "error_text": "either oh->see that",
+        "position": 85,
+        "start_idx": 6580,
+        "end_idx": 6605,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_86",
+        "error_type": "SUB",
+        "error_match": "[SUB:are you->sorry i]",
+        "error_text": "are you->sorry i",
+        "position": 86,
+        "start_idx": 6611,
+        "end_idx": 6633,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_87",
+        "error_type": "SUB",
+        "error_match": "[SUB:thirteen->thirteenyearold]",
+        "error_text": "thirteen->thirteenyearold",
+        "position": 87,
+        "start_idx": 6768,
+        "end_idx": 6799,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_88",
+        "error_type": "DEL",
+        "error_match": "[DEL:year old]",
+        "error_text": "year old",
+        "position": 88,
+        "start_idx": 6800,
+        "end_idx": 6814,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_89",
+        "error_type": "SUB",
+        "error_match": "[SUB:thirteen year->thirteenyearold son]",
+        "error_text": "thirteen year->thirteenyearold son",
+        "position": 89,
+        "start_idx": 6824,
+        "end_idx": 6864,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_90",
+        "error_type": "DEL",
+        "error_match": "[DEL:old]",
+        "error_text": "old",
+        "position": 90,
+        "start_idx": 6865,
+        "end_idx": 6874,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_91",
+        "error_type": "SUB",
+        "error_match": "[SUB:thirteen->thirteenyearold]",
+        "error_text": "thirteen->thirteenyearold",
+        "position": 91,
+        "start_idx": 6949,
+        "end_idx": 6980,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_92",
+        "error_type": "DEL",
+        "error_match": "[DEL:year old]",
+        "error_text": "year old",
+        "position": 92,
+        "start_idx": 6981,
+        "end_idx": 6995,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_93",
+        "error_type": "INS",
+        "error_match": "[INS:is there any drug]",
+        "error_text": "is there any drug",
+        "position": 93,
+        "start_idx": 7020,
+        "end_idx": 7043,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_94",
+        "error_type": "SUB",
+        "error_match": "[SUB:known->nondrug]",
+        "error_text": "known->nondrug",
+        "position": 94,
+        "start_idx": 7060,
+        "end_idx": 7080,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_95",
+        "error_type": "DEL",
+        "error_match": "[DEL:drug]",
+        "error_text": "drug",
+        "position": 95,
+        "start_idx": 7081,
+        "end_idx": 7091,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_96",
+        "error_type": "SUB",
+        "error_match": "[SUB:is->yeah]",
+        "error_text": "is->yeah",
+        "position": 96,
+        "start_idx": 7114,
+        "end_idx": 7128,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_97",
+        "error_type": "DEL",
+        "error_match": "[DEL:there]",
+        "error_text": "there",
+        "position": 97,
+        "start_idx": 7129,
+        "end_idx": 7140,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_98",
+        "error_type": "SUB",
+        "error_match": "[SUB:drug->drugs]",
+        "error_text": "drug->drugs",
+        "position": 98,
+        "start_idx": 7153,
+        "end_idx": 7170,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_99",
+        "error_type": "INS",
+        "error_match": "[INS:mr]",
+        "error_text": "mr",
+        "position": 99,
+        "start_idx": 7245,
+        "end_idx": 7253,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_100",
+        "error_type": "SUB",
+        "error_match": "[SUB:mrs tolulope->tolu roke]",
+        "error_text": "mrs tolulope->tolu roke",
+        "position": 100,
+        "start_idx": 7254,
+        "end_idx": 7283,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_101",
+        "error_type": "INS",
+        "error_match": "[INS:and from the complaints i am seeing this looks like a case of you know hypothyroidism i do not know if you have heard of the thyroid gland before so we have a thyroid gland that is located in the neck have you heard of it before sir]",
+        "error_text": "and from the complaints i am seeing this looks like a case of you know hypothyroidism i do not know if you have heard of the thyroid gland before so we have a thyroid gland that is located in the neck have you heard of it before sir",
+        "position": 101,
+        "start_idx": 7334,
+        "end_idx": 7572,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_102",
+        "error_type": "SUB",
+        "error_match": "[SUB:not->no]",
+        "error_text": "not->no",
+        "position": 102,
+        "start_idx": 7580,
+        "end_idx": 7593,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_103",
+        "error_type": "SUB",
+        "error_match": "[SUB:and->at]",
+        "error_text": "and->at",
+        "position": 103,
+        "start_idx": 7661,
+        "end_idx": 7674,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_104",
+        "error_type": "INS",
+        "error_match": "[INS:it]",
+        "error_text": "it",
+        "position": 104,
+        "start_idx": 7898,
+        "end_idx": 7906,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_105",
+        "error_type": "SUB",
+        "error_match": "[SUB:given->giving]",
+        "error_text": "given->giving",
+        "position": 105,
+        "start_idx": 7979,
+        "end_idx": 7998,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_106",
+        "error_type": "SUB",
+        "error_match": "[SUB:the->these]",
+        "error_text": "the->these",
+        "position": 106,
+        "start_idx": 8007,
+        "end_idx": 8023,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_107",
+        "error_type": "INS",
+        "error_match": "[INS:okay]",
+        "error_text": "okay",
+        "position": 107,
+        "start_idx": 8062,
+        "end_idx": 8072,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_108",
+        "error_type": "SUB",
+        "error_match": "[SUB:is->was]",
+        "error_text": "is->was",
+        "position": 108,
+        "start_idx": 8186,
+        "end_idx": 8199,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_109",
+        "error_type": "INS",
+        "error_match": "[INS:hormone]",
+        "error_text": "hormone",
+        "position": 109,
+        "start_idx": 8343,
+        "end_idx": 8356,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_110",
+        "error_type": "SUB",
+        "error_match": "[SUB:hormones->hormone]",
+        "error_text": "hormones->hormone",
+        "position": 110,
+        "start_idx": 8382,
+        "end_idx": 8405,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_111",
+        "error_type": "INS",
+        "error_match": "[INS:doing]",
+        "error_text": "doing",
+        "position": 111,
+        "start_idx": 8421,
+        "end_idx": 8432,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_112",
+        "error_type": "INS",
+        "error_match": "[INS:a]",
+        "error_text": "a",
+        "position": 112,
+        "start_idx": 8465,
+        "end_idx": 8472,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_113",
+        "error_type": "SUB",
+        "error_match": "[SUB:will->is]",
+        "error_text": "will->is",
+        "position": 113,
+        "start_idx": 8620,
+        "end_idx": 8634,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_114",
+        "error_type": "SUB",
+        "error_match": "[SUB:grand->gland]",
+        "error_text": "grand->gland",
+        "position": 114,
+        "start_idx": 8679,
+        "end_idx": 8697,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_115",
+        "error_type": "SUB",
+        "error_match": "[SUB:issue->history]",
+        "error_text": "issue->history",
+        "position": 115,
+        "start_idx": 8722,
+        "end_idx": 8742,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_116",
+        "error_type": "SUB",
+        "error_match": "[SUB:would->should]",
+        "error_text": "would->should",
+        "position": 116,
+        "start_idx": 8817,
+        "end_idx": 8836,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_117",
+        "error_type": "DEL",
+        "error_match": "[DEL:cont]",
+        "error_text": "cont",
+        "position": 117,
+        "start_idx": 8905,
+        "end_idx": 8915,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_118",
+        "error_type": "DEL",
+        "error_match": "[DEL:a]",
+        "error_text": "a",
+        "position": 118,
+        "start_idx": 9125,
+        "end_idx": 9132,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_119",
+        "error_type": "SUB",
+        "error_match": "[SUB:would->will]",
+        "error_text": "would->will",
+        "position": 119,
+        "start_idx": 9245,
+        "end_idx": 9262,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_120",
+        "error_type": "SUB",
+        "error_match": "[SUB:stay->the]",
+        "error_text": "stay->the",
+        "position": 120,
+        "start_idx": 9519,
+        "end_idx": 9534,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_121",
+        "error_type": "DEL",
+        "error_match": "[DEL:the]",
+        "error_text": "the",
+        "position": 121,
+        "start_idx": 9579,
+        "end_idx": 9588,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_122",
+        "error_type": "INS",
+        "error_match": "[INS:a ten or]",
+        "error_text": "a ten or",
+        "position": 122,
+        "start_idx": 9623,
+        "end_idx": 9637,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_123",
+        "error_type": "SUB",
+        "error_match": "[SUB:atenolol->low]",
+        "error_text": "atenolol->low",
+        "position": 123,
+        "start_idx": 9638,
+        "end_idx": 9657,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_124",
+        "error_type": "SUB",
+        "error_match": "[SUB:they are->i am]",
+        "error_text": "they are->i am",
+        "position": 124,
+        "start_idx": 9753,
+        "end_idx": 9773,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_125",
+        "error_type": "SUB",
+        "error_match": "[SUB:would->will]",
+        "error_text": "would->will",
+        "position": 125,
+        "start_idx": 9812,
+        "end_idx": 9829,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_126",
+        "error_type": "SUB",
+        "error_match": "[SUB:would->will]",
+        "error_text": "would->will",
+        "position": 126,
+        "start_idx": 9916,
+        "end_idx": 9933,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_127",
+        "error_type": "DEL",
+        "error_match": "[DEL:i would]",
+        "error_text": "i would",
+        "position": 127,
+        "start_idx": 9934,
+        "end_idx": 9947,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_128",
+        "error_type": "SUB",
+        "error_match": "[SUB:too->to]",
+        "error_text": "too->to",
+        "position": 128,
+        "start_idx": 9990,
+        "end_idx": 10003,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_129",
+        "error_type": "SUB",
+        "error_match": "[SUB:a->the]",
+        "error_text": "a->the",
+        "position": 129,
+        "start_idx": 10294,
+        "end_idx": 10306,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_130",
+        "error_type": "SUB",
+        "error_match": "[SUB:hormone->gland]",
+        "error_text": "hormone->gland",
+        "position": 130,
+        "start_idx": 10315,
+        "end_idx": 10335,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_131",
+        "error_type": "SUB",
+        "error_match": "[SUB:go->guard]",
+        "error_text": "go->guard",
+        "position": 131,
+        "start_idx": 10354,
+        "end_idx": 10369,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_132",
+        "error_type": "DEL",
+        "error_match": "[DEL:ahead]",
+        "error_text": "ahead",
+        "position": 132,
+        "start_idx": 10370,
+        "end_idx": 10381,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_133",
+        "error_type": "SUB",
+        "error_match": "[SUB:sir->so]",
+        "error_text": "sir->so",
+        "position": 133,
+        "start_idx": 10403,
+        "end_idx": 10416,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_134",
+        "error_type": "INS",
+        "error_match": "[INS:no problem]",
+        "error_text": "no problem",
+        "position": 134,
+        "start_idx": 10432,
+        "end_idx": 10448,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_135",
+        "error_type": "SUB",
+        "error_match": "[SUB:okay->good]",
+        "error_text": "okay->good",
+        "position": 135,
+        "start_idx": 10449,
+        "end_idx": 10465,
+        "is_medical": false
+      }
+    ],
+    "error_count": 136,
+    "index": 0
+  },
+  {
+    "utterance_id": "day1_consultation03",
+    "human_transcript": "hello hello hello there it is  doctor  here how can i help you this afternoon oh i just got a terrible headache since midday  on the left side it is just making me feel so ill  i just feel like i need to vomit i am sorry to hear that  can you tell me a bit more about the headache well you know i noticed some zigzag lines in my vision a few minutes before the headache started   my vision blurred  you know it just i yeah pains just horrible just making me feel so unwell  mm okay and   just want you to do something well let us try our best let us try and get you let us try and get you well soon  you mentioned it is on your left hand side is that right and it started at midday a few hours ago yeah okay  did the pain come on quite suddenly or was it more of a gradual build up do not know really it just happened okay and are you able to describe what kind of headache it was for example was it throbbing or was it more of a sharp pain yeah i guess it is yeah i guess it is throbbing  on that left side and is it moving anywhere else at all no but it is worse when i move  okay is that when you move your neck well like if i lean forward or like move my head or neck yeah headache gets worse okay  i am just really worried like i have just been googling and like i have read  you know if your  headache gets worse if you move it could be a sign of brain cancer okay is that all you are worried about  cancer is that is that all your main worries today oh yeah yeah and i would like you know my my friends mum she she recently died of a brain tumor so it is really concerning me actually oh dear i am sorry to hear that i can i can understand why it is affecting you  but  why do not we why do not we take a good history first and let me examine you and then we can have a little chat afterwards and see what is going on here   so you mentioned a few things you mentioned a headache you also mentioned some disease like lymes  before the headaches came on and your vision has been blurry as well is that right is that  is that on both eyes or just in left left eye yeah eh feels like it some days both eyes okay have you any difficulty with seeing bright lights at all yeah well i am  wearing sunglasses right now it is just you know the lights really hurting my eyes oh i see okay  and you mentioned that you felt quite nauseous have you vomited at all yeah i vomited twice twice okay   earlier today okay  any temperatures or fevers  no i do not feel feverish okay  any other funny skin rashes that you may have noticed no i have not noticed anything like that okay  fine  and do you normally get headaches  i am not really prone to them no no but i did i did have a similar headache a few weeks ago okay and what happened then just  similar how long did it last for couple of days did you do anything that made it better  yeah i had to take painkillers and had to go go to bed and rest and yeah  couple days off work and i work in the fashion industry and you know they are wondering what is going on like i have to take sick days  yeah yeah i need to get back to work today but you know what if it is a brain tumour what is going to happen with my future and my career yeah yeah  you know  really  about this  never had headaches like this before like why should i get them now  yeah sure i mean i can see your concern obviously is a lot there is a lot of worry there  but you know let let let as i said let us take it step by step  to see exactly what the because of these headaches are first  i am just going to ask you some  very  yes no questions if that is okay madam   have you noticed any problems with your speech at all any difficulties with your words no any problems with your arms and legs for example numbness or weakness no any difficulty with balance your balance or coordination no okay and have you had any injuries to your head have you had a fall recently or been knocked on the head no okay alright  and and you are feeling otherwise okay so for example your   your your breathings okay you are not feeling breathless or no okay  do you have any other medical history i should be aware of no nothing no so for example have you had has anyone told you you have had migraines in the past no no okay do you  no my mum my mum has has migraines but i have i have not been diagnosed okay right  my next question was that of family history is there anything in the family so apart from migraines is there anything else is there anything related to brain for example  as well what was that sorry my mom has an underactive thyroid as well  thyroid  as well okay  okay any other problems with for example the brain or  you mentioned brain cancer any other family history of   no no okay  in terms of medications do you take anything on a regular basis  i take the pill microgynon okay and how long have you been on that for  three months three months okay and is that mainly for contraception or is that for something else  it is for contraception okay alright that is something you meant to have a little discussion about today as well   well my next question was about  your social your situation at home you mentioned you work in the fashion industry and your work is your job quite stressful at the moment yeah it is really stressful actually have you been  having problems at like  work you know managers like putting a lot of pressure on me to deliver and  yeah it is not a good time  is it getting you down i do not feel down just a little bit stressed okay alright and what kind of things do you do to alleviate your stress normally nothing really okay do you do much in the way of exercise no no okay  who is at home with you  i live on my own okay  are you coping okay at the moment fine yeah okay  do you smoke at all  and do you drink much in the way of alcohol no no okay alright  so normally at this  i would like to kind of proceed to examination  that is   based on your story  i wonder whether you may  may have a migraine   migraine type headache  it sounds  very classical of that of that nature the the the  headache on one side throbbing nature the nausea vomiting  sensitivity to bright lights  i am reassured that you do not have anything more serious such as meningitis or indeed brain cancer i know that was a big worry of yours initially   thank you   thanks so much i was so worried that i had cancer and oh now you say migraine yeah i guess my mum has similar symptoms to me and yeah it does make sense  yeah yeah well i hope that puts your you know  mind at ease  certainly this is the second migraine you have had in the space of a month  so i think moving forwards there is a couple of options i think keeping a headache diary would be quite important  to see exactly what is triggering these headaches and in terms of trying to treat your headaches today some strong painkillers would be advisable so  think about paracetamol or even cocodamol  and some antiinflammatories such as ibuprofen and naproxen how is that sound to you k that sounds good  and  you know if your headaches were to become more persistent then we could maybe think about giving you some medications that will stop your headaches from happening in the first place something  prophylactic medicines  then we could have a discussion next time i see you next week perhaps okay okay okay  now a couple of things i want you to think about is you know if your symptoms are not getting better next two three days or indeed they are getting worse i would like you to come back and see me  straight away if possible so if your headaches getting worse not responding to medications or your  neck pain is getting worse or you develop any weakness in your arms and legs or your vision then i want you to come back and see me straight away okay okay does that sound  all okay doctor that is great great any questions for me no thank you okay have a good day k thanks bye right",
+    "human_transcript_ner": "hello hello hello there it is  doctor  here how can i help you this afternoon oh i just got a terrible [PROBLEM: headache] since midday  on the left side it is just making me feel so [PROBLEM: ill]  i just feel like i need to [PROBLEM: vomit] i am sorry to hear that  can you tell me a bit more about the [PROBLEM: headache] well you know i noticed some [PROBLEM: zigzag lines] in my vision a few minutes before the [PROBLEM: headache] started   my vision [PROBLEM: blurred]  you know it just i yeah [PROBLEM: pains] just horrible just making me feel so unwell  mm okay and   just want you to do something well let us try our best let us try and get you let us try and get you well soon  you mentioned it is on your left hand side is that right and it started at midday a few hours ago yeah okay  did the [PROBLEM: pain] come on quite suddenly or was it more of a gradual build up do not know really it just happened okay and are you able to describe what kind of [PROBLEM: headache] it was for example was it [PROBLEM: throbbing] or was it more of a [SEVERITY: sharp] [PROBLEM: pain] yeah i guess it is yeah i guess it is [PROBLEM: throbbing]  on that left side and is it moving anywhere else at all no but it is worse when i move  okay is that when you move your [ANATOMICAL_STRUCTURE: neck] well like if i lean forward or like move my [ANATOMICAL_STRUCTURE: head] or [ANATOMICAL_STRUCTURE: neck] yeah [PROBLEM: headache] gets [SEVERITY: worse] okay  i am just really worried like i have just been [PROBLEM: googling] and like i have read  you know if your  [PROBLEM: headache] gets [SEVERITY: worse] if you move it could be a sign of [ANATOMICAL_STRUCTURE: brain] [PROBLEM: cancer] okay is that all you are worried about  [PROBLEM: cancer] is that is that all your main worries today oh yeah yeah and i would like you know my my friends mum she she recently [PROBLEM: died] of a [ANATOMICAL_STRUCTURE: brain] [PROBLEM: tumor] so it is really concerning me actually oh dear i am sorry to hear that i can i can understand why it is affecting you  but  why do not we why do not we take a good history first and let me examine you and then we can have a little chat afterwards and see what is going on here   so you mentioned a few things you mentioned a [PROBLEM: headache] you also mentioned some [PROBLEM: disease] like [PROBLEM: lymes]  before the [PROBLEM: headaches] came on and your [BODY_FUNCTION: vision] has been [BF_RESULT: blurry] as well is that right is that  is that on both [ANATOMICAL_STRUCTURE: eyes] or just in left left [ANATOMICAL_STRUCTURE: eye] yeah eh feels like it some days both [ANATOMICAL_STRUCTURE: eyes] okay have you any difficulty with seeing bright lights at all yeah well i am  wearing sunglasses right now it is just you know the lights really hurting my [ANATOMICAL_STRUCTURE: eyes] oh i see okay  and you mentioned that you felt quite [PROBLEM: nauseous] have you [PROBLEM: vomited] at all yeah i [PROBLEM: vomited] twice twice okay   earlier today okay  any [BODY_MEASUREMENT: temperatures] or [PROBLEM: fevers]  no i do not feel [PROBLEM: feverish] okay  any other funny [ANATOMICAL_STRUCTURE: skin] [PROBLEM: rashes] that you may have noticed no i have not noticed anything like that okay  fine  and do you normally get [PROBLEM: headaches]  i am not really prone to them no no but i did i did have a similar [PROBLEM: headache] a few weeks ago okay and what happened then just  similar how long did it last for couple of days did you do anything that made it better  yeah i had to take [MEDICINE: painkillers] and had to go go to bed and rest and yeah  couple days off work and i work in the fashion industry and you know they are wondering what is going on like i have to take [PROBLEM: sick] days  yeah yeah i need to get back to work today but you know what if it is a [ANATOMICAL_STRUCTURE: brain] [PROBLEM: tumour] what is going to happen with my future and my career yeah yeah  you know  really  about this  never had [PROBLEM: headaches] like this before like why should i get them now  yeah sure i mean i can see your concern obviously is a lot there is a lot of worry there  but you know let let let as i said let us take it step by step  to see exactly what the because of these [PROBLEM: headaches] are first  i am just going to ask you some  very  yes no questions if that is okay madam   have you noticed any [PROBLEM: problems] with your [BODY_FUNCTION: speech] at all any difficulties with your words no any [PROBLEM: problems] with your [ANATOMICAL_STRUCTURE: arms] and [ANATOMICAL_STRUCTURE: legs] for example [PROBLEM: numbness] or [PROBLEM: weakness] no any [PROBLEM: difficulty with balance] your balance or coordination no okay and have you had any [PROBLEM: injuries] to your [ANATOMICAL_STRUCTURE: head] have you had a [PROBLEM: fall] recently or been knocked on the [ANATOMICAL_STRUCTURE: head] no okay alright  and and you are feeling otherwise okay so for example your   your your [BODY_FUNCTION: breathings] okay you are not feeling [PROBLEM: breathless] or no okay  do you have any other medical history i should be aware of no nothing no so for example have you had has anyone told you you have had [PROBLEM: migraines] in the past no no okay do you  no my mum my mum has has [PROBLEM: migraines] but i have i have not been diagnosed okay right  my next question was that of family history is there anything in the family so apart from [PROBLEM: migraines] is there anything else is there anything related to [ANATOMICAL_STRUCTURE: brain] for example  as well what was that sorry my mom has an [PROBLEM: underactive] [ANATOMICAL_STRUCTURE: thyroid] as well  [ANATOMICAL_STRUCTURE: thyroid]  as well okay  okay any other [PROBLEM: problems] with for example the [ANATOMICAL_STRUCTURE: brain] or  you mentioned [ANATOMICAL_STRUCTURE: brain] [PROBLEM: cancer] any other family history of   no no okay  in terms of [MEDICINE: medications] do you take anything on a regular basis  i take the [MEDICINE: pill microgynon] okay and how long have you been on that for  three months three months okay and is that mainly for contraception or is that for something else  it is for contraception okay alright that is something you meant to have a little discussion about today as well   well my next question was about  your social your situation at home you mentioned you work in the fashion industry and your work is your job quite stressful at the moment yeah it is really stressful actually have you been  having [PROBLEM: problems] at like  work you know managers like putting a lot of pressure on me to deliver and  yeah it is not a good time  is it getting you down i do not feel down just a little bit [PROBLEM: stressed] okay alright and what kind of things do you do to alleviate your [PROBLEM: stress] normally nothing really okay do you do much in the way of exercise no no okay  who is at home with you  i live on my own okay  are you coping okay at the moment fine yeah okay  do you [SUBSTANCE_ABUSE: smoke] at all  and do you [SUBSTANCE_ABUSE: drink] much in the way of [SUBSTANCE_ABUSE: alcohol] no no okay alright  so normally at this  i would like to kind of proceed to examination  that is   based on your story  i wonder whether you may  may have a [PROBLEM: migraine   migraine] type [PROBLEM: headache]  it sounds  very classical of that of that nature the the the  [PROBLEM: headache] on one side [PROBLEM: throbbing] nature the [PROBLEM: nausea] [PROBLEM: vomiting]  sensitivity to bright lights  i am reassured that you do not have anything more serious such as [PROBLEM: meningitis] or indeed [ANATOMICAL_STRUCTURE: brain] [PROBLEM: cancer] i know that was a big worry of yours initially   thank you   thanks so much i was so worried that i had [PROBLEM: cancer] and oh now you say [PROBLEM: migraine] yeah i guess my mum has similar [PROBLEM: symptoms] to me and yeah it does make sense  yeah yeah well i hope that puts your you know  mind at ease  certainly this is the second [PROBLEM: migraine] you have had in the space of a month  so i think moving forwards there is a couple of options i think keeping a [PROBLEM: headache] diary would be quite important  to see exactly what is triggering these [PROBLEM: headaches] and in terms of trying to treat your [PROBLEM: headaches] today some strong [PROBLEM: painkillers] would be advisable so  think about [MEDICINE: paracetamol] or even [MEDICINE: cocodamol]  and some [MEDICINE: antiinflammatories] such as [MEDICINE: ibuprofen] and [MEDICINE: naproxen] how is that sound to you k that sounds good  and  you know if your [PROBLEM: headaches] were to become more persistent then we could maybe think about giving you some [MEDICINE: medications] that will stop your [PROBLEM: headaches] from happening in the first place something  [MEDICINE: prophylactic medicines]  then we could have a discussion next time i see you next week perhaps okay okay okay  now a couple of things i want you to think about is you know if your [PROBLEM: symptoms] are not getting better next two three days or indeed they are getting worse i would like you to come back and see me  straight away if possible so if your [PROBLEM: headaches] getting [SEVERITY: worse] not responding to [MEDICINE: medications] or your  [ANATOMICAL_STRUCTURE: neck] [PROBLEM: pain] is getting [SEVERITY: worse] or you develop any [PROBLEM: weakness] in your [ANATOMICAL_STRUCTURE: arms] and [ANATOMICAL_STRUCTURE: legs] or your [BODY_FUNCTION: vision] then i want you to come back and see me straight away okay okay does that sound  all okay doctor that is great great any questions for me no thank you okay have a good day k thanks bye right",
+    "asr_transcript": "hello hello hello there it is doctor seed here how can i help you this afternoon oh i have just got a terrible headache since midday  on the left side it is just making me feel so ill i just feel like i need to vomit i am sorry to hear that  can you tell me a bit more about the headache well you know i noticed some zigzag lines in my vision a few minutes before the headache started my visions blurred  you know it is just i yeah pains just horrible just making me feel so unwell  okay and i am really tired from work and i just want you to do something well let us try our best let us try and get you let us try and get you well soon  you mentioned this on your left hand side is that right and it started at midday a few hours ago yeah okay  did the pain come on quite suddenly or was it more of a gradual build up i do not know really it just happened okay and are you able to describe what kind of headache it was for example was it throbbing or was it more of a sharp pain yeah i guess it is yeah i guess it is throbbing  on that left side and is it moving anywhere else at all no but it is worse when i move okay is that when you move your neck well like if i lean forward or like move my head or neck yeah the headache gets worse okay  i am just really worried like i have just been googling and like i have read that you know if your you get headache gets worse when you move it could be a sign of brain cancer okay is that what you are worried about yeah is that is that what your main worry is today oh yeah yeah and i have like you know my my friends mum she she recently died of a of a brain tumour so it is really concerning me actually oh dear i am sorry to hear that i can i can understand why it is affecting you  but why why do not we why do not we take a good history first and let me examine you and then we can have a little chat afterwards and see what is going on here  so you mentioned a few things you mentioned the headaches you also mentioned some zigzag lines before the headaches came on and your vision has been blurry as well is that right is that on a is that on both eyes or just a left left eye it feels like it is on both both eyes okay have you had any difficulty with seeing bright lights at all yeah well i am wearing i am wearing sunglasses right now just you know lights really hurting my eyes oh i see okay  and you mentioned that you felt quite nauseous have you vomited at all yeah i have vomited twice twice okay and this earlier today okay  any temperatures or fevers  no i do not feel feverish okay  any other funny skin rashes that you may have noticed no i have not noticed anything like that okay  fine  and do you normally get headaches  not really prone to them no no but i did i did have a similar headache a few weeks ago okay and what happened then just similar how long did it last for a couple of days did you do anything that made it better  yeah i had to take painkillers and had to sort of go to bed and rest and yeah a couple days off work and i work in the fashion industry and you know they are wondering what is going on like having to take sick days yeah need to get back to work today but you know what if it is a brain tumour what is going to happen with my future my career you know yeah really worried about this never had headaches like this before like why now yeah sure and i can see your concerns obviously there is a lot there is a lot of worry there  but you know let let let as i said let us take a step by step  and see exactly what the causes of these headaches are first  i am just going to ask you some  very yes no questions that is okay    have you noticed any problems with your speech at all any difficulty with words no any problems with your arms and legs for example numbness or weakness no any difficulty with balance your balance or coordination no okay and have you had any injuries to your head have you had a fall recently or been knocked on the head no okay all right  and and you are feeling otherwise okay so for example your   your breathings okay you are not feeling breathless or no okay  do you have any other medical history i should be aware of no no so for example have you had if anyone told you have had migraines in the past no no okay do you my mum my mum has has migraines but right so my next question was about family history is there anything in the family so apart from migraines is anything else anything related to the brain for example thyroid as well what was that sorry my mum has an underactive thyroid as well underactive thyroid as well okay okay any other problems for example the brain or you mentioned brain cancer any other family history of that no no okay in terms of medications do you take anything on a regular basis i take the pill microgynon okay and how long have you been on that for three months three months okay and is that mainly for contraception or is that for something else it is for contraception okay all right that is something we may need to have a little discussion about today as well well my next question was about your social really your situation at home you mentioned you work in the fashion industry is your work is your job quite stressful at the moment yeah it is really stressful actually having problems with like people at work you know managers like putting a lot of pressure on me to deliver and oh yeah it is not a good time is it getting you down i do not feel down just feel a bit stressed okay all right and what kind of things do you do to alleviate your stress normally nothing really okay do you do much in the way of exercise no no okay who is at home with you i live on my own okay are you coping okay at the moment fine yeah okay do you smoke at all no and do you drink much in the way of alcohol no okay all right so normally at this stage i would kind of proceed to examination but based on your story i wonder whether you may may have a migraine migrainetype headache it sounds very classical of that of that nature the the headache on one side throbbing nature the nausea vomiting sensitivity to bright lights i am reassured that you do not have anything more serious such as meningitis or indeed brain cancer i know that was a big worry of yours initially thank you thanks so much i was so worried that i had cancer and oh now you say migraine yeah i guess my mum had similar symptoms to me and yeah yeah does make sense well i hope that puts you you know in mind at ease certainly this is the second migraine you have had in the space of a month so i think moving forwards there is a couple of options i think keeping a headache diary would be quite important to see exactly what is triggering these headaches we should also try and treat your headaches today some strong painkillers would be advisable so you know think about paracetamol or even codeine and some antiinflammatories such as ibuprofen and naproxen how does that sound to you okay that sounds good and you know if your headaches were to become more persistent then we can maybe think about giving you some medications that will stop your headaches from happening in the first place something you know prophylactic medicines okay we can have a discussion next time i see you next week perhaps okay okay now a couple of things i want you to think about is you know if your symptoms are not getting better in the next two three days or indeed they are getting worse i would like you to come back and see me straight away if possible so if your headaches are getting worse not responding to medications or your neck pain is getting worse or you are developing any weakness in your arms and legs or your vision then i want you to come back and see me straight away okay okay does that sound all okay doctor that is great great any questions for me no thank you okay have a good day thanks bye bye",
+    "asr_reconstructed": "hello hello hello there it is doctor [INS:seed] here how can i help you this afternoon oh i [INS:have] just got a terrible headache since midday on the left side it is just making me feel so ill i just feel like i need to vomit i am sorry to hear that can you tell me a bit more about the headache well you know i noticed some zigzag lines in my vision a few minutes before the headache started my [SUB:vision->visions] blurred you know it [INS:is] just i yeah pains just horrible just making me feel so unwell [DEL:mm] okay and [INS:i am really tired from work and i] just want you to do something well let us try our best let us try and get you let us try and get you well soon you mentioned [SUB:it->this] [DEL:is] on your left hand side is that right and it started at midday a few hours ago yeah okay did the pain come on quite suddenly or was it more of a gradual build up [INS:i] do not know really it just happened okay and are you able to describe what kind of headache it was for example was it throbbing or was it more of a sharp pain yeah i guess it is yeah i guess it is throbbing on that left side and is it moving anywhere else at all no but it is worse when i move okay is that when you move your neck well like if i lean forward or like move my head or neck yeah [INS:the] headache gets worse okay i am just really worried like i have just been googling and like i have read [INS:that] you know if your [INS:you get] headache gets worse [SUB:if->when] you move it could be a sign of brain cancer okay is that [SUB:all->what] you are worried about [SUB:cancer->yeah] is that is that [SUB:all->what] your main [INS:worry] [SUB:worries->is] today oh yeah yeah and i [SUB:would->have] like you know my my friends mum she she recently died of a [INS:of a] brain [SUB:tumor->tumour] so it is really concerning me actually oh dear i am sorry to hear that i can i can understand why it is affecting you but why [INS:why] do not we why do not we take a good history first and let me examine you and then we can have a little chat afterwards and see what is going on here so you mentioned a few things you mentioned [SUB:a headache->the headaches] you also mentioned some [SUB:disease like->zigzag lines] [DEL:lymes] before the headaches came on and your vision has been blurry as well is that right is that [INS:on a] is that on both eyes or just [SUB:in->a] left left eye [SUB:yeah->it] [DEL:eh] feels like it [SUB:some days->is on] both [INS:both] eyes okay have you [INS:had] any difficulty with seeing bright lights at all yeah well i am wearing [INS:i am wearing] sunglasses right now [DEL:it is] just you know [DEL:the] lights really hurting my eyes oh i see okay and you mentioned that you felt quite nauseous have you vomited at all yeah i [INS:have] vomited twice twice okay [INS:and this] earlier today okay any temperatures or fevers no i do not feel feverish okay any other funny skin rashes that you may have noticed no i have not noticed anything like that okay fine and do you normally get headaches [DEL:i am] not really prone to them no no but i did i did have a similar headache a few weeks ago okay and what happened then just similar how long did it last for [INS:a] couple of days did you do anything that made it better yeah i had to take painkillers and had to [INS:sort] [SUB:go->of] go to bed and rest and yeah [INS:a] couple days off work and i work in the fashion industry and you know they are wondering what is going on like [SUB:i->having] [DEL:have] to take sick days yeah [DEL:yeah i] need to get back to work today but you know what if it is a brain tumour what is going to happen with my future [DEL:and] my career [DEL:yeah yeah] you know [INS:yeah] really [INS:worried] about this never had headaches like this before like why [DEL:should i get them] now yeah sure [SUB:i->and] [DEL:mean] i can see your [SUB:concern->concerns] obviously [INS:there] is a lot there is a lot of worry there but you know let let let as i said let us take [SUB:it->a] step by step [SUB:to->and] see exactly what the [SUB:because->causes] of these headaches are first i am just going to ask you some very yes no questions [DEL:if] that is okay [DEL:madam] have you noticed any problems with your speech at all any [SUB:difficulties->difficulty] with [DEL:your] words no any problems with your arms and legs for example numbness or weakness no any difficulty with balance your balance or coordination no okay and have you had any injuries to your head have you had a fall recently or been knocked on the head no okay [INS:all] [SUB:alright->right] and and you are feeling otherwise okay so for example your your [DEL:your] breathings okay you are not feeling breathless or no okay do you have any other medical history i should be aware of no [DEL:nothing] no so for example have you had [SUB:has->if] anyone told you [DEL:you] have had migraines in the past no no okay do you [DEL:no] my mum my mum has has migraines but [SUB:i have->right so] [DEL:i have not been diagnosed okay right] my next question was [SUB:that->about] [DEL:of] family history is there anything in the family so apart from migraines is [DEL:there] anything else [DEL:is there] anything related to [INS:the] brain for example [INS:thyroid] as well what was that sorry my [SUB:mom->mum] has an underactive thyroid as well [INS:underactive] thyroid as well okay okay any other problems [DEL:with] for example the brain or you mentioned brain cancer any other family history of [INS:that] no no okay in terms of medications do you take anything on a regular basis i take the pill microgynon okay and how long have you been on that for three months three months okay and is that mainly for contraception or is that for something else it is for contraception okay [INS:all] [SUB:alright->right] that is something [INS:we] [SUB:you meant->may need] to have a little discussion about today as well well my next question was about your social [INS:really] your situation at home you mentioned you work in the fashion industry [SUB:and->is] your work is your job quite stressful at the moment yeah it is really stressful actually [SUB:have you been having problems->having problems with like people] at [DEL:like] work you know managers like putting a lot of pressure on me to deliver and [INS:oh] yeah it is not a good time is it getting you down i do not feel down just [INS:feel] a [DEL:little] bit stressed okay [INS:all] [SUB:alright->right] and what kind of things do you do to alleviate your stress normally nothing really okay do you do much in the way of exercise no no okay who is at home with you i live on my own okay are you coping okay at the moment fine yeah okay do you smoke at all [INS:no] and do you drink much in the way of alcohol no [SUB:no okay alright->okay all right] so normally at this [INS:stage] i would [DEL:like to] kind of proceed to examination [SUB:that->but] [DEL:is] based on your story i wonder whether you may may have a migraine [SUB:migraine->migrainetype] [DEL:type] headache it sounds very classical of that of that nature the the [DEL:the] headache on one side throbbing nature the nausea vomiting sensitivity to bright lights i am reassured that you do not have anything more serious such as meningitis or indeed brain cancer i know that was a big worry of yours initially thank you thanks so much i was so worried that i had cancer and oh now you say migraine yeah i guess my mum [SUB:has->had] similar symptoms to me and yeah [SUB:it->yeah] does make sense [DEL:yeah yeah] well i hope that puts [SUB:your->you] you know [INS:in] mind at ease certainly this is the second migraine you have had in the space of a month so i think moving forwards there is a couple of options i think keeping a headache diary would be quite important to see exactly what is triggering these headaches [SUB:and in terms of trying->we should also try and] [DEL:to] treat your headaches today some strong painkillers would be advisable so [INS:you know] think about paracetamol or even [SUB:cocodamol->codeine] and some antiinflammatories such as ibuprofen and naproxen how [SUB:is->does] that sound to you [SUB:k->okay] that sounds good and you know if your headaches were to become more persistent then we [SUB:could->can] maybe think about giving you some medications that will stop your headaches from happening in the first place something [INS:you know] prophylactic medicines [SUB:then->okay] we [SUB:could->can] have a discussion next time i see you next week perhaps okay okay [DEL:okay] now a couple of things i want you to think about is you know if your symptoms are not getting better [INS:in the] next two three days or indeed they are getting worse i would like you to come back and see me straight away if possible so if your headaches [INS:are] getting worse not responding to medications or your neck pain is getting worse or you [INS:are] [SUB:develop->developing] any weakness in your arms and legs or your vision then i want you to come back and see me straight away okay okay does that sound all okay doctor that is great great any questions for me no thank you okay have a good day [DEL:k] thanks bye [SUB:right->bye]",
+    "audio_file": "data/final_audio/day1_consultation03_stereo.wav",
+    "model": "qwen3_iaa",
+    "wer": 0.110180412371134,
+    "errors": [
+      {
+        "error_id": "insert_0",
+        "error_type": "INS",
+        "error_match": "[INS:seed]",
+        "error_text": "seed",
+        "position": 0,
+        "start_idx": 37,
+        "end_idx": 47,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_1",
+        "error_type": "INS",
+        "error_match": "[INS:have]",
+        "error_text": "have",
+        "position": 1,
+        "start_idx": 92,
+        "end_idx": 102,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_2",
+        "error_type": "SUB",
+        "error_match": "[SUB:vision->visions]",
+        "error_text": "vision->visions",
+        "position": 2,
+        "start_idx": 398,
+        "end_idx": 419,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_3",
+        "error_type": "INS",
+        "error_match": "[INS:is]",
+        "error_text": "is",
+        "position": 3,
+        "start_idx": 440,
+        "end_idx": 448,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_4",
+        "error_type": "DEL",
+        "error_match": "[DEL:mm]",
+        "error_text": "mm",
+        "position": 4,
+        "start_idx": 511,
+        "end_idx": 519,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_5",
+        "error_type": "INS",
+        "error_match": "[INS:i am really tired from work and i]",
+        "error_text": "i am really tired from work and i",
+        "position": 5,
+        "start_idx": 529,
+        "end_idx": 568,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_6",
+        "error_type": "SUB",
+        "error_match": "[SUB:it->this]",
+        "error_text": "it->this",
+        "position": 6,
+        "start_idx": 694,
+        "end_idx": 708,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_7",
+        "error_type": "DEL",
+        "error_match": "[DEL:is]",
+        "error_text": "is",
+        "position": 7,
+        "start_idx": 709,
+        "end_idx": 717,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_8",
+        "error_type": "INS",
+        "error_match": "[INS:i]",
+        "error_text": "i",
+        "position": 8,
+        "start_idx": 879,
+        "end_idx": 886,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_9",
+        "error_type": "INS",
+        "error_match": "[INS:the]",
+        "error_text": "the",
+        "position": 9,
+        "start_idx": 1280,
+        "end_idx": 1289,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_10",
+        "error_type": "INS",
+        "error_match": "[INS:that]",
+        "error_text": "that",
+        "position": 10,
+        "start_idx": 1392,
+        "end_idx": 1402,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_11",
+        "error_type": "INS",
+        "error_match": "[INS:you get]",
+        "error_text": "you get",
+        "position": 11,
+        "start_idx": 1420,
+        "end_idx": 1433,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_12",
+        "error_type": "SUB",
+        "error_match": "[SUB:if->when]",
+        "error_text": "if->when",
+        "position": 12,
+        "start_idx": 1454,
+        "end_idx": 1468,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_13",
+        "error_type": "SUB",
+        "error_match": "[SUB:all->what]",
+        "error_text": "all->what",
+        "position": 13,
+        "start_idx": 1526,
+        "end_idx": 1541,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_14",
+        "error_type": "SUB",
+        "error_match": "[SUB:cancer->yeah]",
+        "error_text": "cancer->yeah",
+        "position": 14,
+        "start_idx": 1564,
+        "end_idx": 1582,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_15",
+        "error_type": "SUB",
+        "error_match": "[SUB:all->what]",
+        "error_text": "all->what",
+        "position": 15,
+        "start_idx": 1599,
+        "end_idx": 1614,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_16",
+        "error_type": "INS",
+        "error_match": "[INS:worry]",
+        "error_text": "worry",
+        "position": 16,
+        "start_idx": 1625,
+        "end_idx": 1636,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_17",
+        "error_type": "SUB",
+        "error_match": "[SUB:worries->is]",
+        "error_text": "worries->is",
+        "position": 17,
+        "start_idx": 1637,
+        "end_idx": 1654,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_18",
+        "error_type": "SUB",
+        "error_match": "[SUB:would->have]",
+        "error_text": "would->have",
+        "position": 18,
+        "start_idx": 1680,
+        "end_idx": 1697,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_19",
+        "error_type": "INS",
+        "error_match": "[INS:of a]",
+        "error_text": "of a",
+        "position": 19,
+        "start_idx": 1757,
+        "end_idx": 1767,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_20",
+        "error_type": "SUB",
+        "error_match": "[SUB:tumor->tumour]",
+        "error_text": "tumor->tumour",
+        "position": 20,
+        "start_idx": 1774,
+        "end_idx": 1793,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_21",
+        "error_type": "INS",
+        "error_match": "[INS:why]",
+        "error_text": "why",
+        "position": 21,
+        "start_idx": 1920,
+        "end_idx": 1929,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_22",
+        "error_type": "SUB",
+        "error_match": "[SUB:a headache->the headaches]",
+        "error_text": "a headache->the headaches",
+        "position": 22,
+        "start_idx": 2123,
+        "end_idx": 2154,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_23",
+        "error_type": "SUB",
+        "error_match": "[SUB:disease like->zigzag lines]",
+        "error_text": "disease like->zigzag lines",
+        "position": 23,
+        "start_idx": 2179,
+        "end_idx": 2211,
+        "is_medical": true
+      },
+      {
+        "error_id": "delete_24",
+        "error_type": "DEL",
+        "error_match": "[DEL:lymes]",
+        "error_text": "lymes",
+        "position": 24,
+        "start_idx": 2212,
+        "end_idx": 2223,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_25",
+        "error_type": "INS",
+        "error_match": "[INS:on a]",
+        "error_text": "on a",
+        "position": 25,
+        "start_idx": 2315,
+        "end_idx": 2325,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_26",
+        "error_type": "SUB",
+        "error_match": "[SUB:in->a]",
+        "error_text": "in->a",
+        "position": 26,
+        "start_idx": 2355,
+        "end_idx": 2366,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_27",
+        "error_type": "SUB",
+        "error_match": "[SUB:yeah->it]",
+        "error_text": "yeah->it",
+        "position": 27,
+        "start_idx": 2381,
+        "end_idx": 2395,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_28",
+        "error_type": "DEL",
+        "error_match": "[DEL:eh]",
+        "error_text": "eh",
+        "position": 28,
+        "start_idx": 2396,
+        "end_idx": 2404,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_29",
+        "error_type": "SUB",
+        "error_match": "[SUB:some days->is on]",
+        "error_text": "some days->is on",
+        "position": 29,
+        "start_idx": 2419,
+        "end_idx": 2441,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_30",
+        "error_type": "INS",
+        "error_match": "[INS:both]",
+        "error_text": "both",
+        "position": 30,
+        "start_idx": 2447,
+        "end_idx": 2457,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_31",
+        "error_type": "INS",
+        "error_match": "[INS:had]",
+        "error_text": "had",
+        "position": 31,
+        "start_idx": 2477,
+        "end_idx": 2486,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_32",
+        "error_type": "INS",
+        "error_match": "[INS:i am wearing]",
+        "error_text": "i am wearing",
+        "position": 32,
+        "start_idx": 2558,
+        "end_idx": 2576,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_33",
+        "error_type": "DEL",
+        "error_match": "[DEL:it is]",
+        "error_text": "it is",
+        "position": 33,
+        "start_idx": 2598,
+        "end_idx": 2609,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_34",
+        "error_type": "DEL",
+        "error_match": "[DEL:the]",
+        "error_text": "the",
+        "position": 34,
+        "start_idx": 2624,
+        "end_idx": 2633,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_35",
+        "error_type": "INS",
+        "error_match": "[INS:have]",
+        "error_text": "have",
+        "position": 35,
+        "start_idx": 2756,
+        "end_idx": 2766,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_36",
+        "error_type": "INS",
+        "error_match": "[INS:and this]",
+        "error_text": "and this",
+        "position": 36,
+        "start_idx": 2792,
+        "end_idx": 2806,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_37",
+        "error_type": "DEL",
+        "error_match": "[DEL:i am]",
+        "error_text": "i am",
+        "position": 37,
+        "start_idx": 3023,
+        "end_idx": 3033,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_38",
+        "error_type": "INS",
+        "error_match": "[INS:a]",
+        "error_text": "a",
+        "position": 38,
+        "start_idx": 3187,
+        "end_idx": 3194,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_39",
+        "error_type": "INS",
+        "error_match": "[INS:sort]",
+        "error_text": "sort",
+        "position": 39,
+        "start_idx": 3292,
+        "end_idx": 3302,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_40",
+        "error_type": "SUB",
+        "error_match": "[SUB:go->of]",
+        "error_text": "go->of",
+        "position": 40,
+        "start_idx": 3303,
+        "end_idx": 3315,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_41",
+        "error_type": "INS",
+        "error_match": "[INS:a]",
+        "error_text": "a",
+        "position": 41,
+        "start_idx": 3344,
+        "end_idx": 3351,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_42",
+        "error_type": "SUB",
+        "error_match": "[SUB:i->having]",
+        "error_text": "i->having",
+        "position": 42,
+        "start_idx": 3462,
+        "end_idx": 3477,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_43",
+        "error_type": "DEL",
+        "error_match": "[DEL:have]",
+        "error_text": "have",
+        "position": 43,
+        "start_idx": 3478,
+        "end_idx": 3488,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_44",
+        "error_type": "DEL",
+        "error_match": "[DEL:yeah i]",
+        "error_text": "yeah i",
+        "position": 44,
+        "start_idx": 3512,
+        "end_idx": 3524,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_45",
+        "error_type": "DEL",
+        "error_match": "[DEL:and]",
+        "error_text": "and",
+        "position": 45,
+        "start_idx": 3637,
+        "end_idx": 3646,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_46",
+        "error_type": "DEL",
+        "error_match": "[DEL:yeah yeah]",
+        "error_text": "yeah yeah",
+        "position": 46,
+        "start_idx": 3657,
+        "end_idx": 3672,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_47",
+        "error_type": "INS",
+        "error_match": "[INS:yeah]",
+        "error_text": "yeah",
+        "position": 47,
+        "start_idx": 3682,
+        "end_idx": 3692,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_48",
+        "error_type": "INS",
+        "error_match": "[INS:worried]",
+        "error_text": "worried",
+        "position": 48,
+        "start_idx": 3700,
+        "end_idx": 3713,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_49",
+        "error_type": "DEL",
+        "error_match": "[DEL:should i get them]",
+        "error_text": "should i get them",
+        "position": 49,
+        "start_idx": 3771,
+        "end_idx": 3794,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_50",
+        "error_type": "SUB",
+        "error_match": "[SUB:i->and]",
+        "error_text": "i->and",
+        "position": 50,
+        "start_idx": 3809,
+        "end_idx": 3821,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_51",
+        "error_type": "DEL",
+        "error_match": "[DEL:mean]",
+        "error_text": "mean",
+        "position": 51,
+        "start_idx": 3822,
+        "end_idx": 3832,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_52",
+        "error_type": "SUB",
+        "error_match": "[SUB:concern->concerns]",
+        "error_text": "concern->concerns",
+        "position": 52,
+        "start_idx": 3848,
+        "end_idx": 3871,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_53",
+        "error_type": "INS",
+        "error_match": "[INS:there]",
+        "error_text": "there",
+        "position": 53,
+        "start_idx": 3882,
+        "end_idx": 3893,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_54",
+        "error_type": "SUB",
+        "error_match": "[SUB:it->a]",
+        "error_text": "it->a",
+        "position": 54,
+        "start_idx": 3980,
+        "end_idx": 3991,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_55",
+        "error_type": "SUB",
+        "error_match": "[SUB:to->and]",
+        "error_text": "to->and",
+        "position": 55,
+        "start_idx": 4005,
+        "end_idx": 4018,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_56",
+        "error_type": "SUB",
+        "error_match": "[SUB:because->causes]",
+        "error_text": "because->causes",
+        "position": 56,
+        "start_idx": 4040,
+        "end_idx": 4061,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_57",
+        "error_type": "DEL",
+        "error_match": "[DEL:if]",
+        "error_text": "if",
+        "position": 57,
+        "start_idx": 4145,
+        "end_idx": 4153,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_58",
+        "error_type": "DEL",
+        "error_match": "[DEL:madam]",
+        "error_text": "madam",
+        "position": 58,
+        "start_idx": 4167,
+        "end_idx": 4178,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_59",
+        "error_type": "SUB",
+        "error_match": "[SUB:difficulties->difficulty]",
+        "error_text": "difficulties->difficulty",
+        "position": 59,
+        "start_idx": 4237,
+        "end_idx": 4267,
+        "is_medical": true
+      },
+      {
+        "error_id": "delete_60",
+        "error_type": "DEL",
+        "error_match": "[DEL:your]",
+        "error_text": "your",
+        "position": 60,
+        "start_idx": 4273,
+        "end_idx": 4283,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_61",
+        "error_type": "INS",
+        "error_match": "[INS:all]",
+        "error_text": "all",
+        "position": 61,
+        "start_idx": 4539,
+        "end_idx": 4548,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_62",
+        "error_type": "SUB",
+        "error_match": "[SUB:alright->right]",
+        "error_text": "alright->right",
+        "position": 62,
+        "start_idx": 4549,
+        "end_idx": 4569,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_63",
+        "error_type": "DEL",
+        "error_match": "[DEL:your]",
+        "error_text": "your",
+        "position": 63,
+        "start_idx": 4634,
+        "end_idx": 4644,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_64",
+        "error_type": "DEL",
+        "error_match": "[DEL:nothing]",
+        "error_text": "nothing",
+        "position": 64,
+        "start_idx": 4765,
+        "end_idx": 4778,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_65",
+        "error_type": "SUB",
+        "error_match": "[SUB:has->if]",
+        "error_text": "has->if",
+        "position": 65,
+        "start_idx": 4810,
+        "end_idx": 4823,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_66",
+        "error_type": "DEL",
+        "error_match": "[DEL:you]",
+        "error_text": "you",
+        "position": 66,
+        "start_idx": 4840,
+        "end_idx": 4849,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_67",
+        "error_type": "DEL",
+        "error_match": "[DEL:no]",
+        "error_text": "no",
+        "position": 67,
+        "start_idx": 4899,
+        "end_idx": 4907,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_68",
+        "error_type": "SUB",
+        "error_match": "[SUB:i have->right so]",
+        "error_text": "i have->right so",
+        "position": 68,
+        "start_idx": 4944,
+        "end_idx": 4966,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_69",
+        "error_type": "DEL",
+        "error_match": "[DEL:i have not been diagnosed okay right]",
+        "error_text": "i have not been diagnosed okay right",
+        "position": 69,
+        "start_idx": 4967,
+        "end_idx": 5009,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_70",
+        "error_type": "SUB",
+        "error_match": "[SUB:that->about]",
+        "error_text": "that->about",
+        "position": 70,
+        "start_idx": 5031,
+        "end_idx": 5048,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_71",
+        "error_type": "DEL",
+        "error_match": "[DEL:of]",
+        "error_text": "of",
+        "position": 71,
+        "start_idx": 5049,
+        "end_idx": 5057,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_72",
+        "error_type": "DEL",
+        "error_match": "[DEL:there]",
+        "error_text": "there",
+        "position": 72,
+        "start_idx": 5132,
+        "end_idx": 5143,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_73",
+        "error_type": "DEL",
+        "error_match": "[DEL:is there]",
+        "error_text": "is there",
+        "position": 73,
+        "start_idx": 5158,
+        "end_idx": 5172,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_74",
+        "error_type": "INS",
+        "error_match": "[INS:the]",
+        "error_text": "the",
+        "position": 74,
+        "start_idx": 5193,
+        "end_idx": 5202,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_75",
+        "error_type": "INS",
+        "error_match": "[INS:thyroid]",
+        "error_text": "thyroid",
+        "position": 75,
+        "start_idx": 5221,
+        "end_idx": 5234,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_76",
+        "error_type": "SUB",
+        "error_match": "[SUB:mom->mum]",
+        "error_text": "mom->mum",
+        "position": 76,
+        "start_idx": 5266,
+        "end_idx": 5280,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_77",
+        "error_type": "INS",
+        "error_match": "[INS:underactive]",
+        "error_text": "underactive",
+        "position": 77,
+        "start_idx": 5316,
+        "end_idx": 5333,
+        "is_medical": true
+      },
+      {
+        "error_id": "delete_78",
+        "error_type": "DEL",
+        "error_match": "[DEL:with]",
+        "error_text": "with",
+        "position": 78,
+        "start_idx": 5379,
+        "end_idx": 5389,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_79",
+        "error_type": "INS",
+        "error_match": "[INS:that]",
+        "error_text": "that",
+        "position": 79,
+        "start_idx": 5470,
+        "end_idx": 5480,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_80",
+        "error_type": "INS",
+        "error_match": "[INS:all]",
+        "error_text": "all",
+        "position": 80,
+        "start_idx": 5754,
+        "end_idx": 5763,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_81",
+        "error_type": "SUB",
+        "error_match": "[SUB:alright->right]",
+        "error_text": "alright->right",
+        "position": 81,
+        "start_idx": 5764,
+        "end_idx": 5784,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_82",
+        "error_type": "INS",
+        "error_match": "[INS:we]",
+        "error_text": "we",
+        "position": 82,
+        "start_idx": 5803,
+        "end_idx": 5811,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_83",
+        "error_type": "SUB",
+        "error_match": "[SUB:you meant->may need]",
+        "error_text": "you meant->may need",
+        "position": 83,
+        "start_idx": 5812,
+        "end_idx": 5837,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_84",
+        "error_type": "INS",
+        "error_match": "[INS:really]",
+        "error_text": "really",
+        "position": 84,
+        "start_idx": 5930,
+        "end_idx": 5942,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_85",
+        "error_type": "SUB",
+        "error_match": "[SUB:and->is]",
+        "error_text": "and->is",
+        "position": 85,
+        "start_idx": 6013,
+        "end_idx": 6026,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_86",
+        "error_type": "SUB",
+        "error_match": "[SUB:have you been having problems->having problems with like people]",
+        "error_text": "have you been having problems->having problems with like people",
+        "position": 86,
+        "start_idx": 6116,
+        "end_idx": 6185,
+        "is_medical": true
+      },
+      {
+        "error_id": "delete_87",
+        "error_type": "DEL",
+        "error_match": "[DEL:like]",
+        "error_text": "like",
+        "position": 87,
+        "start_idx": 6189,
+        "end_idx": 6199,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_88",
+        "error_type": "INS",
+        "error_match": "[INS:oh]",
+        "error_text": "oh",
+        "position": 88,
+        "start_idx": 6275,
+        "end_idx": 6283,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_89",
+        "error_type": "INS",
+        "error_match": "[INS:feel]",
+        "error_text": "feel",
+        "position": 89,
+        "start_idx": 6358,
+        "end_idx": 6368,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_90",
+        "error_type": "DEL",
+        "error_match": "[DEL:little]",
+        "error_text": "little",
+        "position": 90,
+        "start_idx": 6371,
+        "end_idx": 6383,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_91",
+        "error_type": "INS",
+        "error_match": "[INS:all]",
+        "error_text": "all",
+        "position": 91,
+        "start_idx": 6402,
+        "end_idx": 6411,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_92",
+        "error_type": "SUB",
+        "error_match": "[SUB:alright->right]",
+        "error_text": "alright->right",
+        "position": 92,
+        "start_idx": 6412,
+        "end_idx": 6432,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_93",
+        "error_type": "INS",
+        "error_match": "[INS:no]",
+        "error_text": "no",
+        "position": 93,
+        "start_idx": 6685,
+        "end_idx": 6693,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_94",
+        "error_type": "SUB",
+        "error_match": "[SUB:no okay alright->okay all right]",
+        "error_text": "no okay alright->okay all right",
+        "position": 94,
+        "start_idx": 6741,
+        "end_idx": 6778,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_95",
+        "error_type": "INS",
+        "error_match": "[INS:stage]",
+        "error_text": "stage",
+        "position": 95,
+        "start_idx": 6799,
+        "end_idx": 6810,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_96",
+        "error_type": "DEL",
+        "error_match": "[DEL:like to]",
+        "error_text": "like to",
+        "position": 96,
+        "start_idx": 6819,
+        "end_idx": 6832,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_97",
+        "error_type": "SUB",
+        "error_match": "[SUB:that->but]",
+        "error_text": "that->but",
+        "position": 97,
+        "start_idx": 6864,
+        "end_idx": 6879,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_98",
+        "error_type": "DEL",
+        "error_match": "[DEL:is]",
+        "error_text": "is",
+        "position": 98,
+        "start_idx": 6880,
+        "end_idx": 6888,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_99",
+        "error_type": "SUB",
+        "error_match": "[SUB:migraine->migrainetype]",
+        "error_text": "migraine->migrainetype",
+        "position": 99,
+        "start_idx": 6954,
+        "end_idx": 6982,
+        "is_medical": true
+      },
+      {
+        "error_id": "delete_100",
+        "error_type": "DEL",
+        "error_match": "[DEL:type]",
+        "error_text": "type",
+        "position": 100,
+        "start_idx": 6983,
+        "end_idx": 6993,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_101",
+        "error_type": "DEL",
+        "error_match": "[DEL:the]",
+        "error_text": "the",
+        "position": 101,
+        "start_idx": 7059,
+        "end_idx": 7068,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_102",
+        "error_type": "SUB",
+        "error_match": "[SUB:has->had]",
+        "error_text": "has->had",
+        "position": 102,
+        "start_idx": 7411,
+        "end_idx": 7425,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_103",
+        "error_type": "SUB",
+        "error_match": "[SUB:it->yeah]",
+        "error_text": "it->yeah",
+        "position": 103,
+        "start_idx": 7458,
+        "end_idx": 7472,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_104",
+        "error_type": "DEL",
+        "error_match": "[DEL:yeah yeah]",
+        "error_text": "yeah yeah",
+        "position": 104,
+        "start_idx": 7489,
+        "end_idx": 7504,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_105",
+        "error_type": "SUB",
+        "error_match": "[SUB:your->you]",
+        "error_text": "your->you",
+        "position": 105,
+        "start_idx": 7527,
+        "end_idx": 7542,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_106",
+        "error_type": "INS",
+        "error_match": "[INS:in]",
+        "error_text": "in",
+        "position": 106,
+        "start_idx": 7552,
+        "end_idx": 7560,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_107",
+        "error_type": "SUB",
+        "error_match": "[SUB:and in terms of trying->we should also try and]",
+        "error_text": "and in terms of trying->we should also try and",
+        "position": 107,
+        "start_idx": 7813,
+        "end_idx": 7865,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_108",
+        "error_type": "DEL",
+        "error_match": "[DEL:to]",
+        "error_text": "to",
+        "position": 108,
+        "start_idx": 7866,
+        "end_idx": 7874,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_109",
+        "error_type": "INS",
+        "error_match": "[INS:you know]",
+        "error_text": "you know",
+        "position": 109,
+        "start_idx": 7948,
+        "end_idx": 7962,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_110",
+        "error_type": "SUB",
+        "error_match": "[SUB:cocodamol->codeine]",
+        "error_text": "cocodamol->codeine",
+        "position": 110,
+        "start_idx": 7995,
+        "end_idx": 8019,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_111",
+        "error_type": "SUB",
+        "error_match": "[SUB:is->does]",
+        "error_text": "is->does",
+        "position": 111,
+        "start_idx": 8083,
+        "end_idx": 8097,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_112",
+        "error_type": "SUB",
+        "error_match": "[SUB:k->okay]",
+        "error_text": "k->okay",
+        "position": 112,
+        "start_idx": 8116,
+        "end_idx": 8129,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_113",
+        "error_type": "SUB",
+        "error_match": "[SUB:could->can]",
+        "error_text": "could->can",
+        "position": 113,
+        "start_idx": 8217,
+        "end_idx": 8233,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_114",
+        "error_type": "INS",
+        "error_match": "[INS:you know]",
+        "error_text": "you know",
+        "position": 114,
+        "start_idx": 8354,
+        "end_idx": 8368,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_115",
+        "error_type": "SUB",
+        "error_match": "[SUB:then->okay]",
+        "error_text": "then->okay",
+        "position": 115,
+        "start_idx": 8392,
+        "end_idx": 8408,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_116",
+        "error_type": "SUB",
+        "error_match": "[SUB:could->can]",
+        "error_text": "could->can",
+        "position": 116,
+        "start_idx": 8412,
+        "end_idx": 8428,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_117",
+        "error_type": "DEL",
+        "error_match": "[DEL:okay]",
+        "error_text": "okay",
+        "position": 117,
+        "start_idx": 8495,
+        "end_idx": 8505,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_118",
+        "error_type": "INS",
+        "error_match": "[INS:in the]",
+        "error_text": "in the",
+        "position": 118,
+        "start_idx": 8607,
+        "end_idx": 8619,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_119",
+        "error_type": "INS",
+        "error_match": "[INS:are]",
+        "error_text": "are",
+        "position": 119,
+        "start_idx": 8761,
+        "end_idx": 8770,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_120",
+        "error_type": "INS",
+        "error_match": "[INS:are]",
+        "error_text": "are",
+        "position": 120,
+        "start_idx": 8857,
+        "end_idx": 8866,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_121",
+        "error_type": "SUB",
+        "error_match": "[SUB:develop->developing]",
+        "error_text": "develop->developing",
+        "position": 121,
+        "start_idx": 8867,
+        "end_idx": 8892,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_122",
+        "error_type": "DEL",
+        "error_match": "[DEL:k]",
+        "error_text": "k",
+        "position": 122,
+        "start_idx": 9114,
+        "end_idx": 9121,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_123",
+        "error_type": "SUB",
+        "error_match": "[SUB:right->bye]",
+        "error_text": "right->bye",
+        "position": 123,
+        "start_idx": 9133,
+        "end_idx": 9149,
+        "is_medical": false
+      }
+    ],
+    "error_count": 124,
+    "index": 1
+  },
+  {
+    "utterance_id": "GAS0002",
+    "human_transcript": " i was wondering if you could tell me a little bit about what brought you in to the emergency department today  yeah so nice to meet you i have been having this pain right in my abdomen it is kind of like in the upper right area  okay and so  when where is this painting located exactly  so it is just in the upper right corner of my abdomen right below where the lungs are and it yeah it is just i have this severe pain that is going on  okay and how long is it been going on for  so it is been going on for the last few days and it got worse today  okay and how long is it been since it is like got got worse has this been a few hours or or how long is that been  so i would say it got worse just three or four hours ago before i came to the emergency department  okay and does the pain radiate anywhere   no it stays right in the in the spot that i told you right in the right upper corner  okay and when did the pain start or if you could tell me what were you doing right prior to the pain starting  so i think it started after just three days ago after i had a meal like i i think it was after lunch around half an hour or an hour after lunch  i see okay has the pain gotten worse stayed the same or gotten better since since yesterday  i think it is gotten it was it is the worst today like especially like a few hours ago like three hours ago it was much worse than the other two days  okay and how would you describe the character or the quality of the pain  so it is like a sharp i would describe it as like a sharp pain  okay and on a scale of one to ten ten being the most severe pain what would you rate it as  i would rate it as right now i would rate it as an eight  okay and has anything like this happened to you before  i think it happened to me a few years back where i had this pain and then it just kind of went away on its own i did not go to the emergency department then though  okay and has there been anything that you have tried to make this pain any better  i tried taking just like advil and tylenol but it did not really seem to help the pain too much  okay and have you had any other associated symptoms such as nausea or or vomiting  i have i have had some nausea over the past few days but i have not vomited anything  okay so no blood in your emesis  or no vomiting at all   yeah  okay and have you traveled anywhere recently   no like we have not traveled anywhere recently  okay and how has your energy levels been   energy  when it is hurting a lot like today i have been it is been difficult to move around i have been pretty drained from the pain but  otherwise over the last few days it has not affected me too much but today i would say my energy levels are down  okay and have you noticed any skin changes or any rashes  i do not think so i mean i do not think i have noticed any kind of skin changes  okay and how about any changes to urinary habits like painful urination or the color of your urine  no no no changes  okay and have you had any changes to bowel patterns such as diarrhea or changes in color of your stool  no i do not think so no changes that i have noticed  okay so notice any blood in the stool  no no blood  okay and how has your appetite been  it is it was around the same before the pain actually started getting worse so today i did not really feel like eating i did have nausea over the past few days but my appetite i would say is the worst today  okay and have you noticed any changes to your weight recently  no no i do not think so  okay and have you had any recent infections  no not not that i know of  okay so next just to ask some questions about your past medical history have you been diagnosed with any medical conditions in the past   so i think the only thing is my doctor told me that i should lose some weight but other than that no medical history  okay and any allergies to medications   no no allergies  and are there any medications that you take on a regular basis either prescribed or over the counter   not prescribed sometimes i take like some antacids when i get heartburn but this is just like a couple times a month after dinner sometimes at night but that is about it  okay and  any  hospitalizations  just for just when i had my children at the time of their birth but that is it  okay and have you been around anybody who is been sick  no  okay and have you had any prior surgeries  nope no prior surgeries  okay and any family history of gallbladder disease or cardiovascular disease in the family   so my father died of a stroke when he was in his sixtys my mother does have gallstones  okay and what do you do for work  so i work in at the bank as a consultant  okay and do you drink alcohol   yeah sometimes maybe one or two glasses of wine every night  okay and do you feel the need to cut down on your drinking  no not really  okay have you ever felt annoyed by people criticizing your drinking   no  okay have you felt guilty about your drinking   no so should i be   no at the at this time just wanting to gauge a sense of how you feel about your drinking levels at this time and the follow up question to that would be have you ever felt the need to have a drink early in the morning   no no i have never drank i do not drink in the morning  okay and do you use recreational drugs   no never  okay and do you smoke cigarettes  nope  and  do oh and then  who are you living with currently at home  and so i am living with my two children and my partner  and can you tell me a little bit about the home situation  yeah the home situation is fine like kids are doing great and my partner is very supportive no no issues that i can think of at home  okay excellent",
+    "human_transcript_ner": " i was wondering if you could tell me a little bit about what brought you in to the emergency department today  yeah so nice to meet you i have been having this [PROBLEM: pain] right in my [ANATOMICAL_STRUCTURE: abdomen] it is kind of like in the upper right area  okay and so  when where is this painting located exactly  so it is just in the upper right corner of my [ANATOMICAL_STRUCTURE: abdomen] right below where the [ANATOMICAL_STRUCTURE: lungs] are and it yeah it is just i have this [SEVERITY: severe] [PROBLEM: pain] that is going on  okay and how long is it been going on for  so it is been going on for the last few days and it got worse today  okay and how long is it been since it is like got got worse has this been a few hours or or how long is that been  so i would say it got worse just three or four hours ago before i came to the emergency department  okay and does the [PROBLEM: pain] radiate anywhere   no it stays right in the in the spot that i told you right in the right upper corner  okay and when did the [PROBLEM: pain] start or if you could tell me what were you doing right prior to the [PROBLEM: pain] starting  so i think it started after just three days ago after i had a meal like i i think it was after lunch around half an hour or an hour after lunch  i see okay has the [PROBLEM: pain] gotten [SEVERITY: worse] stayed the same or gotten better since since yesterday  i think it is gotten it was it is the worst today like especially like a few hours ago like three hours ago it was much worse than the other two days  okay and how would you describe the character or the quality of the [PROBLEM: pain]  so it is like a sharp i would describe it as like a [SEVERITY: sharp] [PROBLEM: pain]  okay and on a scale of one to ten ten being the most [SEVERITY: severe] [PROBLEM: pain] what would you rate it as  i would rate it as right now i would rate it as an eight  okay and has anything like this happened to you before  i think it happened to me a few years back where i had this [PROBLEM: pain] and then it just kind of went away on its own i did not go to the emergency department then though  okay and has there been anything that you have tried to make this [PROBLEM: pain] any better  i tried taking just like [MEDICINE: advil] and [MEDICINE: tylenol] but it did not really seem to help the [PROBLEM: pain] too much  okay and have you had any other associated [PROBLEM: symptoms] such as [PROBLEM: nausea] or or [PROBLEM: vomiting]  i have i have had some [PROBLEM: nausea] over the past few days but i have not [PROBLEM: vomited] anything  okay so no [PROBLEM: blood in your emesis]  or no [PROBLEM: vomiting] at all   yeah  okay and have you traveled anywhere recently   no like we have not traveled anywhere recently  okay and how has your energy levels been   energy  when it is hurting a lot like today i have been it is been difficult to move around i have been pretty drained from the [PROBLEM: pain] but  otherwise over the last few days it has not affected me too much but today i would say my energy levels are down  okay and have you noticed any [ANATOMICAL_STRUCTURE: skin] [PROBLEM: changes] or any [PROBLEM: rashes]  i do not think so i mean i do not think i have noticed any kind of [ANATOMICAL_STRUCTURE: skin] [PROBLEM: changes]  okay and how about any changes to urinary habits like [PROBLEM: painful urination] or the color of your urine  no no no changes  okay and have you had any changes to [BODY_FUNCTION: bowel patterns] such as [PROBLEM: diarrhea] or changes in color of your stool  no i do not think so no changes that i have noticed  okay so notice any [PROBLEM: blood in the stool]  no no [PROBLEM: blood]  okay and how has your [BODY_FUNCTION: appetite] been  it is it was around the same before the [PROBLEM: pain] actually started getting [SEVERITY: worse] so today i did not really feel like eating i did have [PROBLEM: nausea] over the past few days but my [BODY_FUNCTION: appetite] i would say is the worst today  okay and have you noticed any changes to your [BODY_MEASUREMENT: weight] recently  no no i do not think so  okay and have you had any recent [PROBLEM: infections]  no not not that i know of  okay so next just to ask some questions about your past medical history have you been diagnosed with any [PROBLEM: medical conditions] in the past   so i think the only thing is my doctor told me that i should lose some [BODY_MEASUREMENT: weight] but other than that no medical history  okay and any [PROBLEM: allergies] to [MEDICINE: medications]   no no [PROBLEM: allergies]  and are there any [MEDICINE: medications] that you take on a regular basis either prescribed or over the counter   not prescribed sometimes i take like some [MEDICINE: antacids] when i get [PROBLEM: heartburn] but this is just like a couple times a month after dinner sometimes at night but that is about it  okay and  any  hospitalizations  just for just when i had my children at the time of their birth but that is it  okay and have you been around anybody who is been [PROBLEM: sick]  no  okay and have you had any prior [PROCEDURE: surgeries]  nope no prior [PROCEDURE: surgeries]  okay and any family history of [PROBLEM: gallbladder disease] or [PROBLEM: cardiovascular disease] in the family   so my father died of a [PROBLEM: stroke] when he was in his sixtys my mother does have [PROBLEM: gallstones]  okay and what do you do for work  so i work in at the bank as a consultant  okay and do you [SUBSTANCE_ABUSE: drink alcohol]   yeah sometimes maybe one or two glasses of [SUBSTANCE_ABUSE: wine] every night  okay and do you feel the need to cut down on your [SUBSTANCE_ABUSE: drinking]  no not really  okay have you ever felt annoyed by people criticizing your [SUBSTANCE_ABUSE: drinking]   no  okay have you felt guilty about your [SUBSTANCE_ABUSE: drinking]   no so should i be   no at the at this time just wanting to gauge a sense of how you feel about your [SUBSTANCE_ABUSE: drinking] levels at this time and the follow up question to that would be have you ever felt the need to have a [SUBSTANCE_ABUSE: drink] early in the morning   no no i have never [SUBSTANCE_ABUSE: drank] i do not [SUBSTANCE_ABUSE: drink] in the morning  okay and do you use [SUBSTANCE_ABUSE: recreational drugs]   no never  okay and do you [SUBSTANCE_ABUSE: smoke cigarettes]  nope  and  do oh and then  who are you living with currently at home  and so i am living with my two [FAMILY: children] and my partner  and can you tell me a little bit about the home situation  yeah the home situation is fine like kids are doing great and my partner is very supportive no no [PROBLEM: issues] that i can think of at home  okay excellent",
+    "asr_transcript": "i was wondering if you could tell me a little bit about what brought you in to the emergency department today yeah so nice to meet you i have been having this pain right in my abdomen it is kind of like in the upper right area okay and so when where is this pain located exactly so it is just in the upper right corner of my abdomen right below where the lungs are and yeah it just i have this severe pain that is going on okay and how long has it been going on for so it is been going on for the last few days and it got worse today okay and how long has it been since it like got got worse has it been a few hours or or how long has that been so i would say it got worse just three or four hours ago before i came to the emergency department okay and does the pain radiate anywhere no it stays right in the in the spot that i told you right in the right upper corner okay and when did the pain start or if you could tell me what were you doing right prior to the the pain starting so i think it started after just three days ago after i had a meal like i think it was after lunch around half an hour or an hour after lunch i see okay it has the pain gotten worse stayed the same or gotten better since since yesterday i think it is gone it was it is the worst today like especially like a few hours ago like three hours ago it was much worse than the other two days okay and how would you describe the the character or the the quality of the pain so it is like a sharp i would describe it as like a sharp pain okay and on a scale of one to ten ten being the most severe pain what would you rate it as i would rate it as right now i would rate it as an eight okay and has anything like this happened to you before i think it it happened to me a few years back where i had this pain and then it just kind of went away on its own i did not go to the emergency department then though okay and has there been anything that you have tried to make this pain any better i tried taking just like advil and tylenol but it did not really seem to help the pain too much okay and have you had any other associated symptoms such as nausea or or vomiting i have i have had some nausea over the past few days but i have not vomited anything okay so no blood in in your emesis or or no vomiting at all  yeah okay and have you traveled anywhere recently  no like we have not traveled anywhere recently okay and how has your energy levels been energy when it is hurting a lot like today i have been it is been difficult to move around i have been pretty drained from the pain but otherwise over the last few days it has not affected me too much but today i would say my energy levels are down okay and have you noticed any skin changes or any rashes i do not think so i mean i do not think i have noticed any kind of skin changes okay and how about any changes to urinary habits like painful urination or the color of your urine no no no changes okay and have you had any changes to bowel patterns such as diarrhea or changes in color of your stool no i do not think so no changes that i have noticed okay so notice any blood in the stool no no blood okay and how has your appetite been  it is it was around the same before the pain actually started getting worse so today i did not really feel like eating i did have nausea over the past few days but my appetite i would say is the worst today okay and have you noticed any changes to your weight recently no i do not think so okay and have you had any recent infections no not not that i know of no okay so next just to ask some questions about your past medical history have you been diagnosed with any medical conditions in the past  so i think the only thing is my doctor told me that i should lose some weight but other than that no medical history okay and any allergies to medications  no no allergies and are there any medications that you take on a regular basis either prescribed or over the counter  not prescribed sometimes i take like some antacids when i get heartburn but this is just like a couple times a month after dinner sometimes at night but that is about it okay and any hospitalizations  just for just when i had my children at the time of their birth but that is it okay and have you been around anybody who is been sick  no okay and have you had any prior surgeries  no no prior surgeries okay and any family history of gallbladder disease or cardiovascular disease in the family  so my father died of a stroke when he was in his sixties my mother does have gallstones okay and what do you do for work  so i work in at the bank okay consulted okay and do you drink alcohol  yeah sometimes like maybe one or two glasses of wine every night okay and do you feel the need to cut down on your drinking  no not really okay have you ever felt annoyed by people criticizing your drinking no okay have you felt guilty about your drinking  no should should i be  no at the at this time just wanting to gauge a sense of how you feel about your drinking levels at at this time and the follow up question to that would be have you ever felt the need to have a drink early in the morning  no no i have never drank i do not drink in the morning no okay and do you use recreational drugs  no never okay and do you smoke cigarettes nope and   oh and then  who are you living with currently at home  so i am living with my two children and my partner and could you tell me a little bit about the home situation yeah the home situation is fine like  kids are doing great and my partner is very supportive no no issues that i can think of at home okay excellent",
+    "asr_reconstructed": "i was wondering if you could tell me a little bit about what brought you in to the emergency department today yeah so nice to meet you i have been having this pain right in my abdomen it is kind of like in the upper right area okay and so when where is this [SUB:painting->pain] located exactly so it is just in the upper right corner of my abdomen right below where the lungs are and [DEL:it] yeah it [DEL:is] just i have this severe pain that is going on okay and how long [SUB:is->has] it been going on for so it is been going on for the last few days and it got worse today okay and how long [SUB:is->has] it been since it [DEL:is] like got got worse has [SUB:this->it] been a few hours or or how long [SUB:is->has] that been so i would say it got worse just three or four hours ago before i came to the emergency department okay and does the pain radiate anywhere no it stays right in the in the spot that i told you right in the right upper corner okay and when did the pain start or if you could tell me what were you doing right prior to the [INS:the] pain starting so i think it started after just three days ago after i had a meal like i [DEL:i] think it was after lunch around half an hour or an hour after lunch i see okay [INS:it] has the pain gotten worse stayed the same or gotten better since since yesterday i think it is [SUB:gotten->gone] it was it is the worst today like especially like a few hours ago like three hours ago it was much worse than the other two days okay and how would you describe the [INS:the] character or the [INS:the] quality of the pain so it is like a sharp i would describe it as like a sharp pain okay and on a scale of one to ten ten being the most severe pain what would you rate it as i would rate it as right now i would rate it as an eight okay and has anything like this happened to you before i think it [INS:it] happened to me a few years back where i had this pain and then it just kind of went away on its own i did not go to the emergency department then though okay and has there been anything that you have tried to make this pain any better i tried taking just like advil and tylenol but it did not really seem to help the pain too much okay and have you had any other associated symptoms such as nausea or or vomiting i have i have had some nausea over the past few days but i have not vomited anything okay so no blood in [INS:in] your emesis or [INS:or] no vomiting at all yeah okay and have you traveled anywhere recently no like we have not traveled anywhere recently okay and how has your energy levels been energy when it is hurting a lot like today i have been it is been difficult to move around i have been pretty drained from the pain but otherwise over the last few days it has not affected me too much but today i would say my energy levels are down okay and have you noticed any skin changes or any rashes i do not think so i mean i do not think i have noticed any kind of skin changes okay and how about any changes to urinary habits like painful urination or the color of your urine no no no changes okay and have you had any changes to bowel patterns such as diarrhea or changes in color of your stool no i do not think so no changes that i have noticed okay so notice any blood in the stool no no blood okay and how has your appetite been it is it was around the same before the pain actually started getting worse so today i did not really feel like eating i did have nausea over the past few days but my appetite i would say is the worst today okay and have you noticed any changes to your weight recently no [DEL:no] i do not think so okay and have you had any recent infections no not not that i know of [INS:no] okay so next just to ask some questions about your past medical history have you been diagnosed with any medical conditions in the past so i think the only thing is my doctor told me that i should lose some weight but other than that no medical history okay and any allergies to medications no no allergies and are there any medications that you take on a regular basis either prescribed or over the counter not prescribed sometimes i take like some antacids when i get heartburn but this is just like a couple times a month after dinner sometimes at night but that is about it okay and any hospitalizations just for just when i had my children at the time of their birth but that is it okay and have you been around anybody who is been sick no okay and have you had any prior surgeries [SUB:nope->no] no prior surgeries okay and any family history of gallbladder disease or cardiovascular disease in the family so my father died of a stroke when he was in his [SUB:sixtys->sixties] my mother does have gallstones okay and what do you do for work so i work in at the bank [SUB:as a->okay consulted] [DEL:consultant] okay and do you drink alcohol yeah sometimes [INS:like] maybe one or two glasses of wine every night okay and do you feel the need to cut down on your drinking no not really okay have you ever felt annoyed by people criticizing your drinking no okay have you felt guilty about your drinking no [SUB:so->should] should i be no at the at this time just wanting to gauge a sense of how you feel about your drinking levels at [INS:at] this time and the follow up question to that would be have you ever felt the need to have a drink early in the morning no no i have never drank i do not drink in the morning [INS:no] okay and do you use recreational drugs no never okay and do you smoke cigarettes nope and [DEL:do] oh and then who are you living with currently at home [DEL:and] so i am living with my two children and my partner and [SUB:can->could] you tell me a little bit about the home situation yeah the home situation is fine like kids are doing great and my partner is very supportive no no issues that i can think of at home okay excellent",
+    "audio_file": "data/final_audio/GAS0002.mp3",
+    "model": "qwen3_iaa",
+    "wer": 0.0272407732864674,
+    "errors": [
+      {
+        "error_id": "substitute_0",
+        "error_type": "SUB",
+        "error_match": "[SUB:painting->pain]",
+        "error_text": "painting->pain",
+        "position": 0,
+        "start_idx": 258,
+        "end_idx": 278,
+        "is_medical": true
+      },
+      {
+        "error_id": "delete_1",
+        "error_type": "DEL",
+        "error_match": "[DEL:it]",
+        "error_text": "it",
+        "position": 1,
+        "start_idx": 385,
+        "end_idx": 393,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_2",
+        "error_type": "DEL",
+        "error_match": "[DEL:is]",
+        "error_text": "is",
+        "position": 2,
+        "start_idx": 402,
+        "end_idx": 410,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_3",
+        "error_type": "SUB",
+        "error_match": "[SUB:is->has]",
+        "error_text": "is->has",
+        "position": 3,
+        "start_idx": 475,
+        "end_idx": 488,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_4",
+        "error_type": "SUB",
+        "error_match": "[SUB:is->has]",
+        "error_text": "is->has",
+        "position": 4,
+        "start_idx": 596,
+        "end_idx": 609,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_5",
+        "error_type": "DEL",
+        "error_match": "[DEL:is]",
+        "error_text": "is",
+        "position": 5,
+        "start_idx": 627,
+        "end_idx": 635,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_6",
+        "error_type": "SUB",
+        "error_match": "[SUB:this->it]",
+        "error_text": "this->it",
+        "position": 6,
+        "start_idx": 659,
+        "end_idx": 673,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_7",
+        "error_type": "SUB",
+        "error_match": "[SUB:is->has]",
+        "error_text": "is->has",
+        "position": 7,
+        "start_idx": 706,
+        "end_idx": 719,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_8",
+        "error_type": "INS",
+        "error_match": "[INS:the]",
+        "error_text": "the",
+        "position": 8,
+        "start_idx": 1050,
+        "end_idx": 1059,
+        "is_medical": true
+      },
+      {
+        "error_id": "delete_9",
+        "error_type": "DEL",
+        "error_match": "[DEL:i]",
+        "error_text": "i",
+        "position": 9,
+        "start_idx": 1148,
+        "end_idx": 1155,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_10",
+        "error_type": "INS",
+        "error_match": "[INS:it]",
+        "error_text": "it",
+        "position": 10,
+        "start_idx": 1235,
+        "end_idx": 1243,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_11",
+        "error_type": "SUB",
+        "error_match": "[SUB:gotten->gone]",
+        "error_text": "gotten->gone",
+        "position": 11,
+        "start_idx": 1339,
+        "end_idx": 1357,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_12",
+        "error_type": "INS",
+        "error_match": "[INS:the]",
+        "error_text": "the",
+        "position": 12,
+        "start_idx": 1523,
+        "end_idx": 1532,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_13",
+        "error_type": "INS",
+        "error_match": "[INS:the]",
+        "error_text": "the",
+        "position": 13,
+        "start_idx": 1550,
+        "end_idx": 1559,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_14",
+        "error_type": "INS",
+        "error_match": "[INS:it]",
+        "error_text": "it",
+        "position": 14,
+        "start_idx": 1857,
+        "end_idx": 1865,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_15",
+        "error_type": "INS",
+        "error_match": "[INS:in]",
+        "error_text": "in",
+        "position": 15,
+        "start_idx": 2384,
+        "end_idx": 2392,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_16",
+        "error_type": "INS",
+        "error_match": "[INS:or]",
+        "error_text": "or",
+        "position": 16,
+        "start_idx": 2408,
+        "end_idx": 2416,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_17",
+        "error_type": "DEL",
+        "error_match": "[DEL:no]",
+        "error_text": "no",
+        "position": 17,
+        "start_idx": 3589,
+        "end_idx": 3597,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_18",
+        "error_type": "INS",
+        "error_match": "[INS:no]",
+        "error_text": "no",
+        "position": 18,
+        "start_idx": 3686,
+        "end_idx": 3694,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_19",
+        "error_type": "SUB",
+        "error_match": "[SUB:nope->no]",
+        "error_text": "nope->no",
+        "position": 19,
+        "start_idx": 4482,
+        "end_idx": 4496,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_20",
+        "error_type": "SUB",
+        "error_match": "[SUB:sixtys->sixties]",
+        "error_text": "sixtys->sixties",
+        "position": 20,
+        "start_idx": 4656,
+        "end_idx": 4677,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_21",
+        "error_type": "SUB",
+        "error_match": "[SUB:as a->okay consulted]",
+        "error_text": "as a->okay consulted",
+        "position": 21,
+        "start_idx": 4767,
+        "end_idx": 4793,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_22",
+        "error_type": "DEL",
+        "error_match": "[DEL:consultant]",
+        "error_text": "consultant",
+        "position": 22,
+        "start_idx": 4794,
+        "end_idx": 4810,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_23",
+        "error_type": "INS",
+        "error_match": "[INS:like]",
+        "error_text": "like",
+        "position": 23,
+        "start_idx": 4856,
+        "end_idx": 4866,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_24",
+        "error_type": "SUB",
+        "error_match": "[SUB:so->should]",
+        "error_text": "so->should",
+        "position": 24,
+        "start_idx": 5105,
+        "end_idx": 5121,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_25",
+        "error_type": "INS",
+        "error_match": "[INS:at]",
+        "error_text": "at",
+        "position": 25,
+        "start_idx": 5233,
+        "end_idx": 5241,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_26",
+        "error_type": "INS",
+        "error_match": "[INS:no]",
+        "error_text": "no",
+        "position": 26,
+        "start_idx": 5416,
+        "end_idx": 5424,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_27",
+        "error_type": "DEL",
+        "error_match": "[DEL:do]",
+        "error_text": "do",
+        "position": 27,
+        "start_idx": 5515,
+        "end_idx": 5523,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_28",
+        "error_type": "DEL",
+        "error_match": "[DEL:and]",
+        "error_text": "and",
+        "position": 28,
+        "start_idx": 5578,
+        "end_idx": 5587,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_29",
+        "error_type": "SUB",
+        "error_match": "[SUB:can->could]",
+        "error_text": "can->could",
+        "position": 29,
+        "start_idx": 5643,
+        "end_idx": 5659,
+        "is_medical": false
+      }
+    ],
+    "error_count": 30,
+    "index": 2
+  }
+]

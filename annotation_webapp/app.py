@@ -18,20 +18,17 @@ MODEL_DISPLAY_NAMES = {
     'qwen3_fixed': 'Qwen3 ASR',
     'nemotron35': 'Nemotron 3.5 ASR',
     'gemma3n': 'Gemma 3n E4B',
+    'qwen3_iaa': 'Qwen3 ASR',
+    'gemma3n_iaa': 'Gemma 3n E4B',
 }
 
-# Models offered on /annotate_subset: the best and worst performers.
-# qwen3_fixed is best (WER 0.127), gemma3n worst (0.191) over the 120-session set.
-SUBSET_MODELS = ['qwen3_fixed', 'gemma3n']
-
-# The inter-annotator agreement subset: one session per dataset group, the same
-# three for both subset models so two annotators can be compared on identical
-# material. 126 medical errors per annotator in total, roughly two hours.
-SUBSET_SESSIONS = [
-    '13_Hyperthyroidism',    # med-convo-nig (African)
-    'day1_consultation03',   # UK-Dataset
-    'GAS0002',               # us_medical
-]
+# Models offered on /annotate_subset, and hidden from /select_model. These hold
+# only the three inter-annotator agreement sessions (one per dataset group), cut
+# from qwen3_fixed and gemma3n - the best and worst performers by WER. Separate
+# model names so IAA work is keyed apart from full-corpus annotation in the
+# database, and so the full models stay complete at 120 sessions.
+# 126 medical errors per annotator, roughly two hours.
+SUBSET_MODELS = ['qwen3_iaa', 'gemma3n_iaa']
 
 
 def get_available_models(app):
@@ -130,14 +127,8 @@ def get_visible_utterances(app, model_name):
     have finalized audio; any others are silently hidden (not deleted) until
     their audio is added, so the annotator-facing list never shows a session
     with no player to listen along with.
-
-    Models in SUBSET_MODELS are further restricted to SUBSET_SESSIONS: they
-    exist for the inter-annotator agreement round, where every annotator must
-    see the same sessions.
     """
     utterances = AnnotationData.query.filter_by(model_name=model_name).order_by(AnnotationData.id).all()
-    if model_name in SUBSET_MODELS:
-        utterances = [u for u in utterances if u.utterance_id in SUBSET_SESSIONS]
     return [u for u in utterances if _has_audio_file(app, (u.extra_data or {}).get('audio_file', ''))]
 
 
@@ -315,9 +306,9 @@ def instructions():
 @app.route('/select_model')
 @login_required
 def select_model():
-    """Model selection page."""
-    models = get_available_models(app)
-    
+    """Model selection page. Subset models live on /annotate_subset instead."""
+    models = [m for m in get_available_models(app) if m['name'] not in SUBSET_MODELS]
+
     # Get stats for each model
     for model in models:
         if AnnotationData.query.filter_by(model_name=model['name']).count() == 0:
