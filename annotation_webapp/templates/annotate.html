@@ -406,7 +406,7 @@
                     <input type="checkbox" name="errorClass" value="homonym_errors_rhyming_words" id="ec-homonym_errors_rhyming_words">
                     <label for="ec-homonym_errors_rhyming_words">Homonym errors/rhyming words</label>
                 </div>
-                <div class="taxonomy-item" data-description="A word is inserted that was not spoken (cases of insertion). This may also be a repeated insertion. e.g. [INS:for you]; [INS:one thousand nine]; [INS:of july].">
+                <div class="taxonomy-item" data-description="The ASR produced a word NOBODY SAID. Use this only when the insertion is invented. If the speaker did say it and the human transcriber simply left it out, it is a Human Spelling Error instead - that is a gap in the reference, not an ASR error. e.g. [INS:for you]; [INS:one thousand nine]; [INS:of july].">
                     <input type="checkbox" name="errorClass" value="words_added" id="ec-words_added">
                     <label for="ec-words_added">Words added</label>
                 </div>
@@ -418,7 +418,7 @@
                     <input type="checkbox" name="errorClass" value="dictionary_errors" id="ec-dictionary_errors">
                     <label for="ec-dictionary_errors">Dictionary errors</label>
                 </div>
-                <div class="taxonomy-item" data-description="The mistake is in the HUMAN transcript, not the ASR output — the recogniser is right and the human transcriber is wrong. This covers both misspellings in the reference AND words the human failed to transcribe at all that the ASR did capture. Judge these from the text rather than the audio. e.g. reference 'catherization' → ASR 'catheterization'; reference 'lose' → ASR 'loose'; the ASR picks up a second 'alcohol' the human left out.">
+                <div class="taxonomy-item" data-description="The mistake is in the HUMAN transcript, not the ASR output — the recogniser is right and the human transcriber is wrong. This covers both misspellings in the reference AND words the human failed to transcribe at all that the ASR did capture. Judge these from the text rather than the audio. Insertions are often this: if [INS:alcohol] or [INS:hormone] is a word the speaker really said, the human missed it and this is the right label, NOT words added. e.g. reference 'catherization' → ASR 'catheterization'; reference 'lose' → ASR 'loose'; [INS:alcohol] where the human typed it only once.">
                     <input type="checkbox" name="errorClass" value="spelling_errors" id="ec-spelling_errors">
                     <label for="ec-spelling_errors">Human Spelling Errors</label>
                 </div>
@@ -427,7 +427,7 @@
                     <label for="ec-nonsense_errors">Nonsense errors</label>
                 </div>
             </div>
-            <small style="color:#666; display:block; margin: -8px 0 15px;">Select every category that applies. Severity 3 is for errors touching a diagnosis, symptom, medication, procedure or a negation.</small>
+            <small style="color:#666; display:block; margin: -8px 0 15px;">Select every category that applies &mdash; one error can have two causes, e.g. [SUB:heartbeat shake-&gt;beating cheek] is Dictionary (heartbeat/beating) <em>and</em> Annunciation (shake/cheek). Severity 3 is for errors touching a diagnosis, symptom, medication, procedure or a negation.</small>
 
             <!-- <div style="margin: 15px 0;">
                 <label for="customTaxonomy" style="font-weight: bold; margin-bottom: 5px; display: block;">

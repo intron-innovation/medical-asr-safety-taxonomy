@@ -159,9 +159,19 @@
         <p><strong>Each error is multi-class.</strong> A single error may belong to more than one
            category &mdash; select every category that applies rather than choosing only the best fit.
            For example,  <em>swampy region &rarr; iswampimidio</em> is both an annunciation error and a nonsense error; since the misrecognition involves both pronunciation and nonsensical transformation.
-           <em>urethra &rarr; ureteral</em> is both a dictionary and a an annunciation error, since the misrecognition involves both medical knowledge and pronunciation.
+           <em>urethra &rarr; ureteral</em> is both a dictionary and an annunciation error, since the misrecognition involves both medical knowledge and pronunciation.
+           <em>[SUB:heartbeat shake-&gt;beating cheek]</em> is both a dictionary error (heartbeat &rarr; beating) and an annunciation error (shake &rarr; cheek) &mdash; one tag covering two words, each failing for a different reason.
            Assign <strong>one</strong> severity level per error, reflecting the combined impact of
            everything you selected.</p>
+        <div class="tip-box">
+            <strong>The insertion rule &mdash; decided at the reconciliation call:</strong> when you see an
+            <em>[INS:&hellip;]</em>, ask whether the speaker actually said the word.
+            <ul>
+                <li><strong>Yes, it was spoken</strong> &rarr; Human Spelling Error. The reference is incomplete; the ASR was right.</li>
+                <li><strong>No, nobody said it</strong> &rarr; Words Added. The ASR invented it.</li>
+            </ul>
+            This single question accounted for a quarter of the disagreements in round 1.
+        </div>
         <div class="taxonomy-grid">
             <div class="taxonomy-card">
                 <h3>Annunciation Errors</h3>
@@ -190,7 +200,7 @@
             </div>
             <div class="taxonomy-card">
                 <h3>Human Spelling Errors</h3>
-                <p>The mistake is in the <strong>human transcript</strong>, not the ASR output &mdash; the recogniser is right and the human transcriber is wrong. This covers both misspellings in the reference <strong>and words the human failed to transcribe at all that the ASR did capture</strong>. Judge these from the text rather than the audio.</p>
+                <p>The mistake is in the <strong>human transcript</strong>, not the ASR output &mdash; the recogniser is right and the human transcriber is wrong. This covers both misspellings in the reference <strong>and words the human failed to transcribe at all that the ASR did capture</strong>. Judge these from the text rather than the audio. <strong>Insertions are often this case:</strong> if <em>[INS:alcohol]</em> or <em>[INS:hormone]</em> is a word the speaker really said, the human missed it and this is the right label, not Words Added.</p>
                 <div class="example">reference "catherization" → ASR "catheterization" &nbsp;•&nbsp; reference "lose" → ASR "loose" &nbsp;•&nbsp; the ASR picks up a second "alcohol" the human left out</div>
             </div>
             <div class="taxonomy-card">
@@ -200,7 +210,7 @@
             </div>
             <div class="taxonomy-card">
                 <h3>Words Added</h3>
-                <p>A word is inserted that was not spoken (cases of insertion). This may also be a repeated insertion.</p>
+                <p>The ASR produced a word <strong>nobody said</strong>. Use this only when the insertion is invented. If the speaker did say it and the human transcriber simply left it out, that is a <strong>Human Spelling Error</strong> instead &mdash; a gap in the reference, not an ASR error.</p>
                 <div class="example">[INS:for you] &nbsp;•&nbsp; [INS:one thousand nine] &nbsp;•&nbsp; [INS:of july]</div>
             </div>
             <div class="taxonomy-card">
