@@ -414,28 +414,20 @@
                     <input type="checkbox" name="errorClass" value="words_deleted" id="ec-words_deleted">
                     <label for="ec-words_deleted">Words deleted</label>
                 </div>
-                <div class="taxonomy-item" data-description="Phrases recognised in place of a word missing from the dictionary. These are typically a medical drug entity or a proper noun which is not in the ASR system's dictionary. The result sounds very similar to, but not always exactly like, the intended word. e.g. naproxen → proxen; metformin → bombetformin; lisinopril → lesetapril; amlodipine → amelodipine; Chidinma → Chidima; Igbo → evil; Ekiti → Nkita.">
+                <div class="taxonomy-item" data-description="Phrases recognised in place of a word missing from the dictionary. Typically a medical entity, a drug name or a proper noun the ASR does not hold. ALSO use this when the ASR turns a non-medical word into a medical one, or a medical word into a non-medical one, e.g. [SUB:daria->diarrhea] or [SUB:ulcer->asthma]. The result sounds similar to, but not always exactly like, the intended word. e.g. naproxen → proxen; metformin → bombetformin; lisinopril → lesetapril; Chidinma → Chidima; Ekiti → Nkita.">
                     <input type="checkbox" name="errorClass" value="dictionary_errors" id="ec-dictionary_errors">
                     <label for="ec-dictionary_errors">Dictionary errors</label>
                 </div>
-                <div class="taxonomy-item" data-description="Errors that occur only in the HUMAN transcription and not in the ASR output — i.e. the speech recogniser is correct in this case and the human transcriber is wrong. Use this when the reference transcript contains the mistake. e.g. reference 'catherization' → ASR 'catheterization'; reference 'urinal' → ASR 'urinary'; podagra → podegra.">
+                <div class="taxonomy-item" data-description="The mistake is in the HUMAN transcript, not the ASR output — the recogniser is right and the human transcriber is wrong. This covers both misspellings in the reference AND words the human failed to transcribe at all that the ASR did capture. Judge these from the text rather than the audio. e.g. reference 'catherization' → ASR 'catheterization'; reference 'lose' → ASR 'loose'; the ASR picks up a second 'alcohol' the human left out.">
                     <input type="checkbox" name="errorClass" value="spelling_errors" id="ec-spelling_errors">
                     <label for="ec-spelling_errors">Human Spelling Errors</label>
-                </div>
-                <div class="taxonomy-item" data-description="Errors that could change the meaning of the intended utterance. Most result when a positive is changed to a negative (or vice versa), or when a number is misrecognised. This can also occur when the ASR deletes a large chunk of the transcript. e.g. [SUB:dripples->bubbles]; [SUB:urethra->ureteral]; [DEL:recreational]; [DEL:okay and do you take any medications i had a a drug history of thyroxine].">
-                    <input type="checkbox" name="errorClass" value="critical_errors" id="ec-critical_errors">
-                    <label for="ec-critical_errors">Critical errors*</label>
                 </div>
                 <div class="taxonomy-item" data-description="A recognised word or phrase that does not make grammatical or lexical sense, even after a possible correction has been hypothesised from context. e.g. wisdom teeth → visimteeth; swampy region → iswampimidio; feverish → beverish.">
                     <input type="checkbox" name="errorClass" value="nonsense_errors" id="ec-nonsense_errors">
                     <label for="ec-nonsense_errors">Nonsense errors</label>
                 </div>
-                <div class="taxonomy-item" data-description="The flagged difference is acceptable and should not be counted as an ASR error: fillers, plural variants and alternate spellings where neither transcript is wrong. Mutually exclusive with the other categories. e.g. uh; like." style="background:#fff6e0;">
-                    <input type="checkbox" name="errorClass" value="not_an_error" id="ec-not_an_error">
-                    <label for="ec-not_an_error">Not an Error</label>
-                </div>
             </div>
-            <small style="color:#666; display:block; margin: -8px 0 15px;">Select all Tab 1 ASR Error Taxonomy categories that apply, or check "Not an Error" if this highlight is not an error.</small>
+            <small style="color:#666; display:block; margin: -8px 0 15px;">Select every category that applies. Severity 3 is for errors touching a diagnosis, symptom, medication, procedure or a negation.</small>
 
             <!-- <div style="margin: 15px 0;">
                 <label for="customTaxonomy" style="font-weight: bold; margin-bottom: 5px; display: block;">

@@ -33,13 +33,11 @@ than choosing only the best fit.
 - *urethra → ureteral* is both a **dictionary** error and an **annunciation** error: it involves
   both medical vocabulary and pronunciation.
 
-**Not an Error** is the exception — it is mutually exclusive with the other ten.
-
 Assign **one** severity level per error, reflecting the combined impact of everything selected.
 
 ---
 
-## The 11 Categories
+## The 9 Categories
 
 Order matches the annotator guide.
 
@@ -87,38 +85,23 @@ transcript contains the mistake.
 > reference "catherization" → ASR "catheterization" · reference "urinal" → ASR "urinary" ·
 > podagra → podegra
 
-### 7. Critical errors
-Errors that could change the meaning of the intended utterance. Most result when a positive is
-changed to a negative (or vice versa), or when a number is misrecognised. This can also occur when
-the ASR deletes a large chunk of the transcript.
-
-> `[SUB:dripples->bubbles]` · `[SUB:urethra->ureteral]` · `[DEL:recreational]` ·
-> `[DEL:okay and do you take any medications i had a a drug history of thyroxine]`
-
-### 8. Nonsense errors
+### 7. Nonsense errors
 A recognised word or phrase that does not make grammatical or lexical sense, even after a possible
 correction has been hypothesised from context.
 
 > wisdom teeth → visimteeth · swampy region → iswampimidio · feverish → beverish
 
-### 9. Words added
+### 8. Words added
 A word is inserted that was not spoken (cases of insertion). This may also be a repeated insertion.
 
 > `[INS:for you]` · `[INS:one thousand nine]` · `[INS:of july]`
 
-### 10. Words deleted
+### 9. Words deleted
 A word that was spoken is omitted (cases of deletion). This may also be a chunk of a sentence being
 deleted.
 
 > `[DEL:urine]` · `[DEL:recreational]` · `[DEL:in]` ·
 > `[DEL:okay and do you take any medications i had a a drug history of thyroxine]`
-
-### 11. Not an error
-The flagged difference is acceptable and should not be counted as an ASR error: fillers, plural
-variants and alternate spellings where neither transcript is wrong. Mutually exclusive with the
-other categories.
-
-> uh · like
 
 ---
 
@@ -158,8 +141,12 @@ record per error:
 
 Category slugs (unchanged — renaming a label does **not** change its slug):
 `annunciation_errors`, `homonym_errors_rhyming_words`, `dictionary_errors`, `stop_words`,
-`suffix_errors`, `spelling_errors` *(displayed as "Human Spelling Errors")*, `critical_errors`,
-`nonsense_errors`, `words_added`, `words_deleted`, `not_an_error`.
+`suffix_errors`, `spelling_errors` *(displayed as "Human Spelling Errors")*, `nonsense_errors`,
+`words_added`, `words_deleted`.
+
+`critical_errors` and `not_an_error` were retired on 2026-10-10: neither reached any agreement
+between the two annotators (kappa -0.08 and -0.04, zero co-occurrence). Criticality is carried by
+severity instead.
 
 ---
 
@@ -172,6 +159,7 @@ were assigned under the old reading and need re-review; conversely, reference er
 
 ---
 
-**Version:** 3.1 — mirrors the live annotator guide. Replaces the earlier clinical-domain scheme
+**Version:** 4.0 — nine categories; critical_errors and not_an_error retired after round-1 IAA.
+**Previously:** 3.1 — mirrors the live annotator guide. Replaces the earlier clinical-domain scheme
 (medication / clinical concepts / temporal / negation / numerics / …), which was never used by
 annotators and is retired.

@@ -18,8 +18,10 @@ MODEL_DISPLAY_NAMES = {
     'qwen3_fixed': 'Qwen3 ASR',
     'nemotron35': 'Nemotron 3.5 ASR',
     'gemma3n': 'Gemma 3n E4B',
-    'qwen3_iaa': 'Qwen3 ASR',
-    'gemma3n_iaa': 'Gemma 3n E4B',
+    'qwen3_iaa': 'Qwen3 ASR - Round 1 (done)',
+    'gemma3n_iaa': 'Gemma 3n E4B - Round 1 (done)',
+    'qwen3_iaa2': 'Qwen3 ASR - Round 2',
+    'gemma3n_iaa2': 'Gemma 3n E4B - Round 2',
 }
 
 # Models offered on /annotate_subset, and hidden from /select_model. These hold
@@ -28,7 +30,7 @@ MODEL_DISPLAY_NAMES = {
 # model names so IAA work is keyed apart from full-corpus annotation in the
 # database, and so the full models stay complete at 120 sessions.
 # 126 medical errors per annotator, roughly two hours.
-SUBSET_MODELS = ['qwen3_iaa', 'gemma3n_iaa']
+SUBSET_MODELS = ['qwen3_iaa2', 'gemma3n_iaa2', 'qwen3_iaa', 'gemma3n_iaa']
 
 
 def get_available_models(app):

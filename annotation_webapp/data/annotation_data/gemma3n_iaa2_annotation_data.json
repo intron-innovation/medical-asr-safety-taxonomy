@@ -1,0 +1,2080 @@
+[
+  {
+    "utterance_id": "46aacf84-fdd1-490b-a857-633d2e7763a0_7d4de4c9d3488a4bbd35634cbd3a2b66_l1RjPEwA",
+    "human_transcript": " male or a female  a male  how old are you  i am sixtyfive years old  hope you do not mind if i address you as mr emeka  i do not mind  okay thank you very much so what brought you to the clinic today  i am having difficulty in urinating  okay you have been having difficulty in urinating for how long has this been  it has started for two weeks  you have been having difficulty in urinating for two weeks  yes  did it started gradually or  it was gradual in onset  okay it was gradual in onset has it been constant has it always been there or it just comes and goes or you feel this within a particular period of the day  i think it goes bad of recent it was not constant before but now it is constant  okay thank you very much is this pain while urinating associated with a burning sensation  is not associated with pain or a burning sensation  okay it is not associated with any pain or a burning sensation  yes it is not  do you feel urgency to urinate  yes i feel urgency to urinate  and then are you able to pass out this urine when you feel this urgency to urinate  i am unable to pass out urine  okay do you feel frequent urination the urge to always go to the toilet  yes i am always visiting the toilet especially in the night  okay nocturia you always visit the toilet in the night  yes at morning at night at night  like how many times do you urinate in the night  it is very frequent i cannot tell  more than you used to before  yes it is more than the usual two times to zero times i usually use the toilet but now it is about five times  do you straint in urinate  yes i strain alot and my urine dripples  okay it dripples  yeah after urination  may i know if there is blood in the urine  there is no blood in this urine there is no fever i do not have fever  is there pause  there is no pause oo  do you have lower abdominal pain  i do not have abdominal pain  okay thank you very much is there a history of trauma or recent catherization or urethra instrumentation  no there is not  there is not history of trauma or catherization  i do not have any history of that  okay thank you very much are you a main hypertensive patient are you hypertensive  yes i have been hypertensive for ten years now  okay you have been hypertensive for ten years how do you know that you are hypertensive  i was told at the hospital that i was diagnosed there  you were diagnosed in a hospital ten years ago  yes  and you have been on medications  yes it has been controlled by medications  okay thank you very much how about diabetic are you diabetic  no i am not diabetic  you are not diabetic okay is there a family history of similar condition is there anyone in your family that has similar condition  yeah i can remember my dad have similar condition when he was old  when he was old what exactly was the problem did he also feel pain while trying to urinate  he has some urinal problem i can tell exactly i was young at that time  okay thank you very much are you a smoker  i do not smoke  do you take alcohol  yeah i consume alcohol occasionally  do you take any recreational drugs substance abuse  no  thank you very much are you on your hypertensive agents  yes i am on some drugs they give me to control the hypertension  can you tell me the name of the drug you are on  amlodepine  okay you are on amlodepine is there any drug you are on  i am not on any other they give me just that one  okay thank you very much do you have any other allergies do you have are you allergic to any drug or medication  i am not  okay thank you very much",
+    "human_transcript_ner": " male or a female  a male  how old are you  i am sixtyfive years old  hope you do not mind if i address you as mr emeka  i do not mind  okay thank you very much so what brought you to the clinic today  i am having [PROBLEM: difficulty in urinating]  okay you have been having [PROBLEM: difficulty in urinating] for how long has this been  it has started for two weeks  you have been having [PROBLEM: difficulty in urinating] for two weeks  yes  did it started gradually or  it was gradual in onset  okay it was gradual in onset has it been constant has it always been there or it just comes and goes or you feel this within a particular period of the day  i think it goes bad of recent it was not constant before but now it is constant  okay thank you very much is this [PROBLEM: pain] while [BODY_FUNCTION: urinating] associated with a [PROBLEM: burning sensation]  is not associated with [PROBLEM: pain] or a [PROBLEM: burning sensation]  okay it is not associated with any [PROBLEM: pain] or a [PROBLEM: burning sensation]  yes it is not  do you feel [PROBLEM: urgency to urinate]  yes i feel [PROBLEM: urgency to urinate]  and then are you able to pass out this urine when you feel this [PROBLEM: urgency to urinate]  i am unable to pass out urine  okay do you feel frequent [BODY_FUNCTION: urination] the urge to always go to the toilet  yes i am always visiting the toilet especially in the night  okay [PROBLEM: nocturia] you always visit the toilet in the night  yes at morning at night at night  like how many times do you [BODY_FUNCTION: urinate] in the night  it is very frequent i cannot tell  more than you used to before  yes it is more than the usual two times to zero times i usually use the toilet but now it is about five times  do you [PROBLEM: straint] in urinate  yes i [PROBLEM: strain] alot and my [LABORATORY_DATA: urine dripples]  okay it dripples  yeah after [BODY_FUNCTION: urination]  may i know if there is [PROBLEM: blood in the urine]  there is no [PROBLEM: blood in this urine] there is no [PROBLEM: fever] i do not have [PROBLEM: fever]  is there pause  there is no pause oo  do you have lower [PROBLEM: abdominal pain]  i do not have [PROBLEM: abdominal pain]  okay thank you very much is there a history of [PROBLEM: trauma] or recent [PROCEDURE: catherization] or [PROCEDURE: urethra instrumentation]  no there is not  there is not history of [PROBLEM: trauma] or [PROCEDURE: catherization]  i do not have any history of that  okay thank you very much are you a main [PROBLEM: hypertensive] patient are you [PROBLEM: hypertensive]  yes i have been [PROBLEM: hypertensive] for ten years now  okay you have been [PROBLEM: hypertensive] for ten years how do you know that you are [PROBLEM: hypertensive]  i was told at the hospital that i was diagnosed there  you were diagnosed in a hospital ten years ago  yes  and you have been on [MEDICINE: medications]  yes it has been controlled by [MEDICINE: medications]  okay thank you very much how about [PROBLEM: diabetic] are you [PROBLEM: diabetic]  no i am not [PROBLEM: diabetic]  you are not [PROBLEM: diabetic] okay is there a family history of similar condition is there anyone in your family that has similar condition  yeah i can remember my dad have similar condition when he was old  when he was old what exactly was the problem did he also feel [PROBLEM: pain] while trying to urinate  he has some [PROBLEM: urinal problem] i can tell exactly i was young at that time  okay thank you very much are you a [SUBSTANCE_ABUSE: smoker]  i do not [SUBSTANCE_ABUSE: smoke]  do you take [SUBSTANCE_ABUSE: alcohol]  yeah i consume [SUBSTANCE_ABUSE: alcohol] occasionally  do you take any [SUBSTANCE_ABUSE: recreational drugs] [SUBSTANCE_ABUSE: substance abuse]  no  thank you very much are you on your [MEDICINE: hypertensive agents]  yes i am on some [MEDICINE: drugs] they give me to control the [PROBLEM: hypertension]  can you tell me the name of the drug you are on  [MEDICINE: amlodepine]  okay you are on [MEDICINE: amlodepine] is there any drug you are on  i am not on any other they give me just that one  okay thank you very much do you have any other [PROBLEM: allergies] do you have are you allergic to any [MEDICINE: drug] or [MEDICINE: medication]  i am not  okay thank you very much",
+    "asr_transcript": "my name is efimio my name is efimio how old are you i am sixtyfive years old i hope you do not mind i address you as mr emeka i do not mind okay thank you very much so what brought you to the clinic today i have been having difficulty in urinating you have been having difficulty in urinating for how long has this been that is just for two weeks you have been having difficulty urinating for two weeks yes did this started gradually or it was gradual nonsense it was gradual nonsense has it been constant has it always been there or it just comes and goes or you feel this within the particular period of the day i think it got bad of recent it was not constant before but now it is constant okay thank you very much is this pain while you are eating associated with a burning sensation it is it is not associated with pain or burning sensation it is not it is not a chest hurts any pain or burning sensation yes it is not do you feel urgency to urinate yes i feel urgency to urinate and then are you able to pass out this urine when you feel this urgency to urinate i am not able to pass out urine okay do you feel frequent urination the urge to always go to the toilet yes i am always going to the toilet especially in the night okay nocturnal so you always use the toilet in the night yes at morning at night at night like how many times you you need in the night it is very frequent i cannot tell more than i used to before yes it is more than usual usually two times to zero times i usually use the toilet but now it is about five times do you strain to urinate yes i strain a lot and my urine dribbles okay it dribbles yes after you urinate after you urinate oh i know if there is blood in the urine there is no bleeding this evening there is no fever i do not have fever is there post there is no post too do you have lower abdominal pain i do not have abdominal pain oh thank you very much is there a history of trauma or any recent catheterization or urethra instrumentation no there is none there is no history of trauma or catheterization i do not have any history of that oh thank you very much are you a known hypertensive patient are you hypertensive yes i have been hypertensive for ten years now okay you have been hypertensive for ten years how do you know you are hypertensive i was told at the hospital  i was diagnosed there you were diagnosed in a hospital ten years ago yes and you have been on medications yes that is been controlled by medications okay thank you very much how about being diabetic are you diabetic no i am not diabetic you are not diabetic okay is there family history of similar condition is there anyone in your family that has similar condition yeah i remember my dad had similar condition when he was old when he was old what exactly was the problem did he also feel pain while trying to urinate he had some urinary problem i cannot tell exactly i was younger at that time okay thank you very much are you a smoker i do smoke do you take alcohol yeah i consume alcohol occasionally do you take any recreational drug substance abuse no thank you very much are you on your hypertensive agents yes i am on  some drugs they gave me to control the hypertension can you tell me the name of the drug you are on  i am on lipin okay you are on i mean lipin is there any other drug you are on i am not on any other drug they gave me just that one oh thank you very much  do you have any allergies do you have are you allergic to any drug or medication no i am not okay thank you very much",
+    "asr_reconstructed": "[INS:my name] [SUB:male or a female a male->is efimio my name is efimio] how old are you i am sixtyfive years old [INS:i] hope you do not mind [DEL:if] i address you as mr emeka i do not mind okay thank you very much so what brought you to the clinic today i [INS:have] [SUB:am->been] having difficulty in urinating [DEL:okay] you have been having difficulty in urinating for how long has this been [SUB:it has started->that is just] for two weeks you have been having difficulty [DEL:in] urinating for two weeks yes did [SUB:it->this] started gradually or it was gradual [SUB:in->nonsense] [DEL:onset okay] it was gradual [SUB:in->nonsense] [DEL:onset] has it been constant has it always been there or it just comes and goes or you feel this within [SUB:a->the] particular period of the day i think it [SUB:goes->got] bad of recent it was not constant before but now it is constant okay thank you very much is this pain while [INS:you are] [SUB:urinating->eating] associated with a burning sensation [INS:it] is [INS:it is] not associated with pain or [DEL:a] burning sensation [INS:it is] [SUB:okay->not] it is not [INS:a] [SUB:associated with->chest hurts] any pain or [DEL:a] burning sensation yes it is not do you feel urgency to urinate yes i feel urgency to urinate and then are you able to pass out this urine when you feel this urgency to urinate i am [INS:not] [SUB:unable->able] to pass out urine okay do you feel frequent urination the urge to always go to the toilet yes i am always [INS:going] [SUB:visiting->to] the toilet especially in the night okay [INS:nocturnal] [SUB:nocturia->so] you always [SUB:visit->use] the toilet in the night yes at morning at night at night like how many times [SUB:do->you] you [SUB:urinate->need] in the night it is very frequent i cannot tell more than [SUB:you->i] used to before yes it is more than [SUB:the usual->usual usually] two times to zero times i usually use the toilet but now it is about five times do you [SUB:straint in->strain to] urinate yes i strain [INS:a] [SUB:alot->lot] and my urine [SUB:dripples->dribbles] okay it [SUB:dripples yeah->dribbles yes] after [INS:you urinate after you] [SUB:urination may->urinate oh] i know if there is blood in the urine there is no [SUB:blood->bleeding] [DEL:in] this [SUB:urine->evening] there is no fever i do not have fever is there [SUB:pause->post] there is no [SUB:pause oo->post too] do you have lower abdominal pain i do not have abdominal pain [SUB:okay->oh] thank you very much is there a history of trauma or [INS:any] recent [SUB:catherization->catheterization] or urethra instrumentation no there is [SUB:not->none] there is [SUB:not->no] history of trauma or [SUB:catherization->catheterization] i do not have any history of that [SUB:okay->oh] thank you very much are you a [SUB:main->known] hypertensive patient are you hypertensive yes i have been hypertensive for ten years now okay you have been hypertensive for ten years how do you know [DEL:that] you are hypertensive i was told at the hospital [DEL:that] i was diagnosed there you were diagnosed in a hospital ten years ago yes and you have been on medications yes [SUB:it has->that is] been controlled by medications okay thank you very much how about [INS:being] diabetic are you diabetic no i am not diabetic you are not diabetic okay is there [DEL:a] family history of similar condition is there anyone in your family that has similar condition yeah i [DEL:can] remember my dad [SUB:have->had] similar condition when he was old when he was old what exactly was the problem did he also feel pain while trying to urinate he [SUB:has->had] some [SUB:urinal->urinary] problem i [SUB:can->cannot] tell exactly i was [SUB:young->younger] at that time okay thank you very much are you a smoker i do [DEL:not] smoke do you take alcohol yeah i consume alcohol occasionally do you take any recreational [SUB:drugs->drug] substance abuse no thank you very much are you on your hypertensive agents yes i am on some drugs they [SUB:give->gave] me to control the hypertension can you tell me the name of the drug you are on [INS:i am on] [SUB:amlodepine->lipin] okay you are on [INS:i mean] [SUB:amlodepine->lipin] is there any [INS:other] drug you are on i am not on any other [INS:drug] they [SUB:give->gave] me just that one [SUB:okay->oh] thank you very much do you have any [DEL:other] allergies do you have are you allergic to any drug or medication [INS:no] i am not okay thank you very much",
+    "audio_file": "data/final_audio/46aacf84-fdd1-490b-a857-633d2e7763a0_7d4de4c9d3488a4bbd35634cbd3a2b66_l1RjPEwA.wav",
+    "model": "gemma3n_iaa2",
+    "wer": 0.1545189504373177,
+    "errors": [
+      {
+        "error_id": "insert_0",
+        "error_type": "INS",
+        "error_match": "[INS:my name]",
+        "error_text": "my name",
+        "position": 0,
+        "start_idx": 0,
+        "end_idx": 13,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_1",
+        "error_type": "SUB",
+        "error_match": "[SUB:male or a female a male->is efimio my name is efimio]",
+        "error_text": "male or a female a male->is efimio my name is efimio",
+        "position": 1,
+        "start_idx": 14,
+        "end_idx": 72,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_2",
+        "error_type": "INS",
+        "error_match": "[INS:i]",
+        "error_text": "i",
+        "position": 2,
+        "start_idx": 114,
+        "end_idx": 121,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_3",
+        "error_type": "DEL",
+        "error_match": "[DEL:if]",
+        "error_text": "if",
+        "position": 3,
+        "start_idx": 143,
+        "end_idx": 151,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_4",
+        "error_type": "INS",
+        "error_match": "[INS:have]",
+        "error_text": "have",
+        "position": 4,
+        "start_idx": 259,
+        "end_idx": 269,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_5",
+        "error_type": "SUB",
+        "error_match": "[SUB:am->been]",
+        "error_text": "am->been",
+        "position": 5,
+        "start_idx": 270,
+        "end_idx": 284,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_6",
+        "error_type": "DEL",
+        "error_match": "[DEL:okay]",
+        "error_text": "okay",
+        "position": 6,
+        "start_idx": 316,
+        "end_idx": 326,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_7",
+        "error_type": "SUB",
+        "error_match": "[SUB:it has started->that is just]",
+        "error_text": "it has started->that is just",
+        "position": 7,
+        "start_idx": 399,
+        "end_idx": 433,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_8",
+        "error_type": "DEL",
+        "error_match": "[DEL:in]",
+        "error_text": "in",
+        "position": 8,
+        "start_idx": 480,
+        "end_idx": 488,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_9",
+        "error_type": "SUB",
+        "error_match": "[SUB:it->this]",
+        "error_text": "it->this",
+        "position": 9,
+        "start_idx": 521,
+        "end_idx": 535,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_10",
+        "error_type": "SUB",
+        "error_match": "[SUB:in->nonsense]",
+        "error_text": "in->nonsense",
+        "position": 10,
+        "start_idx": 572,
+        "end_idx": 590,
+        "is_medical": true
+      },
+      {
+        "error_id": "delete_11",
+        "error_type": "DEL",
+        "error_match": "[DEL:onset okay]",
+        "error_text": "onset okay",
+        "position": 11,
+        "start_idx": 591,
+        "end_idx": 607,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_12",
+        "error_type": "SUB",
+        "error_match": "[SUB:in->nonsense]",
+        "error_text": "in->nonsense",
+        "position": 12,
+        "start_idx": 623,
+        "end_idx": 641,
+        "is_medical": true
+      },
+      {
+        "error_id": "delete_13",
+        "error_type": "DEL",
+        "error_match": "[DEL:onset]",
+        "error_text": "onset",
+        "position": 13,
+        "start_idx": 642,
+        "end_idx": 653,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_14",
+        "error_type": "SUB",
+        "error_match": "[SUB:a->the]",
+        "error_text": "a->the",
+        "position": 14,
+        "start_idx": 750,
+        "end_idx": 762,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_15",
+        "error_type": "SUB",
+        "error_match": "[SUB:goes->got]",
+        "error_text": "goes->got",
+        "position": 15,
+        "start_idx": 803,
+        "end_idx": 818,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_16",
+        "error_type": "INS",
+        "error_match": "[INS:you are]",
+        "error_text": "you are",
+        "position": 16,
+        "start_idx": 927,
+        "end_idx": 940,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_17",
+        "error_type": "SUB",
+        "error_match": "[SUB:urinating->eating]",
+        "error_text": "urinating->eating",
+        "position": 17,
+        "start_idx": 941,
+        "end_idx": 964,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_18",
+        "error_type": "INS",
+        "error_match": "[INS:it]",
+        "error_text": "it",
+        "position": 18,
+        "start_idx": 1001,
+        "end_idx": 1009,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_19",
+        "error_type": "INS",
+        "error_match": "[INS:it is]",
+        "error_text": "it is",
+        "position": 19,
+        "start_idx": 1013,
+        "end_idx": 1024,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_20",
+        "error_type": "DEL",
+        "error_match": "[DEL:a]",
+        "error_text": "a",
+        "position": 20,
+        "start_idx": 1053,
+        "end_idx": 1060,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_21",
+        "error_type": "INS",
+        "error_match": "[INS:it is]",
+        "error_text": "it is",
+        "position": 21,
+        "start_idx": 1079,
+        "end_idx": 1090,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_22",
+        "error_type": "SUB",
+        "error_match": "[SUB:okay->not]",
+        "error_text": "okay->not",
+        "position": 22,
+        "start_idx": 1091,
+        "end_idx": 1106,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_23",
+        "error_type": "INS",
+        "error_match": "[INS:a]",
+        "error_text": "a",
+        "position": 23,
+        "start_idx": 1117,
+        "end_idx": 1124,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_24",
+        "error_type": "SUB",
+        "error_match": "[SUB:associated with->chest hurts]",
+        "error_text": "associated with->chest hurts",
+        "position": 24,
+        "start_idx": 1125,
+        "end_idx": 1159,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_25",
+        "error_type": "DEL",
+        "error_match": "[DEL:a]",
+        "error_text": "a",
+        "position": 25,
+        "start_idx": 1172,
+        "end_idx": 1179,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_26",
+        "error_type": "INS",
+        "error_match": "[INS:not]",
+        "error_text": "not",
+        "position": 26,
+        "start_idx": 1361,
+        "end_idx": 1370,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_27",
+        "error_type": "SUB",
+        "error_match": "[SUB:unable->able]",
+        "error_text": "unable->able",
+        "position": 27,
+        "start_idx": 1371,
+        "end_idx": 1389,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_28",
+        "error_type": "INS",
+        "error_match": "[INS:going]",
+        "error_text": "going",
+        "position": 28,
+        "start_idx": 1496,
+        "end_idx": 1507,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_29",
+        "error_type": "SUB",
+        "error_match": "[SUB:visiting->to]",
+        "error_text": "visiting->to",
+        "position": 29,
+        "start_idx": 1508,
+        "end_idx": 1526,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_30",
+        "error_type": "INS",
+        "error_match": "[INS:nocturnal]",
+        "error_text": "nocturnal",
+        "position": 30,
+        "start_idx": 1567,
+        "end_idx": 1582,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_31",
+        "error_type": "SUB",
+        "error_match": "[SUB:nocturia->so]",
+        "error_text": "nocturia->so",
+        "position": 31,
+        "start_idx": 1583,
+        "end_idx": 1601,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_32",
+        "error_type": "SUB",
+        "error_match": "[SUB:visit->use]",
+        "error_text": "visit->use",
+        "position": 32,
+        "start_idx": 1613,
+        "end_idx": 1629,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_33",
+        "error_type": "SUB",
+        "error_match": "[SUB:do->you]",
+        "error_text": "do->you",
+        "position": 33,
+        "start_idx": 1707,
+        "end_idx": 1720,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_34",
+        "error_type": "SUB",
+        "error_match": "[SUB:urinate->need]",
+        "error_text": "urinate->need",
+        "position": 34,
+        "start_idx": 1725,
+        "end_idx": 1744,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_35",
+        "error_type": "SUB",
+        "error_match": "[SUB:you->i]",
+        "error_text": "you->i",
+        "position": 35,
+        "start_idx": 1802,
+        "end_idx": 1814,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_36",
+        "error_type": "SUB",
+        "error_match": "[SUB:the usual->usual usually]",
+        "error_text": "the usual->usual usually",
+        "position": 36,
+        "start_idx": 1850,
+        "end_idx": 1880,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_37",
+        "error_type": "SUB",
+        "error_match": "[SUB:straint in->strain to]",
+        "error_text": "straint in->strain to",
+        "position": 37,
+        "start_idx": 1968,
+        "end_idx": 1995,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_38",
+        "error_type": "INS",
+        "error_match": "[INS:a]",
+        "error_text": "a",
+        "position": 38,
+        "start_idx": 2017,
+        "end_idx": 2024,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_39",
+        "error_type": "SUB",
+        "error_match": "[SUB:alot->lot]",
+        "error_text": "alot->lot",
+        "position": 39,
+        "start_idx": 2025,
+        "end_idx": 2040,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_40",
+        "error_type": "SUB",
+        "error_match": "[SUB:dripples->dribbles]",
+        "error_text": "dripples->dribbles",
+        "position": 40,
+        "start_idx": 2054,
+        "end_idx": 2078,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_41",
+        "error_type": "SUB",
+        "error_match": "[SUB:dripples yeah->dribbles yes]",
+        "error_text": "dripples yeah->dribbles yes",
+        "position": 41,
+        "start_idx": 2087,
+        "end_idx": 2120,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_42",
+        "error_type": "INS",
+        "error_match": "[INS:you urinate after you]",
+        "error_text": "you urinate after you",
+        "position": 42,
+        "start_idx": 2127,
+        "end_idx": 2154,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_43",
+        "error_type": "SUB",
+        "error_match": "[SUB:urination may->urinate oh]",
+        "error_text": "urination may->urinate oh",
+        "position": 43,
+        "start_idx": 2155,
+        "end_idx": 2186,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_44",
+        "error_type": "SUB",
+        "error_match": "[SUB:blood->bleeding]",
+        "error_text": "blood->bleeding",
+        "position": 44,
+        "start_idx": 2237,
+        "end_idx": 2258,
+        "is_medical": true
+      },
+      {
+        "error_id": "delete_45",
+        "error_type": "DEL",
+        "error_match": "[DEL:in]",
+        "error_text": "in",
+        "position": 45,
+        "start_idx": 2259,
+        "end_idx": 2267,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_46",
+        "error_type": "SUB",
+        "error_match": "[SUB:urine->evening]",
+        "error_text": "urine->evening",
+        "position": 46,
+        "start_idx": 2273,
+        "end_idx": 2293,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_47",
+        "error_type": "SUB",
+        "error_match": "[SUB:pause->post]",
+        "error_text": "pause->post",
+        "position": 47,
+        "start_idx": 2341,
+        "end_idx": 2358,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_48",
+        "error_type": "SUB",
+        "error_match": "[SUB:pause oo->post too]",
+        "error_text": "pause oo->post too",
+        "position": 48,
+        "start_idx": 2371,
+        "end_idx": 2395,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_49",
+        "error_type": "SUB",
+        "error_match": "[SUB:okay->oh]",
+        "error_text": "okay->oh",
+        "position": 49,
+        "start_idx": 2458,
+        "end_idx": 2472,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_50",
+        "error_type": "INS",
+        "error_match": "[INS:any]",
+        "error_text": "any",
+        "position": 50,
+        "start_idx": 2525,
+        "end_idx": 2534,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_51",
+        "error_type": "SUB",
+        "error_match": "[SUB:catherization->catheterization]",
+        "error_text": "catherization->catheterization",
+        "position": 51,
+        "start_idx": 2542,
+        "end_idx": 2578,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_52",
+        "error_type": "SUB",
+        "error_match": "[SUB:not->none]",
+        "error_text": "not->none",
+        "position": 52,
+        "start_idx": 2618,
+        "end_idx": 2633,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_53",
+        "error_type": "SUB",
+        "error_match": "[SUB:not->no]",
+        "error_text": "not->no",
+        "position": 53,
+        "start_idx": 2643,
+        "end_idx": 2656,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_54",
+        "error_type": "SUB",
+        "error_match": "[SUB:catherization->catheterization]",
+        "error_text": "catherization->catheterization",
+        "position": 54,
+        "start_idx": 2678,
+        "end_idx": 2714,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_55",
+        "error_type": "SUB",
+        "error_match": "[SUB:okay->oh]",
+        "error_text": "okay->oh",
+        "position": 55,
+        "start_idx": 2749,
+        "end_idx": 2763,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_56",
+        "error_type": "SUB",
+        "error_match": "[SUB:main->known]",
+        "error_text": "main->known",
+        "position": 56,
+        "start_idx": 2794,
+        "end_idx": 2811,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_57",
+        "error_type": "DEL",
+        "error_match": "[DEL:that]",
+        "error_text": "that",
+        "position": 57,
+        "start_idx": 2963,
+        "end_idx": 2973,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_58",
+        "error_type": "DEL",
+        "error_match": "[DEL:that]",
+        "error_text": "that",
+        "position": 58,
+        "start_idx": 3022,
+        "end_idx": 3032,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_59",
+        "error_type": "SUB",
+        "error_match": "[SUB:it has->that is]",
+        "error_text": "it has->that is",
+        "position": 59,
+        "start_idx": 3143,
+        "end_idx": 3164,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_60",
+        "error_type": "INS",
+        "error_match": "[INS:being]",
+        "error_text": "being",
+        "position": 60,
+        "start_idx": 3231,
+        "end_idx": 3242,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_61",
+        "error_type": "DEL",
+        "error_match": "[DEL:a]",
+        "error_text": "a",
+        "position": 61,
+        "start_idx": 3325,
+        "end_idx": 3332,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_62",
+        "error_type": "DEL",
+        "error_match": "[DEL:can]",
+        "error_text": "can",
+        "position": 62,
+        "start_idx": 3434,
+        "end_idx": 3443,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_63",
+        "error_type": "SUB",
+        "error_match": "[SUB:have->had]",
+        "error_text": "have->had",
+        "position": 63,
+        "start_idx": 3460,
+        "end_idx": 3475,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_64",
+        "error_type": "SUB",
+        "error_match": "[SUB:has->had]",
+        "error_text": "has->had",
+        "position": 64,
+        "start_idx": 3604,
+        "end_idx": 3618,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_65",
+        "error_type": "SUB",
+        "error_match": "[SUB:urinal->urinary]",
+        "error_text": "urinal->urinary",
+        "position": 65,
+        "start_idx": 3624,
+        "end_idx": 3645,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_66",
+        "error_type": "SUB",
+        "error_match": "[SUB:can->cannot]",
+        "error_text": "can->cannot",
+        "position": 66,
+        "start_idx": 3656,
+        "end_idx": 3673,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_67",
+        "error_type": "SUB",
+        "error_match": "[SUB:young->younger]",
+        "error_text": "young->younger",
+        "position": 67,
+        "start_idx": 3693,
+        "end_idx": 3713,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_68",
+        "error_type": "DEL",
+        "error_match": "[DEL:not]",
+        "error_text": "not",
+        "position": 68,
+        "start_idx": 3774,
+        "end_idx": 3783,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_69",
+        "error_type": "SUB",
+        "error_match": "[SUB:drugs->drug]",
+        "error_text": "drugs->drug",
+        "position": 69,
+        "start_idx": 3875,
+        "end_idx": 3892,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_70",
+        "error_type": "SUB",
+        "error_match": "[SUB:give->gave]",
+        "error_text": "give->gave",
+        "position": 70,
+        "start_idx": 3996,
+        "end_idx": 4012,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_71",
+        "error_type": "INS",
+        "error_match": "[INS:i am on]",
+        "error_text": "i am on",
+        "position": 71,
+        "start_idx": 4092,
+        "end_idx": 4105,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_72",
+        "error_type": "SUB",
+        "error_match": "[SUB:amlodepine->lipin]",
+        "error_text": "amlodepine->lipin",
+        "position": 72,
+        "start_idx": 4106,
+        "end_idx": 4129,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_73",
+        "error_type": "INS",
+        "error_match": "[INS:i mean]",
+        "error_text": "i mean",
+        "position": 73,
+        "start_idx": 4146,
+        "end_idx": 4158,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_74",
+        "error_type": "SUB",
+        "error_match": "[SUB:amlodepine->lipin]",
+        "error_text": "amlodepine->lipin",
+        "position": 74,
+        "start_idx": 4159,
+        "end_idx": 4182,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_75",
+        "error_type": "INS",
+        "error_match": "[INS:other]",
+        "error_text": "other",
+        "position": 75,
+        "start_idx": 4196,
+        "end_idx": 4207,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_76",
+        "error_type": "INS",
+        "error_match": "[INS:drug]",
+        "error_text": "drug",
+        "position": 76,
+        "start_idx": 4246,
+        "end_idx": 4256,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_77",
+        "error_type": "SUB",
+        "error_match": "[SUB:give->gave]",
+        "error_text": "give->gave",
+        "position": 77,
+        "start_idx": 4262,
+        "end_idx": 4278,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_78",
+        "error_type": "SUB",
+        "error_match": "[SUB:okay->oh]",
+        "error_text": "okay->oh",
+        "position": 78,
+        "start_idx": 4296,
+        "end_idx": 4310,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_79",
+        "error_type": "DEL",
+        "error_match": "[DEL:other]",
+        "error_text": "other",
+        "position": 79,
+        "start_idx": 4347,
+        "end_idx": 4358,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_80",
+        "error_type": "INS",
+        "error_match": "[INS:no]",
+        "error_text": "no",
+        "position": 80,
+        "start_idx": 4424,
+        "end_idx": 4432,
+        "is_medical": false
+      }
+    ],
+    "error_count": 81,
+    "index": 0
+  },
+  {
+    "utterance_id": "day3_consultation07",
+    "human_transcript": " hello hi hi my name is doctor jacob and welcome to babylon  how are you thank you i am i am i am good i mean i  i am  so i am bad so your  okay right so just before we start is it alright if you could confirm your name for me please  and your date of birth seventeen of january nineteen eighty seven and your address for me please  sixty hanover steps  that is good and just to confirm that you are in a secure location and we can have a confidential conversation london yes okay so you mentioned in our notes that you have got  skin problem if you can tell me a bit more about it please yes  over the past few days i had  i have noticed my skin is  sore and red okay so where is it sore and red  it is  all over my chest my hands and arms and especially inside of the elbows and   that  on the on the inside of the elbow elbows okay inside of the elbows yeah which is the the worst area alright  area is it very itchy it is very itchy and  dry all over my body itchy and dry okay have you had something like this in the past yes  if i have not  had  okay do you think this is similar to your usual eczema or is it worse  i think it is yeah it is getting worse like the past few days way worse yeah but you could be like something similar so on the skin is there any you know any of the patches  sore and you mentioned it is quite sore is it weeping is it like watery liquid coming from that area weeping   no no nothing  okay right but but not the areas that are cracked yeah so you have cracks over there okay and is there any scratch marks on your on any of the you know areas any scratch marks i mean  it is very itchy if i scratch myself but there is no scratch mark no okay is there any thickened skin like  you know where it is the skins very  thick and darkened areas mmm no no i do not think i do not think so okay  rightyho so you have mentioned you have got a history of eczema so what do you do about it  how do you keep it under control yeah usually i use a a a cream called diprobase  and in the shower i use something called dermal  dermal alright and have you been using them recently or not yes yes i i use them you  use them every day yes i there there is no change in that i did not change any   okay have you ever used steroids in the past for your eczema  i i i am not sure   yes yes  yes i remember now i   you have used steroids before  but it it is not helping   yeah also you are still using the steroids yeah i tried i tried which one are you using the steroids what is the name i am not sure it is   i would have   the box is not there  is it the  okay so  is it like the overthecounter ones sorry over the counter hydrocortisone that does that ring a   yeah so you are using the hydrocortisone yeah yes are you using any antihistamines at all i no no no antihistamines okay right fine otherwise other than those rash you are feeling well in yourself there is no temperature no joint pains yeah  no fever  but i remember that i have tried  and it did not work you have tried the antihistamines and it did not work okay which one did you try the one overthecounter okay so like cetirizine yeah yeah okay that is fine right okay so from what you are describing it looks like you know it is quite widespread your eczema yeah because you are having it all over your chest and  hands and things like that  so do you have any  allergies to any medication at all  no no allergies no allergies okay and you do not other than eczema you do not have  any other medical condition i i have  asthma and  in my family  there is hypothyroidism and migraine my mother has migraine  mother has migraine and what was the other one i did not understand  hypothyroidism  who who has hypothroidism my mother okay so she has hyperthyroidism okay that is fine right here you mentioned you have asthma so what medications are you using for asthma   you know probably neither  the blue inhaler so you do not you do not use it everyday so you just use it on and off yeah yeah yeah blue inhalers but your breathings all okay yeah okay yeah yeah  it is only when i have a flare  yeah sure  so what we need to do is obviously you have got  as i have mentioned so extensive eczema what we will do we need a couple of minutes because to keep your a bit comfortable we will you would probably need some antihistamines which i am going to prescribe also hydrocortisone is a baby steroid that you use for young children you might probably need a bit more stronger one like betnovateor something like that okay  so we will try that first so i am going to  it is called the antihistamine is called fexofenadine and then we will try with some betnovate first so it is like very small amount like it is like one fingertip yeah this much is is enough to cover your palms and your  back of your hands yeah so it is very small amounts so that if you can imagine you can cover with a very small amount the whole body yeah so use that you you have to use it twice a day for the next couple of weeks okay if if there is no improvement you need to get back to us or if you have any kind of adverse reaction like an allergic reaction which is unlikely but if it still happens you need to get in touch with us okay okay okay thank you very much  so what we are going to do is we are going to send off the prescription to your pharmacy it looks like boots on the systems is that correct yeah yes so i will send it across to boots and it will be there for  collecting yes if things are getting worse in the next two weeks call us before hand otherwise wait for two weeks take the medication and the cream you still need to continue on your emollients like the dermal soap and as well as the diprovate yeah so you still need to use those in the interim any questions at all  no no questions thank you thank you very okay then you take care then bye bye now okay bye bye",
+    "human_transcript_ner": " hello hi hi my name is doctor [MEDICINE: jacob] and welcome to [MEDICINE: babylon]  how are you thank you i am i am i am good i mean i  i am  so i am bad so your  okay right so just before we start is it alright if you could confirm your name for me please  and your date of birth seventeen of january nineteen eighty seven and your address for me please  sixty hanover steps  that is good and just to confirm that you are in a secure location and we can have a confidential conversation london yes okay so you mentioned in our notes that you have got  [ANATOMICAL_STRUCTURE: skin] [PROBLEM: problem] if you can tell me a bit more about it please yes  over the past few days i had  i have noticed my [ANATOMICAL_STRUCTURE: skin] is  [PROBLEM: sore] and [PROBLEM: red] okay so where is it [PROBLEM: sore] and [PROBLEM: red]  it is  all over my [ANATOMICAL_STRUCTURE: chest] my [ANATOMICAL_STRUCTURE: hands] and [ANATOMICAL_STRUCTURE: arms] and especially inside of the [ANATOMICAL_STRUCTURE: elbows] and   that  on the on the inside of the [ANATOMICAL_STRUCTURE: elbow] [ANATOMICAL_STRUCTURE: elbows] okay inside of the [ANATOMICAL_STRUCTURE: elbows] yeah which is the the worst area alright  area is it very [PROBLEM: itchy] it is very [PROBLEM: itchy] and  [PROBLEM: dry] all over my [ANATOMICAL_STRUCTURE: body] [PROBLEM: itchy] and [PROBLEM: dry] okay have you had something like this in the past yes  if i have not  had  okay do you think this is similar to your usual [PROBLEM: eczema] or is it worse  i think it is yeah it is getting worse like the past few days way worse yeah but you could be like something similar so on the [ANATOMICAL_STRUCTURE: skin] is there any you know any of the patches  [PROBLEM: sore] and you mentioned it is quite [PROBLEM: sore] is it weeping is it like watery liquid coming from that area [PROBLEM: weeping]   no no nothing  okay right but but not the areas that are [PROBLEM: cracked] yeah so you have [PROBLEM: cracks] over there okay and is there any [PROBLEM: scratch marks] on your on any of the you know areas any [PROBLEM: scratch marks] i mean  it is very [PROBLEM: itchy] if i scratch myself but there is no [PROBLEM: scratch] mark no okay is there any [PROBLEM: thickened] [ANATOMICAL_STRUCTURE: skin] like  you know where it is the [ANATOMICAL_STRUCTURE: skins] very  thick and darkened areas mmm no no i do not think i do not think so okay  rightyho so you have mentioned you have got a history of [PROBLEM: eczema] so what do you do about it  how do you keep it under control yeah usually i use a a a cream called [MEDICINE: diprobase]  and in the shower i use something called dermal  dermal alright and have you been using them recently or not yes yes i i use them you  use them every day yes i there there is no change in that i did not change any   okay have you ever used [MEDICINE: steroids] in the past for your [PROBLEM: eczema]  i i i am not sure   yes yes  yes i remember now i   you have used [MEDICINE: steroids] before  but it it is not helping   yeah also you are still using the [MEDICINE: steroids] yeah i tried i tried which one are you using the [MEDICINE: steroids] what is the name i am not sure it is   i would have   the box is not there  is it the  okay so  is it like the overthecounter ones sorry over the counter [MEDICINE: hydrocortisone] that does that ring a   yeah so you are using the [MEDICINE: hydrocortisone] yeah yes are you using any [MEDICINE: antihistamines] at all i no no no [MEDICINE: antihistamines] okay right fine otherwise other than those [PROBLEM: rash] you are feeling well in yourself there is no [BODY_MEASUREMENT: temperature] no [ANATOMICAL_STRUCTURE: joint] [PROBLEM: pains] yeah  no [PROBLEM: fever]  but i remember that i have tried  and it did not work you have tried the [MEDICINE: antihistamines] and it did not work okay which one did you try the one overthecounter okay so like [MEDICINE: cetirizine] yeah yeah okay that is fine right okay so from what you are describing it looks like you know it is quite widespread your [PROBLEM: eczema] yeah because you are having it all over your [ANATOMICAL_STRUCTURE: chest] and  [ANATOMICAL_STRUCTURE: hands] and things like that  so do you have any  [PROBLEM: allergies] to any [MEDICINE: medication] at all  no no [PROBLEM: allergies] no [PROBLEM: allergies] okay and you do not other than [PROBLEM: eczema] you do not have  any other medical condition i i have  [PROBLEM: asthma] and  in my family  there is [PROBLEM: hypothyroidism] and [PROBLEM: migraine] my mother has [PROBLEM: migraine]  mother has [PROBLEM: migraine] and what was the other one i did not understand  [PROBLEM: hypothyroidism]  who who has [PROBLEM: hypothroidism] my mother okay so she has [PROBLEM: hyperthyroidism] okay that is fine right here you mentioned you have [PROBLEM: asthma] so what [MEDICINE: medications] are you using for [PROBLEM: asthma]   you know probably neither  the blue [MED_FORM: inhaler] so you do not you do not use it everyday so you just use it on and off yeah yeah yeah blue [MEDICINE: inhalers] but your [BODY_FUNCTION: breathings] all okay yeah okay yeah yeah  it is only when i have a flare  yeah sure  so what we need to do is obviously you have got  as i have mentioned so extensive [PROBLEM: eczema] what we will do we need a couple of minutes because to keep your a bit comfortable we will you would probably need some [MEDICINE: antihistamines] which i am going to prescribe also [MEDICINE: hydrocortisone] is a [MEDICINE: baby steroid] that you use for young children you might probably need a bit more stronger one like [MEDICINE: betnovateor] something like that okay  so we will try that first so i am going to  it is called the [MEDICINE: antihistamine] is called [MEDICINE: fexofenadine] and then we will try with some [MEDICINE: betnovate] first so it is like very small amount like it is like one fingertip yeah this much is is enough to cover your [ANATOMICAL_STRUCTURE: palms] and your  [ANATOMICAL_STRUCTURE: back] of your [ANATOMICAL_STRUCTURE: hands] yeah so it is very small amounts so that if you can imagine you can cover with a very small amount the whole body yeah so use that you you have to use it twice a day for the next couple of weeks okay if if there is no improvement you need to get back to us or if you have any kind of [PROBLEM: adverse reaction] like an [PROBLEM: allergic reaction] which is unlikely but if it still happens you need to get in touch with us okay okay okay thank you very much  so what we are going to do is we are going to send off the prescription to your pharmacy it looks like [MEDICAL_DEVICE: boots] on the systems is that correct yeah yes so i will send it across to boots and it will be there for  collecting yes if things are getting worse in the next two weeks call us before hand otherwise wait for two weeks take the [MEDICINE: medication] and the cream you still need to continue on your [MEDICINE: emollients] like the [MEDICINE: dermal soap] and as well as the [MEDICINE: diprovate] yeah so you still need to use those in the interim any questions at all  no no questions thank you thank you very okay then you take care then bye bye now okay bye bye",
+    "asr_transcript": "hello hi hi my name is doctor jacob and welcome to babylon how are you how are you i am i am i am good i mean i am  so i am bad you are so sorry okay right so just before we start is it alright if you could confirm your name for me please abbott yes that is right and your date of birth seventeenth of january one thousand nine hundred and seventyseven and your address for me please  sixty anover steps  that is good and just to confirm that you are in a secure location and we can have a confidential conversation yes okay so you have mentioned in our notes that you have got  skin problem if you can tell me a bit more about it please yes  in over the past few days i had  i have noticed my skin is sore in red okay so where is it sore and red  it is  all over my chest my hands and arms  especially inside of the elbows and  the elbows got caught that on the on the inside of the elbows okay inside of the elbows yeah which is the the worst area all right the worst area is it very itchy it is very itchy and  dry all over my body itchy and dry okay yes  yes i have had eczema in the past okay do you think this is similar to your usual eczema or is it worse  i think it is yeah it is going worse like this past few days yeah but it could be like something similar so on your skin is there any you know any of the patches  sore areas you mentioned it is quite sore is it weeping is it like watery liquid coming from that area weeping no nothing that noticed okay right the skin of your area is cracked yeah so you have cracks all over there okay and is there any scratch marks on your on any of the you know areas any scratch marks i mean  it is very itchy i was scratch myself there is no scratch marks okay is there any thickened skin like thick you know where it is the skins very  thick and darkened areas no no i do not think so okay all right here so you have mentioned you have got a history of eczema so what do you do about it how do you keep it under control yeah usually i use a cream called diprobate in the shower i use something called dermol dermol all right and have you been using them recently or not yes yes i i use them you use them everyday yes i there is no changes that i did not change anything okay have you ever used steroids in the past for your eczema  i i am not sure  yes yes i have yes you have used steroids  but it it is not helping yeah oh so you are still using the steroids yeah i tried i tried which one are you using the steroids what is the name i am not sure it is  oh is it your water account no it is not there okay so is it like the old water account ones sorry old water account hydrocortisone does that ring a bell yeah so you are using the hydrocortisone yeah are you using any antihistamines at all  no no no antihistamines okay right fine otherwise other than those cash you are feeling well in yourself there is no temperature no joint pains yeah no joint pains no i will say i have tried lowdose antihistamine and it did not work you have tried the antihistamines and did not work okay which one did you try the one over the counter okay so like cetirizine yeah yeah okay that is fine right okay so from what you are describing it looks like you know it is quite widespread your eczema yeah because you are having it all over your chest and hands and things like that  so do you have any al allergies to any medication at all no no allergies no allergies okay and you do not other than eczema you do not have any other medical condition i i have asthma and in my family  there is  hypothyroidism and migraines my mother has my mother has migraine and what was the other one i did not understand i i posted it who has hypothyroidism my mother okay so she has hypothyroidism okay that is fine right you you mentioned you have asthma so what medications are you using for asthma   you know probably an inhaler the blue inhaler so you do not you do not use it every day you just use it on and off yeah yeah yeah blue inhalers but your breathings all okay yeah okay yeah yeah it is only it is only when i have a flare so what we need to do is obviously you have got extensive mentioned extensive exam what we will do is you need a couple of things because to keep you a bit comfortable we will you would probably need some antihistamines which i am going to prescribe also hydrocortisone is a baby steroid that we use for young children might probably need a bit more stronger one like betnovate or something like that okay so we will try that first so i am going to it is called the antiinflammatory it is called dexamethasone and then we will try with some betnovate first so it is like very small amount like it is like one fingertip yeah this much is is enough to cover your palms and the back of your hands yeah so it is very small amount so that if you can imagine you can cover with a very small the amount the whole body yeah so use that you have to use it twice a day for the next couple of weeks okay okay if if there is no improvement you need to get back to us or if you have any kind of adverse reaction like an allergic reaction which is unlikely but if it still happens you need to get in touch with us okay okay thank you very much so what we are going to do is we are going to send off the prescription to your pharmacy it looks like boots on the system yes that is correct yes yes so i will send it across to boots and it will be there for collecting if things get worse in the next two weeks call us beforehand otherwise wait for two weeks take the medication and the cream you still need to continue on your emollients like the dermol and as well as the deprovest yeah so you still need to use those in the interim any questions at all no no questions thank you okay you take care then byebye now take care bye bye",
+    "asr_reconstructed": "hello hi hi my name is doctor jacob and welcome to babylon how are you [INS:how] [SUB:thank->are] you i am i am i am good i mean i [DEL:i] am so i am bad [INS:you are] so [SUB:your->sorry] okay right so just before we start is it alright if you could confirm your name for me please [INS:abbott yes that is right] and your date of birth [SUB:seventeen->seventeenth] of january [INS:one] [SUB:nineteen eighty seven->thousand nine hundred] and [INS:seventyseven and] your address for me please sixty [SUB:hanover->anover] steps that is good and just to confirm that you are in a secure location and we can have a confidential conversation [DEL:london] yes okay so you [INS:have] mentioned in our notes that you have got skin problem if you can tell me a bit more about it please yes [INS:in] over the past few days i had i have noticed my skin is sore [SUB:and->in] red okay so where is it sore and red it is all over my chest my hands and arms [DEL:and] especially inside of the elbows and [INS:the elbows got caught] that on the on the inside of the [DEL:elbow] elbows okay inside of the elbows yeah which is the the worst area [INS:all right the] [SUB:alright->worst] area is it very itchy it is very itchy and dry all over my body itchy and dry okay [SUB:have you had something like this->yes yes i have had eczema] in the past [DEL:yes if i have not had] okay do you think this is similar to your usual eczema or is it worse i think it is yeah it is [SUB:getting->going] worse like [SUB:the->this] past few days [DEL:way worse] yeah but [SUB:you->it] could be like something similar so on [SUB:the->your] skin is there any you know any of the patches sore [SUB:and->areas] you mentioned it is quite sore is it weeping is it like watery liquid coming from that area weeping no [INS:nothing] [SUB:no nothing->that noticed] okay right [SUB:but but not the areas that->the skin of your area is] [DEL:are] cracked yeah so you have cracks [INS:all] over there okay and is there any scratch marks on your on any of the you know areas any scratch marks i mean it is very itchy [SUB:if i->i was] scratch myself [DEL:but] there is no scratch [SUB:mark->marks] [DEL:no] okay is there any thickened skin like [INS:thick] you know where it is the skins very thick and darkened areas [DEL:mmm] no no i do not think [SUB:i do not think so->so okay all right here] [DEL:okay rightyho] so you have mentioned you have got a history of eczema so what do you do about it how do you keep it under control yeah usually i use a [DEL:a a] cream called [SUB:diprobase->diprobate] [DEL:and] in the shower i use something called [INS:dermol] [SUB:dermal dermal alright->dermol all right] and have you been using them recently or not yes yes i i use them you use them [SUB:every->everyday] [DEL:day] yes i there [DEL:there] is no [SUB:change->changes] [DEL:in] that i did not change [SUB:any->anything] okay have you ever used steroids in the past for your eczema i i [DEL:i] am not sure yes yes [DEL:yes] i [SUB:remember now->have yes] [DEL:i] you have used steroids [DEL:before] but it it is not helping yeah [INS:oh] [SUB:also->so] you are still using the steroids yeah i tried i tried which one are you using the steroids what is the name i am not sure it is [SUB:i would have the box is not there->oh is it your water account no it] is [SUB:it the->not there] okay so is it like the [INS:old water] [SUB:overthecounter->account] ones sorry [SUB:over the counter->old water account] hydrocortisone [DEL:that] does that ring a [INS:bell] yeah so you are using the hydrocortisone yeah [DEL:yes] are you using any antihistamines at all [DEL:i] no no no antihistamines okay right fine otherwise other than those [SUB:rash->cash] you are feeling well in yourself there is no temperature no joint pains yeah no [INS:joint] [SUB:fever but->pains no] i [SUB:remember that->will say] i have tried [INS:lowdose antihistamine] and it did not work you have tried the antihistamines and [DEL:it] did not work okay which one did you try the one [INS:over the] [SUB:overthecounter->counter] okay so like cetirizine yeah yeah okay that is fine right okay so from what you are describing it looks like you know it is quite widespread your eczema yeah because you are having it all over your chest and hands and things like that so do you have any [INS:al] allergies to any medication at all no no allergies no allergies okay and you do not other than eczema you do not have any other medical condition i i have asthma and in my family there is hypothyroidism and [SUB:migraine->migraines] my mother has [SUB:migraine->my] mother has migraine and what was the other one i did not understand [INS:i i] [SUB:hypothyroidism who->posted it] who has [SUB:hypothroidism->hypothyroidism] my mother okay so she has [SUB:hyperthyroidism->hypothyroidism] okay that is fine right [SUB:here->you] you mentioned you have asthma so what medications are you using for asthma you know probably [INS:an] [SUB:neither->inhaler] the blue inhaler so you do not you do not use it [SUB:everyday so->every day] you just use it on and off yeah yeah yeah blue inhalers but your breathings all okay yeah okay yeah yeah it is only [INS:it is only] when i have a flare [DEL:yeah sure] so what we need to do is obviously you have got [SUB:as->extensive] [DEL:i have] mentioned [DEL:so] extensive [SUB:eczema->exam] what we will do [INS:is] [SUB:we->you] need a couple of [SUB:minutes->things] because to keep [SUB:your->you] a bit comfortable we will you would probably need some antihistamines which i am going to prescribe also hydrocortisone is a baby steroid that [SUB:you->we] use for young children [DEL:you] might probably need a bit more stronger one like [INS:betnovate] [SUB:betnovateor->or] something like that okay so we will try that first so i am going to it is called the [INS:antiinflammatory] [SUB:antihistamine->it] is called [SUB:fexofenadine->dexamethasone] and then we will try with some betnovate first so it is like very small amount like it is like one fingertip yeah this much is is enough to cover your palms and [SUB:your->the] back of your hands yeah so it is very small [SUB:amounts->amount] so that if you can imagine you can cover with a very small [INS:the] amount the whole body yeah so use that you [DEL:you] have to use it twice a day for the next couple of weeks okay [INS:okay] if if there is no improvement you need to get back to us or if you have any kind of adverse reaction like an allergic reaction which is unlikely but if it still happens you need to get in touch with us okay okay [DEL:okay] thank you very much so what we are going to do is we are going to send off the prescription to your pharmacy it looks like boots on the [SUB:systems is->system yes] that [INS:is] correct [SUB:yeah->yes] yes so i will send it across to boots and it will be there for collecting [DEL:yes] if things [SUB:are->get] [DEL:getting] worse in the next two weeks call us [SUB:before->beforehand] [DEL:hand] otherwise wait for two weeks take the medication and the cream you still need to continue on your emollients like the [SUB:dermal->dermol] [DEL:soap] and as well as the [SUB:diprovate->deprovest] yeah so you still need to use those in the interim any questions at all no no questions thank you [DEL:thank you very] okay [DEL:then] you take care then [SUB:bye bye now okay->byebye now take care] bye bye",
+    "audio_file": "data/final_audio/day3_consultation07_stereo.wav",
+    "model": "gemma3n_iaa2",
+    "wer": 0.1639624252775405,
+    "errors": [
+      {
+        "error_id": "insert_0",
+        "error_type": "INS",
+        "error_match": "[INS:how]",
+        "error_text": "how",
+        "position": 0,
+        "start_idx": 71,
+        "end_idx": 80,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_1",
+        "error_type": "SUB",
+        "error_match": "[SUB:thank->are]",
+        "error_text": "thank->are",
+        "position": 1,
+        "start_idx": 81,
+        "end_idx": 97,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_2",
+        "error_type": "DEL",
+        "error_match": "[DEL:i]",
+        "error_text": "i",
+        "position": 2,
+        "start_idx": 131,
+        "end_idx": 138,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_3",
+        "error_type": "INS",
+        "error_match": "[INS:you are]",
+        "error_text": "you are",
+        "position": 3,
+        "start_idx": 154,
+        "end_idx": 167,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_4",
+        "error_type": "SUB",
+        "error_match": "[SUB:your->sorry]",
+        "error_text": "your->sorry",
+        "position": 4,
+        "start_idx": 171,
+        "end_idx": 188,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_5",
+        "error_type": "INS",
+        "error_match": "[INS:abbott yes that is right]",
+        "error_text": "abbott yes that is right",
+        "position": 5,
+        "start_idx": 283,
+        "end_idx": 313,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_6",
+        "error_type": "SUB",
+        "error_match": "[SUB:seventeen->seventeenth]",
+        "error_text": "seventeen->seventeenth",
+        "position": 6,
+        "start_idx": 337,
+        "end_idx": 365,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_7",
+        "error_type": "INS",
+        "error_match": "[INS:one]",
+        "error_text": "one",
+        "position": 7,
+        "start_idx": 377,
+        "end_idx": 386,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_8",
+        "error_type": "SUB",
+        "error_match": "[SUB:nineteen eighty seven->thousand nine hundred]",
+        "error_text": "nineteen eighty seven->thousand nine hundred",
+        "position": 8,
+        "start_idx": 387,
+        "end_idx": 437,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_9",
+        "error_type": "INS",
+        "error_match": "[INS:seventyseven and]",
+        "error_text": "seventyseven and",
+        "position": 9,
+        "start_idx": 442,
+        "end_idx": 464,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_10",
+        "error_type": "SUB",
+        "error_match": "[SUB:hanover->anover]",
+        "error_text": "hanover->anover",
+        "position": 10,
+        "start_idx": 498,
+        "end_idx": 519,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_11",
+        "error_type": "DEL",
+        "error_match": "[DEL:london]",
+        "error_text": "london",
+        "position": 11,
+        "start_idx": 637,
+        "end_idx": 649,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_12",
+        "error_type": "INS",
+        "error_match": "[INS:have]",
+        "error_text": "have",
+        "position": 12,
+        "start_idx": 666,
+        "end_idx": 676,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_13",
+        "error_type": "INS",
+        "error_match": "[INS:in]",
+        "error_text": "in",
+        "position": 13,
+        "start_idx": 781,
+        "end_idx": 789,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_14",
+        "error_type": "SUB",
+        "error_match": "[SUB:and->in]",
+        "error_text": "and->in",
+        "position": 14,
+        "start_idx": 850,
+        "end_idx": 863,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_15",
+        "error_type": "DEL",
+        "error_match": "[DEL:and]",
+        "error_text": "and",
+        "position": 15,
+        "start_idx": 943,
+        "end_idx": 952,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_16",
+        "error_type": "INS",
+        "error_match": "[INS:the elbows got caught]",
+        "error_text": "the elbows got caught",
+        "position": 16,
+        "start_idx": 989,
+        "end_idx": 1016,
+        "is_medical": true
+      },
+      {
+        "error_id": "delete_17",
+        "error_type": "DEL",
+        "error_match": "[DEL:elbow]",
+        "error_text": "elbow",
+        "position": 17,
+        "start_idx": 1050,
+        "end_idx": 1061,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_18",
+        "error_type": "INS",
+        "error_match": "[INS:all right the]",
+        "error_text": "all right the",
+        "position": 18,
+        "start_idx": 1128,
+        "end_idx": 1147,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_19",
+        "error_type": "SUB",
+        "error_match": "[SUB:alright->worst]",
+        "error_text": "alright->worst",
+        "position": 19,
+        "start_idx": 1148,
+        "end_idx": 1168,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_20",
+        "error_type": "SUB",
+        "error_match": "[SUB:have you had something like this->yes yes i have had eczema]",
+        "error_text": "have you had something like this->yes yes i have had eczema",
+        "position": 20,
+        "start_idx": 1252,
+        "end_idx": 1317,
+        "is_medical": true
+      },
+      {
+        "error_id": "delete_21",
+        "error_type": "DEL",
+        "error_match": "[DEL:yes if i have not had]",
+        "error_text": "yes if i have not had",
+        "position": 21,
+        "start_idx": 1330,
+        "end_idx": 1357,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_22",
+        "error_type": "SUB",
+        "error_match": "[SUB:getting->going]",
+        "error_text": "getting->going",
+        "position": 22,
+        "start_idx": 1453,
+        "end_idx": 1473,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_23",
+        "error_type": "SUB",
+        "error_match": "[SUB:the->this]",
+        "error_text": "the->this",
+        "position": 23,
+        "start_idx": 1485,
+        "end_idx": 1500,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_24",
+        "error_type": "DEL",
+        "error_match": "[DEL:way worse]",
+        "error_text": "way worse",
+        "position": 24,
+        "start_idx": 1515,
+        "end_idx": 1530,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_25",
+        "error_type": "SUB",
+        "error_match": "[SUB:you->it]",
+        "error_text": "you->it",
+        "position": 25,
+        "start_idx": 1540,
+        "end_idx": 1553,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_26",
+        "error_type": "SUB",
+        "error_match": "[SUB:the->your]",
+        "error_text": "the->your",
+        "position": 26,
+        "start_idx": 1592,
+        "end_idx": 1607,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_27",
+        "error_type": "SUB",
+        "error_match": "[SUB:and->areas]",
+        "error_text": "and->areas",
+        "position": 27,
+        "start_idx": 1659,
+        "end_idx": 1675,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_28",
+        "error_type": "INS",
+        "error_match": "[INS:nothing]",
+        "error_text": "nothing",
+        "position": 28,
+        "start_idx": 1779,
+        "end_idx": 1792,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_29",
+        "error_type": "SUB",
+        "error_match": "[SUB:no nothing->that noticed]",
+        "error_text": "no nothing->that noticed",
+        "position": 29,
+        "start_idx": 1793,
+        "end_idx": 1823,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_30",
+        "error_type": "SUB",
+        "error_match": "[SUB:but but not the areas that->the skin of your area is]",
+        "error_text": "but but not the areas that->the skin of your area is",
+        "position": 30,
+        "start_idx": 1835,
+        "end_idx": 1893,
+        "is_medical": true
+      },
+      {
+        "error_id": "delete_31",
+        "error_type": "DEL",
+        "error_match": "[DEL:are]",
+        "error_text": "are",
+        "position": 31,
+        "start_idx": 1894,
+        "end_idx": 1903,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_32",
+        "error_type": "INS",
+        "error_match": "[INS:all]",
+        "error_text": "all",
+        "position": 32,
+        "start_idx": 1936,
+        "end_idx": 1945,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_33",
+        "error_type": "SUB",
+        "error_match": "[SUB:if i->i was]",
+        "error_text": "if i->i was",
+        "position": 33,
+        "start_idx": 2072,
+        "end_idx": 2089,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_34",
+        "error_type": "DEL",
+        "error_match": "[DEL:but]",
+        "error_text": "but",
+        "position": 34,
+        "start_idx": 2105,
+        "end_idx": 2114,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_35",
+        "error_type": "SUB",
+        "error_match": "[SUB:mark->marks]",
+        "error_text": "mark->marks",
+        "position": 35,
+        "start_idx": 2135,
+        "end_idx": 2152,
+        "is_medical": true
+      },
+      {
+        "error_id": "delete_36",
+        "error_type": "DEL",
+        "error_match": "[DEL:no]",
+        "error_text": "no",
+        "position": 36,
+        "start_idx": 2153,
+        "end_idx": 2161,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_37",
+        "error_type": "INS",
+        "error_match": "[INS:thick]",
+        "error_text": "thick",
+        "position": 37,
+        "start_idx": 2200,
+        "end_idx": 2211,
+        "is_medical": true
+      },
+      {
+        "error_id": "delete_38",
+        "error_type": "DEL",
+        "error_match": "[DEL:mmm]",
+        "error_text": "mmm",
+        "position": 38,
+        "start_idx": 2273,
+        "end_idx": 2282,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_39",
+        "error_type": "SUB",
+        "error_match": "[SUB:i do not think so->so okay all right here]",
+        "error_text": "i do not think so->so okay all right here",
+        "position": 39,
+        "start_idx": 2304,
+        "end_idx": 2351,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_40",
+        "error_type": "DEL",
+        "error_match": "[DEL:okay rightyho]",
+        "error_text": "okay rightyho",
+        "position": 40,
+        "start_idx": 2352,
+        "end_idx": 2371,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_41",
+        "error_type": "DEL",
+        "error_match": "[DEL:a a]",
+        "error_text": "a a",
+        "position": 41,
+        "start_idx": 2508,
+        "end_idx": 2517,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_42",
+        "error_type": "SUB",
+        "error_match": "[SUB:diprobase->diprobate]",
+        "error_text": "diprobase->diprobate",
+        "position": 42,
+        "start_idx": 2531,
+        "end_idx": 2557,
+        "is_medical": true
+      },
+      {
+        "error_id": "delete_43",
+        "error_type": "DEL",
+        "error_match": "[DEL:and]",
+        "error_text": "and",
+        "position": 43,
+        "start_idx": 2558,
+        "end_idx": 2567,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_44",
+        "error_type": "INS",
+        "error_match": "[INS:dermol]",
+        "error_text": "dermol",
+        "position": 44,
+        "start_idx": 2605,
+        "end_idx": 2617,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_45",
+        "error_type": "SUB",
+        "error_match": "[SUB:dermal dermal alright->dermol all right]",
+        "error_text": "dermal dermal alright->dermol all right",
+        "position": 45,
+        "start_idx": 2618,
+        "end_idx": 2663,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_46",
+        "error_type": "SUB",
+        "error_match": "[SUB:every->everyday]",
+        "error_text": "every->everyday",
+        "position": 46,
+        "start_idx": 2743,
+        "end_idx": 2764,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_47",
+        "error_type": "DEL",
+        "error_match": "[DEL:day]",
+        "error_text": "day",
+        "position": 47,
+        "start_idx": 2765,
+        "end_idx": 2774,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_48",
+        "error_type": "DEL",
+        "error_match": "[DEL:there]",
+        "error_text": "there",
+        "position": 48,
+        "start_idx": 2787,
+        "end_idx": 2798,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_49",
+        "error_type": "SUB",
+        "error_match": "[SUB:change->changes]",
+        "error_text": "change->changes",
+        "position": 49,
+        "start_idx": 2805,
+        "end_idx": 2826,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_50",
+        "error_type": "DEL",
+        "error_match": "[DEL:in]",
+        "error_text": "in",
+        "position": 50,
+        "start_idx": 2827,
+        "end_idx": 2835,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_51",
+        "error_type": "SUB",
+        "error_match": "[SUB:any->anything]",
+        "error_text": "any->anything",
+        "position": 51,
+        "start_idx": 2858,
+        "end_idx": 2877,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_52",
+        "error_type": "DEL",
+        "error_match": "[DEL:i]",
+        "error_text": "i",
+        "position": 52,
+        "start_idx": 2943,
+        "end_idx": 2950,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_53",
+        "error_type": "DEL",
+        "error_match": "[DEL:yes]",
+        "error_text": "yes",
+        "position": 53,
+        "start_idx": 2971,
+        "end_idx": 2980,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_54",
+        "error_type": "SUB",
+        "error_match": "[SUB:remember now->have yes]",
+        "error_text": "remember now->have yes",
+        "position": 54,
+        "start_idx": 2983,
+        "end_idx": 3011,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_55",
+        "error_type": "DEL",
+        "error_match": "[DEL:i]",
+        "error_text": "i",
+        "position": 55,
+        "start_idx": 3012,
+        "end_idx": 3019,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_56",
+        "error_type": "DEL",
+        "error_match": "[DEL:before]",
+        "error_text": "before",
+        "position": 56,
+        "start_idx": 3043,
+        "end_idx": 3055,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_57",
+        "error_type": "INS",
+        "error_match": "[INS:oh]",
+        "error_text": "oh",
+        "position": 57,
+        "start_idx": 3086,
+        "end_idx": 3094,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_58",
+        "error_type": "SUB",
+        "error_match": "[SUB:also->so]",
+        "error_text": "also->so",
+        "position": 58,
+        "start_idx": 3095,
+        "end_idx": 3109,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_59",
+        "error_type": "SUB",
+        "error_match": "[SUB:i would have the box is not there->oh is it your water account no it]",
+        "error_text": "i would have the box is not there->oh is it your water account no it",
+        "position": 59,
+        "start_idx": 3238,
+        "end_idx": 3312,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_60",
+        "error_type": "SUB",
+        "error_match": "[SUB:it the->not there]",
+        "error_text": "it the->not there",
+        "position": 60,
+        "start_idx": 3316,
+        "end_idx": 3339,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_61",
+        "error_type": "INS",
+        "error_match": "[INS:old water]",
+        "error_text": "old water",
+        "position": 61,
+        "start_idx": 3363,
+        "end_idx": 3378,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_62",
+        "error_type": "SUB",
+        "error_match": "[SUB:overthecounter->account]",
+        "error_text": "overthecounter->account",
+        "position": 62,
+        "start_idx": 3379,
+        "end_idx": 3408,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_63",
+        "error_type": "SUB",
+        "error_match": "[SUB:over the counter->old water account]",
+        "error_text": "over the counter->old water account",
+        "position": 63,
+        "start_idx": 3420,
+        "end_idx": 3461,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_64",
+        "error_type": "DEL",
+        "error_match": "[DEL:that]",
+        "error_text": "that",
+        "position": 64,
+        "start_idx": 3477,
+        "end_idx": 3487,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_65",
+        "error_type": "INS",
+        "error_match": "[INS:bell]",
+        "error_text": "bell",
+        "position": 65,
+        "start_idx": 3505,
+        "end_idx": 3515,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_66",
+        "error_type": "DEL",
+        "error_match": "[DEL:yes]",
+        "error_text": "yes",
+        "position": 66,
+        "start_idx": 3562,
+        "end_idx": 3571,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_67",
+        "error_type": "DEL",
+        "error_match": "[DEL:i]",
+        "error_text": "i",
+        "position": 67,
+        "start_idx": 3612,
+        "end_idx": 3619,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_68",
+        "error_type": "SUB",
+        "error_match": "[SUB:rash->cash]",
+        "error_text": "rash->cash",
+        "position": 68,
+        "start_idx": 3687,
+        "end_idx": 3703,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_69",
+        "error_type": "INS",
+        "error_match": "[INS:joint]",
+        "error_text": "joint",
+        "position": 69,
+        "start_idx": 3784,
+        "end_idx": 3795,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_70",
+        "error_type": "SUB",
+        "error_match": "[SUB:fever but->pains no]",
+        "error_text": "fever but->pains no",
+        "position": 70,
+        "start_idx": 3796,
+        "end_idx": 3821,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_71",
+        "error_type": "SUB",
+        "error_match": "[SUB:remember that->will say]",
+        "error_text": "remember that->will say",
+        "position": 71,
+        "start_idx": 3824,
+        "end_idx": 3853,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_72",
+        "error_type": "INS",
+        "error_match": "[INS:lowdose antihistamine]",
+        "error_text": "lowdose antihistamine",
+        "position": 72,
+        "start_idx": 3867,
+        "end_idx": 3894,
+        "is_medical": true
+      },
+      {
+        "error_id": "delete_73",
+        "error_type": "DEL",
+        "error_match": "[DEL:it]",
+        "error_text": "it",
+        "position": 73,
+        "start_idx": 3953,
+        "end_idx": 3961,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_74",
+        "error_type": "INS",
+        "error_match": "[INS:over the]",
+        "error_text": "over the",
+        "position": 74,
+        "start_idx": 4010,
+        "end_idx": 4024,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_75",
+        "error_type": "SUB",
+        "error_match": "[SUB:overthecounter->counter]",
+        "error_text": "overthecounter->counter",
+        "position": 75,
+        "start_idx": 4025,
+        "end_idx": 4054,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_76",
+        "error_type": "INS",
+        "error_match": "[INS:al]",
+        "error_text": "al",
+        "position": 76,
+        "start_idx": 4309,
+        "end_idx": 4317,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_77",
+        "error_type": "SUB",
+        "error_match": "[SUB:migraine->migraines]",
+        "error_text": "migraine->migraines",
+        "position": 77,
+        "start_idx": 4525,
+        "end_idx": 4550,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_78",
+        "error_type": "SUB",
+        "error_match": "[SUB:migraine->my]",
+        "error_text": "migraine->my",
+        "position": 78,
+        "start_idx": 4565,
+        "end_idx": 4583,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_79",
+        "error_type": "INS",
+        "error_match": "[INS:i i]",
+        "error_text": "i i",
+        "position": 79,
+        "start_idx": 4652,
+        "end_idx": 4661,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_80",
+        "error_type": "SUB",
+        "error_match": "[SUB:hypothyroidism who->posted it]",
+        "error_text": "hypothyroidism who->posted it",
+        "position": 80,
+        "start_idx": 4662,
+        "end_idx": 4697,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_81",
+        "error_type": "SUB",
+        "error_match": "[SUB:hypothroidism->hypothyroidism]",
+        "error_text": "hypothroidism->hypothyroidism",
+        "position": 81,
+        "start_idx": 4706,
+        "end_idx": 4741,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_82",
+        "error_type": "SUB",
+        "error_match": "[SUB:hyperthyroidism->hypothyroidism]",
+        "error_text": "hyperthyroidism->hypothyroidism",
+        "position": 82,
+        "start_idx": 4768,
+        "end_idx": 4805,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_83",
+        "error_type": "SUB",
+        "error_match": "[SUB:here->you]",
+        "error_text": "here->you",
+        "position": 83,
+        "start_idx": 4830,
+        "end_idx": 4845,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_84",
+        "error_type": "INS",
+        "error_match": "[INS:an]",
+        "error_text": "an",
+        "position": 84,
+        "start_idx": 4939,
+        "end_idx": 4947,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_85",
+        "error_type": "SUB",
+        "error_match": "[SUB:neither->inhaler]",
+        "error_text": "neither->inhaler",
+        "position": 85,
+        "start_idx": 4948,
+        "end_idx": 4970,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_86",
+        "error_type": "SUB",
+        "error_match": "[SUB:everyday so->every day]",
+        "error_text": "everyday so->every day",
+        "position": 86,
+        "start_idx": 5020,
+        "end_idx": 5048,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_87",
+        "error_type": "INS",
+        "error_match": "[INS:it is only]",
+        "error_text": "it is only",
+        "position": 87,
+        "start_idx": 5165,
+        "end_idx": 5181,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_88",
+        "error_type": "DEL",
+        "error_match": "[DEL:yeah sure]",
+        "error_text": "yeah sure",
+        "position": 88,
+        "start_idx": 5202,
+        "end_idx": 5217,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_89",
+        "error_type": "SUB",
+        "error_match": "[SUB:as->extensive]",
+        "error_text": "as->extensive",
+        "position": 89,
+        "start_idx": 5266,
+        "end_idx": 5285,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_90",
+        "error_type": "DEL",
+        "error_match": "[DEL:i have]",
+        "error_text": "i have",
+        "position": 90,
+        "start_idx": 5286,
+        "end_idx": 5298,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_91",
+        "error_type": "DEL",
+        "error_match": "[DEL:so]",
+        "error_text": "so",
+        "position": 91,
+        "start_idx": 5309,
+        "end_idx": 5317,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_92",
+        "error_type": "SUB",
+        "error_match": "[SUB:eczema->exam]",
+        "error_text": "eczema->exam",
+        "position": 92,
+        "start_idx": 5328,
+        "end_idx": 5346,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_93",
+        "error_type": "INS",
+        "error_match": "[INS:is]",
+        "error_text": "is",
+        "position": 93,
+        "start_idx": 5363,
+        "end_idx": 5371,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_94",
+        "error_type": "SUB",
+        "error_match": "[SUB:we->you]",
+        "error_text": "we->you",
+        "position": 94,
+        "start_idx": 5372,
+        "end_idx": 5385,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_95",
+        "error_type": "SUB",
+        "error_match": "[SUB:minutes->things]",
+        "error_text": "minutes->things",
+        "position": 95,
+        "start_idx": 5403,
+        "end_idx": 5424,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_96",
+        "error_type": "SUB",
+        "error_match": "[SUB:your->you]",
+        "error_text": "your->you",
+        "position": 96,
+        "start_idx": 5441,
+        "end_idx": 5456,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_97",
+        "error_type": "SUB",
+        "error_match": "[SUB:you->we]",
+        "error_text": "you->we",
+        "position": 97,
+        "start_idx": 5600,
+        "end_idx": 5613,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_98",
+        "error_type": "DEL",
+        "error_match": "[DEL:you]",
+        "error_text": "you",
+        "position": 98,
+        "start_idx": 5637,
+        "end_idx": 5646,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_99",
+        "error_type": "INS",
+        "error_match": "[INS:betnovate]",
+        "error_text": "betnovate",
+        "position": 99,
+        "start_idx": 5696,
+        "end_idx": 5711,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_100",
+        "error_type": "SUB",
+        "error_match": "[SUB:betnovateor->or]",
+        "error_text": "betnovateor->or",
+        "position": 100,
+        "start_idx": 5712,
+        "end_idx": 5733,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_101",
+        "error_type": "INS",
+        "error_match": "[INS:antiinflammatory]",
+        "error_text": "antiinflammatory",
+        "position": 101,
+        "start_idx": 5819,
+        "end_idx": 5841,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_102",
+        "error_type": "SUB",
+        "error_match": "[SUB:antihistamine->it]",
+        "error_text": "antihistamine->it",
+        "position": 102,
+        "start_idx": 5842,
+        "end_idx": 5865,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_103",
+        "error_type": "SUB",
+        "error_match": "[SUB:fexofenadine->dexamethasone]",
+        "error_text": "fexofenadine->dexamethasone",
+        "position": 103,
+        "start_idx": 5876,
+        "end_idx": 5909,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_104",
+        "error_type": "SUB",
+        "error_match": "[SUB:your->the]",
+        "error_text": "your->the",
+        "position": 104,
+        "start_idx": 6071,
+        "end_idx": 6086,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_105",
+        "error_type": "SUB",
+        "error_match": "[SUB:amounts->amount]",
+        "error_text": "amounts->amount",
+        "position": 105,
+        "start_idx": 6131,
+        "end_idx": 6152,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_106",
+        "error_type": "INS",
+        "error_match": "[INS:the]",
+        "error_text": "the",
+        "position": 106,
+        "start_idx": 6212,
+        "end_idx": 6221,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_107",
+        "error_type": "DEL",
+        "error_match": "[DEL:you]",
+        "error_text": "you",
+        "position": 107,
+        "start_idx": 6265,
+        "end_idx": 6274,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_108",
+        "error_type": "INS",
+        "error_match": "[INS:okay]",
+        "error_text": "okay",
+        "position": 108,
+        "start_idx": 6336,
+        "end_idx": 6346,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_109",
+        "error_type": "DEL",
+        "error_match": "[DEL:okay]",
+        "error_text": "okay",
+        "position": 109,
+        "start_idx": 6559,
+        "end_idx": 6569,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_110",
+        "error_type": "SUB",
+        "error_match": "[SUB:systems is->system yes]",
+        "error_text": "systems is->system yes",
+        "position": 110,
+        "start_idx": 6706,
+        "end_idx": 6734,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_111",
+        "error_type": "INS",
+        "error_match": "[INS:is]",
+        "error_text": "is",
+        "position": 111,
+        "start_idx": 6740,
+        "end_idx": 6748,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_112",
+        "error_type": "SUB",
+        "error_match": "[SUB:yeah->yes]",
+        "error_text": "yeah->yes",
+        "position": 112,
+        "start_idx": 6757,
+        "end_idx": 6772,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_113",
+        "error_type": "DEL",
+        "error_match": "[DEL:yes]",
+        "error_text": "yes",
+        "position": 113,
+        "start_idx": 6847,
+        "end_idx": 6856,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_114",
+        "error_type": "SUB",
+        "error_match": "[SUB:are->get]",
+        "error_text": "are->get",
+        "position": 114,
+        "start_idx": 6867,
+        "end_idx": 6881,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_115",
+        "error_type": "DEL",
+        "error_match": "[DEL:getting]",
+        "error_text": "getting",
+        "position": 115,
+        "start_idx": 6882,
+        "end_idx": 6895,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_116",
+        "error_type": "SUB",
+        "error_match": "[SUB:before->beforehand]",
+        "error_text": "before->beforehand",
+        "position": 116,
+        "start_idx": 6932,
+        "end_idx": 6956,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_117",
+        "error_type": "DEL",
+        "error_match": "[DEL:hand]",
+        "error_text": "hand",
+        "position": 117,
+        "start_idx": 6957,
+        "end_idx": 6967,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_118",
+        "error_type": "SUB",
+        "error_match": "[SUB:dermal->dermol]",
+        "error_text": "dermal->dermol",
+        "position": 118,
+        "start_idx": 7086,
+        "end_idx": 7106,
+        "is_medical": true
+      },
+      {
+        "error_id": "delete_119",
+        "error_type": "DEL",
+        "error_match": "[DEL:soap]",
+        "error_text": "soap",
+        "position": 119,
+        "start_idx": 7107,
+        "end_idx": 7117,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_120",
+        "error_type": "SUB",
+        "error_match": "[SUB:diprovate->deprovest]",
+        "error_text": "diprovate->deprovest",
+        "position": 120,
+        "start_idx": 7137,
+        "end_idx": 7163,
+        "is_medical": true
+      },
+      {
+        "error_id": "delete_121",
+        "error_type": "DEL",
+        "error_match": "[DEL:thank you very]",
+        "error_text": "thank you very",
+        "position": 121,
+        "start_idx": 7262,
+        "end_idx": 7282,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_122",
+        "error_type": "DEL",
+        "error_match": "[DEL:then]",
+        "error_text": "then",
+        "position": 122,
+        "start_idx": 7288,
+        "end_idx": 7298,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_123",
+        "error_type": "SUB",
+        "error_match": "[SUB:bye bye now okay->byebye now take care]",
+        "error_text": "bye bye now okay->byebye now take care",
+        "position": 123,
+        "start_idx": 7318,
+        "end_idx": 7362,
+        "is_medical": false
+      }
+    ],
+    "error_count": 124,
+    "index": 1
+  }
+]
