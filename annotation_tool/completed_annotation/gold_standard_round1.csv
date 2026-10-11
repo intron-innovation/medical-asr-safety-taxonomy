@@ -1,0 +1,101 @@
+error_id,model,session,error_type,error,gold_labels,gold_severity,source,ANN009_labels,ANN009_severity,ANN010_labels,ANN010_severity
+163240ea-864d-4565-84d1-4f36ec2db1a5,qwen3_iaa,13_Hyperthyroidism,INS,[INS:tolu],words_added,1,adjudicated,words_added,1,not_an_error,1
+e80da227-f296-4af2-b05a-b2e73269691f,qwen3_iaa,13_Hyperthyroidism,SUB,[SUB:mr or mrs mrs tolulope->okay misses tolu ope alabody],dictionary_errors,2,adjudicated,dictionary_errors; words_added,1,dictionary_errors; homonym_errors_rhyming_words,2
+8bfaea57-dce0-4362-b843-44cdf7d226e7,qwen3_iaa,13_Hyperthyroidism,DEL,[DEL:olabode],dictionary_errors,2,adjudicated,dictionary_errors; words_deleted,1,dictionary_errors,2
+b881fd0b-f091-4343-9b9f-933783130454,qwen3_iaa,13_Hyperthyroidism,INS,[INS:i will just be asking you a few questions about your complaints can i go ahead],spelling_errors,1,already agreed,spelling_errors,1,spelling_errors,1
+45ac6438-4b79-4656-96e7-f8a3d472eced,qwen3_iaa,13_Hyperthyroidism,INS,[INS:heart],words_added,1,already agreed,words_added,1,words_added,1
+77bdfc93-867b-4f35-b421-07a07571f189,qwen3_iaa,13_Hyperthyroidism,SUB,[SUB:heartbeat shake->beating cheek],annunciation_errors; dictionary_errors,3,adjudicated,dictionary_errors; words_added,3,annunciation_errors,2
+b0c1bd0b-56cc-4507-a2e5-7a5652b02789,qwen3_iaa,13_Hyperthyroidism,SUB,[SUB:complaint->complaints],suffix_errors,1,adjudicated,not_an_error,1,suffix_errors,1
+9c6ca96a-a83a-4c39-a523-018faa6703cf,qwen3_iaa,13_Hyperthyroidism,SUB,[SUB:palpitations->palpitation],annunciation_errors,2,adjudicated,annunciation_errors,1,suffix_errors,1
+cedde182-63a7-449e-98d8-13ad10df6d16,qwen3_iaa,13_Hyperthyroidism,SUB,[SUB:lose->loose],spelling_errors,1,adjudicated,spelling_errors,1,homonym_errors_rhyming_words,2
+3cce36dd-92e4-43c4-9227-69d4629abeaa,qwen3_iaa,13_Hyperthyroidism,INS,[INS:how do how are you about the weight loss eating loose clothes so much],spelling_errors,1,adjudicated,spelling_errors; words_added,1,homonym_errors_rhyming_words,1
+285c8403-5d60-4912-ac4a-c303472b83ae,qwen3_iaa,13_Hyperthyroidism,SUB,[SUB:irregularities->regularities],annunciation_errors,3,adjudicated,annunciation_errors; words_added,2,annunciation_errors; critical_errors,3
+5cca7832-95e7-4c70-9819-4b9c7d85a4f9,qwen3_iaa,13_Hyperthyroidism,INS,[INS:okay do you complain of difficulty with vision then your eyes bulging then you also sensitive to light],spelling_errors,1,already agreed,spelling_errors,1,spelling_errors,1
+f83de7a2-e384-4ff1-a04c-54dc0a571926,qwen3_iaa,13_Hyperthyroidism,SUB,[SUB:hypertensive->paternity],dictionary_errors,3,adjudicated,words_deleted,2,critical_errors; dictionary_errors,3
+59c6469f-14b3-4679-b536-8e3c4158219d,qwen3_iaa,13_Hyperthyroidism,INS,[INS:do you alcohol],spelling_errors,2,adjudicated,not_an_error,1,spelling_errors,2
+81e67bbf-c364-416e-95aa-522b2f2fe40d,qwen3_iaa,13_Hyperthyroidism,INS,[INS:alcohol],spelling_errors,1,adjudicated,spelling_errors,1,words_added,1
+5f6e7891-a944-4697-8a48-19c7a0cc48ed,qwen3_iaa,13_Hyperthyroidism,INS,[INS:is there any drug],spelling_errors,1,adjudicated,spelling_errors,1,words_added,1
+3057243e-16b0-4584-8bad-750a6f4c81ef,qwen3_iaa,13_Hyperthyroidism,DEL,[DEL:drug],words_deleted,2,adjudicated,words_deleted,3,words_deleted,1
+bb6416cb-1959-4dc6-af08-5b5115ca3665,qwen3_iaa,13_Hyperthyroidism,SUB,[SUB:drug->drugs],suffix_errors,1,already agreed,suffix_errors,1,suffix_errors,1
+ca509ae9-929b-44ba-858e-3e3d79da3b1f,qwen3_iaa,13_Hyperthyroidism,INS,[INS:and from the complaints i am seeing this looks like a case of you know hypothyroidism i do not know if you have heard of the thyroid gland before so we hav,spelling_errors,1,adjudicated,spelling_errors,1,words_added,2
+bc77319d-6ccc-4787-9236-88758eed87c0,qwen3_iaa,13_Hyperthyroidism,SUB,[SUB:hormones->hormone],suffix_errors,1,already agreed,suffix_errors,1,suffix_errors,1
+d2364e2d-827d-451b-8e02-1f177d55751c,qwen3_iaa,13_Hyperthyroidism,INS,[INS:hormone],spelling_errors,1,adjudicated,spelling_errors,1,words_added,1
+3040edb8-562f-41a4-956e-ed56b6a0a96c,qwen3_iaa,13_Hyperthyroidism,SUB,[SUB:grand->gland],annunciation_errors,2,adjudicated,spelling_errors,1,annunciation_errors; critical_errors,2
+dab1d4eb-0b1d-441e-8107-eab1da863c80,qwen3_iaa,13_Hyperthyroidism,SUB,[SUB:atenolol->low],dictionary_errors; homonym_errors_rhyming_words,2,adjudicated,dictionary_errors; homonym_errors_rhyming_words,1,critical_errors; dictionary_errors,2
+bdb748e5-39e0-4295-a2b9-773a5fc9bcc9,qwen3_iaa,13_Hyperthyroidism,INS,[INS:that mister misses misses misses tolu ope alabody oh sorry],spelling_errors,1,adjudicated,spelling_errors,1,not_an_error,1
+9164c435-9122-48e4-b1e5-4d0a25a80c13,qwen3_iaa,day1_consultation03,SUB,[SUB:vision->visions],suffix_errors,1,already agreed,suffix_errors,1,suffix_errors,1
+cc5b805e-eb3e-4295-84ee-551877d5551f,qwen3_iaa,day1_consultation03,SUB,[SUB:a headache->the headaches],stop_words; suffix_errors,,adjudicated,spelling_errors; stop_words; words_added,1,stop_words,1
+6714de7c-2c95-47ca-931c-c06c91854351,qwen3_iaa,day1_consultation03,SUB,[SUB:disease like->zigzag lines],dictionary_errors,2,adjudicated,spelling_errors,2,critical_errors; dictionary_errors,2
+3bc4a346-1174-404b-b76c-172f9ce95930,qwen3_iaa,day1_consultation03,DEL,[DEL:lymes],dictionary_errors,1,adjudicated,not_an_error,1,dictionary_errors,1
+b89d032f-8e1b-4f1a-9ec0-1630422b569e,qwen3_iaa,day1_consultation03,SUB,[SUB:migraine->migrainetype],annunciation_errors; words_added,1,adjudicated,not_an_error,1,annunciation_errors; words_added,1
+d9712446-3bfc-4f3d-a43e-9586e824363a,qwen3_iaa,day1_consultation03,SUB,[SUB:cocodamol->codeine],dictionary_errors,2,already agreed,dictionary_errors,2,dictionary_errors,2
+4dbf2837-3916-43d1-888d-36ea4920a9e0,qwen3_iaa,day1_consultation03,INS,[INS:thyroid],spelling_errors; words_added,2,adjudicated,spelling_errors,1,critical_errors; words_added,2
+2c52cd4e-be2b-43da-88cd-72817dc41eed,qwen3_iaa,day1_consultation03,SUB,[SUB:tumor->tumour],spelling_errors,1,adjudicated,not_an_error,1,spelling_errors,1
+2286a980-053b-45cd-9432-a2f5ef7b6c3a,qwen3_iaa,GAS0002,INS,[INS:in],stop_words,1,already agreed,stop_words,1,stop_words,1
+c2b50342-91b1-4678-af25-7061cf54a49d,qwen3_iaa,GAS0002,INS,[INS:the],stop_words,1,already agreed,stop_words,1,stop_words,1
+ac8a3457-2d47-4548-bbf5-925b0679ff30,qwen3_iaa,GAS0002,INS,[INS:the],stop_words,1,already agreed,stop_words,1,stop_words,1
+b5f93f31-010e-40a9-8e99-2719a06fb8d0,qwen3_iaa,GAS0002,INS,[INS:the],stop_words,1,already agreed,stop_words,1,stop_words,1
+2de9941c-880f-448a-ba48-6ffdf9d3f4ee,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:tolulope->lope],dictionary_errors; homonym_errors_rhyming_words,2,adjudicated,dictionary_errors; homonym_errors_rhyming_words,1,dictionary_errors,2
+68978514-01e8-41f8-a42c-4fe3040f09dd,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:tolulope->lope],annunciation_errors; dictionary_errors,1,adjudicated,annunciation_errors; dictionary_errors,1,dictionary_errors,2
+c50bbb10-2b6c-44ab-b900-1b018ed8d343,gemma3n_iaa,13_Hyperthyroidism,INS,[INS:oh sorry about that okay mrs too lope olabode],spelling_errors,1,already agreed,spelling_errors,1,spelling_errors,1
+8e88997e-6949-44da-a0ef-4d92089bcd83,gemma3n_iaa,13_Hyperthyroidism,INS,[INS:adeola i will just be asking you a few questions about your complaint can i go],spelling_errors; words_added,1,already agreed,spelling_errors; words_added,1,spelling_errors; words_added,1
+d9b8677c-7d52-4af4-97eb-f2fbaaed1e14,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:beating->pain],dictionary_errors,2,adjudicated,words_deleted,1,critical_errors,2
+ba0fa686-a051-40aa-99a4-9929ffd2f8e9,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:heartbeat shake->pain okay],spelling_errors,3,adjudicated,words_added,3,annunciation_errors,1
+dc923507-c8b9-4c7e-9dd3-4744a0f2afd3,gemma3n_iaa,13_Hyperthyroidism,DEL,[DEL:palms],words_deleted,,adjudicated,words_deleted,1,words_added,2
+ff99d8cb-5742-4a6a-82af-0eabcb925c41,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:palms->hands],dictionary_errors,1,adjudicated,words_deleted,1,annunciation_errors; critical_errors,2
+9953a601-e8c7-493f-9053-efc7635f2922,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:heart beating->ache began],annunciation_errors,2,adjudicated,words_deleted,2,annunciation_errors,1
+8d69ad88-d100-4fce-9453-3ee7fecf5a67,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:worsens->worsen],suffix_errors,1,already agreed,suffix_errors,1,suffix_errors,1
+92614fd7-68f0-4583-b438-ad67e217aa7a,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:complaint->complaints],suffix_errors,1,already agreed,suffix_errors,1,suffix_errors,1
+0ae500a0-a5aa-4276-9698-9f67745a94cb,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:your heart beating->a itching fast],annunciation_errors,2,adjudicated,annunciation_errors; homonym_errors_rhyming_words; stop_words,2,annunciation_errors; critical_errors,2
+2f959d01-4574-4e29-b46b-d016e0046d48,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:neck->next],dictionary_errors,,adjudicated,critical_errors; dictionary_errors,2,annunciation_errors; dictionary_errors,2
+5b6793e4-1cd7-4c25-9bd3-c1c9ba80dcc4,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:neck->next],annunciation_errors; dictionary_errors,2,adjudicated,critical_errors; dictionary_errors,2,annunciation_errors; dictionary_errors,2
+9cc35a56-9c17-4037-a2c7-9dcff89c5adb,gemma3n_iaa,13_Hyperthyroidism,INS,[INS:tell me if there is any idea why you lost weight hmm just clothes oh i mean],spelling_errors,2,adjudicated,spelling_errors; words_added,2,spelling_errors,1
+f1d68ac2-1c0f-4573-aa2c-c8af69e881b7,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:lose->loose],spelling_errors,1,already agreed,spelling_errors,1,spelling_errors,1
+effabd81-2d69-4a72-80f5-d04cd395f35d,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:diarrhea->daria],annunciation_errors; dictionary_errors,3,adjudicated,annunciation_errors; critical_errors,3,annunciation_errors; dictionary_errors,2
+29ae586b-bfcb-47a1-b30b-113cdc6a7f48,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:two->irregularity],words_deleted,2,adjudicated,dictionary_errors; words_deleted,2,stop_words; words_deleted,1
+bc693771-dfc7-4448-84e3-11cbc448d71b,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:muscle->more],annunciation_errors,2,adjudicated,nonsense_errors; words_added,2,annunciation_errors; critical_errors,3
+16c64be7-c555-4bf8-b3aa-a7d1516c97bf,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:muscle->more],annunciation_errors,2,adjudicated,nonsense_errors; words_added,2,annunciation_errors; critical_errors,3
+52931d8a-cdee-4380-84a0-4b8a14422813,gemma3n_iaa,13_Hyperthyroidism,INS,[INS:okay so you complain of difficulty with vision and your eyes bulging then you also sensitive to light],spelling_errors,1,adjudicated,spelling_errors,1,spelling_errors; words_added,1
+42221988-b398-45ca-9972-3779aaad570a,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:ulcer->asthma],dictionary_errors,3,adjudicated,critical_errors; words_deleted,2,annunciation_errors; dictionary_errors,3
+831150a6-0c90-4347-af4e-e12cfda1bf9e,gemma3n_iaa,13_Hyperthyroidism,INS,[INS:alcohol],spelling_errors,1,adjudicated,not_an_error,1,words_added,1
+ad10d59a-3e03-436e-8ace-4fe2d290a199,gemma3n_iaa,13_Hyperthyroidism,INS,[INS:is there any drugs],spelling_errors,1,adjudicated,spelling_errors,1,words_added,1
+81eba357-6853-4e38-9767-ae8a8bcb50fe,gemma3n_iaa,13_Hyperthyroidism,DEL,[DEL:drug],critical_errors; words_deleted,2,adjudicated,critical_errors; words_deleted,2,words_added,1
+eed6bfea-9d3b-46ab-bc26-744986e2720e,gemma3n_iaa,13_Hyperthyroidism,INS,[INS:and from the complaints i am saying this looks like a case of you know hyperthyroidism i do not know if it is a head of the thyroid gland before so we have,spelling_errors,1,adjudicated,spelling_errors,1,spelling_errors; words_added,1
+0b7552e8-a186-4a24-84a5-46617db04215,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:test->tests],suffix_errors,1,already agreed,suffix_errors,1,suffix_errors,1
+94b884f6-8c03-4ce0-8a67-808777627934,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:hormone->hormones],suffix_errors,1,already agreed,suffix_errors,1,suffix_errors,1
+ddb147c5-21a1-4876-8bc1-722552d8f212,gemma3n_iaa,13_Hyperthyroidism,INS,[INS:hormone],spelling_errors,1,adjudicated,spelling_errors,1,words_added,1
+ba2a2614-1bbb-4dc3-b865-79e1923c7fbd,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:antithyroid->nontitrate],dictionary_errors,3,adjudicated,dictionary_errors; nonsense_errors,3,critical_errors; dictionary_errors,3
+7e31f72f-0b4a-4af4-aa6d-7e248b360e33,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:hormones->hormone],suffix_errors,1,already agreed,suffix_errors,1,suffix_errors,1
+5bdaf741-60ac-43d8-9cf5-a0e08633bf44,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:heart beating->activity and],dictionary_errors; words_added,2,adjudicated,dictionary_errors; words_added,2,annunciation_errors,2
+9d0dd83c-9b67-4c57-ad46-d5d8ec4bfe38,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:these tests we->this test to],homonym_errors_rhyming_words,1,adjudicated,homonym_errors_rhyming_words,1,homonym_errors_rhyming_words; suffix_errors,1
+741aff3a-609d-46e5-bb2f-44d960803c8a,gemma3n_iaa,13_Hyperthyroidism,DEL,[DEL:hormone],words_deleted,2,already agreed,words_deleted,2,words_deleted,2
+128c19e1-7f4e-40a3-b5db-7fb5b30387d3,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:gland->i],homonym_errors_rhyming_words,1,adjudicated,words_deleted,1,stop_words,1
+116f539d-600e-4f22-8853-7cfc92faeb3b,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:gland but i think we should do->i am going to have you push],nonsense_errors; words_added,2,adjudicated,dictionary_errors; nonsense_errors; words_added; words_deleted,1,nonsense_errors; words_added,2
+645ffa23-8deb-4105-84d8-272fd1e0fcc6,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:scan->button],dictionary_errors,2,adjudicated,dictionary_errors; nonsense_errors,2,annunciation_errors,2
+b7fbe2d7-8f76-4dbb-8925-08fb205da2f8,gemma3n_iaa,13_Hyperthyroidism,SUB,[SUB:drug->drugs],suffix_errors,1,already agreed,suffix_errors,1,suffix_errors,1
+0aa61a91-d1b1-4837-9b8a-aab224d7ba71,gemma3n_iaa,GAS0002,SUB,[SUB:the->this],stop_words,1,already agreed,stop_words,1,stop_words,1
+d7305412-cce6-4345-8e99-4159a6a1987c,gemma3n_iaa,GAS0002,INS,[INS:the],stop_words,1,adjudicated,spelling_errors,1,stop_words,1
+52606408-7f34-4368-853d-082ed4f7587a,gemma3n_iaa,GAS0002,INS,[INS:in],stop_words,1,adjudicated,stop_words; words_added,1,stop_words,1
+535d5f37-1683-489a-a660-0341cafb6d3d,gemma3n_iaa,GAS0002,INS,[INS:the],stop_words,1,adjudicated,spelling_errors,1,stop_words,1
+a63d3167-8dd7-41be-9941-ab873f8321c2,gemma3n_iaa,GAS0002,INS,[INS:the],stop_words,1,adjudicated,spelling_errors,1,stop_words,1
+a793f7bd-9cee-48be-bbb3-2141c20248d2,gemma3n_iaa,GAS0002,INS,[INS:in],stop_words,1,adjudicated,spelling_errors,1,stop_words,1
+dbce94cf-3e25-4dd3-85b8-e09d72900f9a,gemma3n_iaa,GAS0002,SUB,[SUB:the follow->a followup],stop_words,1,already agreed,stop_words,1,stop_words,1
+7b1fb653-e487-4c0c-a787-b55c51cc001f,gemma3n_iaa,GAS0002,SUB,[SUB:drank->drinking],suffix_errors,1,adjudicated,annunciation_errors; homonym_errors_rhyming_words,1,suffix_errors,1
+5711eaf7-0291-4328-b773-af23a81789a6,gemma3n_iaa,GAS0002,SUB,[SUB:a->the],stop_words,1,already agreed,stop_words,1,stop_words,1
+71c9e8ca-e19f-4b06-a213-78aac2f68166,gemma3n_iaa,GAS0002,DEL,[DEL:the at],stop_words,1,already agreed,stop_words,1,stop_words,1
+9600fc87-096c-4ce1-a786-f537364a2deb,gemma3n_iaa,GAS0002,SUB,[SUB:emesis->mss],annunciation_errors; dictionary_errors,2,adjudicated,homonym_errors_rhyming_words,2,dictionary_errors,2
+91280278-dcb1-46d4-94b7-48ffebdb8c18,gemma3n_iaa,GAS0002,SUB,[SUB:nausea->just],dictionary_errors,2,adjudicated,annunciation_errors; critical_errors,2,dictionary_errors,2
+c59922f4-56dc-41f7-9e9d-4b95a93fcb9f,gemma3n_iaa,day1_consultation03,SUB,[SUB:cancer->sir],annunciation_errors,1,adjudicated,annunciation_errors,1,annunciation_errors; words_added,1
+5a36c4da-f37c-4157-a86a-f1181b814871,gemma3n_iaa,day1_consultation03,SUB,[SUB:a->headaches],stop_words,1,adjudicated,annunciation_errors; stop_words,1,not_an_error,1
+a8a59bd5-08c3-4310-a4b3-2231ea5a2844,gemma3n_iaa,day1_consultation03,DEL,[DEL:headache],words_deleted,1,adjudicated,words_deleted,1,stop_words,1
+400b519c-a710-4122-94a5-879f0cf263d6,gemma3n_iaa,day1_consultation03,SUB,[SUB:disease like->zigzag lines],dictionary_errors,2,adjudicated,not_an_error,1,dictionary_errors,2
+1f946f95-597d-4040-a6fe-91e9392a3fac,gemma3n_iaa,day1_consultation03,DEL,[DEL:lymes],dictionary_errors,2,adjudicated,spelling_errors,1,dictionary_errors,2
+5c571f42-aa23-499a-b44c-399c0c013d43,gemma3n_iaa,day1_consultation03,SUB,[SUB:tumour->tumor],spelling_errors,1,adjudicated,not_an_error,1,spelling_errors,1
+b192d373-17fe-446f-8aee-0770c8277437,gemma3n_iaa,day1_consultation03,SUB,[SUB:because of these->causes headache is],annunciation_errors; words_deleted,1,adjudicated,critical_errors; words_deleted,1,annunciation_errors,1
+e167d566-2f5a-415c-8302-30831d5c1ea9,gemma3n_iaa,day1_consultation03,DEL,[DEL:headaches are],annunciation_errors,2,adjudicated,annunciation_errors; critical_errors,1,words_added,2
+154e3559-3eba-42b7-9572-e59de59700a7,gemma3n_iaa,day1_consultation03,SUB,[SUB:difficulties->difficulty],suffix_errors,1,already agreed,suffix_errors,1,suffix_errors,1
+752e6dcd-0dcc-4462-942f-ace4c7cdc2e8,gemma3n_iaa,day1_consultation03,SUB,[SUB:injuries->injury],suffix_errors,1,already agreed,suffix_errors,1,suffix_errors,1
+c41ea3cc-f2d4-412d-9d1a-dc3a5b375c6f,gemma3n_iaa,day1_consultation03,INS,[INS:i have migraines],words_added,1,already agreed,words_added,1,words_added,1
+be498273-29df-49cf-b51f-4c6b1258c0c4,gemma3n_iaa,day1_consultation03,SUB,[SUB:underactive->undiagnosed],dictionary_errors,3,adjudicated,dictionary_errors,3,annunciation_errors,2
+cd94ef4b-25d2-4664-bc55-331445dc1d3b,gemma3n_iaa,day1_consultation03,SUB,[SUB:cocodamol and->codeine or],dictionary_errors,2,already agreed,dictionary_errors,2,dictionary_errors,2
+dd368dd5-0447-4739-8ca6-1913c2d066d2,gemma3n_iaa,day1_consultation03,INS,[INS:a migraine],words_added,1,already agreed,words_added,1,words_added,1
