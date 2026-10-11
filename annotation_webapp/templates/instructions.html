@@ -164,6 +164,33 @@
            Assign <strong>one</strong> severity level per error, reflecting the combined impact of
            everything you selected.</p>
         <div class="tip-box">
+            <strong>Which label, when several could apply.</strong> Work down this order and take the
+            first that fits, then carry on and add any <em>other</em> cause that applies to a
+            <em>different word</em> in the same tag.
+            <ol>
+                <li><strong>Is the mistake in the human transcript?</strong> &rarr; Human Spelling Error, and stop. The ASR was right.</li>
+                <li><strong>Is the output not a real word or phrase?</strong> &rarr; Nonsense Error.</li>
+                <li><strong>Was the target a medical term, drug or proper noun &mdash; or a medical/non-medical swap?</strong> &rarr; Dictionary Error.</li>
+                <li><strong>Right stem, wrong ending?</strong> &rarr; Suffix Error.</li>
+                <li><strong>Does it sound like what was said?</strong> &rarr; Homonym/Rhyming. Add Annunciation if the speaker's delivery caused it &mdash; listen first.</li>
+                <li><strong>Is it a short function word?</strong> &rarr; Stop Words.</li>
+                <li><strong>Otherwise</strong> &rarr; Words Added or Words Deleted, by the operation rule below.</li>
+            </ol>
+            Steps 1 and 2 are exits. The rest can combine: <em>[SUB:heartbeat shake-&gt;beating cheek]</em>
+            is Dictionary <em>and</em> Annunciation because two different words failed for two different reasons.
+        </div>
+        <div class="tip-box">
+            <strong>The operation rule.</strong> <em>Words Added</em> applies only to insertions
+            <em>[INS:&hellip;]</em> and <em>Words Deleted</em> only to deletions <em>[DEL:&hellip;]</em>.
+            They are greyed out on any other error type. A substitution is never "added" or "deleted" &mdash;
+            it is a wrong word, so it takes one of the cause labels above.
+        </div>
+        <div class="tip-box">
+            <strong>Annunciation means you listened.</strong> It is a claim about how the speaker
+            <em>said</em> the word, which cannot be judged from text. Play the audio for the error
+            before selecting it; the form will remind you if you have not.
+        </div>
+        <div class="tip-box">
             <strong>The insertion rule &mdash; decided at the reconciliation call:</strong> when you see an
             <em>[INS:&hellip;]</em>, ask whether the speaker actually said the word.
             <ul>

@@ -9,6 +9,52 @@ let annotatorId = null;
 let errorIdMap = {};  // Map from error_id to annotation data
 let manualSpansByUtterance = {};  // utterance_id -> [manual span objects]
 let pendingManualSpan = null;  // Manual span awaiting save (from a fresh selection)
+let audioPlayedForCurrentError = false;  // Reset each time the annotation modal opens
+
+// Error-class options that only make sense for one alignment operation. Round-1 IAA
+// showed 47% of "words added" and 62% of "words deleted" selections landing on the
+// wrong operation, so these are enforced rather than left to the annotator.
+const ERROR_TYPE_RULES = {
+    words_added: { requires: 'INS', because: 'Words Added applies only to insertions [INS:...].' },
+    words_deleted: { requires: 'DEL', because: 'Words Deleted applies only to deletions [DEL:...].' }
+};
+
+function showRuleHint(msg) {
+    const el = document.getElementById('ecRuleHint');
+    if (!el) return;
+    el.textContent = msg;
+    el.style.display = 'block';
+}
+
+function clearRuleHint() {
+    const el = document.getElementById('ecRuleHint');
+    if (el) el.style.display = 'none';
+}
+
+// Grey out and uncheck the options that cannot apply to this error's operation.
+function applyErrorTypeRules(errorType) {
+    const blocked = [];
+    Object.entries(ERROR_TYPE_RULES).forEach(([value, rule]) => {
+        const cb = document.getElementById(`ec-${value}`);
+        if (!cb) return;
+        const allowed = errorType === rule.requires;
+        cb.disabled = !allowed;
+        if (!allowed) {
+            cb.checked = false;
+            blocked.push(rule.because);
+        }
+        const item = cb.closest('.taxonomy-item');
+        if (item) {
+            item.style.opacity = allowed ? '' : '0.4';
+            item.title = allowed ? '' : rule.because;
+        }
+    });
+    if (blocked.length) {
+        showRuleHint(`This error is ${errorType}. ` + blocked.join(' '));
+    } else {
+        clearRuleHint();
+    }
+}
 
 // Small deterministic string hash (djb2), used to seed the shuffle below.
 function hashStringToSeed(str) {
@@ -75,20 +121,29 @@ window.addEventListener('load', function() {
     
     document.getElementById('annotationForm').addEventListener('submit', handleAnnotationSubmit);
 
-    // "Not an Error" is mutually exclusive with the other ASR Error Class options -
-    // checking it clears the rest and vice versa, since they're contradictory.
-    document.querySelectorAll('input[name="errorClass"]').forEach(cb => {
-        cb.addEventListener('change', function() {
-            if (this.value === 'not_an_error' && this.checked) {
-                document.querySelectorAll('input[name="errorClass"]').forEach(other => {
-                    if (other.value !== 'not_an_error') other.checked = false;
-                });
-            } else if (this.value !== 'not_an_error' && this.checked) {
-                const notAnError = document.getElementById('ec-not_an_error');
-                if (notAnError) notAnError.checked = false;
+    // Annunciation is a claim about how the speaker said the word, so it cannot be
+    // judged from the text. Warn if it is selected before the audio has been played
+    // for this error. Soft gate - the annotator can still proceed.
+    const sessionAudio = document.getElementById('sessionAudio');
+    if (sessionAudio) {
+        sessionAudio.addEventListener('play', () => {
+            audioPlayedForCurrentError = true;
+            const box = document.getElementById('ec-annunciation_errors');
+            if (box && box.checked) clearRuleHint();
+        });
+    }
+
+    const annunciationBox = document.getElementById('ec-annunciation_errors');
+    if (annunciationBox) {
+        annunciationBox.addEventListener('change', function() {
+            if (this.checked && !audioPlayedForCurrentError) {
+                showRuleHint('Annunciation is about how the speaker pronounced the word. '
+                    + 'Play the audio for this error before selecting it.');
+            } else if (!this.checked) {
+                clearRuleHint();
             }
         });
-    });
+    }
 
     // Click-anywhere seek + text-selection manual annotation on the ASR Reconstructed box
     const asrRecEl = document.getElementById('asrReconstructed');
@@ -656,7 +711,11 @@ function openAnnotationModal(errorId, errorType, fullMatch, errorText) {
         });
         selectSeverity(existing.severity);
     }
-    
+
+    // Enforce the operation rules last, so a stored selection that breaks them is cleared.
+    audioPlayedForCurrentError = false;
+    applyErrorTypeRules(errorType);
+
     document.getElementById('annotationModal').style.display = 'block';
 }
 
@@ -691,6 +750,9 @@ function openAnnotationModalLegacy(errorType, fullMatch, errorText) {
         selectSeverity(existing.severity);
     }
     
+    audioPlayedForCurrentError = false;
+    applyErrorTypeRules(errorType);
+
     document.getElementById('annotationModal').style.display = 'block';
 }
 
