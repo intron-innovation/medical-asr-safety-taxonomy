@@ -152,7 +152,7 @@
 
     <!-- Section 2b: ASR Error Class -->
     <div class="section" id="error-class">
-        <h2>3. ASR Error Class (9 Categories)</h2>
+        <h2>2. ASR Error Class (9 Categories)</h2>
         <p>Classify <strong>how</strong> the ASR system failed. The taxonomy is adapted from
            <a href="https://pubmed.ncbi.nlm.nih.gov/15325329/" target="_blank" rel="noopener noreferrer">Zafar et al. (2004), <em>A simple error classification system for understanding sources of
            error in automatic speech recognition and human transcription</em></a></p>
@@ -168,7 +168,7 @@
             first that fits, then carry on and add any <em>other</em> cause that applies to a
             <em>different word</em> in the same tag.
             <ol>
-                <li><strong>Is the mistake in the human transcript?</strong> &rarr; Human Spelling Error, and stop. The ASR was right.</li>
+                <li><strong>Is the mistake in the human transcript?</strong> &rarr; Human Spelling Error, and stop. The ASR was right.<br><em>This is the usual answer for insertions:</em> if the speaker really said the word and the human just did not type it (<em>[INS:alcohol]</em>, <em>[INS:hormone]</em>), the reference is incomplete &mdash; not Words Added.</li>
                 <li><strong>Is the output not a real word or phrase?</strong> &rarr; Nonsense Error.</li>
                 <li><strong>Was the target a medical term, drug or proper noun &mdash; or a medical/non-medical swap?</strong> &rarr; Dictionary Error.</li>
                 <li><strong>Right stem, wrong ending?</strong> &rarr; Suffix Error.</li>
@@ -180,24 +180,15 @@
             is Dictionary <em>and</em> Annunciation because two different words failed for two different reasons.
         </div>
         <div class="tip-box">
-            <strong>The operation rule.</strong> <em>Words Added</em> applies only to insertions
-            <em>[INS:&hellip;]</em> and <em>Words Deleted</em> only to deletions <em>[DEL:&hellip;]</em>.
-            They are greyed out on any other error type. A substitution is never "added" or "deleted" &mdash;
-            it is a wrong word, so it takes one of the cause labels above.
-        </div>
-        <div class="tip-box">
-            <strong>Annunciation means you listened.</strong> It is a claim about how the speaker
-            <em>said</em> the word, which cannot be judged from text. Play the audio for the error
-            before selecting it; the form will remind you if you have not.
-        </div>
-        <div class="tip-box">
-            <strong>The insertion rule &mdash; decided at the reconciliation call:</strong> when you see an
-            <em>[INS:&hellip;]</em>, ask whether the speaker actually said the word.
+            <strong>Two rules the form enforces.</strong>
             <ul>
-                <li><strong>Yes, it was spoken</strong> &rarr; Human Spelling Error. The reference is incomplete; the ASR was right.</li>
-                <li><strong>No, nobody said it</strong> &rarr; Words Added. The ASR invented it.</li>
+                <li><strong>Operation.</strong> <em>Words Added</em> applies only to <em>[INS:&hellip;]</em>,
+                    <em>Words Deleted</em> only to <em>[DEL:&hellip;]</em>. They are greyed out otherwise.
+                    A substitution is never "added" or "deleted" &mdash; it is a wrong word, so it takes a cause label.</li>
+                <li><strong>Annunciation means you listened.</strong> It is a claim about how the speaker
+                    <em>said</em> the word and cannot be judged from text. Play the audio first;
+                    the form reminds you if you have not.</li>
             </ul>
-            This single question accounted for a quarter of the disagreements in round 1.
         </div>
         <div class="taxonomy-grid">
             <div class="taxonomy-card">
@@ -251,32 +242,37 @@
 
     <!-- Section 3: Examples -->
     <div class="section" id="examples">
-        <h2>4. Detailed Examples</h2>
+        <h2>3. Detailed Examples</h2>
 
-        <h3>Multi-Category Errors</h3>
+        <h3>Worked examples, as decided at the reconciliation call</h3>
         <div class="example-box">
-            <strong>Error:</strong> [SUB:naproxen 500mg->proxen]<br>
-            <strong>ASR Error Class:</strong> Dictionary Error<br>
-            <strong>Severity:</strong> Moderate - Missing dosage changes intent
+            <strong>Error:</strong> [SUB:ulcer-&gt;asthma]<br>
+            <strong>Error Class:</strong> Dictionary Error<br>
+            <strong>Severity:</strong> 3 &mdash; one diagnosis swapped for another
         </div>
 
         <div class="example-box">
-            <strong>Error:</strong> [SUB:no chest pain->chest pain]<br>
-            <strong>ASR Error Class:</strong> Words Deleted<br>
-            <strong>Severity:</strong> Severe - Reverses symptom status
+            <strong>Error:</strong> [SUB:irregularities-&gt;regularities]<br>
+            <strong>Error Class:</strong> Annunciation Error<br>
+            <strong>Severity:</strong> 3 &mdash; the negation flips, so the meaning reverses
         </div>
 
         <div class="example-box">
-            <strong>Error:</strong> [SUB:120/80->120/8]<br>
-            <strong>Context:</strong> "BP is ___"<br>
-            <strong>ASR Error Class:</strong> Suffix Errors<br>
-            <strong>Severity:</strong> Severe - Incorrect vital sign
+            <strong>Error:</strong> [INS:alcohol]<br>
+            <strong>Error Class:</strong> Human Spelling Error &mdash; <em>not</em> Words Added<br>
+            <strong>Severity:</strong> 1 &mdash; the patient said it twice; the human typed it once
+        </div>
+
+        <div class="example-box">
+            <strong>Error:</strong> [SUB:heartbeat shake-&gt;beating cheek]<br>
+            <strong>Error Class:</strong> Dictionary Error <em>and</em> Annunciation Error<br>
+            <strong>Severity:</strong> 3 &mdash; two words, two different causes, in one tag
         </div>
     </div>
 
     <!-- Section 4: Workflow -->
     <div class="section" id="workflow">
-        <h2>5. Annotation Workflow</h2>
+        <h2>4. Annotation Workflow</h2>
         <ol class="workflow-steps-vertical">
             <!--<li><strong>Load Data:</strong> Upload your JSON file in the annotation interface</li>-->
             <li><strong>Read:</strong> Review the human transcript (left) to understand context</li>
@@ -292,7 +288,7 @@
 
     <!-- Section 5: Severity -->
     <div class="section" id="severity">
-        <h2>6. Severity Guidelines</h2>
+        <h2>5. Severity Guidelines</h2>
         <div class="severity-scale">
             <div class="severity-level level-1">
                 <div class="severity-number">1</div>
@@ -324,7 +320,7 @@
 
     <!-- Section 6: Best Practices -->
     <div class="section" id="bestpractices">
-        <h2>7. Best Practices</h2>
+        <h2>6. Best Practices</h2>
         <div class="tip-box">
             <strong>💡 Tips for Accuracy:</strong>
             <ul>
@@ -347,7 +343,7 @@
 
     <!-- Section 7: FAQ -->
     <div class="section" id="faq">
-        <h2>8. FAQ</h2>
+        <h2>7. FAQ</h2>
 
         <h3>Q: Can an error have multiple categories?</h3>
         <p><strong>A:</strong> YES! Select all applicable categories. Many errors span multiple dimensions.</p>
