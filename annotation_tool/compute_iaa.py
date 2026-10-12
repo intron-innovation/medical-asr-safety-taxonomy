@@ -143,6 +143,14 @@ def main():
     ks = [r[5] for r in rows if not np.isnan(r[5])]
     print(f"\n  mean kappa across {len(ks)} categories: {np.mean(ks):.2f}")
 
+    # Exact set match is too strict for a multi-label scheme: if one rater names a
+    # cause and the other names that cause plus a second one, they agree on what they
+    # both saw. Subset-tolerant matching counts that as agreement.
+    subset_ok = np.mean([
+        set(x["errorClass"]) <= set(y["errorClass"]) or set(y["errorClass"]) <= set(x["errorClass"])
+        for x, y in allpairs])
+    no_overlap = np.mean([not (set(x["errorClass"]) & set(y["errorClass"])) for x, y in allpairs])
+    print(f"  subset-tolerant agreement: {subset_ok:.1%}   no shared label at all: {no_overlap:.1%}")
     exact_set = np.mean([set(x["errorClass"]) == set(y["errorClass"]) for x, y in allpairs])
     jac = np.mean([len(set(x["errorClass"]) & set(y["errorClass"])) /
                    max(len(set(x["errorClass"]) | set(y["errorClass"])), 1)
