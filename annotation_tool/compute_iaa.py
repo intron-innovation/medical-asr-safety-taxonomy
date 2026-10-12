@@ -7,6 +7,7 @@ Reports severity agreement (ordinal) and taxonomy agreement (multi-label).
 """
 
 import json
+import sys
 from collections import Counter
 from itertools import combinations
 from pathlib import Path
@@ -14,12 +15,17 @@ from pathlib import Path
 import numpy as np
 
 DATA = Path(__file__).parent / "completed_annotation" / "inter_rater_datasets"
-PAIRS = [("qwen3_iaa", "ANN009_qwen.json", "ANN010_qwen.json"),
-         ("gemma3n_iaa", "ANN009_gemma.json", "ANN010_gemma.json")]
+ROUNDS = {
+    1: [("qwen3_iaa", "ANN009_qwen.json", "ANN010_qwen.json"),
+        ("gemma3n_iaa", "ANN009_gemma.json", "ANN010_gemma.json")],
+    2: [("qwen3_iaa2", "ANN009_qwen_round2.json", "ANN010_qwen_round2.json"),
+        ("gemma3n_iaa2", "ANN009_gemma_round2.json", "ANN010_gemma_round2.json")],
+}
+PAIRS = ROUNDS[int(sys.argv[1])] if len(sys.argv) > 1 else ROUNDS[1]
 
 CLASSES = ["annunciation_errors", "homonym_errors_rhyming_words", "dictionary_errors",
-           "stop_words", "suffix_errors", "spelling_errors", "critical_errors",
-           "nonsense_errors", "words_added", "words_deleted", "not_an_error"]
+           "stop_words", "suffix_errors", "spelling_errors", "nonsense_errors",
+           "words_added", "words_deleted", "critical_errors", "not_an_error"]
 
 
 def load(fname):
