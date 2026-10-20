@@ -10,10 +10,40 @@ let errorIdMap = {};  // Map from error_id to annotation data
 let manualSpansByUtterance = {};  // utterance_id -> [manual span objects]
 let pendingManualSpan = null;  // Manual span awaiting save (from a fresh selection)
 let audioPlayedForCurrentError = false;  // Reset each time the annotation modal opens
+let currentErrorMatch = '';              // Inline tag of the error being annotated
 
 // Error-class options that only make sense for one alignment operation. Round-1 IAA
 // showed 47% of "words added" and 62% of "words deleted" selections landing on the
 // wrong operation, so these are enforced rather than left to the annotator.
+// Round-2 IAA showed 77% of tags cover a single word, and on those one annotator
+// picked two labels 22 times while the other picked two 3 times. A single damaged
+// word has a single cause, so the form now enforces that rather than asking the
+// annotator to remember it.
+function damagedWordCount(errorMatch) {
+    const m = /^\[(INS|DEL|SUB):([\s\S]*)\]$/.exec((errorMatch || '').trim());
+    if (!m) return 1;
+    const [, kind, body] = m;
+    const count = (t) => (t.trim() ? t.trim().split(/\s+/).length : 0);
+    if (kind === 'SUB') {
+        const i = body.indexOf('->');
+        return i < 0 ? count(body) : Math.max(count(body.slice(0, i)), count(body.slice(i + 2)));
+    }
+    return count(body);
+}
+
+function applyLabelCountRule(errorMatch) {
+    const multiAllowed = damagedWordCount(errorMatch) > 1;
+    const boxes = Array.from(document.querySelectorAll('input[name="errorClass"]'));
+    const checked = boxes.filter(b => b.checked && !b.disabled).length;
+    boxes.forEach(b => {
+        if (b.dataset.typeBlocked === '1') return;      // operation rule already owns this one
+        b.disabled = !multiAllowed && checked >= 1 && !b.checked;
+    });
+    if (!multiAllowed && checked >= 1) {
+        showRuleHint('This tag covers one word, so it takes one label. Untick to choose a different one.');
+    }
+}
+
 const ERROR_TYPE_RULES = {
     words_added: { requires: 'INS', because: 'Words Added applies only to insertions [INS:...].' },
     words_deleted: { requires: 'DEL', because: 'Words Deleted applies only to deletions [DEL:...].' }
@@ -39,6 +69,7 @@ function applyErrorTypeRules(errorType) {
         if (!cb) return;
         const allowed = errorType === rule.requires;
         cb.disabled = !allowed;
+        cb.dataset.typeBlocked = allowed ? '0' : '1';
         if (!allowed) {
             cb.checked = false;
             blocked.push(rule.because);
@@ -133,7 +164,11 @@ window.addEventListener('load', function() {
         });
     }
 
-    const annunciationBox = document.getElementById('ec-annunciation_errors');
+    document.querySelectorAll('input[name="errorClass"]').forEach(cb => {
+        cb.addEventListener('change', () => applyLabelCountRule(currentErrorMatch));
+    });
+
+    const annunciationBox = document.getElementById('ec-annunciation_homonym_errors');
     if (annunciationBox) {
         annunciationBox.addEventListener('change', function() {
             if (this.checked && !audioPlayedForCurrentError) {
@@ -714,7 +749,9 @@ function openAnnotationModal(errorId, errorType, fullMatch, errorText) {
 
     // Enforce the operation rules last, so a stored selection that breaks them is cleared.
     audioPlayedForCurrentError = false;
+    currentErrorMatch = fullMatch;
     applyErrorTypeRules(errorType);
+    applyLabelCountRule(fullMatch);
 
     document.getElementById('annotationModal').style.display = 'block';
 }
@@ -751,7 +788,9 @@ function openAnnotationModalLegacy(errorType, fullMatch, errorText) {
     }
     
     audioPlayedForCurrentError = false;
+    currentErrorMatch = fullMatch;
     applyErrorTypeRules(errorType);
+    applyLabelCountRule(fullMatch);
 
     document.getElementById('annotationModal').style.display = 'block';
 }

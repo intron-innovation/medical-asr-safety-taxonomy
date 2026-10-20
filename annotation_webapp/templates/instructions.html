@@ -152,91 +152,79 @@
 
     <!-- Section 2b: ASR Error Class -->
     <div class="section" id="error-class">
-        <h2>2. ASR Error Class (9 Categories)</h2>
-        <p>Classify <strong>how</strong> the ASR system failed. The taxonomy is adapted from
-           <a href="https://pubmed.ncbi.nlm.nih.gov/15325329/" target="_blank" rel="noopener noreferrer">Zafar et al. (2004), <em>A simple error classification system for understanding sources of
-           error in automatic speech recognition and human transcription</em></a></p>
-        <p><strong>Each error is multi-class.</strong> A single error may belong to more than one
-           category &mdash; select every category that applies rather than choosing only the best fit.
-           For example,  <em>swampy region &rarr; iswampimidio</em> is both an annunciation error and a nonsense error; since the misrecognition involves both pronunciation and nonsensical transformation.
-           <em>urethra &rarr; ureteral</em> is both a dictionary and an annunciation error, since the misrecognition involves both medical knowledge and pronunciation.
-           <em>[SUB:heartbeat shake-&gt;beating cheek]</em> is both a dictionary error (heartbeat &rarr; beating) and an annunciation error (shake &rarr; cheek) &mdash; one tag covering two words, each failing for a different reason.
-           Assign <strong>one</strong> severity level per error, reflecting the combined impact of
-           everything you selected.</p>
+        <h2>2. ASR Error Class (8 Categories)</h2>
+        <p>Classify <strong>why</strong> the ASR failed. Adapted from
+           <a href="https://pubmed.ncbi.nlm.nih.gov/15325329/" target="_blank" rel="noopener noreferrer">Zafar et al. (2004)</a>.</p>
+
         <div class="tip-box">
-            <strong>Which label, when several could apply.</strong> Work down this order and take the
-            first that fits, then carry on and add any <em>other</em> cause that applies to a
-            <em>different word</em> in the same tag.
-            <ol>
-                <li><strong>Is the mistake in the human transcript?</strong> &rarr; Human Spelling Error, and stop. The ASR was right.<br><em>This is the usual answer for insertions:</em> if the speaker really said the word and the human just did not type it (<em>[INS:alcohol]</em>, <em>[INS:hormone]</em>), the reference is incomplete &mdash; not Words Added.</li>
-                <li><strong>Is the output not a real word or phrase?</strong> &rarr; Nonsense Error.</li>
-                <li><strong>Was the target a medical term, drug or proper noun &mdash; or a medical/non-medical swap?</strong> &rarr; Dictionary Error.</li>
-                <li><strong>Right stem, wrong ending?</strong> &rarr; Suffix Error.</li>
-                <li><strong>Does it sound like what was said?</strong> &rarr; Homonym/Rhyming. Add Annunciation if the speaker's delivery caused it &mdash; listen first.</li>
-                <li><strong>Is it a short function word?</strong> &rarr; Stop Words.</li>
-                <li><strong>Otherwise</strong> &rarr; Words Added or Words Deleted, by the operation rule below.</li>
-            </ol>
-            Steps 1 and 2 are exits. The rest can combine: <em>[SUB:heartbeat shake-&gt;beating cheek]</em>
-            is Dictionary <em>and</em> Annunciation because two different words failed for two different reasons.
+            <strong>Rule 1 &mdash; start from the WORD, not the sound.</strong> Pronunciation explains
+            why nearly every ASR error happens, which is exactly why it is a poor label: it fits
+            everything. Ask what <em>kind of word</em> was damaged.
+            <br><em>[SUB:amlodipine-&gt;pain]</em> &mdash; wrong: "that's a mispronunciation".
+            Right: "amlodipine is a drug name" &rarr; <strong>Dictionary error</strong>.
         </div>
+
         <div class="tip-box">
-            <strong>Two rules the form enforces.</strong>
-            <ul>
-                <li><strong>Operation.</strong> <em>Words Added</em> applies only to <em>[INS:&hellip;]</em>,
-                    <em>Words Deleted</em> only to <em>[DEL:&hellip;]</em>. They are greyed out otherwise.
-                    A substitution is never "added" or "deleted" &mdash; it is a wrong word, so it takes a cause label.</li>
-                <li><strong>Annunciation means you listened.</strong> It is a claim about how the speaker
-                    <em>said</em> the word and cannot be judged from text. Play the audio first;
-                    the form reminds you if you have not.</li>
-            </ul>
+            <strong>Rule 2 &mdash; one tag, one label, unless two words were damaged.</strong>
+            If the tag covers a single word the form will not let you pick a second.
+            Only a tag spanning two or more damaged words may take more than one label, and only
+            because those words failed for <em>different</em> reasons:
+            <em>[SUB:heartbeat shake-&gt;beating cheek]</em> is Dictionary (heartbeat&rarr;beating)
+            <strong>and</strong> Annunciation/Homonym (shake&rarr;cheek).
+            Never add a second label to be safe.
         </div>
+
+        <div class="tip-box">
+            <strong>Rule 3 &mdash; the form enforces two things.</strong>
+            <em>Words added</em> applies only to <em>[INS:&hellip;]</em> and <em>Words deleted</em>
+            only to <em>[DEL:&hellip;]</em>. And <em>Annunciation / Homonym</em> is a claim about how
+            the word sounded, so play the audio before selecting it.
+        </div>
+
+        <p>Work down and take the <strong>first</strong> that fits.</p>
         <div class="taxonomy-grid">
             <div class="taxonomy-card">
-                <h3>Annunciation Errors</h3>
-                <p>Errors caused by how the speaker pronounced the word &mdash; accented speech, pausing in the middle of a sentence, speaking too fast, slurring words, or disfluencies. Listen to the audio before selecting this.</p>
-                <div class="example">large intestine → large intensity &nbsp;•&nbsp; nausea → nuisance &nbsp;•&nbsp; abdominal pain → abnormal pain &nbsp;•&nbsp; cigarette pack → cigarette back &nbsp;•&nbsp; recreational drugs → nutritional drugs &nbsp;•&nbsp; night sweats → night sets</div>
+                <h3>1. Human transcription error</h3>
+                <p>The <strong>transcript</strong> is at fault, not the model &mdash; the ASR was right. Stop here if this applies. Judge from the text, not the audio.<br>
+                   <strong>(a) the human typed it wrong</strong><br>
+                   <strong>(b) the human missed speech the speaker actually said</strong>, which shows up as an insertion. Ask: <em>did the speaker really say this?</em> If yes the reference is incomplete. If nobody said it, use Words added.</p>
+                <div class="example">reference "catherization" → ASR "catheterization" &nbsp;•&nbsp; reference "lose" → ASR "loose" &nbsp;•&nbsp; [INS:alcohol] said twice, typed once &nbsp;•&nbsp; [INS:is there any drug], a question the transcript omits</div>
             </div>
             <div class="taxonomy-card">
-                <h3>Homonym Errors/Rhyming Words</h3>
-                <p>Errors where the misrecognised word or phrase <strong>sounds similar</strong> to the intended one but is spelled differently. This covers both identical-sounding words and near-sounding or rhyming words.</p>
-                <div class="example">pus → pulse &nbsp;•&nbsp; middle ear effusion → middle ear fusion &nbsp;•&nbsp; exertion → extortion &nbsp;•&nbsp; fainting → painting &nbsp;•&nbsp; weight loss → waste loss &nbsp;•&nbsp; stool → stew</div>
+                <h3>2. Dictionary error</h3>
+                <p>The damaged word was a <strong>drug, condition, anatomy term, procedure, or a proper noun / place / name</strong>. Also when a medical word becomes non-medical, or the reverse.</p>
+                <div class="example">amlodipine → pain &nbsp;•&nbsp; naproxen → proxen &nbsp;•&nbsp; cetirizine → trazinia &nbsp;•&nbsp; ulcer → asthma &nbsp;•&nbsp; Ekiti → Nkita</div>
             </div>
             <div class="taxonomy-card">
-                <h3>Dictionary Errors</h3>
-                <p>Phrases recognised in place of a word missing from the dictionary &mdash; typically a medical entity, a drug name or a proper noun the ASR does not hold. <strong>Also use this when the ASR turns a non-medical word into a medical one, or a medical word into a non-medical one.</strong> The result sounds similar to, but not always exactly like, the intended word.</p>
-                <div class="example">naproxen → proxen &nbsp;•&nbsp; metformin → bombetformin &nbsp;•&nbsp; lisinopril → lesetapril &nbsp;•&nbsp; Chidinma → Chidima &nbsp;•&nbsp; Ekiti → Nkita &nbsp;•&nbsp; [SUB:daria-&gt;diarrhea] &nbsp;•&nbsp; [SUB:ulcer-&gt;asthma]</div>
+                <h3>3. Suffix error</h3>
+                <p>Same stem, wrong ending.</p>
+                <div class="example">[SUB:vomit-&gt;vomits] &nbsp;•&nbsp; [SUB:problem-&gt;problems] &nbsp;•&nbsp; breathless → breathlessness</div>
             </div>
             <div class="taxonomy-card">
-                <h3>Stop Words</h3>
-                <p>An error involving a short function word such as <em>a, an, the, has</em> or <em>if</em>, whether added, deleted or substituted.</p>
-                <div class="example">[SUB:a-&gt;the] &nbsp;•&nbsp; [DEL:a] &nbsp;•&nbsp; [SUB:or-&gt;so] &nbsp;•&nbsp; [INS:in] &nbsp;•&nbsp; [INS:the] &nbsp;•&nbsp; [DEL:a bit]</div>
+                <h3>4. Annunciation / Homonym error</h3>
+                <p>An <strong>ordinary</strong> English word was misheard as another word that sounds like it &mdash; through accent, speed, slurring, a pause, or plain phonetic similarity. If the damaged word was specialist, use Dictionary error instead. <strong>Play the audio first.</strong></p>
+                <div class="example">nausea → nuisance &nbsp;•&nbsp; abdominal pain → abnormal pain &nbsp;•&nbsp; pus → pulse &nbsp;•&nbsp; fainting → painting &nbsp;•&nbsp; cigarette pack → cigarette back</div>
             </div>
             <div class="taxonomy-card">
-                <h3>Suffix Errors</h3>
-                <p>Errors caused by substituting an incorrect ending on the intended word. The stem is right; the ending is wrong.</p>
-                <div class="example">breathless → breathlessness &nbsp;•&nbsp; [SUB:vomit-&gt;vomits] &nbsp;•&nbsp; [SUB:nauseated-&gt;nauseous] &nbsp;•&nbsp; [SUB:problem-&gt;problems]</div>
-            </div>
-            <div class="taxonomy-card">
-                <h3>Human Spelling Errors</h3>
-                <p>The mistake is in the <strong>human transcript</strong>, not the ASR output &mdash; the recogniser is right and the human transcriber is wrong. This covers both misspellings in the reference <strong>and words the human failed to transcribe at all that the ASR did capture</strong>. Judge these from the text rather than the audio. <strong>Insertions are often this case:</strong> if <em>[INS:alcohol]</em> or <em>[INS:hormone]</em> is a word the speaker really said, the human missed it and this is the right label, not Words Added.</p>
-                <div class="example">reference "catherization" → ASR "catheterization" &nbsp;•&nbsp; reference "lose" → ASR "loose" &nbsp;•&nbsp; the ASR picks up a second "alcohol" the human left out</div>
-            </div>
-            <div class="taxonomy-card">
-                <h3>Nonsense Errors</h3>
-                <p>A recognised word or phrase that does not make grammatical or lexical sense, even after a possible correction has been hypothesised from context.</p>
+                <h3>5. Nonsense error</h3>
+                <p>The output is not a real word at all, even after trying to guess from context.</p>
                 <div class="example">wisdom teeth → visimteeth &nbsp;•&nbsp; swampy region → iswampimidio &nbsp;•&nbsp; feverish → beverish</div>
             </div>
             <div class="taxonomy-card">
-                <h3>Words Added</h3>
-                <p>The ASR produced a word <strong>nobody said</strong>. Use this only when the insertion is invented. If the speaker did say it and the human transcriber simply left it out, that is a <strong>Human Spelling Error</strong> instead &mdash; a gap in the reference, not an ASR error.</p>
+                <h3>6. Stop words</h3>
+                <p>Only a short function word changed &mdash; <em>a, an, the, is, has, if</em>.</p>
+                <div class="example">[SUB:a-&gt;the] &nbsp;•&nbsp; [DEL:a] &nbsp;•&nbsp; [INS:in] &nbsp;•&nbsp; [SUB:or-&gt;so]</div>
+            </div>
+            <div class="taxonomy-card">
+                <h3>7. Words added</h3>
+                <p><em>[INS:&hellip;]</em> only. A word <strong>nobody said</strong>. If the speaker did say it, it is a Human transcription error.</p>
                 <div class="example">[INS:for you] &nbsp;•&nbsp; [INS:one thousand nine] &nbsp;•&nbsp; [INS:of july]</div>
             </div>
             <div class="taxonomy-card">
-                <h3>Words Deleted</h3>
-                <p>A word that was spoken is omitted (cases of deletion). This may also be a chunk of a sentence being deleted.</p>
-                <div class="example">[DEL:urine] &nbsp;•&nbsp; [DEL:recreational] &nbsp;•&nbsp; [DEL:in] &nbsp;•&nbsp; [DEL:okay and do you take any medications i had a a drug history of thyroxine]</div>
+                <h3>8. Words deleted</h3>
+                <p><em>[DEL:&hellip;]</em> only. Spoken content missing from the output.</p>
+                <div class="example">[DEL:urine] &nbsp;•&nbsp; [DEL:recreational] &nbsp;•&nbsp; [DEL:okay and do you take any medications i had a a drug history of thyroxine]</div>
             </div>
-
         </div>
     </div>
 
@@ -244,30 +232,14 @@
     <div class="section" id="examples">
         <h2>3. Detailed Examples</h2>
 
-        <h3>Worked examples, as decided at the reconciliation call</h3>
-        <div class="example-box">
-            <strong>Error:</strong> [SUB:ulcer-&gt;asthma]<br>
-            <strong>Error Class:</strong> Dictionary Error<br>
-            <strong>Severity:</strong> 3 &mdash; one diagnosis swapped for another
-        </div>
-
-        <div class="example-box">
-            <strong>Error:</strong> [SUB:irregularities-&gt;regularities]<br>
-            <strong>Error Class:</strong> Annunciation Error<br>
-            <strong>Severity:</strong> 3 &mdash; the negation flips, so the meaning reverses
-        </div>
-
-        <div class="example-box">
-            <strong>Error:</strong> [INS:alcohol]<br>
-            <strong>Error Class:</strong> Human Spelling Error &mdash; <em>not</em> Words Added<br>
-            <strong>Severity:</strong> 1 &mdash; the patient said it twice; the human typed it once
-        </div>
-
-        <div class="example-box">
-            <strong>Error:</strong> [SUB:heartbeat shake-&gt;beating cheek]<br>
-            <strong>Error Class:</strong> Dictionary Error <em>and</em> Annunciation Error<br>
-            <strong>Severity:</strong> 3 &mdash; two words, two different causes, in one tag
-        </div>
+        <h3>Severity anchors &mdash; calibrate against these</h3>
+        <div class="example-box"><strong>[SUB:amlodipine-&gt;pain]</strong> &mdash; Dictionary error, <strong>severity 3</strong>: a medication is lost.</div>
+        <div class="example-box"><strong>[SUB:ulcer-&gt;asthma]</strong> &mdash; Dictionary error, <strong>severity 3</strong>: one diagnosis becomes another.</div>
+        <div class="example-box"><strong>[SUB:irregularities-&gt;regularities]</strong> &mdash; Annunciation/Homonym, <strong>severity 3</strong>: the negation flips.</div>
+        <div class="example-box"><strong>[SUB:urethra-&gt;ureteral]</strong> &mdash; Dictionary error, <strong>severity 2</strong>: anatomy blurred, meaning recoverable.</div>
+        <div class="example-box"><strong>[INS:alcohol]</strong> (the patient said it twice) &mdash; Human transcription error, <strong>severity 1</strong>.</div>
+        <div class="example-box"><strong>[DEL:the]</strong> &mdash; Stop words, <strong>severity 1</strong>: no clinical content.</div>
+        <p>Severity 2 is for <em>genuinely uncertain</em> cases, not "somewhere in between". If you can name the diagnosis, symptom, medication, procedure or negation affected, it is 3.</p>
     </div>
 
     <!-- Section 4: Workflow -->

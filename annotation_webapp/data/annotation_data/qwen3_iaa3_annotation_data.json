@@ -1,0 +1,2010 @@
+[
+  {
+    "utterance_id": "c46ac19c-edf5-4bc2-8162-110ff52ef78b_654f83104ac72fe1dfb3396f740cf6e1_qfrd3ivN",
+    "human_transcript": " may i address you as miss or mrs  mrs  how old are you  i am fortyfive years old doctor  so ma what brought you here today  i have been having this pain in my abdominal two days ago suddenly two days ago  so can you tell me more about it  yes the pain started suddenly like and it was a very sharp pain and its how should i explain it is located at my abdominal at the right side the top side of my abdomen and the pain it moves from my back like it moves around my back and my right shoulder  okay i will just ask you few questions about that you said the pain is located at your right side of your abdomen  yes doctor  and the pain is sharp right  yes doctor  is there anything that makes the pain worse  yes the pain becomes worse like whenever i eat after eating the pain becomes worst and it is always happen when i take a food that has plenty fats  okay what about anything that makes you feel relieved  i have not really noticed any  okay are they other symptoms associated with the pain  yes since this pain started i have been having nausea i have been vomiting you get if una i have been having fever and if you look at me now you will see that i have jaundice  okay is there any other symptoms like change in bowel movement or change in urine color  no no no  what about weight loss  no no no doctor  do you think you are losing weight  no i am not losing weight you look at me now i am not losing weight  do you eat at all or do you have a loss of appetite  i do not have loss of appetite i eat very well just after eating the food and the pain will start  have you gone through any trauma  no doctor  have you had any surgery done recently  no no no  okay on a scale of oneten can you describe how severe the pain is  i will rate it nine i will say nine cos it is very very severe the pain is very very bad so i will say nine  okay what do you think will be causing this  doctor i do not know i do not know  are you worried about it  i am very worried about it because the pain is just too much  do you have any medical history  yes i do yes i do  what is it if i may ask  i am hypertensive and i was diagnosed on hypertension that was five years ago and i have been on medication  do you have any family medical history  yesyes my mother yes i do my mother had gallstones  okay i am going to ask you few more questions about yourself if you do not mind  okay go ahead  do you smoke  no no i do not  good do you drink alcohol  yes i do  okay like how many drinks you take when you drink  i take few drinks i do not take much  okay how frequent is that  it is not frequent it is just once in a blue moon occasionally  okay do you take any recreational drug  no no no i do not  are you on any routine or prescribe medication  yes i am i am on antihypertension drugs antihypertension medication i have been on it for five years now  do you have any drug or food allergies  no no no none that i know of  do you have any question for me  no doctor i do not  okay that will be all for the consultation thanks for talking with me today from my findings mrs ogechukwu fortyfive is having a severe abdominal pain which started two days ago the pain is located at the right upper quadrant of her abdominal and it radiates to the back and her right shoulder according to her the pain becomes worst after eating especially when she eats fatty food the pain is associated with nausea and vomiting fever and jaundice she does not have any history of change in bowel movement or urine color weight loss or loss of appetite she does not also have any history of trauma or have not under gone any surgery according to her medical history she was diagnosed of hypertension five years ago and has been on medication the only family medical history she has is her mother where had gastrings she does not smoke nor take any recreational drugs but drinks alcohol occasionally she is also on antihypertensive medication she does not have any known drugs or food allergy she also rated the pain to nine on a scale of oneten onefortyeightthreeonefortyeightthreeonefortyeightthree hundred and onethirtyfiveninetyeight",
+    "human_transcript_ner": " may i address you as miss or mrs  mrs  how old are you  i am fortyfive years old doctor  so ma what brought you here today  i have been having this [PROBLEM: pain] in my [ANATOMICAL_STRUCTURE: abdominal] two days ago suddenly two days ago  so can you tell me more about it  yes the [PROBLEM: pain] started suddenly like and it was a very [SEVERITY: sharp] [PROBLEM: pain] and its how should i explain it is located at my [ANATOMICAL_STRUCTURE: abdominal] at the right side the top side of my [ANATOMICAL_STRUCTURE: abdomen] and the [PROBLEM: pain] it moves from my [ANATOMICAL_STRUCTURE: back] like it moves around my [ANATOMICAL_STRUCTURE: back] and my right [ANATOMICAL_STRUCTURE: shoulder]  okay i will just ask you few questions about that you said the [PROBLEM: pain] is located at your right side of your [ANATOMICAL_STRUCTURE: abdomen]  yes doctor  and the [PROBLEM: pain] is [SEVERITY: sharp] right  yes doctor  is there anything that makes the [PROBLEM: pain] [SEVERITY: worse]  yes the [PROBLEM: pain] becomes [SEVERITY: worse] like whenever i eat after eating the [PROBLEM: pain] becomes worst and it is always happen when i take a food that has plenty fats  okay what about anything that makes you feel relieved  i have not really noticed any  okay are they other [PROBLEM: symptoms] associated with the [PROBLEM: pain]  yes since this [PROBLEM: pain] started i have been having [PROBLEM: nausea] i have been [PROBLEM: vomiting] you get if una i have been having [PROBLEM: fever] and if you look at me now you will see that i have [PROBLEM: jaundice]  okay is there any other [PROBLEM: symptoms] like [BF_RESULT: change] in [BODY_FUNCTION: bowel movement] or [PROBLEM: change in urine color]  no no no  what about [PROBLEM: weight loss]  no no no doctor  do you think you are [PROBLEM: losing weight]  no i am not [PROBLEM: losing weight] you look at me now i am not [PROBLEM: losing weight]  do you eat at all or do you have a [PROBLEM: loss of appetite]  i do not have [PROBLEM: loss of appetite] i eat very well just after eating the food and the [PROBLEM: pain] will start  have you gone through any [PROBLEM: trauma]  no doctor  have you had any [PROCEDURE: surgery] done recently  no no no  okay on a scale of oneten can you describe how [SEVERITY: severe] the [PROBLEM: pain] is  i will rate it nine i will say nine cos it is very very [SEVERITY: severe] the [PROBLEM: pain] is very very bad so i will say nine  okay what do you think will be causing this  doctor i do not know i do not know  are you worried about it  i am very worried about it because the [PROBLEM: pain] is just too much  do you have any medical history  yes i do yes i do  what is it if i may ask  i am [PROBLEM: hypertensive] and i was diagnosed on [PROBLEM: hypertension] that was five years ago and i have been on [MEDICINE: medication]  do you have any family medical history  yesyes my mother yes i do my mother had [PROBLEM: gallstones]  okay i am going to ask you few more questions about yourself if you do not mind  okay go ahead  do you [SUBSTANCE_ABUSE: smoke]  no no i do not  good do you drink [SUBSTANCE_ABUSE: alcohol]  yes i do  okay like how many drinks you take when you drink  i take few drinks i do not take much  okay how frequent is that  it is not frequent it is just once in a blue moon occasionally  okay do you take any [SUBSTANCE_ABUSE: recreational drug]  no no no i do not  are you on any routine or prescribe [MEDICINE: medication]  yes i am i am on [MEDICINE: antihypertension] [MEDICINE: drugs] [MEDICINE: antihypertension medication] i have been on it for five years now  do you have any [MEDICINE: drug] or food [PROBLEM: allergies]  no no no none that i know of  do you have any question for me  no doctor i do not  okay that will be all for the consultation thanks for talking with me today from my findings mrs [MEDICINE: ogechukwu] fortyfive is having a [SEVERITY: severe] [PROBLEM: abdominal pain] which started two days ago the [PROBLEM: pain] is located at the [ANATOMICAL_STRUCTURE: right upper quadrant] of her [ANATOMICAL_STRUCTURE: abdominal] and it radiates to the [ANATOMICAL_STRUCTURE: back] and her right [ANATOMICAL_STRUCTURE: shoulder] according to her the [PROBLEM: pain] becomes [SEVERITY: worst] after eating especially when she eats fatty food the [PROBLEM: pain] is associated with [PROBLEM: nausea] and [PROBLEM: vomiting] [PROBLEM: fever] and [PROBLEM: jaundice] she does not have any history of [BF_RESULT: change] in [BODY_FUNCTION: bowel movement] or urine color [PROBLEM: weight loss] or [PROBLEM: loss of appetite] she does not also have any history of [PROBLEM: trauma] or have not under gone any [PROCEDURE: surgery] according to her medical history she was diagnosed of [PROBLEM: hypertension] five years ago and has been on [MEDICINE: medication] the only family medical history she has is her mother where had [MEDICINE: gastrings] she does not [SUBSTANCE_ABUSE: smoke] nor take any [SUBSTANCE_ABUSE: recreational drugs] but [SUBSTANCE_ABUSE: drinks alcohol] occasionally she is also on [MEDICINE: antihypertensive medication] she does not have any known [SUBSTANCE_ABUSE: drugs] or food allergy she also rated the [PROBLEM: pain] to nine on a scale of oneten onefortyeightthreeonefortyeightthreeonefortyeightthree hundred and [MEDICINE: onethirtyfiveninetyeight]",
+    "asr_transcript": "may i address you as miss or mrs mrs how old are you i am fortyfive years old doctor so ma what brought you here today i have been having this pain in my abdomen two days ago it started two days ago so can you tell me more about it yes the pain started suddenly like and it was a very sharp pain and it is how should i explain it it is located at my abdomen at the right side the top the top side of my abdomen and the pain it moves from my back and like it moves around my back and my right shoulder okay i will just ask a few questions about that you said the pain is located at the right side of your abdomen yes doctor and the pain is sharp right yes doctor is there anything that makes the pain worse yes the pain becomes worse like whenever i eat after eating the pain becomes worse and it is it mostly happen when i take food that has plenty fats okay what about anything that makes you feel relieved i have not really noticed any okay are there other symptoms associated with the pain yes since this pain started i have been having nausea i have been vomiting you get even i have been having fever and if you look at me now you see that i have jaundice okay is there any other symptoms like change in bowel movements or change in urine color no no no what about the weight loss no no doctor do you think you are losing weight no i am not i am not losing weight look at me i am not losing weight do you eat well or you have lost loss of appetite i do not have loss of appetite i eat very well just that after eating the food the pain starts have you gone through any trauma no doctor have you had any surgery done recently no no no okay on a scale of one to ten can you describe how severe the pain is  i will rate it nine i will say nine because it is very very severe the pain is very very bad so i will say nine okay what do you think would be causing this doctor i do not know i do not know are you worried about it i am very worried about it because the pain is just too much do you have any medical history yes i do yes i do what is it if i may ask i am i am hypertensive i was i was diagnosed of high of hypertension that was five years ago and i have been on medication do you have any family medical history  yes yes my mother yes i do my mother had had gall gallstones okay i am going to ask a few more questions about yourself if you do not mind okay go ahead do you smoke no no no i do not good do you drink alcohol yes i do okay like how many drinks do you take when you drink i take few few drinks i do not take i do not take much okay how frequent is that it is not frequent it is just once in a blue moon occasionally okay do you take any recreational drug no no no i do not are you on any routine or prescribed medications yes i am i am i am on on antihypertension drugs antihypertension medication i have been on it for five years now do you have any drug or food allergies no no no not none that i know do you have any question for me no doctor i do not okay that will be all for the consultation thanks for talking with me today from my findings mrs ogetu aged fortyfive is having severe abdominal pain we started two days ago the pain is located at the right upper quadrant of her abdominal and is radiates to the back and her right shoulder according to her the pain becomes worse after eating especially when when she eats fatty food the pain is associated with nausea and vomiting fever and jaundice she does not have any history of change in bowel movement or urine color weight loss or loss of appetite she does not also have any history of trauma or have not undergone any surgery recently according to her medical history she was diagnosed of hypertension five years ago has been on medication the only family medical history she has is her mother who had gallstones she does not smoke nor take any recreational drugs but drinks alcohol occasionally she is also on antihypertensive medication she does not have any known drugs or food allergy she also rated the pain to be nine on a scale of one to ten",
+    "asr_reconstructed": "may i address you as miss or mrs mrs how old are you i am fortyfive years old doctor so ma what brought you here today i have been having this pain in my [SUB:abdominal->abdomen] two days ago [INS:it] [SUB:suddenly->started] two days ago so can you tell me more about it yes the pain started suddenly like and it was a very sharp pain and [INS:it] [SUB:its->is] how should i explain it [INS:it] is located at my [SUB:abdominal->abdomen] at the right side the top [INS:the top] side of my abdomen and the pain it moves from my back [INS:and] like it moves around my back and my right shoulder okay i will just ask [SUB:you->a] few questions about that you said the pain is located at [SUB:your->the] right side of your abdomen yes doctor and the pain is sharp right yes doctor is there anything that makes the pain worse yes the pain becomes worse like whenever i eat after eating the pain becomes [SUB:worst->worse] and it is [INS:it] [SUB:always->mostly] happen when i take [DEL:a] food that has plenty fats okay what about anything that makes you feel relieved i have not really noticed any okay are [SUB:they->there] other symptoms associated with the pain yes since this pain started i have been having nausea i have been vomiting you get [SUB:if->even] [DEL:una] i have been having fever and if you look at me now you [DEL:will] see that i have jaundice okay is there any other symptoms like change in bowel [SUB:movement->movements] or change in urine color no no no what about [INS:the] weight loss no no [DEL:no] doctor do you think you are losing weight no i am not [INS:i am not] losing weight [DEL:you] look at me [DEL:now] i am not losing weight do you eat [SUB:at->well] [DEL:all] or [DEL:do] you have [SUB:a->lost] loss of appetite i do not have loss of appetite i eat very well just [INS:that] after eating the food [DEL:and] the pain [SUB:will->starts] [DEL:start] have you gone through any trauma no doctor have you had any surgery done recently no no no okay on a scale of [INS:one to] [SUB:oneten->ten] can you describe how severe the pain is i will rate it nine i will say nine [SUB:cos->because] it is very very severe the pain is very very bad so i will say nine okay what do you think [SUB:will->would] be causing this doctor i do not know i do not know are you worried about it i am very worried about it because the pain is just too much do you have any medical history yes i do yes i do what is it if i may ask i am [INS:i am] hypertensive [INS:i] [SUB:and->was] i was diagnosed [INS:of high] [SUB:on->of] hypertension that was five years ago and i have been on medication do you have any family medical history [INS:yes] [SUB:yesyes->yes] my mother yes i do my mother had [INS:had gall] gallstones okay i am going to ask [SUB:you->a] few more questions about yourself if you do not mind okay go ahead do you smoke no no [INS:no] i do not good do you drink alcohol yes i do okay like how many drinks [INS:do] you take when you drink i take few [INS:few] drinks i do not take [INS:i do not take] much okay how frequent is that it is not frequent it is just once in a blue moon occasionally okay do you take any recreational drug no no no i do not are you on any routine or [SUB:prescribe medication->prescribed medications] yes i am i am [INS:i am] on [INS:on] antihypertension drugs antihypertension medication i have been on it for five years now do you have any drug or food allergies no no no [INS:not] none that i know [DEL:of] do you have any question for me no doctor i do not okay that will be all for the consultation thanks for talking with me today from my findings mrs [INS:ogetu] [SUB:ogechukwu->aged] fortyfive is having [DEL:a] severe abdominal pain [SUB:which->we] started two days ago the pain is located at the right upper quadrant of her abdominal and [SUB:it->is] radiates to the back and her right shoulder according to her the pain becomes [SUB:worst->worse] after eating especially when [INS:when] she eats fatty food the pain is associated with nausea and vomiting fever and jaundice she does not have any history of change in bowel movement or urine color weight loss or loss of appetite she does not also have any history of trauma or have not [SUB:under->undergone] [DEL:gone] any surgery [INS:recently] according to her medical history she was diagnosed of hypertension five years ago [DEL:and] has been on medication the only family medical history she has is her mother [SUB:where->who] had [SUB:gastrings->gallstones] she does not smoke nor take any recreational drugs but drinks alcohol occasionally she is also on antihypertensive medication she does not have any known drugs or food allergy she also rated the pain to [INS:be] nine on a scale of [SUB:oneten onefortyeightthreeonefortyeightthreeonefortyeightthree hundred->one to ten] [DEL:and onethirtyfiveninetyeight]",
+    "audio_file": "data/final_audio/c46ac19c-edf5-4bc2-8162-110ff52ef78b_654f83104ac72fe1dfb3396f740cf6e1_qfrd3ivN.wav",
+    "model": "qwen3_iaa3",
+    "wer": 0.1075,
+    "errors": [
+      {
+        "error_id": "substitute_0",
+        "error_type": "SUB",
+        "error_match": "[SUB:abdominal->abdomen]",
+        "error_text": "abdominal->abdomen",
+        "position": 0,
+        "start_idx": 154,
+        "end_idx": 178,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_1",
+        "error_type": "INS",
+        "error_match": "[INS:it]",
+        "error_text": "it",
+        "position": 1,
+        "start_idx": 192,
+        "end_idx": 200,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_2",
+        "error_type": "SUB",
+        "error_match": "[SUB:suddenly->started]",
+        "error_text": "suddenly->started",
+        "position": 2,
+        "start_idx": 201,
+        "end_idx": 224,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_3",
+        "error_type": "INS",
+        "error_match": "[INS:it]",
+        "error_text": "it",
+        "position": 3,
+        "start_idx": 339,
+        "end_idx": 347,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_4",
+        "error_type": "SUB",
+        "error_match": "[SUB:its->is]",
+        "error_text": "its->is",
+        "position": 4,
+        "start_idx": 348,
+        "end_idx": 361,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_5",
+        "error_type": "INS",
+        "error_match": "[INS:it]",
+        "error_text": "it",
+        "position": 5,
+        "start_idx": 386,
+        "end_idx": 394,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_6",
+        "error_type": "SUB",
+        "error_match": "[SUB:abdominal->abdomen]",
+        "error_text": "abdominal->abdomen",
+        "position": 6,
+        "start_idx": 412,
+        "end_idx": 436,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_7",
+        "error_type": "INS",
+        "error_match": "[INS:the top]",
+        "error_text": "the top",
+        "position": 7,
+        "start_idx": 463,
+        "end_idx": 476,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_8",
+        "error_type": "INS",
+        "error_match": "[INS:and]",
+        "error_text": "and",
+        "position": 8,
+        "start_idx": 531,
+        "end_idx": 540,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_9",
+        "error_type": "SUB",
+        "error_match": "[SUB:you->a]",
+        "error_text": "you->a",
+        "position": 9,
+        "start_idx": 613,
+        "end_idx": 625,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_10",
+        "error_type": "SUB",
+        "error_match": "[SUB:your->the]",
+        "error_text": "your->the",
+        "position": 10,
+        "start_idx": 683,
+        "end_idx": 698,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_11",
+        "error_type": "SUB",
+        "error_match": "[SUB:worst->worse]",
+        "error_text": "worst->worse",
+        "position": 11,
+        "start_idx": 897,
+        "end_idx": 915,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_12",
+        "error_type": "INS",
+        "error_match": "[INS:it]",
+        "error_text": "it",
+        "position": 12,
+        "start_idx": 926,
+        "end_idx": 934,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_13",
+        "error_type": "SUB",
+        "error_match": "[SUB:always->mostly]",
+        "error_text": "always->mostly",
+        "position": 13,
+        "start_idx": 935,
+        "end_idx": 955,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_14",
+        "error_type": "DEL",
+        "error_match": "[DEL:a]",
+        "error_text": "a",
+        "position": 14,
+        "start_idx": 975,
+        "end_idx": 982,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_15",
+        "error_type": "SUB",
+        "error_match": "[SUB:they->there]",
+        "error_text": "they->there",
+        "position": 15,
+        "start_idx": 1102,
+        "end_idx": 1119,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_16",
+        "error_type": "SUB",
+        "error_match": "[SUB:if->even]",
+        "error_text": "if->even",
+        "position": 16,
+        "start_idx": 1243,
+        "end_idx": 1257,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_17",
+        "error_type": "DEL",
+        "error_match": "[DEL:una]",
+        "error_text": "una",
+        "position": 17,
+        "start_idx": 1258,
+        "end_idx": 1267,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_18",
+        "error_type": "DEL",
+        "error_match": "[DEL:will]",
+        "error_text": "will",
+        "position": 18,
+        "start_idx": 1323,
+        "end_idx": 1333,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_19",
+        "error_type": "SUB",
+        "error_match": "[SUB:movement->movements]",
+        "error_text": "movement->movements",
+        "position": 19,
+        "start_idx": 1413,
+        "end_idx": 1438,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_20",
+        "error_type": "INS",
+        "error_match": "[INS:the]",
+        "error_text": "the",
+        "position": 20,
+        "start_idx": 1484,
+        "end_idx": 1493,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_21",
+        "error_type": "DEL",
+        "error_match": "[DEL:no]",
+        "error_text": "no",
+        "position": 21,
+        "start_idx": 1512,
+        "end_idx": 1520,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_22",
+        "error_type": "INS",
+        "error_match": "[INS:i am not]",
+        "error_text": "i am not",
+        "position": 22,
+        "start_idx": 1575,
+        "end_idx": 1589,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_23",
+        "error_type": "DEL",
+        "error_match": "[DEL:you]",
+        "error_text": "you",
+        "position": 23,
+        "start_idx": 1604,
+        "end_idx": 1613,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_24",
+        "error_type": "DEL",
+        "error_match": "[DEL:now]",
+        "error_text": "now",
+        "position": 24,
+        "start_idx": 1625,
+        "end_idx": 1634,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_25",
+        "error_type": "SUB",
+        "error_match": "[SUB:at->well]",
+        "error_text": "at->well",
+        "position": 25,
+        "start_idx": 1669,
+        "end_idx": 1683,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_26",
+        "error_type": "DEL",
+        "error_match": "[DEL:all]",
+        "error_text": "all",
+        "position": 26,
+        "start_idx": 1684,
+        "end_idx": 1693,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_27",
+        "error_type": "DEL",
+        "error_match": "[DEL:do]",
+        "error_text": "do",
+        "position": 27,
+        "start_idx": 1697,
+        "end_idx": 1705,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_28",
+        "error_type": "SUB",
+        "error_match": "[SUB:a->lost]",
+        "error_text": "a->lost",
+        "position": 28,
+        "start_idx": 1715,
+        "end_idx": 1728,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_29",
+        "error_type": "INS",
+        "error_match": "[INS:that]",
+        "error_text": "that",
+        "position": 29,
+        "start_idx": 1798,
+        "end_idx": 1808,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_30",
+        "error_type": "DEL",
+        "error_match": "[DEL:and]",
+        "error_text": "and",
+        "position": 30,
+        "start_idx": 1831,
+        "end_idx": 1840,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_31",
+        "error_type": "SUB",
+        "error_match": "[SUB:will->starts]",
+        "error_text": "will->starts",
+        "position": 31,
+        "start_idx": 1850,
+        "end_idx": 1868,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_32",
+        "error_type": "DEL",
+        "error_match": "[DEL:start]",
+        "error_text": "start",
+        "position": 32,
+        "start_idx": 1869,
+        "end_idx": 1880,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_33",
+        "error_type": "INS",
+        "error_match": "[INS:one to]",
+        "error_text": "one to",
+        "position": 33,
+        "start_idx": 1991,
+        "end_idx": 2003,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_34",
+        "error_type": "SUB",
+        "error_match": "[SUB:oneten->ten]",
+        "error_text": "oneten->ten",
+        "position": 34,
+        "start_idx": 2004,
+        "end_idx": 2021,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_35",
+        "error_type": "SUB",
+        "error_match": "[SUB:cos->because]",
+        "error_text": "cos->because",
+        "position": 35,
+        "start_idx": 2098,
+        "end_idx": 2116,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_36",
+        "error_type": "SUB",
+        "error_match": "[SUB:will->would]",
+        "error_text": "will->would",
+        "position": 36,
+        "start_idx": 2208,
+        "end_idx": 2225,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_37",
+        "error_type": "INS",
+        "error_match": "[INS:i am]",
+        "error_text": "i am",
+        "position": 37,
+        "start_idx": 2442,
+        "end_idx": 2452,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_38",
+        "error_type": "INS",
+        "error_match": "[INS:i]",
+        "error_text": "i",
+        "position": 38,
+        "start_idx": 2466,
+        "end_idx": 2473,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_39",
+        "error_type": "SUB",
+        "error_match": "[SUB:and->was]",
+        "error_text": "and->was",
+        "position": 39,
+        "start_idx": 2474,
+        "end_idx": 2488,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_40",
+        "error_type": "INS",
+        "error_match": "[INS:of high]",
+        "error_text": "of high",
+        "position": 40,
+        "start_idx": 2505,
+        "end_idx": 2518,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_41",
+        "error_type": "SUB",
+        "error_match": "[SUB:on->of]",
+        "error_text": "on->of",
+        "position": 41,
+        "start_idx": 2519,
+        "end_idx": 2531,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_42",
+        "error_type": "INS",
+        "error_match": "[INS:yes]",
+        "error_text": "yes",
+        "position": 42,
+        "start_idx": 2638,
+        "end_idx": 2647,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_43",
+        "error_type": "SUB",
+        "error_match": "[SUB:yesyes->yes]",
+        "error_text": "yesyes->yes",
+        "position": 43,
+        "start_idx": 2648,
+        "end_idx": 2665,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_44",
+        "error_type": "INS",
+        "error_match": "[INS:had gall]",
+        "error_text": "had gall",
+        "position": 44,
+        "start_idx": 2699,
+        "end_idx": 2713,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_45",
+        "error_type": "SUB",
+        "error_match": "[SUB:you->a]",
+        "error_text": "you->a",
+        "position": 45,
+        "start_idx": 2748,
+        "end_idx": 2760,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_46",
+        "error_type": "INS",
+        "error_match": "[INS:no]",
+        "error_text": "no",
+        "position": 46,
+        "start_idx": 2847,
+        "end_idx": 2855,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_47",
+        "error_type": "INS",
+        "error_match": "[INS:do]",
+        "error_text": "do",
+        "position": 47,
+        "start_idx": 2926,
+        "end_idx": 2934,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_48",
+        "error_type": "INS",
+        "error_match": "[INS:few]",
+        "error_text": "few",
+        "position": 48,
+        "start_idx": 2970,
+        "end_idx": 2979,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_49",
+        "error_type": "INS",
+        "error_match": "[INS:i do not take]",
+        "error_text": "i do not take",
+        "position": 49,
+        "start_idx": 3001,
+        "end_idx": 3020,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_50",
+        "error_type": "SUB",
+        "error_match": "[SUB:prescribe medication->prescribed medications]",
+        "error_text": "prescribe medication->prescribed medications",
+        "position": 50,
+        "start_idx": 3198,
+        "end_idx": 3248,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_51",
+        "error_type": "INS",
+        "error_match": "[INS:i am]",
+        "error_text": "i am",
+        "position": 51,
+        "start_idx": 3263,
+        "end_idx": 3273,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_52",
+        "error_type": "INS",
+        "error_match": "[INS:on]",
+        "error_text": "on",
+        "position": 52,
+        "start_idx": 3277,
+        "end_idx": 3285,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_53",
+        "error_type": "INS",
+        "error_match": "[INS:not]",
+        "error_text": "not",
+        "position": 53,
+        "start_idx": 3422,
+        "end_idx": 3431,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_54",
+        "error_type": "DEL",
+        "error_match": "[DEL:of]",
+        "error_text": "of",
+        "position": 54,
+        "start_idx": 3449,
+        "end_idx": 3457,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_55",
+        "error_type": "INS",
+        "error_match": "[INS:ogetu]",
+        "error_text": "ogetu",
+        "position": 55,
+        "start_idx": 3606,
+        "end_idx": 3617,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_56",
+        "error_type": "SUB",
+        "error_match": "[SUB:ogechukwu->aged]",
+        "error_text": "ogechukwu->aged",
+        "position": 56,
+        "start_idx": 3618,
+        "end_idx": 3639,
+        "is_medical": true
+      },
+      {
+        "error_id": "delete_57",
+        "error_type": "DEL",
+        "error_match": "[DEL:a]",
+        "error_text": "a",
+        "position": 57,
+        "start_idx": 3660,
+        "end_idx": 3667,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_58",
+        "error_type": "SUB",
+        "error_match": "[SUB:which->we]",
+        "error_text": "which->we",
+        "position": 58,
+        "start_idx": 3690,
+        "end_idx": 3705,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_59",
+        "error_type": "SUB",
+        "error_match": "[SUB:it->is]",
+        "error_text": "it->is",
+        "position": 59,
+        "start_idx": 3796,
+        "end_idx": 3808,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_60",
+        "error_type": "SUB",
+        "error_match": "[SUB:worst->worse]",
+        "error_text": "worst->worse",
+        "position": 60,
+        "start_idx": 3887,
+        "end_idx": 3905,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_61",
+        "error_type": "INS",
+        "error_match": "[INS:when]",
+        "error_text": "when",
+        "position": 61,
+        "start_idx": 3935,
+        "end_idx": 3945,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_62",
+        "error_type": "SUB",
+        "error_match": "[SUB:under->undergone]",
+        "error_text": "under->undergone",
+        "position": 62,
+        "start_idx": 4195,
+        "end_idx": 4217,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_63",
+        "error_type": "DEL",
+        "error_match": "[DEL:gone]",
+        "error_text": "gone",
+        "position": 63,
+        "start_idx": 4218,
+        "end_idx": 4228,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_64",
+        "error_type": "INS",
+        "error_match": "[INS:recently]",
+        "error_text": "recently",
+        "position": 64,
+        "start_idx": 4241,
+        "end_idx": 4255,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_65",
+        "error_type": "DEL",
+        "error_match": "[DEL:and]",
+        "error_text": "and",
+        "position": 65,
+        "start_idx": 4338,
+        "end_idx": 4347,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_66",
+        "error_type": "SUB",
+        "error_match": "[SUB:where->who]",
+        "error_text": "where->who",
+        "position": 66,
+        "start_idx": 4425,
+        "end_idx": 4441,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_67",
+        "error_type": "SUB",
+        "error_match": "[SUB:gastrings->gallstones]",
+        "error_text": "gastrings->gallstones",
+        "position": 67,
+        "start_idx": 4446,
+        "end_idx": 4473,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_68",
+        "error_type": "INS",
+        "error_match": "[INS:be]",
+        "error_text": "be",
+        "position": 68,
+        "start_idx": 4677,
+        "end_idx": 4685,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_69",
+        "error_type": "SUB",
+        "error_match": "[SUB:oneten onefortyeightthreeonefortyeightthreeonefortyeightthree hundred->one to ten]",
+        "error_text": "oneten onefortyeightthreeonefortyeightthreeonefortyeightthree hundred->one to ten",
+        "position": 69,
+        "start_idx": 4705,
+        "end_idx": 4792,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_70",
+        "error_type": "DEL",
+        "error_match": "[DEL:and onethirtyfiveninetyeight]",
+        "error_text": "and onethirtyfiveninetyeight",
+        "position": 70,
+        "start_idx": 4793,
+        "end_idx": 4827,
+        "is_medical": true
+      }
+    ],
+    "error_count": 71,
+    "index": 0
+  },
+  {
+    "utterance_id": "day5_consultation04",
+    "human_transcript": "hello hello i am doctor smith from babylon hello hello i am   hi there can you confirm your full name date of birth and the first line of your address please okay  my my name is  and  i am twenty twenty three years old   can you confirm your date of birth and first line   nineteen ninetysix okay and your address and my address is  sixty  yep okay and are you in a  are you in a private place where you can have a consultation yes definitely yes okay what can i do for you today  yeah sorry i i i cannot hear you what can i do for you today   i am having really bad tummy ache like at the bottom at the lower bottom of my belly  right okay and when did it start few days ago i was all well was being well everything was o k  kind of really getting worse big time  okay and whereabouts in your in your abdomen do you think it is can you just  explain to me whereabouts it is yeah it is like lower in my lower abdomen yeah okay and is it in the middle or to one side no it is it is in the middle yeah and is it around your belly button or above or below that below mainly below and is it there all the time or does it come and go it is there all the time okay and what would you say it is on a scale of one to ten with ten being the worst pain you have ever had it may be a eight okay  and have you are you having any other symptoms with it yeah like as in like i have like vaginal sometime bleeding but it is like  light colour and sometimes  i am constipated like   k so when when was your last period my   last month  two weeks ago i am sorry about two weeks two or three weeks ago okay and are you having sexual intercourse regularly yes yes i do four weeks ago  four days ago sorry i just had okay are you using any contraception yes i am i usuallycome last one year and  it is called implant okay and do you have your  do you have your periods when you since you have been using the  implanon do you have periods  regularly or are they sporadic yes i do close they they are spreading like not the time it changes yeah right okay and was your last period normal yeah and any problems with nausea or vomiting yeah i feel  like  i feel like vomiting but i i get nauseated but i do not vomit right and have you been eating and drinking okay yeah yeah my regular activities  okay yeah but it is just very uncomfortable at times and   okay and have you opened your bowels normally  have you opened your bowels normally  yeah last week last week i had problems but this week it seems to be you have been to the toilet what problems did you have last week like i was constipated for a week like i was having problem okay and what about this week yeah that seems to be okay  it is it is fine now yeah are you going to the toilet every day  is the stool normal or diarrhea or  hard stool yeah it is  no  it is it is  now yeah not like   and you said you would had some vaginal bleeding yes yes i did is that is your period stopped yeah my period stopped like last two weeks ago but and this is different i can i can see because it is not really like dark it is just light pink colour so i do not know what is it i cannot say what exactly what it is but i  okay any abnormal discharge other discharge or just the slight bleeding just very small extra like a vaginal discharge just okay any difficulty breathing or pain in your shoulders or anything like that no and have you had a high temperature have you got a thermometer no i do not i i should be okay  do you feel feverish no and do you feel faint when you stand up no what have you been doing for the last few days have you been at work as normal or have to stay at home  yes i have  i am doing i work  regular other activities like cooking and stuff everything but it seems okay when i get the pain it is just very bad okay but you said the pains constant there all the time or is it getting worse from time to time it is getting worse  okay  have you had any other  medical problems in the past yeah i have allergy i have amoxicillin  amoxicillin allergy pardon okay anything else have you had any operations  no have you had any pregnancies no have you taken a pregnancy test this time  when was that yeah i did yeah yeah  around like a month ago yeah okay but not since you have had the abdominal pain okay and any surgery in the past  and what is your job day to day yeah i am a teacher school teacher  okay and who do you live with at home my husband and my husbands family okay and do you smoke or drink alcohol i do not know you take any other drugs no have you been abroad recently yes whereabouts to out in the air pardon  a year ago not recently no  and any problems passing water no any pain or strong smell or having to go more often than normal so i i i do not really i have noticed that i do not really go up that high before so yeah i do drink a lot though right okay and any  any  weight loss or blood in the stool or urine yes i have  as i said i have some i guess discharge and pain but then i  there is is not a lot of discharge   okay fine  i think with the abdominal pain as it is getting worse and it is been going on for the last few days  it would be very helpful to be able to examine you properly would you be happy to have an examination with a doctor yes  okay  so what we can do is we can arrange a face to face examination where they can  see you in a clinic and do a abdominal examination and advise further from there when we got more of an idea what is causing the problem  would you  be happy to call the support line and arrange that appointment yes okay that is fine so we will we will do that in the meantime if it gets a lot worse  or you you are not holding any fluids down  then we should see you before then  did you say your pregnancy test was a month ago yes okay   your implanon was just put in a year ago yes the other thing we would need to do is to to do a pregnancy test today if possible i will do it so if you can do that today and if it is positive we need to see you straight away so give us a call back yes okay have you got any other questions  right okay so if you call the support line and make an appointment we will go from there  thank you thank you thank you very thanks bye",
+    "human_transcript_ner": "hello hello i am doctor smith from babylon hello hello i am   hi there can you confirm your full name date of birth and the first line of your address please okay  my my name is  and  i am twenty twenty three years old   can you confirm your date of birth and first line   nineteen ninetysix okay and your address and my address is  sixty  yep okay and are you in a  are you in a private place where you can have a consultation yes definitely yes okay what can i do for you today  yeah sorry i i i cannot hear you what can i do for you today   i am having really bad [PROBLEM: tummy ache] like at the bottom at the lower bottom of my [ANATOMICAL_STRUCTURE: belly]  right okay and when did it start few days ago i was all well was being well everything was o k  kind of really getting worse big time  okay and whereabouts in your in your [ANATOMICAL_STRUCTURE: abdomen] do you think it is can you just  explain to me whereabouts it is yeah it is like lower in my lower [ANATOMICAL_STRUCTURE: abdomen] yeah okay and is it in the middle or to one side no it is it is in the middle yeah and is it around your [ANATOMICAL_STRUCTURE: belly button] or above or below that below mainly below and is it there all the time or does it come and go it is there all the time okay and what would you say it is on a scale of one to ten with ten being the [SEVERITY: worst] [PROBLEM: pain] you have ever had it may be a eight okay  and have you are you having any other [PROBLEM: symptoms] with it yeah like as in like i have like [ANATOMICAL_STRUCTURE: vaginal] sometime [PROBLEM: bleeding] but it is like  light colour and sometimes  i am [PROBLEM: constipated] like   k so when when was your last period my   last month  two weeks ago i am sorry about two weeks two or three weeks ago okay and are you having sexual intercourse regularly yes yes i do four weeks ago  four days ago sorry i just had okay are you using any contraception yes i am i usuallycome last one year and  it is called implant okay and do you have your  do you have your periods when you since you have been using the  implanon do you have periods  regularly or are they sporadic yes i do close they they are spreading like not the time it changes yeah right okay and was your last period normal yeah and any [PROBLEM: problems] with [PROBLEM: nausea] or [PROBLEM: vomiting] yeah i feel  like  i feel like [PROBLEM: vomiting] but i i get [PROBLEM: nauseated] but i do not [PROBLEM: vomit] right and have you been eating and drinking okay yeah yeah my regular activities  okay yeah but it is just very uncomfortable at times and   okay and have you opened your bowels normally  have you opened your bowels normally  yeah last week last week i had [PROBLEM: problems] but this week it seems to be you have been to the toilet what [PROBLEM: problems] did you have last week like i was [PROBLEM: constipated] for a week like i was having [PROBLEM: problem] okay and what about this week yeah that seems to be okay  it is it is fine now yeah are you going to the toilet every day  is the stool normal or [PROBLEM: diarrhea] or  hard stool yeah it is  no  it is it is  now yeah not like   and you said you would had some [PROBLEM: vaginal bleeding] yes yes i did is that is your period stopped yeah my period stopped like last two weeks ago but and this is different i can i can see because it is not really like dark it is just light pink colour so i do not know what is it i cannot say what exactly what it is but i  okay any [PROBLEM: abnormal discharge] other [PROBLEM: discharge] or just the slight [PROBLEM: bleeding] just very small extra like a [PROBLEM: vaginal discharge] just okay any [PROBLEM: difficulty breathing] or [PROBLEM: pain] in your [ANATOMICAL_STRUCTURE: shoulders] or anything like that no and have you had a [BM_RESULT: high] [BODY_MEASUREMENT: temperature] have you got a [MEDICAL_DEVICE: thermometer] no i do not i i should be okay  do you feel [PROBLEM: feverish] no and do you feel faint when you stand up no what have you been doing for the last few days have you been at work as normal or have to stay at home  yes i have  i am doing i work  regular other activities like cooking and stuff everything but it seems okay when i get the [PROBLEM: pain] it is just very bad okay but you said the [PROBLEM: pains] constant there all the time or is it getting worse from time to time it is getting worse  okay  have you had any other  [PROBLEM: medical problems] in the past yeah i have allergy i have [MEDICINE: amoxicillin  amoxicillin] allergy pardon okay anything else have you had any [PROCEDURE: operations]  no have you had any [PROBLEM: pregnancies] no have you taken a [PROCEDURE: pregnancy test] this time  when was that yeah i did yeah yeah  around like a month ago yeah okay but not since you have had the [PROBLEM: abdominal pain] okay and any [PROCEDURE: surgery] in the past  and what is your job day to day yeah i am a teacher school teacher  okay and who do you live with at home my husband and my husbands family okay and do you [SUBSTANCE_ABUSE: smoke] or [SUBSTANCE_ABUSE: drink alcohol] i do not know you take any other [SUBSTANCE_ABUSE: drugs] no have you been abroad recently yes whereabouts to out in the air pardon  a year ago not recently no  and any [PROBLEM: problems] passing water no any [PROBLEM: pain] or strong smell or having to go more often than normal so i i i do not really i have noticed that i do not really go up that high before so yeah i do [SUBSTANCE_ABUSE: drink] a lot though right okay and any  any  [PROBLEM: weight loss] or [PROBLEM: blood in the stool or urine] yes i have  as i said i have some i guess [PROBLEM: discharge] and [PROBLEM: pain] but then i  there is is not a lot of [PROBLEM: discharge]   okay fine  i think with the [PROBLEM: abdominal pain] as it is getting [SEVERITY: worse] and it is been going on for the last few days  it would be very helpful to be able to examine you properly would you be happy to have an examination with a doctor yes  okay  so what we can do is we can arrange a face to face examination where they can  see you in a clinic and do a [PROCEDURE: abdominal examination] and advise further from there when we got more of an idea what is causing the [PROBLEM: problem]  would you  be happy to call the support line and arrange that appointment yes okay that is fine so we will we will do that in the meantime if it gets a lot worse  or you you are not holding any [MEDICINE: fluids] down  then we should see you before then  did you say your [LABORATORY_DATA: pregnancy test] was a month ago yes okay   your implanon was just put in a year ago yes the other thing we would need to do is to to do a [LABORATORY_DATA: pregnancy test] today if possible i will do it so if you can do that today and if it is positive we need to see you straight away so give us a call back yes okay have you got any other questions  right okay so if you call the support line and make an appointment we will go from there  thank you thank you thank you very thanks bye",
+    "asr_transcript": "hello i am doctor smith from babylon hello hi there can you confirm your full name date of birth and the first line of your address please okay my name is and i am twentytwo years old can you confirm your date of birth and the first line i can third of may one thousand nine hundred and ninetysix okay and your address and my address is sixth stallone yep okay and are you in a private place you can have a consultation yes definitely okay what can i do for you today yeah sorry i i cannot hear you what can i do for you today  my i am having really bad tummy ache like at the bottom at the lower bottom of my belly right okay and when did it start a few days ago i was all well i was doing well everything was okay just started and it is kind of really getting worse with time okay and whereabouts in your in your abdomen do you think it is can you explain to me whereabouts it is yeah it is like lower in my lower abdomen okay and is it in the middle or to one side no it is it is in the middle and is it around your belly button or above or below that below yeah below and is it there all the time or does it come and go it is there all the time okay and what would you say is on a scale of one to ten with ten being the worst pain you have ever had maybe eight okay  and have you are you having any other symptoms with it yeah like as in like i have like vaginal sometimes bleeding but it is like light color and sometimes i am i am constipated like okay so when was when was your last period my  last month two weeks ago i am sorry about two weeks three weeks weeks ago okay and are you having sexual intercourse regularly yes yes i do four weeks ago four days ago sorry i just are you using any contraception yes i am i use it from last one year and i am implan implanon it is called implanon okay and do you have your period do you have your periods when you since you have been using the implan implanon do you have periods yes i do or are they sporadic no they they are sporadic like not the time it changes yeah right okay and was your last period normal yeah and any problems with nausea or vomiting yeah i feel nauseous like i feel like vomiting but i do not i get nauseated but i do not vomit right and have you been eating and drinking okay yeah yeah my regular activities and drinking and other things okay yeah but it just are very uncomfortable at times okay and have you opened your bowels normally have you opened your bowels normally  you have been to the yeah last week i had problems but this week it is what problems did you have last week like i was constipated for a week like i was having problems okay and what about this week yeah it seems to be okay it is it is fine now you go to the toilet every day yeah and is the stool normal or diarrhea or hard stool no it it it is normal now yeah not like that  and you said you would had some vaginal bleeding yes yes is that since your period stopped yeah my period stopped like last two weeks ago okay and this is different i can i can see it because it is not really like dark it is just light pinkish color so i do not know what is it i cannot say exactly what it is but i see it in the any abnormal discharge other discharge or just this light bleeding just there is no extra other vaginal discharge just okay any difficulty breathing or pain in your shoulders or anything like that no and have you had a high temperature have you got a thermometer no i do not should be okay do you feel feverish no and do you feel faint when you stand up no what have you been doing for the last few days have you been at work as normal or had to stay at home yes i have been i am doing my work doing regular other activities like cooking and stuff everything it seems okay just when i get the pain it is just very bad okay but you said the pains constant there all the time or is it getting worse from time to time it is getting yeah okay  have you had any other  medical problems in the past yeah i have allergy to amoxicillin pardon amoxicillin allergy okay anything else have you had any operations no have you had any pregnancies no have you taken a pregnancy test this time yeah i did when was that yeah like around like a month ago okay but not since you have had the abdominal pain okay and any surgery in the past  and what is your job day to day yeah i am a teacher okay and who do you live with at home my husband and my husbands family okay and do you smoke or drink alcohol no do you take any other drugs no have you been abroad recently yes whereabouts to about in a year pardon oh a year ago not recently nope  and any problems passing water no any pain or strong smell or having to go more often than normal no i i i do not really i have noticed that i do not really go often like before though yeah i do i do drink a lot though right okay and any change any weight weight loss or blood in the stool or urine yes i have as i said i have some i can see some discharge and bleeding but then i do not other than that there is no other discharge fine  i think with the abdominal pain as it is getting worse and it is been going on for the last few days  it would be very helpful to be able to examine you properly would you be happy to have an examination with the doctor yes okay  so what we can do is we can arrange a facetoface examination where they can  see you in a clinic and do an abdominal examination and advise further from them when we have got more of an idea what is causing the problem  would you be happy to call the support line and arrange that appointment yes okay that is fine so we will we will do that in the meantime if it gets a lot worse  or you you are not holding any fluids down  then we should see you before then  did you say your pregnancy test was a month ago yes okay  and your implant on was just put in a year ago yes the other thing we would need to do is to to do a pregnancy test today if possible okay i will be so if you can do that today and if it is positive we need to see you straight away so give us a call back yes okay have you got any other questions right okay so if you call the support line and make an appointment we will go from there thank you thanks bye",
+    "asr_reconstructed": "hello [DEL:hello] i am doctor smith from babylon hello [DEL:hello i am] hi there can you confirm your full name date of birth and the first line of your address please okay my [DEL:my] name is and i am [SUB:twenty->twentytwo] [DEL:twenty three] years old can you confirm your date of birth and [INS:the] first line [INS:i can third of may one thousand nine hundred] [SUB:nineteen->and] ninetysix okay and your address and my address is [INS:sixth] [SUB:sixty->stallone] yep okay and are you in a [DEL:are you in a] private place [DEL:where] you can have a consultation yes definitely [DEL:yes] okay what can i do for you today yeah sorry i i [DEL:i] cannot hear you what can i do for you today [INS:my] i am having really bad tummy ache like at the bottom at the lower bottom of my belly right okay and when did it start [INS:a] few days ago i was all well [INS:i] was [SUB:being->doing] well everything was [INS:okay just started and] [SUB:o k->it is] kind of really getting worse [SUB:big->with] time okay and whereabouts in your in your abdomen do you think it is can you [DEL:just] explain to me whereabouts it is yeah it is like lower in my lower abdomen [DEL:yeah] okay and is it in the middle or to one side no it is it is in the middle [DEL:yeah] and is it around your belly button or above or below that below [SUB:mainly->yeah] below and is it there all the time or does it come and go it is there all the time okay and what would you say [DEL:it] is on a scale of one to ten with ten being the worst pain you have ever had [SUB:it->maybe] [DEL:may be a] eight okay and have you are you having any other symptoms with it yeah like as in like i have like vaginal [SUB:sometime->sometimes] bleeding but it is like light [SUB:colour->color] and sometimes i am [INS:i am] constipated like [SUB:k->okay] so when [INS:was] when was your last period my last month two weeks ago i am sorry about two weeks [DEL:two or] three weeks [INS:weeks] ago okay and are you having sexual intercourse regularly yes yes i do four weeks ago four days ago sorry i just [DEL:had okay] are you using any contraception yes i am i [INS:use it] [SUB:usuallycome->from] last one year and [INS:i am implan implanon] it is called [SUB:implant->implanon] okay and do you have your [INS:period] do you have your periods when you since you have been using the [INS:implan] implanon do you have periods [INS:yes i] [SUB:regularly->do] or are they sporadic [SUB:yes->no] [DEL:i do close] they they are [SUB:spreading->sporadic] like not the time it changes yeah right okay and was your last period normal yeah and any problems with nausea or vomiting yeah i feel [INS:nauseous] like i feel like vomiting but i [INS:do not] i get nauseated but i do not vomit right and have you been eating and drinking okay yeah yeah my regular activities [INS:and drinking and other things] okay yeah but it [SUB:is just->just are] very uncomfortable at times [DEL:and] okay and have you opened your bowels normally have you opened your bowels normally [INS:you have been] [SUB:yeah last week->to the yeah] last week i had problems but this week it [SUB:seems->is] [DEL:to be you have been to the toilet] what problems did you have last week like i was constipated for a week like i was having [SUB:problem->problems] okay and what about this week yeah [SUB:that->it] seems to be okay it is it is fine now [DEL:yeah are] you [SUB:going->go] to the toilet every day [INS:yeah and] is the stool normal or diarrhea or hard stool [SUB:yeah->no] it [SUB:is->it] [DEL:no] it is [SUB:it->normal] [DEL:is] now yeah not like [INS:that] and you said you would had some vaginal bleeding yes yes [DEL:i did] is that [SUB:is->since] your period stopped yeah my period stopped like last two weeks ago [SUB:but->okay] and this is different i can i can see [INS:it] because it is not really like dark it is just light [SUB:pink colour->pinkish color] so i do not know what is it i cannot say [DEL:what] exactly what it is but i [INS:see it in] [SUB:okay->the] any abnormal discharge other discharge or just [SUB:the slight->this light] bleeding just [INS:there] [SUB:very small->is no] extra [SUB:like->other] [DEL:a] vaginal discharge just okay any difficulty breathing or pain in your shoulders or anything like that no and have you had a high temperature have you got a thermometer no i do not [DEL:i i] should be okay do you feel feverish no and do you feel faint when you stand up no what have you been doing for the last few days have you been at work as normal or [SUB:have->had] to stay at home yes i have [INS:been] i am doing [SUB:i->my] work [INS:doing] regular other activities like cooking and stuff everything [DEL:but] it seems okay [INS:just] when i get the pain it is just very bad okay but you said the pains constant there all the time or is it getting worse from time to time it is getting [SUB:worse->yeah] okay have you had any other medical problems in the past yeah i have allergy [SUB:i have amoxicillin->to amoxicillin pardon] amoxicillin allergy [DEL:pardon] okay anything else have you had any operations no have you had any pregnancies no have you taken a pregnancy test this time [INS:yeah i did] when was that yeah [SUB:i->like] [DEL:did yeah yeah] around like a month ago [DEL:yeah] okay but not since you have had the abdominal pain okay and any surgery in the past and what is your job day to day yeah i am a teacher [DEL:school teacher] okay and who do you live with at home my husband and my husbands family okay and do you smoke or drink alcohol [SUB:i->no] do [DEL:not know] you take any other drugs no have you been abroad recently yes whereabouts to [SUB:out->about] in [SUB:the air->a year] pardon [INS:oh] a year ago not recently [SUB:no->nope] and any problems passing water no any pain or strong smell or having to go more often than normal [SUB:so->no] i i i do not really i have noticed that i do not really go [SUB:up that->often like] [DEL:high] before [SUB:so->though] yeah i do [INS:i do] drink a lot though right okay and any [INS:change] any weight [INS:weight] loss or blood in the stool or urine yes i have as i said i have some i [INS:can see] [SUB:guess->some] discharge and [SUB:pain->bleeding] but then i [INS:do not] [SUB:there is is not a lot of->other than that there is no other] discharge [DEL:okay] fine i think with the abdominal pain as it is getting worse and it is been going on for the last few days it would be very helpful to be able to examine you properly would you be happy to have an examination with [SUB:a->the] doctor yes okay so what we can do is we can arrange a [SUB:face->facetoface] [DEL:to face] examination where they can see you in a clinic and do [SUB:a->an] abdominal examination and advise further from [SUB:there->them] when we [INS:have] got more of an idea what is causing the problem would you be happy to call the support line and arrange that appointment yes okay that is fine so we will we will do that in the meantime if it gets a lot worse or you you are not holding any fluids down then we should see you before then did you say your pregnancy test was a month ago yes okay [INS:and] your [INS:implant] [SUB:implanon->on] was just put in a year ago yes the other thing we would need to do is to to do a pregnancy test today if possible [INS:okay] i will [SUB:do->be] [DEL:it] so if you can do that today and if it is positive we need to see you straight away so give us a call back yes okay have you got any other questions right okay so if you call the support line and make an appointment we will go from there thank you [DEL:thank you thank you very] thanks bye",
+    "audio_file": "data/final_audio/day5_consultation04_stereo.wav",
+    "model": "qwen3_iaa3",
+    "wer": 0.1631205673758865,
+    "errors": [
+      {
+        "error_id": "delete_0",
+        "error_type": "DEL",
+        "error_match": "[DEL:hello]",
+        "error_text": "hello",
+        "position": 0,
+        "start_idx": 6,
+        "end_idx": 17,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_1",
+        "error_type": "DEL",
+        "error_match": "[DEL:hello i am]",
+        "error_text": "hello i am",
+        "position": 1,
+        "start_idx": 55,
+        "end_idx": 71,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_2",
+        "error_type": "DEL",
+        "error_match": "[DEL:my]",
+        "error_text": "my",
+        "position": 2,
+        "start_idx": 176,
+        "end_idx": 184,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_3",
+        "error_type": "SUB",
+        "error_match": "[SUB:twenty->twentytwo]",
+        "error_text": "twenty->twentytwo",
+        "position": 3,
+        "start_idx": 202,
+        "end_idx": 225,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_4",
+        "error_type": "DEL",
+        "error_match": "[DEL:twenty three]",
+        "error_text": "twenty three",
+        "position": 4,
+        "start_idx": 226,
+        "end_idx": 244,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_5",
+        "error_type": "INS",
+        "error_match": "[INS:the]",
+        "error_text": "the",
+        "position": 5,
+        "start_idx": 294,
+        "end_idx": 303,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_6",
+        "error_type": "INS",
+        "error_match": "[INS:i can third of may one thousand nine hundred]",
+        "error_text": "i can third of may one thousand nine hundred",
+        "position": 6,
+        "start_idx": 315,
+        "end_idx": 365,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_7",
+        "error_type": "SUB",
+        "error_match": "[SUB:nineteen->and]",
+        "error_text": "nineteen->and",
+        "position": 7,
+        "start_idx": 366,
+        "end_idx": 385,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_8",
+        "error_type": "INS",
+        "error_match": "[INS:sixth]",
+        "error_text": "sixth",
+        "position": 8,
+        "start_idx": 436,
+        "end_idx": 447,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_9",
+        "error_type": "SUB",
+        "error_match": "[SUB:sixty->stallone]",
+        "error_text": "sixty->stallone",
+        "position": 9,
+        "start_idx": 448,
+        "end_idx": 469,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_10",
+        "error_type": "DEL",
+        "error_match": "[DEL:are you in a]",
+        "error_text": "are you in a",
+        "position": 10,
+        "start_idx": 496,
+        "end_idx": 514,
+        "is_medical": true
+      },
+      {
+        "error_id": "delete_11",
+        "error_type": "DEL",
+        "error_match": "[DEL:where]",
+        "error_text": "where",
+        "position": 11,
+        "start_idx": 529,
+        "end_idx": 540,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_12",
+        "error_type": "DEL",
+        "error_match": "[DEL:yes]",
+        "error_text": "yes",
+        "position": 12,
+        "start_idx": 584,
+        "end_idx": 593,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_13",
+        "error_type": "DEL",
+        "error_match": "[DEL:i]",
+        "error_text": "i",
+        "position": 13,
+        "start_idx": 642,
+        "end_idx": 649,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_14",
+        "error_type": "INS",
+        "error_match": "[INS:my]",
+        "error_text": "my",
+        "position": 14,
+        "start_idx": 694,
+        "end_idx": 702,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_15",
+        "error_type": "INS",
+        "error_match": "[INS:a]",
+        "error_text": "a",
+        "position": 15,
+        "start_idx": 821,
+        "end_idx": 828,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_16",
+        "error_type": "INS",
+        "error_match": "[INS:i]",
+        "error_text": "i",
+        "position": 16,
+        "start_idx": 857,
+        "end_idx": 864,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_17",
+        "error_type": "SUB",
+        "error_match": "[SUB:being->doing]",
+        "error_text": "being->doing",
+        "position": 17,
+        "start_idx": 869,
+        "end_idx": 887,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_18",
+        "error_type": "INS",
+        "error_match": "[INS:okay just started and]",
+        "error_text": "okay just started and",
+        "position": 18,
+        "start_idx": 908,
+        "end_idx": 935,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_19",
+        "error_type": "SUB",
+        "error_match": "[SUB:o k->it is]",
+        "error_text": "o k->it is",
+        "position": 19,
+        "start_idx": 936,
+        "end_idx": 952,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_20",
+        "error_type": "SUB",
+        "error_match": "[SUB:big->with]",
+        "error_text": "big->with",
+        "position": 20,
+        "start_idx": 982,
+        "end_idx": 997,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_21",
+        "error_type": "DEL",
+        "error_match": "[DEL:just]",
+        "error_text": "just",
+        "position": 21,
+        "start_idx": 1075,
+        "end_idx": 1085,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_22",
+        "error_type": "DEL",
+        "error_match": "[DEL:yeah]",
+        "error_text": "yeah",
+        "position": 22,
+        "start_idx": 1160,
+        "end_idx": 1170,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_23",
+        "error_type": "DEL",
+        "error_match": "[DEL:yeah]",
+        "error_text": "yeah",
+        "position": 23,
+        "start_idx": 1244,
+        "end_idx": 1254,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_24",
+        "error_type": "SUB",
+        "error_match": "[SUB:mainly->yeah]",
+        "error_text": "mainly->yeah",
+        "position": 24,
+        "start_idx": 1319,
+        "end_idx": 1337,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_25",
+        "error_type": "DEL",
+        "error_match": "[DEL:it]",
+        "error_text": "it",
+        "position": 25,
+        "start_idx": 1449,
+        "end_idx": 1457,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_26",
+        "error_type": "SUB",
+        "error_match": "[SUB:it->maybe]",
+        "error_text": "it->maybe",
+        "position": 26,
+        "start_idx": 1534,
+        "end_idx": 1549,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_27",
+        "error_type": "DEL",
+        "error_match": "[DEL:may be a]",
+        "error_text": "may be a",
+        "position": 27,
+        "start_idx": 1550,
+        "end_idx": 1564,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_28",
+        "error_type": "SUB",
+        "error_match": "[SUB:sometime->sometimes]",
+        "error_text": "sometime->sometimes",
+        "position": 28,
+        "start_idx": 1672,
+        "end_idx": 1697,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_29",
+        "error_type": "SUB",
+        "error_match": "[SUB:colour->color]",
+        "error_text": "colour->color",
+        "position": 29,
+        "start_idx": 1728,
+        "end_idx": 1747,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_30",
+        "error_type": "INS",
+        "error_match": "[INS:i am]",
+        "error_text": "i am",
+        "position": 30,
+        "start_idx": 1767,
+        "end_idx": 1777,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_31",
+        "error_type": "SUB",
+        "error_match": "[SUB:k->okay]",
+        "error_text": "k->okay",
+        "position": 31,
+        "start_idx": 1795,
+        "end_idx": 1808,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_32",
+        "error_type": "INS",
+        "error_match": "[INS:was]",
+        "error_text": "was",
+        "position": 32,
+        "start_idx": 1817,
+        "end_idx": 1826,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_33",
+        "error_type": "DEL",
+        "error_match": "[DEL:two or]",
+        "error_text": "two or",
+        "position": 33,
+        "start_idx": 1908,
+        "end_idx": 1920,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_34",
+        "error_type": "INS",
+        "error_match": "[INS:weeks]",
+        "error_text": "weeks",
+        "position": 34,
+        "start_idx": 1933,
+        "end_idx": 1944,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_35",
+        "error_type": "DEL",
+        "error_match": "[DEL:had okay]",
+        "error_text": "had okay",
+        "position": 35,
+        "start_idx": 2057,
+        "end_idx": 2071,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_36",
+        "error_type": "INS",
+        "error_match": "[INS:use it]",
+        "error_text": "use it",
+        "position": 36,
+        "start_idx": 2115,
+        "end_idx": 2127,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_37",
+        "error_type": "SUB",
+        "error_match": "[SUB:usuallycome->from]",
+        "error_text": "usuallycome->from",
+        "position": 37,
+        "start_idx": 2128,
+        "end_idx": 2151,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_38",
+        "error_type": "INS",
+        "error_match": "[INS:i am implan implanon]",
+        "error_text": "i am implan implanon",
+        "position": 38,
+        "start_idx": 2170,
+        "end_idx": 2196,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_39",
+        "error_type": "SUB",
+        "error_match": "[SUB:implant->implanon]",
+        "error_text": "implant->implanon",
+        "position": 39,
+        "start_idx": 2210,
+        "end_idx": 2233,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_40",
+        "error_type": "INS",
+        "error_match": "[INS:period]",
+        "error_text": "period",
+        "position": 40,
+        "start_idx": 2260,
+        "end_idx": 2272,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_41",
+        "error_type": "INS",
+        "error_match": "[INS:implan]",
+        "error_text": "implan",
+        "position": 41,
+        "start_idx": 2337,
+        "end_idx": 2349,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_42",
+        "error_type": "INS",
+        "error_match": "[INS:yes i]",
+        "error_text": "yes i",
+        "position": 42,
+        "start_idx": 2379,
+        "end_idx": 2390,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_43",
+        "error_type": "SUB",
+        "error_match": "[SUB:regularly->do]",
+        "error_text": "regularly->do",
+        "position": 43,
+        "start_idx": 2391,
+        "end_idx": 2410,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_44",
+        "error_type": "SUB",
+        "error_match": "[SUB:yes->no]",
+        "error_text": "yes->no",
+        "position": 44,
+        "start_idx": 2432,
+        "end_idx": 2445,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_45",
+        "error_type": "DEL",
+        "error_match": "[DEL:i do close]",
+        "error_text": "i do close",
+        "position": 45,
+        "start_idx": 2446,
+        "end_idx": 2462,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_46",
+        "error_type": "SUB",
+        "error_match": "[SUB:spreading->sporadic]",
+        "error_text": "spreading->sporadic",
+        "position": 46,
+        "start_idx": 2477,
+        "end_idx": 2502,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_47",
+        "error_type": "INS",
+        "error_match": "[INS:nauseous]",
+        "error_text": "nauseous",
+        "position": 47,
+        "start_idx": 2638,
+        "end_idx": 2652,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_48",
+        "error_type": "INS",
+        "error_match": "[INS:do not]",
+        "error_text": "do not",
+        "position": 48,
+        "start_idx": 2685,
+        "end_idx": 2697,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_49",
+        "error_type": "INS",
+        "error_match": "[INS:and drinking and other things]",
+        "error_text": "and drinking and other things",
+        "position": 49,
+        "start_idx": 2814,
+        "end_idx": 2849,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_50",
+        "error_type": "SUB",
+        "error_match": "[SUB:is just->just are]",
+        "error_text": "is just->just are",
+        "position": 50,
+        "start_idx": 2867,
+        "end_idx": 2890,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_51",
+        "error_type": "DEL",
+        "error_match": "[DEL:and]",
+        "error_text": "and",
+        "position": 51,
+        "start_idx": 2919,
+        "end_idx": 2928,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_52",
+        "error_type": "INS",
+        "error_match": "[INS:you have been]",
+        "error_text": "you have been",
+        "position": 52,
+        "start_idx": 3012,
+        "end_idx": 3031,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_53",
+        "error_type": "SUB",
+        "error_match": "[SUB:yeah last week->to the yeah]",
+        "error_text": "yeah last week->to the yeah",
+        "position": 53,
+        "start_idx": 3032,
+        "end_idx": 3065,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_54",
+        "error_type": "SUB",
+        "error_match": "[SUB:seems->is]",
+        "error_text": "seems->is",
+        "position": 54,
+        "start_idx": 3108,
+        "end_idx": 3123,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_55",
+        "error_type": "DEL",
+        "error_match": "[DEL:to be you have been to the toilet]",
+        "error_text": "to be you have been to the toilet",
+        "position": 55,
+        "start_idx": 3124,
+        "end_idx": 3163,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_56",
+        "error_type": "SUB",
+        "error_match": "[SUB:problem->problems]",
+        "error_text": "problem->problems",
+        "position": 56,
+        "start_idx": 3253,
+        "end_idx": 3276,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_57",
+        "error_type": "SUB",
+        "error_match": "[SUB:that->it]",
+        "error_text": "that->it",
+        "position": 57,
+        "start_idx": 3312,
+        "end_idx": 3326,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_58",
+        "error_type": "DEL",
+        "error_match": "[DEL:yeah are]",
+        "error_text": "yeah are",
+        "position": 58,
+        "start_idx": 3365,
+        "end_idx": 3379,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_59",
+        "error_type": "SUB",
+        "error_match": "[SUB:going->go]",
+        "error_text": "going->go",
+        "position": 59,
+        "start_idx": 3384,
+        "end_idx": 3399,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_60",
+        "error_type": "INS",
+        "error_match": "[INS:yeah and]",
+        "error_text": "yeah and",
+        "position": 60,
+        "start_idx": 3424,
+        "end_idx": 3438,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_61",
+        "error_type": "SUB",
+        "error_match": "[SUB:yeah->no]",
+        "error_text": "yeah->no",
+        "position": 61,
+        "start_idx": 3485,
+        "end_idx": 3499,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_62",
+        "error_type": "SUB",
+        "error_match": "[SUB:is->it]",
+        "error_text": "is->it",
+        "position": 62,
+        "start_idx": 3503,
+        "end_idx": 3515,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_63",
+        "error_type": "DEL",
+        "error_match": "[DEL:no]",
+        "error_text": "no",
+        "position": 63,
+        "start_idx": 3516,
+        "end_idx": 3524,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_64",
+        "error_type": "SUB",
+        "error_match": "[SUB:it->normal]",
+        "error_text": "it->normal",
+        "position": 64,
+        "start_idx": 3531,
+        "end_idx": 3547,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_65",
+        "error_type": "DEL",
+        "error_match": "[DEL:is]",
+        "error_text": "is",
+        "position": 65,
+        "start_idx": 3548,
+        "end_idx": 3556,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_66",
+        "error_type": "INS",
+        "error_match": "[INS:that]",
+        "error_text": "that",
+        "position": 66,
+        "start_idx": 3575,
+        "end_idx": 3585,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_67",
+        "error_type": "DEL",
+        "error_match": "[DEL:i did]",
+        "error_text": "i did",
+        "position": 67,
+        "start_idx": 3643,
+        "end_idx": 3654,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_68",
+        "error_type": "SUB",
+        "error_match": "[SUB:is->since]",
+        "error_text": "is->since",
+        "position": 68,
+        "start_idx": 3663,
+        "end_idx": 3678,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_69",
+        "error_type": "SUB",
+        "error_match": "[SUB:but->okay]",
+        "error_text": "but->okay",
+        "position": 69,
+        "start_idx": 3746,
+        "end_idx": 3761,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_70",
+        "error_type": "INS",
+        "error_match": "[INS:it]",
+        "error_text": "it",
+        "position": 70,
+        "start_idx": 3800,
+        "end_idx": 3808,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_71",
+        "error_type": "SUB",
+        "error_match": "[SUB:pink colour->pinkish color]",
+        "error_text": "pink colour->pinkish color",
+        "position": 71,
+        "start_idx": 3861,
+        "end_idx": 3893,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_72",
+        "error_type": "DEL",
+        "error_match": "[DEL:what]",
+        "error_text": "what",
+        "position": 72,
+        "start_idx": 3935,
+        "end_idx": 3945,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_73",
+        "error_type": "INS",
+        "error_match": "[INS:see it in]",
+        "error_text": "see it in",
+        "position": 73,
+        "start_idx": 3971,
+        "end_idx": 3986,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_74",
+        "error_type": "SUB",
+        "error_match": "[SUB:okay->the]",
+        "error_text": "okay->the",
+        "position": 74,
+        "start_idx": 3987,
+        "end_idx": 4002,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_75",
+        "error_type": "SUB",
+        "error_match": "[SUB:the slight->this light]",
+        "error_text": "the slight->this light",
+        "position": 75,
+        "start_idx": 4050,
+        "end_idx": 4078,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_76",
+        "error_type": "INS",
+        "error_match": "[INS:there]",
+        "error_text": "there",
+        "position": 76,
+        "start_idx": 4093,
+        "end_idx": 4104,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_77",
+        "error_type": "SUB",
+        "error_match": "[SUB:very small->is no]",
+        "error_text": "very small->is no",
+        "position": 77,
+        "start_idx": 4105,
+        "end_idx": 4128,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_78",
+        "error_type": "SUB",
+        "error_match": "[SUB:like->other]",
+        "error_text": "like->other",
+        "position": 78,
+        "start_idx": 4135,
+        "end_idx": 4152,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_79",
+        "error_type": "DEL",
+        "error_match": "[DEL:a]",
+        "error_text": "a",
+        "position": 79,
+        "start_idx": 4153,
+        "end_idx": 4160,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_80",
+        "error_type": "DEL",
+        "error_match": "[DEL:i i]",
+        "error_text": "i i",
+        "position": 80,
+        "start_idx": 4340,
+        "end_idx": 4349,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_81",
+        "error_type": "SUB",
+        "error_match": "[SUB:have->had]",
+        "error_text": "have->had",
+        "position": 81,
+        "start_idx": 4514,
+        "end_idx": 4529,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_82",
+        "error_type": "INS",
+        "error_match": "[INS:been]",
+        "error_text": "been",
+        "position": 82,
+        "start_idx": 4557,
+        "end_idx": 4567,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_83",
+        "error_type": "SUB",
+        "error_match": "[SUB:i->my]",
+        "error_text": "i->my",
+        "position": 83,
+        "start_idx": 4579,
+        "end_idx": 4590,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_84",
+        "error_type": "INS",
+        "error_match": "[INS:doing]",
+        "error_text": "doing",
+        "position": 84,
+        "start_idx": 4596,
+        "end_idx": 4607,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_85",
+        "error_type": "DEL",
+        "error_match": "[DEL:but]",
+        "error_text": "but",
+        "position": 85,
+        "start_idx": 4667,
+        "end_idx": 4676,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_86",
+        "error_type": "INS",
+        "error_match": "[INS:just]",
+        "error_text": "just",
+        "position": 86,
+        "start_idx": 4691,
+        "end_idx": 4701,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_87",
+        "error_type": "SUB",
+        "error_match": "[SUB:worse->yeah]",
+        "error_text": "worse->yeah",
+        "position": 87,
+        "start_idx": 4853,
+        "end_idx": 4870,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_88",
+        "error_type": "SUB",
+        "error_match": "[SUB:i have amoxicillin->to amoxicillin pardon]",
+        "error_text": "i have amoxicillin->to amoxicillin pardon",
+        "position": 88,
+        "start_idx": 4948,
+        "end_idx": 4995,
+        "is_medical": true
+      },
+      {
+        "error_id": "delete_89",
+        "error_type": "DEL",
+        "error_match": "[DEL:pardon]",
+        "error_text": "pardon",
+        "position": 89,
+        "start_idx": 5016,
+        "end_idx": 5028,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_90",
+        "error_type": "INS",
+        "error_match": "[INS:yeah i did]",
+        "error_text": "yeah i did",
+        "position": 90,
+        "start_idx": 5153,
+        "end_idx": 5169,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_91",
+        "error_type": "SUB",
+        "error_match": "[SUB:i->like]",
+        "error_text": "i->like",
+        "position": 91,
+        "start_idx": 5189,
+        "end_idx": 5202,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_92",
+        "error_type": "DEL",
+        "error_match": "[DEL:did yeah yeah]",
+        "error_text": "did yeah yeah",
+        "position": 92,
+        "start_idx": 5203,
+        "end_idx": 5222,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_93",
+        "error_type": "DEL",
+        "error_match": "[DEL:yeah]",
+        "error_text": "yeah",
+        "position": 93,
+        "start_idx": 5247,
+        "end_idx": 5257,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_94",
+        "error_type": "DEL",
+        "error_match": "[DEL:school teacher]",
+        "error_text": "school teacher",
+        "position": 94,
+        "start_idx": 5394,
+        "end_idx": 5414,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_95",
+        "error_type": "SUB",
+        "error_match": "[SUB:i->no]",
+        "error_text": "i->no",
+        "position": 95,
+        "start_idx": 5526,
+        "end_idx": 5537,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_96",
+        "error_type": "DEL",
+        "error_match": "[DEL:not know]",
+        "error_text": "not know",
+        "position": 96,
+        "start_idx": 5541,
+        "end_idx": 5555,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_97",
+        "error_type": "SUB",
+        "error_match": "[SUB:out->about]",
+        "error_text": "out->about",
+        "position": 97,
+        "start_idx": 5633,
+        "end_idx": 5649,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_98",
+        "error_type": "SUB",
+        "error_match": "[SUB:the air->a year]",
+        "error_text": "the air->a year",
+        "position": 98,
+        "start_idx": 5653,
+        "end_idx": 5674,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_99",
+        "error_type": "INS",
+        "error_match": "[INS:oh]",
+        "error_text": "oh",
+        "position": 99,
+        "start_idx": 5682,
+        "end_idx": 5690,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_100",
+        "error_type": "SUB",
+        "error_match": "[SUB:no->nope]",
+        "error_text": "no->nope",
+        "position": 100,
+        "start_idx": 5715,
+        "end_idx": 5729,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_101",
+        "error_type": "SUB",
+        "error_match": "[SUB:so->no]",
+        "error_text": "so->no",
+        "position": 101,
+        "start_idx": 5828,
+        "end_idx": 5840,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_102",
+        "error_type": "SUB",
+        "error_match": "[SUB:up that->often like]",
+        "error_text": "up that->often like",
+        "position": 102,
+        "start_idx": 5900,
+        "end_idx": 5925,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_103",
+        "error_type": "DEL",
+        "error_match": "[DEL:high]",
+        "error_text": "high",
+        "position": 103,
+        "start_idx": 5926,
+        "end_idx": 5936,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_104",
+        "error_type": "SUB",
+        "error_match": "[SUB:so->though]",
+        "error_text": "so->though",
+        "position": 104,
+        "start_idx": 5944,
+        "end_idx": 5960,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_105",
+        "error_type": "INS",
+        "error_match": "[INS:i do]",
+        "error_text": "i do",
+        "position": 105,
+        "start_idx": 5971,
+        "end_idx": 5981,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_106",
+        "error_type": "INS",
+        "error_match": "[INS:change]",
+        "error_text": "change",
+        "position": 106,
+        "start_idx": 6020,
+        "end_idx": 6032,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_107",
+        "error_type": "INS",
+        "error_match": "[INS:weight]",
+        "error_text": "weight",
+        "position": 107,
+        "start_idx": 6044,
+        "end_idx": 6056,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_108",
+        "error_type": "INS",
+        "error_match": "[INS:can see]",
+        "error_text": "can see",
+        "position": 108,
+        "start_idx": 6128,
+        "end_idx": 6141,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_109",
+        "error_type": "SUB",
+        "error_match": "[SUB:guess->some]",
+        "error_text": "guess->some",
+        "position": 109,
+        "start_idx": 6142,
+        "end_idx": 6159,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_110",
+        "error_type": "SUB",
+        "error_match": "[SUB:pain->bleeding]",
+        "error_text": "pain->bleeding",
+        "position": 110,
+        "start_idx": 6174,
+        "end_idx": 6194,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_111",
+        "error_type": "INS",
+        "error_match": "[INS:do not]",
+        "error_text": "do not",
+        "position": 111,
+        "start_idx": 6206,
+        "end_idx": 6218,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_112",
+        "error_type": "SUB",
+        "error_match": "[SUB:there is is not a lot of->other than that there is no other]",
+        "error_text": "there is is not a lot of->other than that there is no other",
+        "position": 112,
+        "start_idx": 6219,
+        "end_idx": 6284,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_113",
+        "error_type": "DEL",
+        "error_match": "[DEL:okay]",
+        "error_text": "okay",
+        "position": 113,
+        "start_idx": 6295,
+        "end_idx": 6305,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_114",
+        "error_type": "SUB",
+        "error_match": "[SUB:a->the]",
+        "error_text": "a->the",
+        "position": 114,
+        "start_idx": 6519,
+        "end_idx": 6531,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_115",
+        "error_type": "SUB",
+        "error_match": "[SUB:face->facetoface]",
+        "error_text": "face->facetoface",
+        "position": 115,
+        "start_idx": 6586,
+        "end_idx": 6608,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_116",
+        "error_type": "DEL",
+        "error_match": "[DEL:to face]",
+        "error_text": "to face",
+        "position": 116,
+        "start_idx": 6609,
+        "end_idx": 6622,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_117",
+        "error_type": "SUB",
+        "error_match": "[SUB:a->an]",
+        "error_text": "a->an",
+        "position": 117,
+        "start_idx": 6677,
+        "end_idx": 6688,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_118",
+        "error_type": "SUB",
+        "error_match": "[SUB:there->them]",
+        "error_text": "there->them",
+        "position": 118,
+        "start_idx": 6735,
+        "end_idx": 6752,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_119",
+        "error_type": "INS",
+        "error_match": "[INS:have]",
+        "error_text": "have",
+        "position": 119,
+        "start_idx": 6761,
+        "end_idx": 6771,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_120",
+        "error_type": "INS",
+        "error_match": "[INS:and]",
+        "error_text": "and",
+        "position": 120,
+        "start_idx": 7116,
+        "end_idx": 7125,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_121",
+        "error_type": "INS",
+        "error_match": "[INS:implant]",
+        "error_text": "implant",
+        "position": 121,
+        "start_idx": 7131,
+        "end_idx": 7144,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_122",
+        "error_type": "SUB",
+        "error_match": "[SUB:implanon->on]",
+        "error_text": "implanon->on",
+        "position": 122,
+        "start_idx": 7145,
+        "end_idx": 7163,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_123",
+        "error_type": "INS",
+        "error_match": "[INS:okay]",
+        "error_text": "okay",
+        "position": 123,
+        "start_idx": 7278,
+        "end_idx": 7288,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_124",
+        "error_type": "SUB",
+        "error_match": "[SUB:do->be]",
+        "error_text": "do->be",
+        "position": 124,
+        "start_idx": 7296,
+        "end_idx": 7308,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_125",
+        "error_type": "DEL",
+        "error_match": "[DEL:it]",
+        "error_text": "it",
+        "position": 125,
+        "start_idx": 7309,
+        "end_idx": 7317,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_126",
+        "error_type": "DEL",
+        "error_match": "[DEL:thank you thank you very]",
+        "error_text": "thank you thank you very",
+        "position": 126,
+        "start_idx": 7565,
+        "end_idx": 7595,
+        "is_medical": false
+      }
+    ],
+    "error_count": 127,
+    "index": 1
+  }
+]
