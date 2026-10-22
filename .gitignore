@@ -27,3 +27,7 @@ data/us_datasets/*
 # Ignore logs and shell scripts
 logs/
 *.sh
+
+# Python bytecode is runtime state, never source.
+__pycache__/
+*.pyc
