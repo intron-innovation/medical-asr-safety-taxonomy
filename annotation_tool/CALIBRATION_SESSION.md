@@ -1,10 +1,22 @@
-# Calibration session — do these ten together
+# Calibration session
 
 **15 minutes, both annotators, before anyone works alone.**
 
-Every item below is a real error from a previous round where the two of you chose
-differently. Work through them one at a time: both commit to an answer, then compare,
-then read the note. Argue where you disagree — that is the point of the session.
+## How the session runs
+
+**Session `RES0051` is the live one.** It sits first in both models on
+`/annotate_subset` — 3 errors on Qwen3, 8 on Gemma 3n, 11 in total. Annotate it
+**together, out loud**: both commit to an answer, then compare, then discuss.
+
+The ten worked items further down are the reference sheet. Use them when you hit a
+disagreement on `RES0051` — each one is a real error the two of you labelled differently
+in an earlier round, with the settled answer.
+
+Afterwards each of you finishes the **other two sessions alone**, 75 errors each.
+
+---
+
+## Reference sheet: ten errors you previously disagreed on
 
 ---
 
@@ -74,8 +86,8 @@ document is correct.**
 
 ## After the session
 
-Each of you finishes the remaining errors alone. Do not compare notes — the whole point
-is to measure whether the shared understanding holds.
+Each of you finishes the other two sessions alone. Do not compare notes once `RES0051`
+is done — the whole point is to measure whether the shared understanding holds.
 
 If you hit something the guide does not cover, note the error ID and keep going. Do not
 invent a convention mid-session; that is how the last two rounds diverged.

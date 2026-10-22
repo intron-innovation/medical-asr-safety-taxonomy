@@ -1,5 +1,649 @@
 [
   {
+    "utterance_id": "RES0051",
+    "human_transcript": " would you mind starting with telling me what brought you in  sure i have had this cough for the past five days and it does not seem to be getting any better so i am just here to ask you what it what it possibly could be  has the cough been getting any better staying the same or getting worse over these last five days  i think it is getting worse  are you bringing up any any phlegm  no  okay are you bringing up any blood  no  okay have you been coughing at night time as well is it interfering with your sleep or is the cough just during the day   it is mostly during the day and in the evenings it does not wake me up from sleep  okay and any triggers that you have notice five days ago or anything that changed at that time to bring on the cough  no nothing  okay and have you been having any other symptoms with the cough  i have a sore throat and i feel like i cannot taste things the same  okay  are you having any pain with swallowing either liquids or food   mostly with foods  okay and when did the sore throat start  it started up around the same time as my cough  okay and you cannot taste your food as well and when did you notice that  that was two days ago  okay have you noticed any any loss of smell  no no i do not think so  okay and have you had any difficulties breathing or short of breath  no  okay and have you had any symptoms like this before  no nothing like this  okay and how has your energy level been have you been fatigued  a little bit yes  okay have you had any changes to your vision or or hearing  no  any mucous or pain or discharge from either your ears or nose  no  okay so your nose has not been runny but has it felt congested   no  okay have you had any fevers or chills  i do not know about fevers i guess i was feeling a little bit hot last night but i did not take my temperature  okay so possibly a fever i will certainly check your temperature today to investigate that have you had any night sweats   no night sweats  alright and have you had any weight loss in the last few months  no  okay and have you had any chest pain  no chest pain  have you noticed any heart palpitations or heart racing  no  right okay have you had any wheezing  no  alright and have you had any abdominal pain  no  any nausea or vomiting  no  okay how about any urinary problems  no  problems like diarrhea or constipation  no  okay and any muscle aches or or body pains  no  have you had any rashes  no  okay so the cough started five days ago you had a sore throat you have been feeling a bit more tired and have not been able to taste your food for the last couple of days  yes  okay have you been diagnosed with any medical conditions before   no i do not think so  okay nothing you see a physician regularly for  no  alright do you take any medications  no  alright do you know if you have any allergies to medications   possibly penicillin  okay do you know what the reaction was  i think i had a rash  okay are your immunizations up to date  i think yeah i think so  excellent and any surgeries before   no  and have you been in the hospital for any reason   no no  okay and are you in school now  i am in grade six  okay cool what is your favorite class  i would say it is math  awesome and has there been anybody in your class who is been sick  no everythings virtual right now  okay cool so have you traveled anywhere   no  alright and who are you living with  i live with two of my younger siblings and my mom and dad  okay and is there any physical or verbal abuse in the home  no  okay so you do feel safe in the home  yes yes  okay and do you smoke cigarettes  i do not  okay and i know some people in your age group might even start using other types of substances have you noticed anything like that or have you used anything like that   no  okay and so do you drink do you drink alcohol  i have had a sip of wine but that is that is about it  okay great and has anybody in your family had had similar symptoms  no i do not think so  okay  and anybody in the family have asthma or lung conditions  i think my aunt has asthma but i was i was checked for asthma when i was younger and it turns out i do not have it  okay and any diseases that run in the family like genetic or congenital  i think crohns disease  okay and  who in the family has that  my father  okay so that was everything that i wanted to ask today was there anything else you wanted to tell me  no that is it what do you think i have  well it is sounding like it could be most likely an infectious type of process going on with the possibility of having a fever with a cough and sore throat so we will do a physical exam and also some investigations which will include a covid test today because some of these symptoms do overlap but it could be something like the common cold i do not know the virus that is bringing this on but it is not necessarily covid but because we are doing the test it will require fourteen days of self isolation we will get back to you with the results as quickly as we can  okay sounds great thank you",
+    "human_transcript_ner": " would you mind starting with telling me what brought you in  sure i have had this [PROBLEM: cough] for the past five days and it does not seem to be getting any better so i am just here to ask you what it what it possibly could be  has the [PROBLEM: cough] been getting any better staying the same or getting worse over these last five days  i think it is getting worse  are you bringing up any any [MEDICINE: phlegm]  no  okay are you bringing up any blood  no  okay have you been [PROBLEM: coughing] at night time as well is it interfering with your [BODY_FUNCTION: sleep] or is the [PROBLEM: cough] just during the day   it is mostly during the day and in the evenings it does not wake me up from sleep  okay and any triggers that you have notice five days ago or anything that changed at that time to bring on the [PROBLEM: cough]  no nothing  okay and have you been having any other [PROBLEM: symptoms] with the [PROBLEM: cough]  i have a [PROBLEM: sore throat] and i feel like i cannot taste things the same  okay  are you having any [PROBLEM: pain] with swallowing either liquids or food   mostly with foods  okay and when did the [PROBLEM: sore throat] start  it started up around the same time as my [PROBLEM: cough]  okay and you cannot taste your food as well and when did you notice that  that was two days ago  okay have you noticed any any [PROBLEM: loss of smell]  no no i do not think so  okay and have you had any [PROBLEM: difficulties breathing] or [PROBLEM: short of breath]  no  okay and have you had any [PROBLEM: symptoms] like this before  no nothing like this  okay and how has your energy level been have you been [PROBLEM: fatigued]  a little bit yes  okay have you had any [BF_RESULT: changes] to your [BODY_FUNCTION: vision] or or [BODY_FUNCTION: hearing]  no  any [PROBLEM: mucous] or [PROBLEM: pain] or [PROBLEM: discharge] from either your [ANATOMICAL_STRUCTURE: ears] or [ANATOMICAL_STRUCTURE: nose]  no  okay so your [ANATOMICAL_STRUCTURE: nose] has not been [PROBLEM: runny] but has it felt [PROBLEM: congested]   no  okay have you had any [PROBLEM: fevers] or [PROBLEM: chills]  i do not know about [PROBLEM: fevers] i guess i was feeling a little bit hot last night but i did not take my [BODY_MEASUREMENT: temperature]  okay so possibly a [PROBLEM: fever] i will certainly check your [BODY_MEASUREMENT: temperature] today to investigate that have you had any [PROBLEM: night sweats]   no [PROBLEM: night sweats]  alright and have you had any [PROBLEM: weight loss] in the last few months  no  okay and have you had any [ANATOMICAL_STRUCTURE: chest] [PROBLEM: pain]  no [ANATOMICAL_STRUCTURE: chest] [PROBLEM: pain]  have you noticed any [ANATOMICAL_STRUCTURE: heart] [PROBLEM: palpitations] or [ANATOMICAL_STRUCTURE: heart] [PROBLEM: racing]  no  right okay have you had any [PROBLEM: wheezing]  no  alright and have you had any [PROBLEM: abdominal pain]  no  any [PROBLEM: nausea] or [PROBLEM: vomiting]  no  okay how about any [PROBLEM: urinary problems]  no  [PROBLEM: problems] like [PROBLEM: diarrhea] or [PROBLEM: constipation]  no  okay and any [ANATOMICAL_STRUCTURE: muscle] [PROBLEM: aches] or or [ANATOMICAL_STRUCTURE: body] [PROBLEM: pains]  no  have you had any [PROBLEM: rashes]  no  okay so the [PROBLEM: cough] started five days ago you had a [PROBLEM: sore throat] you have been feeling a bit more [PROBLEM: tired] and have not been able to taste your food for the last couple of days  yes  okay have you been diagnosed with any [PROBLEM: medical conditions] before   no i do not think so  okay nothing you see a physician regularly for  no  alright do you take any [MEDICINE: medications]  no  alright do you know if you have any allergies to [MEDICINE: medications]   possibly [MEDICINE: penicillin]  okay do you know what the reaction was  i think i had a [PROBLEM: rash]  okay are your [PROCEDURE: immunizations] up to date  i think yeah i think so  excellent and any [PROCEDURE: surgeries] before   no  and have you been in the hospital for any reason   no no  okay and are you in school now  i am in grade six  okay cool what is your favorite class  i would say it is math  awesome and has there been anybody in your class who is been sick  no everythings virtual right now  okay cool so have you traveled anywhere   no  alright and who are you living with  i live with two of my younger [FAMILY: siblings] and my mom and [FAMILY: dad]  okay and is there any physical or verbal abuse in the home  no  okay so you do feel safe in the home  yes yes  okay and do you [SUBSTANCE_ABUSE: smoke cigarettes]  i do not  okay and i know some people in your age group might even start using other types of [SUBSTANCE_ABUSE: substances] have you noticed anything like that or have you used anything like that   no  okay and so do you drink do you drink [SUBSTANCE_ABUSE: alcohol]  i have had a sip of [SUBSTANCE_ABUSE: wine] but that is that is about it  okay great and has anybody in your family had had similar [PROBLEM: symptoms]  no i do not think so  okay  and anybody in the family have [PROBLEM: asthma] or [ANATOMICAL_STRUCTURE: lung] [PROBLEM: conditions]  i think my aunt has [PROBLEM: asthma] but i was i was checked for [PROBLEM: asthma] when i was younger and it turns out i do not have it  okay and any [PROBLEM: diseases] that run in the family like genetic or congenital  i think [PROBLEM: crohns disease]  okay and  who in the family has that  my father  okay so that was everything that i wanted to ask today was there anything else you wanted to tell me  no that is it what do you think i have  well it is sounding like it could be most likely an [PROBLEM: infectious type of process] going on with the possibility of having a [PROBLEM: fever] with a [PROBLEM: cough] and [PROBLEM: sore] [ANATOMICAL_STRUCTURE: throat] so we will do a [PROCEDURE: physical exam] and also some investigations which will include a covid test today because some of these [PROBLEM: symptoms] do overlap but it could be something like the common cold i do not know the [PROBLEM: virus] that is bringing this on but it is not necessarily covid but because we are doing the test it will require fourteen days of self isolation we will get back to you with the results as quickly as we can  okay sounds great thank you",
+    "asr_transcript": "would you mind starting with telling me what brought you in sure i have had this cough for the past five days and it does not seem to be getting any better so i am just here to ask you what what what it possibly could be has the cough been getting any better staying the same or getting worse over these last five days i think it is getting worse okay are you bringing up any any phlegm no okay have you are you bringing up any blood no okay have you been coughing at night time as well like interfering with your sleep or is the cough just during the day it is mostly during the day and in the evenings it does not wake me up from sleep okay and any triggers that you noticed five days ago or anything that that changed at that time to bring on the cough no nothing okay and have you been having any other symptoms with the cough i have a sore throat and i feel like i cannot taste things the same okay are you having any pain with swallowing either liquids or food with mostly with foods okay and when did the sore throat start it started around the same time as my cough okay and you cannot taste your food as well when did you notice that that was two days ago okay have you noticed any any loss of smell no not no i do not think so okay and have you had any difficulties breathing or short of breath no okay and have you had any symptoms like this before  no nothing like this okay and how has your energy level been have you been fatigued a little bit yes okay have you had any changes to your vision or or hearing no any mucus or pain or or discharge from either your ears or nose  no okay so your nose has not been runny but has it felt congested  no okay  and have you had any fevers or chills and i do not know about fevers  i i guess i was feeling a little bit hot last night but i did not take my temperature okay so possibly a fever we will certainly check your temperature today to investigate that have you had any night sweats  no no night sweats all right  and have you had any weight loss in the last few months no okay and have you had any chest pain no chest pain have you noticed any heart palpitations or heart racing no right okay have you had any wheezing no all right  and have you had any abdominal pain no any nausea or vomiting no okay how about any urinary problems no any any bowel problems like diarrhea or constipation no okay and any muscle aches or or body pains  no have you had any rashes  nope okay  and okay so the symptoms so the cough started five days ago you had a sore throat have been feeling a bit more tired and have not been able to taste your food the last couple of days yes okay have you been diagnosed with any medical conditions before  no i do not think so okay nothing you see a physician regularly for no all right do you take any medications  no all right do you know if you have any allergies to medications  possibly penicillin okay do you know what the reaction was i think i had a rash okay are your immunizations up to date i think yep i think so excellent and any surgeries before i know and have you been in the hospital for any reason  no no okay  and are you in school now i am i am in grade six okay cool what is your favorite class i would say it is math awesome and was has there been anybody in your class who is been sick no everythings virtual right now okay cool  so have you traveled anywhere i know all right  and who are you living with i live with two of my younger siblings and my mom and dad okay and  is there any physical or verbal abuse in the home no okay so you you do you feel safe in the home yes yes okay  and do you smoke cigarettes i do not okay and  i know some people in your your age group might even start and you might see people using other types of substances have you noticed anything like that or have you used anything other anything like that  no okay  and  so do you have you drink or do you drink alcohol i have had a sip of wine but that is that is about it okay great  and has anybody in your family had had similar symptoms  no i do not think so okay  and anybody in the family have  asthma or harder or lung conditions  i think my aunt has asthma  but i was i i was checked for asthma when i was younger  and it turns out i do not have it okay  and any diseases that run in the family like genetic or congenital  i think crohns disease okay and  and who in the family has that  my my father okay  and so that that was  everything that i wanted to ask today was there anything you wanted to tell me  no that is that is it what what do you think i i have  well it it is sounding like it could be most likely an infectious type of process going on with  the possibility of having a fever with a cough and sore throat so we will do a physical exam and also some investigations which will include a covid test today because some of these symptoms do overlap okay but it could be something like the common cold  like adenovirus that is bringing this on so it is not necessarily covid  but  because we are doing the test it will require fourteen days of self isolation  and we will get back to you  with the results as quickly as we can okay sounds great thank you",
+    "asr_reconstructed": "would you mind starting with telling me what brought you in sure i have had this cough for the past five days and it does not seem to be getting any better so i am just here to ask you what [SUB:it->what] what it possibly could be has the cough been getting any better staying the same or getting worse over these last five days i think it is getting worse [INS:okay] are you bringing up any any phlegm no okay [INS:have you] are you bringing up any blood no okay have you been coughing at night time as well [SUB:is->like] [DEL:it] interfering with your sleep or is the cough just during the day it is mostly during the day and in the evenings it does not wake me up from sleep okay and any triggers that you [SUB:have->noticed] [DEL:notice] five days ago or anything that [INS:that] changed at that time to bring on the cough no nothing okay and have you been having any other symptoms with the cough i have a sore throat and i feel like i cannot taste things the same okay are you having any pain with swallowing either liquids or food [INS:with] mostly with foods okay and when did the sore throat start it started [DEL:up] around the same time as my cough okay and you cannot taste your food as well [DEL:and] when did you notice that that was two days ago okay have you noticed any any loss of smell no [INS:not] no i do not think so okay and have you had any difficulties breathing or short of breath no okay and have you had any symptoms like this before no nothing like this okay and how has your energy level been have you been fatigued a little bit yes okay have you had any changes to your vision or or hearing no any [SUB:mucous->mucus] or pain or [INS:or] discharge from either your ears or nose no okay so your nose has not been runny but has it felt congested no okay [INS:and] have you had any fevers or chills [INS:and] i do not know about fevers i [INS:i] guess i was feeling a little bit hot last night but i did not take my temperature okay so possibly a fever [SUB:i->we] will certainly check your temperature today to investigate that have you had any night sweats no [INS:no] night sweats [INS:all] [SUB:alright->right] and have you had any weight loss in the last few months no okay and have you had any chest pain no chest pain have you noticed any heart palpitations or heart racing no right okay have you had any wheezing no [INS:all] [SUB:alright->right] and have you had any abdominal pain no any nausea or vomiting no okay how about any urinary problems no [INS:any any bowel] problems like diarrhea or constipation no okay and any muscle aches or or body pains no have you had any rashes [SUB:no->nope] okay [INS:and okay] so the [INS:symptoms so the] cough started five days ago you had a sore throat [DEL:you] have been feeling a bit more tired and have not been able to taste your food [DEL:for] the last couple of days yes okay have you been diagnosed with any medical conditions before no i do not think so okay nothing you see a physician regularly for no [INS:all] [SUB:alright->right] do you take any medications no [INS:all] [SUB:alright->right] do you know if you have any allergies to medications possibly penicillin okay do you know what the reaction was i think i had a rash okay are your immunizations up to date i think [SUB:yeah->yep] i think so excellent and any surgeries before [INS:i] [SUB:no->know] and have you been in the hospital for any reason no no okay and are you in school now i am [INS:i am] in grade six okay cool what is your favorite class i would say it is math awesome and [INS:was] has there been anybody in your class who is been sick no everythings virtual right now okay cool so have you traveled anywhere [INS:i know] [SUB:no alright->all right] and who are you living with i live with two of my younger siblings and my mom and dad okay and is there any physical or verbal abuse in the home no okay so you [INS:you] do [INS:you] feel safe in the home yes yes okay and do you smoke cigarettes i do not okay and i know some people in your [INS:your] age group might even start [INS:and you might see people] using other types of substances have you noticed anything like that or have you used anything [INS:other anything] like that no okay and so do you [INS:have you] drink [INS:or] do you drink alcohol i have had a sip of wine but that is that is about it okay great and has anybody in your family had had similar symptoms no i do not think so okay and anybody in the family have asthma or [INS:harder or] lung conditions i think my aunt has asthma but i was i [INS:i] was checked for asthma when i was younger and it turns out i do not have it okay and any diseases that run in the family like genetic or congenital i think crohns disease okay and [INS:and] who in the family has that my [INS:my] father okay [INS:and] so that [INS:that] was everything that i wanted to ask today was there anything [DEL:else] you wanted to tell me no that is [INS:that is] it what [INS:what] do you think i [INS:i] have well it [INS:it] is sounding like it could be most likely an infectious type of process going on with the possibility of having a fever with a cough and sore throat so we will do a physical exam and also some investigations which will include a covid test today because some of these symptoms do overlap [INS:okay] but it could be something like the common cold [SUB:i do->like adenovirus] [DEL:not know the virus] that is bringing this on [SUB:but->so] it is not necessarily covid but because we are doing the test it will require fourteen days of self isolation [INS:and] we will get back to you with the results as quickly as we can okay sounds great thank you",
+    "audio_file": "data/final_audio/RES0051.mp3",
+    "model": "qwen3_iaa3",
+    "wer": 0.0848484848484848,
+    "errors": [
+      {
+        "error_id": "substitute_0",
+        "error_type": "SUB",
+        "error_match": "[SUB:it->what]",
+        "error_text": "it->what",
+        "position": 0,
+        "start_idx": 190,
+        "end_idx": 204,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_1",
+        "error_type": "INS",
+        "error_match": "[INS:okay]",
+        "error_text": "okay",
+        "position": 1,
+        "start_idx": 357,
+        "end_idx": 367,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_2",
+        "error_type": "INS",
+        "error_match": "[INS:have you]",
+        "error_text": "have you",
+        "position": 2,
+        "start_idx": 411,
+        "end_idx": 425,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_3",
+        "error_type": "SUB",
+        "error_match": "[SUB:is->like]",
+        "error_text": "is->like",
+        "position": 3,
+        "start_idx": 509,
+        "end_idx": 523,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_4",
+        "error_type": "DEL",
+        "error_match": "[DEL:it]",
+        "error_text": "it",
+        "position": 4,
+        "start_idx": 524,
+        "end_idx": 532,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_5",
+        "error_type": "SUB",
+        "error_match": "[SUB:have->noticed]",
+        "error_text": "have->noticed",
+        "position": 5,
+        "start_idx": 710,
+        "end_idx": 729,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_6",
+        "error_type": "DEL",
+        "error_match": "[DEL:notice]",
+        "error_text": "notice",
+        "position": 6,
+        "start_idx": 730,
+        "end_idx": 742,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_7",
+        "error_type": "INS",
+        "error_match": "[INS:that]",
+        "error_text": "that",
+        "position": 7,
+        "start_idx": 774,
+        "end_idx": 784,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_8",
+        "error_type": "INS",
+        "error_match": "[INS:with]",
+        "error_text": "with",
+        "position": 8,
+        "start_idx": 1039,
+        "end_idx": 1049,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_9",
+        "error_type": "DEL",
+        "error_match": "[DEL:up]",
+        "error_text": "up",
+        "position": 9,
+        "start_idx": 1119,
+        "end_idx": 1127,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_10",
+        "error_type": "DEL",
+        "error_match": "[DEL:and]",
+        "error_text": "and",
+        "position": 10,
+        "start_idx": 1205,
+        "end_idx": 1214,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_11",
+        "error_type": "INS",
+        "error_match": "[INS:not]",
+        "error_text": "not",
+        "position": 11,
+        "start_idx": 1309,
+        "end_idx": 1318,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_12",
+        "error_type": "SUB",
+        "error_match": "[SUB:mucous->mucus]",
+        "error_text": "mucous->mucus",
+        "position": 12,
+        "start_idx": 1630,
+        "end_idx": 1649,
+        "is_medical": true
+      },
+      {
+        "error_id": "insert_13",
+        "error_type": "INS",
+        "error_match": "[INS:or]",
+        "error_text": "or",
+        "position": 13,
+        "start_idx": 1661,
+        "end_idx": 1669,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_14",
+        "error_type": "INS",
+        "error_match": "[INS:and]",
+        "error_text": "and",
+        "position": 14,
+        "start_idx": 1784,
+        "end_idx": 1793,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_15",
+        "error_type": "INS",
+        "error_match": "[INS:and]",
+        "error_text": "and",
+        "position": 15,
+        "start_idx": 1828,
+        "end_idx": 1837,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_16",
+        "error_type": "INS",
+        "error_match": "[INS:i]",
+        "error_text": "i",
+        "position": 16,
+        "start_idx": 1867,
+        "end_idx": 1874,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_17",
+        "error_type": "SUB",
+        "error_match": "[SUB:i->we]",
+        "error_text": "i->we",
+        "position": 17,
+        "start_idx": 1982,
+        "end_idx": 1993,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_18",
+        "error_type": "INS",
+        "error_match": "[INS:no]",
+        "error_text": "no",
+        "position": 18,
+        "start_idx": 2091,
+        "end_idx": 2099,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_19",
+        "error_type": "INS",
+        "error_match": "[INS:all]",
+        "error_text": "all",
+        "position": 19,
+        "start_idx": 2113,
+        "end_idx": 2122,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_20",
+        "error_type": "SUB",
+        "error_match": "[SUB:alright->right]",
+        "error_text": "alright->right",
+        "position": 20,
+        "start_idx": 2123,
+        "end_idx": 2143,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_21",
+        "error_type": "INS",
+        "error_match": "[INS:all]",
+        "error_text": "all",
+        "position": 21,
+        "start_idx": 2353,
+        "end_idx": 2362,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_22",
+        "error_type": "SUB",
+        "error_match": "[SUB:alright->right]",
+        "error_text": "alright->right",
+        "position": 22,
+        "start_idx": 2363,
+        "end_idx": 2383,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_23",
+        "error_type": "INS",
+        "error_match": "[INS:any any bowel]",
+        "error_text": "any any bowel",
+        "position": 23,
+        "start_idx": 2488,
+        "end_idx": 2507,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_24",
+        "error_type": "SUB",
+        "error_match": "[SUB:no->nope]",
+        "error_text": "no->nope",
+        "position": 24,
+        "start_idx": 2620,
+        "end_idx": 2634,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_25",
+        "error_type": "INS",
+        "error_match": "[INS:and okay]",
+        "error_text": "and okay",
+        "position": 25,
+        "start_idx": 2640,
+        "end_idx": 2654,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_26",
+        "error_type": "INS",
+        "error_match": "[INS:symptoms so the]",
+        "error_text": "symptoms so the",
+        "position": 26,
+        "start_idx": 2662,
+        "end_idx": 2683,
+        "is_medical": true
+      },
+      {
+        "error_id": "delete_27",
+        "error_type": "DEL",
+        "error_match": "[DEL:you]",
+        "error_text": "you",
+        "position": 27,
+        "start_idx": 2734,
+        "end_idx": 2743,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_28",
+        "error_type": "DEL",
+        "error_match": "[DEL:for]",
+        "error_text": "for",
+        "position": 28,
+        "start_idx": 2821,
+        "end_idx": 2830,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_29",
+        "error_type": "INS",
+        "error_match": "[INS:all]",
+        "error_text": "all",
+        "position": 29,
+        "start_idx": 2994,
+        "end_idx": 3003,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_30",
+        "error_type": "SUB",
+        "error_match": "[SUB:alright->right]",
+        "error_text": "alright->right",
+        "position": 30,
+        "start_idx": 3004,
+        "end_idx": 3024,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_31",
+        "error_type": "INS",
+        "error_match": "[INS:all]",
+        "error_text": "all",
+        "position": 31,
+        "start_idx": 3056,
+        "end_idx": 3065,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_32",
+        "error_type": "SUB",
+        "error_match": "[SUB:alright->right]",
+        "error_text": "alright->right",
+        "position": 32,
+        "start_idx": 3066,
+        "end_idx": 3086,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_33",
+        "error_type": "SUB",
+        "error_match": "[SUB:yeah->yep]",
+        "error_text": "yeah->yep",
+        "position": 33,
+        "start_idx": 3267,
+        "end_idx": 3282,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_34",
+        "error_type": "INS",
+        "error_match": "[INS:i]",
+        "error_text": "i",
+        "position": 34,
+        "start_idx": 3329,
+        "end_idx": 3336,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_35",
+        "error_type": "SUB",
+        "error_match": "[SUB:no->know]",
+        "error_text": "no->know",
+        "position": 35,
+        "start_idx": 3337,
+        "end_idx": 3351,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_36",
+        "error_type": "INS",
+        "error_match": "[INS:i am]",
+        "error_text": "i am",
+        "position": 36,
+        "start_idx": 3443,
+        "end_idx": 3453,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_37",
+        "error_type": "INS",
+        "error_match": "[INS:was]",
+        "error_text": "was",
+        "position": 37,
+        "start_idx": 3540,
+        "end_idx": 3549,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_38",
+        "error_type": "INS",
+        "error_match": "[INS:i know]",
+        "error_text": "i know",
+        "position": 38,
+        "start_idx": 3677,
+        "end_idx": 3689,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_39",
+        "error_type": "SUB",
+        "error_match": "[SUB:no alright->all right]",
+        "error_text": "no alright->all right",
+        "position": 39,
+        "start_idx": 3690,
+        "end_idx": 3717,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_40",
+        "error_type": "INS",
+        "error_match": "[INS:you]",
+        "error_text": "you",
+        "position": 40,
+        "start_idx": 3878,
+        "end_idx": 3887,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_41",
+        "error_type": "INS",
+        "error_match": "[INS:you]",
+        "error_text": "you",
+        "position": 41,
+        "start_idx": 3891,
+        "end_idx": 3900,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_42",
+        "error_type": "INS",
+        "error_match": "[INS:your]",
+        "error_text": "your",
+        "position": 42,
+        "start_idx": 4009,
+        "end_idx": 4019,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_43",
+        "error_type": "INS",
+        "error_match": "[INS:and you might see people]",
+        "error_text": "and you might see people",
+        "position": 43,
+        "start_idx": 4047,
+        "end_idx": 4077,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_44",
+        "error_type": "INS",
+        "error_match": "[INS:other anything]",
+        "error_text": "other anything",
+        "position": 44,
+        "start_idx": 4172,
+        "end_idx": 4192,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_45",
+        "error_type": "INS",
+        "error_match": "[INS:have you]",
+        "error_text": "have you",
+        "position": 45,
+        "start_idx": 4225,
+        "end_idx": 4239,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_46",
+        "error_type": "INS",
+        "error_match": "[INS:or]",
+        "error_text": "or",
+        "position": 46,
+        "start_idx": 4246,
+        "end_idx": 4254,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_47",
+        "error_type": "INS",
+        "error_match": "[INS:harder or]",
+        "error_text": "harder or",
+        "position": 47,
+        "start_idx": 4464,
+        "end_idx": 4479,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_48",
+        "error_type": "INS",
+        "error_match": "[INS:i]",
+        "error_text": "i",
+        "position": 48,
+        "start_idx": 4535,
+        "end_idx": 4542,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_49",
+        "error_type": "INS",
+        "error_match": "[INS:and]",
+        "error_text": "and",
+        "position": 49,
+        "start_idx": 4723,
+        "end_idx": 4732,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_50",
+        "error_type": "INS",
+        "error_match": "[INS:my]",
+        "error_text": "my",
+        "position": 50,
+        "start_idx": 4763,
+        "end_idx": 4771,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_51",
+        "error_type": "INS",
+        "error_match": "[INS:and]",
+        "error_text": "and",
+        "position": 51,
+        "start_idx": 4784,
+        "end_idx": 4793,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_52",
+        "error_type": "INS",
+        "error_match": "[INS:that]",
+        "error_text": "that",
+        "position": 52,
+        "start_idx": 4802,
+        "end_idx": 4812,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_53",
+        "error_type": "DEL",
+        "error_match": "[DEL:else]",
+        "error_text": "else",
+        "position": 53,
+        "start_idx": 4874,
+        "end_idx": 4884,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_54",
+        "error_type": "INS",
+        "error_match": "[INS:that is]",
+        "error_text": "that is",
+        "position": 54,
+        "start_idx": 4918,
+        "end_idx": 4931,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_55",
+        "error_type": "INS",
+        "error_match": "[INS:what]",
+        "error_text": "what",
+        "position": 55,
+        "start_idx": 4940,
+        "end_idx": 4950,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_56",
+        "error_type": "INS",
+        "error_match": "[INS:i]",
+        "error_text": "i",
+        "position": 56,
+        "start_idx": 4966,
+        "end_idx": 4973,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_57",
+        "error_type": "INS",
+        "error_match": "[INS:it]",
+        "error_text": "it",
+        "position": 57,
+        "start_idx": 4987,
+        "end_idx": 4995,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_58",
+        "error_type": "INS",
+        "error_match": "[INS:okay]",
+        "error_text": "okay",
+        "position": 58,
+        "start_idx": 5283,
+        "end_idx": 5293,
+        "is_medical": false
+      },
+      {
+        "error_id": "substitute_59",
+        "error_type": "SUB",
+        "error_match": "[SUB:i do->like adenovirus]",
+        "error_text": "i do->like adenovirus",
+        "position": 59,
+        "start_idx": 5341,
+        "end_idx": 5368,
+        "is_medical": false
+      },
+      {
+        "error_id": "delete_60",
+        "error_type": "DEL",
+        "error_match": "[DEL:not know the virus]",
+        "error_text": "not know the virus",
+        "position": 60,
+        "start_idx": 5369,
+        "end_idx": 5393,
+        "is_medical": true
+      },
+      {
+        "error_id": "substitute_61",
+        "error_type": "SUB",
+        "error_match": "[SUB:but->so]",
+        "error_text": "but->so",
+        "position": 61,
+        "start_idx": 5419,
+        "end_idx": 5432,
+        "is_medical": false
+      },
+      {
+        "error_id": "insert_62",
+        "error_type": "INS",
+        "error_match": "[INS:and]",
+        "error_text": "and",
+        "position": 62,
+        "start_idx": 5543,
+        "end_idx": 5552,
+        "is_medical": false
+      }
+    ],
+    "error_count": 63,
+    "index": 0
+  },
+  {
     "utterance_id": "c46ac19c-edf5-4bc2-8162-110ff52ef78b_654f83104ac72fe1dfb3396f740cf6e1_qfrd3ivN",
     "human_transcript": " may i address you as miss or mrs  mrs  how old are you  i am fortyfive years old doctor  so ma what brought you here today  i have been having this pain in my abdominal two days ago suddenly two days ago  so can you tell me more about it  yes the pain started suddenly like and it was a very sharp pain and its how should i explain it is located at my abdominal at the right side the top side of my abdomen and the pain it moves from my back like it moves around my back and my right shoulder  okay i will just ask you few questions about that you said the pain is located at your right side of your abdomen  yes doctor  and the pain is sharp right  yes doctor  is there anything that makes the pain worse  yes the pain becomes worse like whenever i eat after eating the pain becomes worst and it is always happen when i take a food that has plenty fats  okay what about anything that makes you feel relieved  i have not really noticed any  okay are they other symptoms associated with the pain  yes since this pain started i have been having nausea i have been vomiting you get if una i have been having fever and if you look at me now you will see that i have jaundice  okay is there any other symptoms like change in bowel movement or change in urine color  no no no  what about weight loss  no no no doctor  do you think you are losing weight  no i am not losing weight you look at me now i am not losing weight  do you eat at all or do you have a loss of appetite  i do not have loss of appetite i eat very well just after eating the food and the pain will start  have you gone through any trauma  no doctor  have you had any surgery done recently  no no no  okay on a scale of oneten can you describe how severe the pain is  i will rate it nine i will say nine cos it is very very severe the pain is very very bad so i will say nine  okay what do you think will be causing this  doctor i do not know i do not know  are you worried about it  i am very worried about it because the pain is just too much  do you have any medical history  yes i do yes i do  what is it if i may ask  i am hypertensive and i was diagnosed on hypertension that was five years ago and i have been on medication  do you have any family medical history  yesyes my mother yes i do my mother had gallstones  okay i am going to ask you few more questions about yourself if you do not mind  okay go ahead  do you smoke  no no i do not  good do you drink alcohol  yes i do  okay like how many drinks you take when you drink  i take few drinks i do not take much  okay how frequent is that  it is not frequent it is just once in a blue moon occasionally  okay do you take any recreational drug  no no no i do not  are you on any routine or prescribe medication  yes i am i am on antihypertension drugs antihypertension medication i have been on it for five years now  do you have any drug or food allergies  no no no none that i know of  do you have any question for me  no doctor i do not  okay that will be all for the consultation thanks for talking with me today from my findings mrs ogechukwu fortyfive is having a severe abdominal pain which started two days ago the pain is located at the right upper quadrant of her abdominal and it radiates to the back and her right shoulder according to her the pain becomes worst after eating especially when she eats fatty food the pain is associated with nausea and vomiting fever and jaundice she does not have any history of change in bowel movement or urine color weight loss or loss of appetite she does not also have any history of trauma or have not under gone any surgery according to her medical history she was diagnosed of hypertension five years ago and has been on medication the only family medical history she has is her mother where had gastrings she does not smoke nor take any recreational drugs but drinks alcohol occasionally she is also on antihypertensive medication she does not have any known drugs or food allergy she also rated the pain to nine on a scale of oneten onefortyeightthreeonefortyeightthreeonefortyeightthree hundred and onethirtyfiveninetyeight",
     "human_transcript_ner": " may i address you as miss or mrs  mrs  how old are you  i am fortyfive years old doctor  so ma what brought you here today  i have been having this [PROBLEM: pain] in my [ANATOMICAL_STRUCTURE: abdominal] two days ago suddenly two days ago  so can you tell me more about it  yes the [PROBLEM: pain] started suddenly like and it was a very [SEVERITY: sharp] [PROBLEM: pain] and its how should i explain it is located at my [ANATOMICAL_STRUCTURE: abdominal] at the right side the top side of my [ANATOMICAL_STRUCTURE: abdomen] and the [PROBLEM: pain] it moves from my [ANATOMICAL_STRUCTURE: back] like it moves around my [ANATOMICAL_STRUCTURE: back] and my right [ANATOMICAL_STRUCTURE: shoulder]  okay i will just ask you few questions about that you said the [PROBLEM: pain] is located at your right side of your [ANATOMICAL_STRUCTURE: abdomen]  yes doctor  and the [PROBLEM: pain] is [SEVERITY: sharp] right  yes doctor  is there anything that makes the [PROBLEM: pain] [SEVERITY: worse]  yes the [PROBLEM: pain] becomes [SEVERITY: worse] like whenever i eat after eating the [PROBLEM: pain] becomes worst and it is always happen when i take a food that has plenty fats  okay what about anything that makes you feel relieved  i have not really noticed any  okay are they other [PROBLEM: symptoms] associated with the [PROBLEM: pain]  yes since this [PROBLEM: pain] started i have been having [PROBLEM: nausea] i have been [PROBLEM: vomiting] you get if una i have been having [PROBLEM: fever] and if you look at me now you will see that i have [PROBLEM: jaundice]  okay is there any other [PROBLEM: symptoms] like [BF_RESULT: change] in [BODY_FUNCTION: bowel movement] or [PROBLEM: change in urine color]  no no no  what about [PROBLEM: weight loss]  no no no doctor  do you think you are [PROBLEM: losing weight]  no i am not [PROBLEM: losing weight] you look at me now i am not [PROBLEM: losing weight]  do you eat at all or do you have a [PROBLEM: loss of appetite]  i do not have [PROBLEM: loss of appetite] i eat very well just after eating the food and the [PROBLEM: pain] will start  have you gone through any [PROBLEM: trauma]  no doctor  have you had any [PROCEDURE: surgery] done recently  no no no  okay on a scale of oneten can you describe how [SEVERITY: severe] the [PROBLEM: pain] is  i will rate it nine i will say nine cos it is very very [SEVERITY: severe] the [PROBLEM: pain] is very very bad so i will say nine  okay what do you think will be causing this  doctor i do not know i do not know  are you worried about it  i am very worried about it because the [PROBLEM: pain] is just too much  do you have any medical history  yes i do yes i do  what is it if i may ask  i am [PROBLEM: hypertensive] and i was diagnosed on [PROBLEM: hypertension] that was five years ago and i have been on [MEDICINE: medication]  do you have any family medical history  yesyes my mother yes i do my mother had [PROBLEM: gallstones]  okay i am going to ask you few more questions about yourself if you do not mind  okay go ahead  do you [SUBSTANCE_ABUSE: smoke]  no no i do not  good do you drink [SUBSTANCE_ABUSE: alcohol]  yes i do  okay like how many drinks you take when you drink  i take few drinks i do not take much  okay how frequent is that  it is not frequent it is just once in a blue moon occasionally  okay do you take any [SUBSTANCE_ABUSE: recreational drug]  no no no i do not  are you on any routine or prescribe [MEDICINE: medication]  yes i am i am on [MEDICINE: antihypertension] [MEDICINE: drugs] [MEDICINE: antihypertension medication] i have been on it for five years now  do you have any [MEDICINE: drug] or food [PROBLEM: allergies]  no no no none that i know of  do you have any question for me  no doctor i do not  okay that will be all for the consultation thanks for talking with me today from my findings mrs [MEDICINE: ogechukwu] fortyfive is having a [SEVERITY: severe] [PROBLEM: abdominal pain] which started two days ago the [PROBLEM: pain] is located at the [ANATOMICAL_STRUCTURE: right upper quadrant] of her [ANATOMICAL_STRUCTURE: abdominal] and it radiates to the [ANATOMICAL_STRUCTURE: back] and her right [ANATOMICAL_STRUCTURE: shoulder] according to her the [PROBLEM: pain] becomes [SEVERITY: worst] after eating especially when she eats fatty food the [PROBLEM: pain] is associated with [PROBLEM: nausea] and [PROBLEM: vomiting] [PROBLEM: fever] and [PROBLEM: jaundice] she does not have any history of [BF_RESULT: change] in [BODY_FUNCTION: bowel movement] or urine color [PROBLEM: weight loss] or [PROBLEM: loss of appetite] she does not also have any history of [PROBLEM: trauma] or have not under gone any [PROCEDURE: surgery] according to her medical history she was diagnosed of [PROBLEM: hypertension] five years ago and has been on [MEDICINE: medication] the only family medical history she has is her mother where had [MEDICINE: gastrings] she does not [SUBSTANCE_ABUSE: smoke] nor take any [SUBSTANCE_ABUSE: recreational drugs] but [SUBSTANCE_ABUSE: drinks alcohol] occasionally she is also on [MEDICINE: antihypertensive medication] she does not have any known [SUBSTANCE_ABUSE: drugs] or food allergy she also rated the [PROBLEM: pain] to nine on a scale of oneten onefortyeightthreeonefortyeightthreeonefortyeightthree hundred and [MEDICINE: onethirtyfiveninetyeight]",
@@ -721,7 +1365,7 @@
       }
     ],
     "error_count": 71,
-    "index": 0
+    "index": 1
   },
   {
     "utterance_id": "day5_consultation04",
@@ -2005,6 +2649,6 @@
       }
     ],
     "error_count": 127,
-    "index": 1
+    "index": 2
   }
 ]
