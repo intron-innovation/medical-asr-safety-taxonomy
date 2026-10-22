@@ -49,6 +49,29 @@ def get_available_models(app):
     return sorted(models, key=lambda x: x['name'])
 
 
+def ensure_model_loaded(app, model_name):
+    """Load any sessions present in the model's JSON but missing from the database.
+
+    The old gate only loaded when a model had zero rows, so adding a session to an
+    existing model's file never took effect - the file and the database silently
+    diverged. load_model_data skips rows that already exist, so it is safe to call
+    whenever the two counts disagree.
+    """
+    json_file = app.config['ANNOTATION_DATA_DIR'] / f'{model_name}_annotation_data.json'
+    in_db = AnnotationData.query.filter_by(model_name=model_name).count()
+    on_disk = in_db
+    if json_file.exists():
+        try:
+            with open(json_file) as fh:
+                on_disk = len(json.load(fh))
+        except (ValueError, OSError):
+            app.logger.exception('could not read %s', json_file)
+            on_disk = in_db
+    if in_db != on_disk:
+        return load_model_data(app, model_name)
+    return None
+
+
 def load_model_data(app, model_name):
     """Load annotation data for a specific model into database."""
     annotation_data_dir = app.config['ANNOTATION_DATA_DIR']
@@ -311,8 +334,7 @@ def select_model():
 
     # Get stats for each model
     for model in models:
-        if AnnotationData.query.filter_by(model_name=model['name']).count() == 0:
-            load_model_data(app, model['name'])
+        ensure_model_loaded(app, model['name'])
         total_utterances = len(get_visible_utterances(app, model['name']))
         user_annotations = Annotation.query.filter_by(
             annotator_id=session['annotator_id'],
@@ -338,8 +360,7 @@ def annotate_subset():
     models = [available[n] for n in SUBSET_MODELS if n in available]
 
     for model in models:
-        if AnnotationData.query.filter_by(model_name=model['name']).count() == 0:
-            load_model_data(app, model['name'])
+        ensure_model_loaded(app, model['name'])
         model['total_utterances'] = len(get_visible_utterances(app, model['name']))
         model['user_annotations'] = Annotation.query.filter_by(
             annotator_id=session['annotator_id'],
@@ -543,9 +564,9 @@ def admin_export():
 def annotate(model_name):
     """Annotation interface for specific model."""
     # Auto-load model data if not already loaded
-    existing_count = AnnotationData.query.filter_by(model_name=model_name).count()
-    if existing_count == 0:
-        result, status = load_model_data(app, model_name)
+    loaded = ensure_model_loaded(app, model_name)
+    if loaded is not None:
+        result, status = loaded
         if status != 200:
             flash(f'Error loading model data: {result.get("error")}', 'error')
             return redirect(url_for('select_model'))
