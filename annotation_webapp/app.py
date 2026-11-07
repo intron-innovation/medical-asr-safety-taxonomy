@@ -20,15 +20,21 @@ MODEL_DISPLAY_NAMES = {
     'gemma3n': 'Gemma 3n E4B',
     'qwen3_iaa3': 'Qwen3 ASR',
     'gemma3n_iaa3': 'Gemma 3n E4B',
+    'qwen3_iaa4': 'Qwen3 ASR',
+    'gemma3n_iaa4': 'Gemma 3n E4B',
 }
 
-# Models offered on /annotate_subset, and hidden from /select_model. These hold
-# only the three inter-annotator agreement sessions (one per dataset group), cut
-# from qwen3_fixed and gemma3n - the best and worst performers by WER. Separate
-# model names so IAA work is keyed apart from full-corpus annotation in the
-# database, and so the full models stay complete at 120 sessions.
-# 126 medical errors per annotator, roughly two hours.
-SUBSET_MODELS = ['qwen3_iaa3', 'gemma3n_iaa3']
+# Inter-annotator agreement subsets, hidden from /select_model. Each holds only the
+# IAA sessions of one round, cut from qwen3_fixed and gemma3n - the best and worst
+# performers by WER. Separate model names so IAA work is keyed apart from full-corpus
+# annotation in the database, and so the full models stay complete at 120 sessions.
+# Round 3 (iaa3): three sessions, 126 medical errors per annotator.
+# Phase 4 (iaa4): five sessions (3 joint, 2 independent), 143 medical errors per annotator.
+SUBSET_MODELS = ['qwen3_iaa3', 'gemma3n_iaa3', 'qwen3_iaa4', 'gemma3n_iaa4']
+
+# The subset on offer at /annotate_subset right now. Earlier rounds stay in the database
+# and the admin dashboard, but are no longer offered to annotators.
+ACTIVE_SUBSET_MODELS = ['qwen3_iaa4', 'gemma3n_iaa4']
 
 
 def get_available_models(app):
@@ -351,13 +357,13 @@ def select_model():
 @app.route('/annotate_subset')
 @login_required
 def annotate_subset():
-    """Model selection restricted to SUBSET_MODELS (the best/worst pair).
+    """Model selection restricted to ACTIVE_SUBSET_MODELS (the best/worst pair).
 
     Same page and same annotation flow as /select_model; only the model list
     differs. Annotation itself still goes through /annotate/<model_name>.
     """
     available = {m['name']: m for m in get_available_models(app)}
-    models = [available[n] for n in SUBSET_MODELS if n in available]
+    models = [available[n] for n in ACTIVE_SUBSET_MODELS if n in available]
 
     for model in models:
         ensure_model_loaded(app, model['name'])
