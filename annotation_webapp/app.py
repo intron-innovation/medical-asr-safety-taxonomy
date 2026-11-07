@@ -332,6 +332,24 @@ def instructions():
     return render_template('instructions.html')
 
 
+def annotator_progress(app, model_name, annotator_id):
+    """(medical errors to annotate, how many this annotator has done) for one model.
+
+    Counts only the medically relevant auto-detected errors, which is what the session
+    completion gate requires, so the model cards show the real total and not an estimate.
+    """
+    required = {
+        e['error_id']
+        for utt in get_visible_utterances(app, model_name)
+        for e in (utt.extra_data or {}).get('errors', [])
+        if e.get('is_medical')
+    }
+    done = {
+        a.error_id for a in Annotation.query.filter_by(annotator_id=annotator_id, model_name=model_name)
+    } & required
+    return len(required), len(done)
+
+
 @app.route('/select_model')
 @login_required
 def select_model():
@@ -349,6 +367,7 @@ def select_model():
         
         model['total_utterances'] = total_utterances
         model['user_annotations'] = user_annotations
+        model['total_errors'], model['done_errors'] = annotator_progress(app, model['name'], session['annotator_id'])
         model['loaded'] = total_utterances > 0
     
     return render_template('select_model.html', models=models)
@@ -372,6 +391,7 @@ def annotate_subset():
             annotator_id=session['annotator_id'],
             model_name=model['name']
         ).count()
+        model['total_errors'], model['done_errors'] = annotator_progress(app, model['name'], session['annotator_id'])
         model['loaded'] = model['total_utterances'] > 0
 
     return render_template('select_model.html', models=models, subset=True)

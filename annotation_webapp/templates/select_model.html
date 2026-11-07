@@ -57,7 +57,7 @@
 
                 {% if model.total_utterances > 0 %}
                 <div class="progress-section">
-                    {% set progress_pct = (model.user_annotations / (model.total_utterances * 3) * 100)|int %}
+                    {% set progress_pct = ((model.done_errors / model.total_errors * 100)|int if model.total_errors else 0) %}
                     <div class="progress-info">
                         <span class="progress-label">Progress</span>
                         <span class="progress-percentage">{{ progress_pct }}%</span>
@@ -66,8 +66,7 @@
                         <div class="progress-bar-fill" style="width: {{ progress_pct }}%"></div>
                     </div>
                     <div class="progress-details">
-                        <small>{{ model.user_annotations }} of {{ model.total_utterances * 3 }} errors annotated</small>
-                        <small class="text-muted">(approx. 3 errors per utterance)</small>
+                        <small>{{ model.done_errors }} of {{ model.total_errors }} errors annotated</small>
                     </div>
                 </div>
                 {% endif %}
