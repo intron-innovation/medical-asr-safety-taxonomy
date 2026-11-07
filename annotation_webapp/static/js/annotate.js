@@ -63,19 +63,6 @@ function humanVsAsrLine(errorType, errorText) {
     return q(errorText);
 }
 
-function nerContextLine(errorData, errorType) {
-    if (errorData && errorData.ner_text) {
-        const chip = `<span class="ner-chip">${escapeHtml(errorData.ner_group || errorData.ner_type)}</span> ` +
-            `&ldquo;${escapeHtml(errorData.ner_text)}&rdquo;`;
-        return errorData.ner_match === 'elsewhere'
-            ? chip + ' <span class="ner-none">(a similar word is tagged elsewhere in this conversation)</span>'
-            : chip;
-    }
-    return errorType === 'INS'
-        ? '<span class="ner-none">none &mdash; inserted word</span>'
-        : '<span class="ner-none">not inside a tagged clinical term</span>';
-}
-
 function showRuleHint(msg) {
     const el = document.getElementById('ecRuleHint');
     if (!el) return;
@@ -665,7 +652,6 @@ function highlightErrors(text, utteranceId) {
             replacement = `<span class="error-highlight ${errorClass} ${isAnnotated}" ` +
                 `onclick="openAnnotationModal('${escapeHtml(errorId)}', '${escapeHtml(errorType)}', '${escapeHtml(fullMatch)}', '${escapeHtml(content)}')">` +
                 `<span class="error-status-indicator"></span>${escapeHtml(fullMatch)}` +
-                (error.ner_group && error.ner_match !== 'elsewhere' ? `<sup class="ner-inline" title="${escapeHtml(error.ner_group)}: ${escapeHtml(error.ner_text || '')}">${escapeHtml(error.ner_group)}</sup>` : '') +
                 `</span>`;
         } else {
             // Render as the plain word the ASR actually produced, with no markup:
@@ -750,7 +736,6 @@ function openAnnotationModal(errorId, errorType, fullMatch, errorText) {
     if (errorData) seekToError(errorData);
     
     document.getElementById('errorContext').innerHTML = `
-        <strong>Clinical term:</strong> ${nerContextLine(errorData, errorType)}<br>
         <strong>Error:</strong> ${humanVsAsrLine(errorType, errorText)}<br>
         <strong>Utterance:</strong> ${utterance.utterance_id}<br>
         <strong>Error ID:</strong> <code style="font-size: 0.9em;">${errorId}</code>

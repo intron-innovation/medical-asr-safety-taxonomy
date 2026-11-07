@@ -35,16 +35,6 @@
             shows where you think the error occurred (taxonomy below). Everything highlighted should mostly be medically
             relevant words, but many are also ordinary words with no specific clinical meaning.
         </p>
-        <div class="tip-box">
-            <strong>How to read an error tag.</strong> The <em>human</em> is the reference transcript; the <em>ASR</em> is the model's output.
-            <ul>
-                <li><span style="background:#fef6e0; padding:0 4px;"><strong>[SUB:abdominal-&gt;abdomen]</strong></span> &mdash; substitution. Left of the arrow is what the <strong>human</strong> reference says; right of the arrow is what the <strong>ASR</strong> produced.</li>
-                <li><span style="background:#fee; padding:0 4px;"><strong>[DEL:urine]</strong></span> &mdash; deletion. The <strong>human</strong> reference has it; the <strong>ASR</strong> left it out.</li>
-                <li><span style="background:#e6f7ff; padding:0 4px;"><strong>[INS:of]</strong></span> &mdash; insertion. The <strong>ASR</strong> added it; it is not in the <strong>human</strong> reference.</li>
-            </ul>
-            When an error sits inside a medical term the NER tagged, a small label (Problem, Medication, Anatomy, ...) appears
-            next to it. The annotation window also names that term, or a similar term tagged elsewhere in the conversation.
-        </div>
         <p><strong>Your Task:</strong></p>
         <ul class="checklist">
             <li>Click on each highlighted error</li>
