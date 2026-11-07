@@ -142,7 +142,7 @@
 
     <!-- Section 2b: ASR Error Class -->
     <div class="section" id="error-class">
-        <h2>2. ASR Error Class (7 Categories)</h2>
+        <h2>2. ASR Error Class (8 Categories)</h2>
         <p>Classify <strong>why</strong> the ASR failed. Adapted from
            <a href="https://pubmed.ncbi.nlm.nih.gov/15325329/" target="_blank" rel="noopener noreferrer">Zafar et al. (2004)</a>.</p>
 
@@ -168,7 +168,7 @@
             <strong>Rule 3 &mdash; the form enforces two things.</strong>
             <em>ASR omission / insertion</em> applies only to <em>[INS:&hellip;]</em> and
             <em>[DEL:&hellip;]</em>. And <em>Annunciation / Homonym</em> is a claim about how
-            the word sounded, so play the audio before selecting it.
+            the word sounded, and <em>Audio glitch</em> is a claim about the recording, so play the audio before selecting either.
         </div>
 
         <p>Work down and take the <strong>first</strong> that fits.</p>
@@ -184,32 +184,37 @@
                 <div class="example">reference "catherization" → ASR "catheterization" &nbsp;•&nbsp; reference "lose" → ASR "loose" &nbsp;•&nbsp; [INS:alcohol] said twice, typed once &nbsp;•&nbsp; [INS:is there any drug], a question the transcript omits</div>
             </div>
             <div class="taxonomy-card">
-                <h3>2. Dictionary error</h3>
+                <h3>2. Audio glitch</h3>
+                <p>A <strong>fault in the recording</strong> at this spot: a dropout or silence, a click or pop, a cut-off, distortion, or noise over the speech. <strong>Play the audio first.</strong> An accent or fast, slurred, mumbled speech is not a glitch. If a glitch hides a medical term, use this label, not Dictionary error.</p>
+                <div class="example">a word cut off mid-syllable &nbsp;•&nbsp; a click or dropout where a word should be</div>
+            </div>
+            <div class="taxonomy-card">
+                <h3>3. Dictionary error</h3>
                 <p>The damaged word was a <strong>drug, condition, anatomy term, procedure, or a proper noun / place / name</strong>. Also when a medical word becomes non-medical, or the reverse. <strong>A medical term stays here even if only the ending changed.</strong></p>
                 <div class="example">amlodipine → pain &nbsp;•&nbsp; naproxen → proxen &nbsp;•&nbsp; cetirizine → trazinia &nbsp;•&nbsp; ulcer → asthma &nbsp;•&nbsp; Ekiti → Nkita &nbsp;•&nbsp; abdominal → abdomen</div>
             </div>
             <div class="taxonomy-card">
-                <h3>3. Suffix error</h3>
+                <h3>4. Suffix error</h3>
                 <p><strong>Ordinary</strong> words only: same stem, only the inflection is wrong (plural, tense, -ing). A medical term with a different ending is a Dictionary error.</p>
                 <div class="example">[SUB:vomit-&gt;vomits] &nbsp;•&nbsp; [SUB:problem-&gt;problems] &nbsp;•&nbsp; [SUB:complaint-&gt;complaints]</div>
             </div>
             <div class="taxonomy-card">
-                <h3>4. Annunciation / Homonym error</h3>
+                <h3>5. Annunciation / Homonym error</h3>
                 <p>An <strong>ordinary</strong> English word was misheard as another word that sounds like it &mdash; through accent, speed, slurring, a pause, or plain phonetic similarity. If the damaged word was specialist, use Dictionary error instead. A real word swapped for another real word on an ordinary word is still this label. <strong>Play the audio first.</strong></p>
                 <div class="example">nausea → nuisance &nbsp;•&nbsp; abdominal pain → abnormal pain &nbsp;•&nbsp; pus → pulse &nbsp;•&nbsp; fainting → painting &nbsp;•&nbsp; worst → worse</div>
             </div>
             <div class="taxonomy-card">
-                <h3>5. Nonsense error</h3>
+                <h3>6. Nonsense error</h3>
                 <p>The output is not a real word at all, even after trying to guess from context.</p>
                 <div class="example">wisdom teeth → visimteeth &nbsp;•&nbsp; swampy region → iswampimidio &nbsp;•&nbsp; feverish → beverish</div>
             </div>
             <div class="taxonomy-card">
-                <h3>6. Stop words</h3>
+                <h3>7. Stop words</h3>
                 <p>Only a short function word changed &mdash; <em>a, an, the, is, has, if</em>.</p>
                 <div class="example">[SUB:a-&gt;the] &nbsp;•&nbsp; [DEL:a] &nbsp;•&nbsp; [INS:in] &nbsp;•&nbsp; [SUB:or-&gt;so]</div>
             </div>
             <div class="taxonomy-card">
-                <h3>7. ASR omission / insertion</h3>
+                <h3>8. ASR omission / insertion</h3>
                 <p><em>[INS:&hellip;]</em> or <em>[DEL:&hellip;]</em> only. The reference is right and the ASR dropped or invented ordinary words. If the reference is the one at fault, use Human transcription error.</p>
                 <div class="example">[INS:for you] &nbsp;•&nbsp; [INS:of july] &nbsp;•&nbsp; [DEL:urine] &nbsp;•&nbsp; [DEL:okay and do you take any medications i had a a drug history of thyroxine]</div>
             </div>

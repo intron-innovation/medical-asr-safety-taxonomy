@@ -29,7 +29,7 @@ PAIRS = ROUNDS[int(ARGS[0])] if ARGS else ROUNDS[1]
 
 CLASSES = ["annunciation_errors", "homonym_errors_rhyming_words", "annunciation_homonym_errors", "dictionary_errors",
            "stop_words", "suffix_errors", "spelling_errors", "nonsense_errors",
-           "words_added", "words_deleted", "asr_omission_insertion", "critical_errors", "not_an_error"]
+           "words_added", "words_deleted", "asr_omission_insertion", "audio_glitch", "critical_errors", "not_an_error"]
 
 
 def load(fname):

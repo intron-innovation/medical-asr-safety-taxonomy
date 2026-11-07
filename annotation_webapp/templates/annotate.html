@@ -390,6 +390,10 @@
 
             <h3>Select ASR Error Class</h3>
             <div class="taxonomy-grid">
+                <div class="taxonomy-item" data-description="A fault in the recording at this spot, not in the speaker or the transcript: a dropout or silence, a click or pop, a cut-off, distortion, or a burst of noise over the speech. Play the audio and listen at the error. An accent, fast, slurred or mumbled speech is not a glitch (use Annunciation / Homonym). If a glitch hides a drug or other medical term, this label still wins over Dictionary error. e.g. a word cut off mid-syllable; a click or dropout where a word should be.">
+                    <input type="checkbox" name="errorClass" value="audio_glitch" id="ec-audio_glitch">
+                    <label for="ec-audio_glitch">Audio glitch</label>
+                </div>
                 <div class="taxonomy-item" data-description="An ORDINARY English word was misheard as another word that sounds like it — through accent, speed, slurring, a mid-sentence pause, or simple phonetic similarity. If the damaged word was a drug, condition, anatomy term or proper noun, use Dictionary error instead. A real word swapped for another real word on an ordinary word (worst → worse) is still this label. You must play the audio before selecting this. e.g. nausea → nuisance; abdominal pain → abnormal pain; pus → pulse; fainting → painting; cigarette pack → cigarette back.">
                     <input type="checkbox" name="errorClass" value="annunciation_homonym_errors" id="ec-annunciation_homonym_errors">
                     <label for="ec-annunciation_homonym_errors">Annunciation / Homonym error</label>
@@ -464,5 +468,5 @@
 {% endblock %}
 
 {% block extra_js %}
-<script src="{{ url_for('static', filename='js/annotate.js') }}?v=20261108a"></script>
+<script src="{{ url_for('static', filename='js/annotate.js') }}?v=20261109a"></script>
 {% endblock %}

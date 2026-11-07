@@ -196,6 +196,18 @@ window.addEventListener('load', function() {
         });
     }
 
+    const glitchBox = document.getElementById('ec-audio_glitch');
+    if (glitchBox) {
+        glitchBox.addEventListener('change', function() {
+            if (this.checked && !audioPlayedForCurrentError) {
+                showRuleHint('Audio glitch is a claim about the recording. '
+                    + 'Play the audio for this error before selecting it.');
+            } else if (!this.checked) {
+                clearRuleHint();
+            }
+        });
+    }
+
     // Click-anywhere seek + text-selection manual annotation on the ASR Reconstructed box
     const asrRecEl = document.getElementById('asrReconstructed');
     if (asrRecEl) {

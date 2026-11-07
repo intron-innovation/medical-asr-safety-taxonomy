@@ -18,7 +18,9 @@ Not deployed.
 flowchart TD
     S([Highlighted error]) --> Q1{Is the reference wrong<br/>and the ASR right?}
     Q1 -- yes --> H[Human transcription error]
-    Q1 -- no --> Q2{Is the damaged word a<br/>medical term or a name?}
+    Q1 -- no --> QA{Is there a fault in the audio here?<br/>dropout, click, cut-off. Play the audio}
+    QA -- yes --> AG[Audio glitch]
+    QA -- no --> Q2{Is the damaged word a<br/>medical term or a name?}
     Q2 -- yes --> D[Dictionary error]
     Q2 -- no --> Q3{Same stem, only the<br/>inflection changed?}
     Q3 -- yes --> SU[Suffix error]

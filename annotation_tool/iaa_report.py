@@ -28,7 +28,7 @@ RULE = next((a.split("=", 1)[1] for a in sys.argv[1:] if a.startswith("--rule=")
 EXCLUDE = {u for a in sys.argv[1:] if a.startswith("--exclude=") for u in a.split("=", 1)[1].split(",")}
 CLASSES = ["annunciation_errors", "homonym_errors_rhyming_words", "annunciation_homonym_errors", "dictionary_errors",
            "stop_words", "suffix_errors", "spelling_errors", "nonsense_errors",
-           "words_added", "words_deleted", "asr_omission_insertion", "critical_errors", "not_an_error"]
+           "words_added", "words_deleted", "asr_omission_insertion", "audio_glitch", "critical_errors", "not_an_error"]
 SEV_NAME = {0: "0 None", 1: "1 Minor", 2: "2 Moderate", 3: "3 Severe"}
 
 
