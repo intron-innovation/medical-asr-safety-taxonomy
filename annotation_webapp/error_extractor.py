@@ -106,35 +106,66 @@ class ErrorExtractor:
         return plain, entities
 
     @staticmethod
+    def _vocab_entity(words, entities):
+        """
+        The first NER entity that shares a word with `words` (exact word, or the same 5-letter
+        stem for words of 4+ letters, as in is_medical). Only used for errors that sit outside
+        every tagged term but were flagged medical because a similar word is tagged elsewhere.
+        Short words (under 4 letters) never match, so "the" does not pull in a clinical term.
+        """
+        words = [re.sub(r"[^a-z']", '', w.lower()) for w in words]
+        words = [w for w in words if len(w) >= 4]
+        for entity in entities:
+            tokens = [t for t in re.findall(r"[a-zA-Z']+", entity[3].lower()) if len(t) >= 4]
+            for w in words:
+                if any(w == t or w[:5] == t[:5] for t in tokens):
+                    return entity
+        return None
+
+    @staticmethod
     def _ner_for_errors(asr_text: str, human_transcript_ner: str):
         """
-        For each error marker in asr_text (in order), the NER entity of the reference it
-        overlaps, matched by word position: None for insertions (no reference word), for
-        errors outside any tagged entity, and for the whole transcript when the tagged text
-        does not line up word-for-word with the reference reconstructed from asr_text.
+        For each error marker in asr_text (in order): (start, end, type, text, match) or None.
+        match is 'in' when the error sits inside that entity of the reference (matched by word
+        position) and 'elsewhere' when it sits outside every entity but shares a word with one.
+        Insertions have no reference word, so only 'elsewhere' can apply to them. The position
+        match is skipped if the tagged text does not line up word-for-word with the reference
+        reconstructed from asr_text.
         """
         marker = re.compile(r'\[([A-Z]+):([^\]]+)\]')
-        ref_words, spans, pos = [], [], 0
+        ref_words, spans, words, pos = [], [], [], 0
         for match in marker.finditer(asr_text):
             ref_words += asr_text[pos:match.start()].split()
             kind, body = match.group(1), match.group(2)
             start = len(ref_words)
             if kind == 'DEL':
                 ref_words += body.split()
+                words.append(body.split())
             elif kind == 'SUB':
-                ref_words += body.split('->')[0].split()
+                before, _, after = body.partition('->')
+                ref_words += before.split()
+                words.append(before.split() + after.split())
+            else:
+                words.append(body.split())
             spans.append((kind, start, len(ref_words)))
             pos = match.end()
         ref_words += asr_text[pos:].split()
 
         plain, entities = ErrorExtractor._ner_entities(human_transcript_ner)
-        if not entities or plain != ref_words:
+        if not entities:
             return [None] * len(spans)
+        aligned = plain == ref_words
         found = []
-        for kind, start, end in spans:
+        for (kind, start, end), error_words in zip(spans, words):
             hit = None
-            if kind != 'INS':
-                hit = next((e for e in entities if e[0] < end and e[1] > start), None)
+            if aligned and kind != 'INS':
+                inside = next((e for e in entities if e[0] < end and e[1] > start), None)
+                if inside:
+                    hit = inside + ('in',)
+            if hit is None:
+                near = ErrorExtractor._vocab_entity(error_words, entities)
+                if near:
+                    hit = near + ('elsewhere',)
             found.append(hit)
         return found
 
@@ -162,9 +193,11 @@ class ErrorExtractor:
                 - is_medical: True if the error's text overlaps a tagged medical
                      entity in human_transcript_ner (annotators are only
                      required to annotate is_medical=True errors)
-                - ner_type / ner_group / ner_text: the NER entity (raw type, short
-                     display group, full entity text) the error sits inside, matched
-                     by word position; None for insertions or errors outside any entity
+                - ner_type / ner_group / ner_text / ner_match: the NER entity (raw type,
+                     short display group, full entity text) the error sits inside
+                     (ner_match 'in', matched by word position), or the entity sharing a
+                     word with it elsewhere in the transcript ('elsewhere'); None when
+                     neither applies
         """
         errors = []
         medical_vocab = ErrorExtractor.build_medical_vocab(human_transcript_ner)
@@ -192,7 +225,8 @@ class ErrorExtractor:
                 'is_medical': ErrorExtractor._is_medical_error(error_type, error_content, medical_vocab),
                 'ner_type': hit[2] if hit else None,
                 'ner_group': ErrorExtractor.NER_GROUPS.get(hit[2], 'Other') if hit else None,
-                'ner_text': hit[3] if hit else None
+                'ner_text': hit[3] if hit else None,
+                'ner_match': hit[4] if hit else None
             })
         
         return errors

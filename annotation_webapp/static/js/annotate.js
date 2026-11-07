@@ -51,10 +51,25 @@ const ERROR_TYPE_RULES = {
 // Annotations saved before Words added / Words deleted were merged keep working.
 const LEGACY_ERROR_CLASS = { words_added: 'asr_omission_insertion', words_deleted: 'asr_omission_insertion' };
 
+// Which side of the tag is the human reference and which is the ASR output.
+function humanVsAsrLine(errorType, errorText) {
+    const q = t => `&ldquo;${escapeHtml(t)}&rdquo;`;
+    if (errorType === 'SUB' && errorText.includes('->')) {
+        const [human, asr] = errorText.split('->');
+        return `<strong>Human:</strong> ${q(human)} &rarr; <strong>ASR:</strong> ${q(asr)}`;
+    }
+    if (errorType === 'DEL') return `<strong>Human:</strong> ${q(errorText)} &rarr; <strong>ASR:</strong> left it out`;
+    if (errorType === 'INS') return `<strong>Human:</strong> (nothing) &rarr; <strong>ASR:</strong> added ${q(errorText)}`;
+    return q(errorText);
+}
+
 function nerContextLine(errorData, errorType) {
     if (errorData && errorData.ner_text) {
-        return `<span class="ner-chip">${escapeHtml(errorData.ner_group || errorData.ner_type)}</span> ` +
+        const chip = `<span class="ner-chip">${escapeHtml(errorData.ner_group || errorData.ner_type)}</span> ` +
             `&ldquo;${escapeHtml(errorData.ner_text)}&rdquo;`;
+        return errorData.ner_match === 'elsewhere'
+            ? chip + ' <span class="ner-none">(a similar word is tagged elsewhere in this conversation)</span>'
+            : chip;
     }
     return errorType === 'INS'
         ? '<span class="ner-none">none &mdash; inserted word</span>'
@@ -649,7 +664,9 @@ function highlightErrors(text, utteranceId) {
                 : errorType === 'INS' ? 'ins-error' : 'sub-error';
             replacement = `<span class="error-highlight ${errorClass} ${isAnnotated}" ` +
                 `onclick="openAnnotationModal('${escapeHtml(errorId)}', '${escapeHtml(errorType)}', '${escapeHtml(fullMatch)}', '${escapeHtml(content)}')">` +
-                `<span class="error-status-indicator"></span>${escapeHtml(fullMatch)}</span>`;
+                `<span class="error-status-indicator"></span>${escapeHtml(fullMatch)}` +
+                (error.ner_group && error.ner_match !== 'elsewhere' ? `<sup class="ner-inline" title="${escapeHtml(error.ner_group)}: ${escapeHtml(error.ner_text || '')}">${escapeHtml(error.ner_group)}</sup>` : '') +
+                `</span>`;
         } else {
             // Render as the plain word the ASR actually produced, with no markup:
             // DEL words were never in the ASR output (omit), SUB shows the ASR's
@@ -734,7 +751,7 @@ function openAnnotationModal(errorId, errorType, fullMatch, errorText) {
     
     document.getElementById('errorContext').innerHTML = `
         <strong>Clinical term:</strong> ${nerContextLine(errorData, errorType)}<br>
-        <strong>Error Text:</strong> "${errorText}"<br>
+        <strong>Error:</strong> ${humanVsAsrLine(errorType, errorText)}<br>
         <strong>Utterance:</strong> ${utterance.utterance_id}<br>
         <strong>Error ID:</strong> <code style="font-size: 0.9em;">${errorId}</code>
     `;

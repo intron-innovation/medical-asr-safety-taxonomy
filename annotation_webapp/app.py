@@ -917,6 +917,7 @@ def backfill_medical_flags():
                 'ner_type': hit[2] if hit else None,
                 'ner_group': ErrorExtractor.NER_GROUPS.get(hit[2], 'Other') if hit else None,
                 'ner_text': hit[3] if hit else None,
+                'ner_match': hit[4] if hit else None,
             }
             for key, value in ner.items():
                 if error.get(key) != value:
