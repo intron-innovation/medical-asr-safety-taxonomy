@@ -3,7 +3,7 @@
 Open **Annotate Subset** and pick a model. Both models hold the same five sessions.
 Built by `build_phase4_subset.py` (`qwen3_iaa4`, `gemma3n_iaa4`).
 
-Sessions appear in a different order for each annotator, so use the IDs below.
+Everyone sees the sessions in the same order: the three joint sessions first, then the two independent ones. Next and Previous Session are always available; Next asks for confirmation if the session still has unannotated errors.
 
 ## Joint: all three annotators, together
 

@@ -624,6 +624,7 @@ def annotate(model_name):
     return render_template(
         'annotate.html',
         model_name=model_name,
+        free_navigation=model_name in SUBSET_MODELS,
         current_index=progress.current_utterance_index if progress else 0,
         total_utterances=total_utterances,
         total_annotations=total_annotations

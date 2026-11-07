@@ -6,6 +6,7 @@ let currentErrorId = null;  // Changed: now using error_id instead of error key
 let userAnnotations = {};
 let modelName = null;
 let annotatorId = null;
+let freeNavigation = false;  // IAA subsets: Next is never blocked, and every annotator sees the same session order
 let errorIdMap = {};  // Map from error_id to annotation data
 let manualSpansByUtterance = {};  // utterance_id -> [manual span objects]
 let pendingManualSpan = null;  // Manual span awaiting save (from a fresh selection)
@@ -143,6 +144,7 @@ window.addEventListener('load', function() {
     const interfaceDiv = document.querySelector('.annotation-interface');
     modelName = interfaceDiv ? interfaceDiv.dataset.modelName : null;
     annotatorId = interfaceDiv ? interfaceDiv.dataset.annotatorId : null;
+    freeNavigation = !!interfaceDiv && interfaceDiv.dataset.freeNavigation === '1';
     
     if (!modelName) {
         alert('Model name not found. Please select a model.');
@@ -238,11 +240,17 @@ function navigateUtterance(direction) {
         const currentUtterance = allData[randomizedIndices[currentPositionInRandomized]];
         const status = getSessionCompletion(currentUtterance);
         if (!status.complete) {
-            alert(
-                `This session is INCOMPLETE: ${status.total - status.annotated} of ${status.total} ` +
-                `flagged error(s) still need to be annotated before moving to the next session.`
-            );
-            return;
+            const left = status.total - status.annotated;
+            if (!freeNavigation) {
+                alert(
+                    `This session is INCOMPLETE: ${left} of ${status.total} ` +
+                    `flagged error(s) still need to be annotated before moving to the next session.`
+                );
+                return;
+            }
+            if (!confirm(`${left} of ${status.total} error(s) in this session are not annotated yet. Go to the next session anyway? You can come back with Previous Session.`)) {
+                return;
+            }
         }
     }
     const newPosition = currentPositionInRandomized + direction;
@@ -318,7 +326,10 @@ async function loadUtterances() {
         // every time, so the session list an annotator sees never changes
         // between logins/reloads.
         const seed = annotatorId ? hashStringToSeed(`${annotatorId}::${modelName}`) : undefined;
-        randomizedIndices = shuffleArray(Array.from({length: allData.length}, (_, i) => i), seed);
+        const sessionOrder = Array.from({length: allData.length}, (_, i) => i);
+        // IAA subsets keep the file order (joint sessions first) so all annotators walk the
+        // same sequence; the full models keep the per-annotator shuffle.
+        randomizedIndices = freeNavigation ? sessionOrder : shuffleArray(sessionOrder, seed);
 
         // Resume on the last unfinished session the annotator was viewing,
         // instead of always restarting at position 0.
@@ -1047,7 +1058,7 @@ async function loadStats() {
                 badge.classList.add('incomplete');
             }
         }
-        if (nextBtn) nextBtn.disabled = !status.complete;
+        if (nextBtn) nextBtn.disabled = !status.complete && !freeNavigation;
     } catch (error) {
         console.error('Error loading stats:', error);
         // Set default values on error

@@ -258,7 +258,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="annotation-interface" data-model-name="{{ model_name }}" data-annotator-id="{{ session.get('annotator_id', '') }}">
+<div class="annotation-interface" data-model-name="{{ model_name }}" data-free-navigation="{{ 1 if free_navigation else 0 }}" data-annotator-id="{{ session.get('annotator_id', '') }}">
     <!-- Model Info Header -->
     <div class="model-info-bar mb-3">
         <div class="d-flex justify-content-between align-items-center p-3 bg-primary text-white rounded">
@@ -282,7 +282,7 @@
         <span id="sessionTracker" style="font-weight: bold; font-size: 14px; color: #444;">0 / 0 errors annotated</span>
         <span id="sessionStatusBadge" class="session-status-badge incomplete">INCOMPLETE</span>
         <button id="prevBtn" class="btn btn-secondary">← Previous Session</button>
-        <button id="nextBtn" class="btn btn-secondary" title="All flagged errors in this session must be annotated first">Next Session →</button>
+        <button id="nextBtn" class="btn btn-secondary" title="{{ 'Move to the next session' if free_navigation else 'All flagged errors in this session must be annotated first' }}">Next Session →</button>
     </div>
 
     <!-- Session Audio -->
@@ -464,5 +464,5 @@
 {% endblock %}
 
 {% block extra_js %}
-<script src="{{ url_for('static', filename='js/annotate.js') }}?v=20261107c"></script>
+<script src="{{ url_for('static', filename='js/annotate.js') }}?v=20261108a"></script>
 {% endblock %}
