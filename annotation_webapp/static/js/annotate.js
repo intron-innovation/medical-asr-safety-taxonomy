@@ -45,9 +45,21 @@ function applyLabelCountRule(errorMatch) {
 }
 
 const ERROR_TYPE_RULES = {
-    words_added: { requires: 'INS', because: 'Words Added applies only to insertions [INS:...].' },
-    words_deleted: { requires: 'DEL', because: 'Words Deleted applies only to deletions [DEL:...].' }
+    asr_omission_insertion: { requires: ['INS', 'DEL'], because: 'ASR omission / insertion applies only to insertions [INS:...] and deletions [DEL:...].' }
 };
+
+// Annotations saved before Words added / Words deleted were merged keep working.
+const LEGACY_ERROR_CLASS = { words_added: 'asr_omission_insertion', words_deleted: 'asr_omission_insertion' };
+
+function nerContextLine(errorData, errorType) {
+    if (errorData && errorData.ner_text) {
+        return `<span class="ner-chip">${escapeHtml(errorData.ner_group || errorData.ner_type)}</span> ` +
+            `&ldquo;${escapeHtml(errorData.ner_text)}&rdquo;`;
+    }
+    return errorType === 'INS'
+        ? '<span class="ner-none">none &mdash; inserted word</span>'
+        : '<span class="ner-none">not inside a tagged clinical term</span>';
+}
 
 function showRuleHint(msg) {
     const el = document.getElementById('ecRuleHint');
@@ -67,7 +79,7 @@ function applyErrorTypeRules(errorType) {
     Object.entries(ERROR_TYPE_RULES).forEach(([value, rule]) => {
         const cb = document.getElementById(`ec-${value}`);
         if (!cb) return;
-        const allowed = errorType === rule.requires;
+        const allowed = [].concat(rule.requires).includes(errorType);
         cb.disabled = !allowed;
         cb.dataset.typeBlocked = allowed ? '0' : '1';
         if (!allowed) {
@@ -721,7 +733,7 @@ function openAnnotationModal(errorId, errorType, fullMatch, errorText) {
     if (errorData) seekToError(errorData);
     
     document.getElementById('errorContext').innerHTML = `
-        <strong>Error Type:</strong> ${errorType}<br>
+        <strong>Clinical term:</strong> ${nerContextLine(errorData, errorType)}<br>
         <strong>Error Text:</strong> "${errorText}"<br>
         <strong>Utterance:</strong> ${utterance.utterance_id}<br>
         <strong>Error ID:</strong> <code style="font-size: 0.9em;">${errorId}</code>
@@ -741,7 +753,7 @@ function openAnnotationModal(errorId, errorType, fullMatch, errorText) {
             }
         });
         (existing.errorClass || []).forEach(cls => {
-            const checkbox = document.getElementById(`ec-${cls}`);
+            const checkbox = document.getElementById(`ec-${LEGACY_ERROR_CLASS[cls] || cls}`);
             if (checkbox) checkbox.checked = true;
         });
         selectSeverity(existing.severity);
@@ -781,7 +793,7 @@ function openAnnotationModalLegacy(errorType, fullMatch, errorText) {
             }
         });
         (existing.errorClass || []).forEach(cls => {
-            const checkbox = document.getElementById(`ec-${cls}`);
+            const checkbox = document.getElementById(`ec-${LEGACY_ERROR_CLASS[cls] || cls}`);
             if (checkbox) checkbox.checked = true;
         });
         selectSeverity(existing.severity);

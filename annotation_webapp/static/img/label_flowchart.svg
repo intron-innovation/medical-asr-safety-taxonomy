@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 676" width="840" font-family="Helvetica, Arial, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#555"/></marker></defs>
+<text x="30" y="26" font-size="15" font-weight="700" fill="#222">Pick the label: start at the top, stop at the first yes</text>
+<rect x="30" y="50" width="400" height="56" rx="8" fill="#f1f4ff" stroke="#667eea" stroke-width="1.5"/>
+<text x="230.0" y="74.0" font-size="14" text-anchor="middle" fill="#222">Is the reference wrong,</text>
+<text x="230.0" y="92.0" font-size="14" text-anchor="middle" fill="#222">and the ASR right?</text>
+<line x1="430" y1="78.0" x2="556" y2="78.0" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="495.0" y="70.0" font-size="13" text-anchor="middle" fill="#2f855a" font-weight="700">yes</text>
+<rect x="560" y="50" width="250" height="56" rx="8" fill="#e6f7ee" stroke="#2f855a" stroke-width="1.5"/>
+<text x="685.0" y="83.0" font-size="14" font-weight="700" text-anchor="middle" fill="#1c4532">Human transcription error</text>
+<line x1="230.0" y1="106" x2="230.0" y2="136" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="240.0" y="127.0" font-size="13" fill="#c05621" font-weight="700">no</text>
+<rect x="30" y="140" width="400" height="56" rx="8" fill="#f1f4ff" stroke="#667eea" stroke-width="1.5"/>
+<text x="230.0" y="164.0" font-size="14" text-anchor="middle" fill="#222">Is the damaged word a medical</text>
+<text x="230.0" y="182.0" font-size="14" text-anchor="middle" fill="#222">term or a name?</text>
+<line x1="430" y1="168.0" x2="556" y2="168.0" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="495.0" y="160.0" font-size="13" text-anchor="middle" fill="#2f855a" font-weight="700">yes</text>
+<rect x="560" y="140" width="250" height="56" rx="8" fill="#e6f7ee" stroke="#2f855a" stroke-width="1.5"/>
+<text x="685.0" y="173.0" font-size="14" font-weight="700" text-anchor="middle" fill="#1c4532">Dictionary error</text>
+<line x1="230.0" y1="196" x2="230.0" y2="226" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="240.0" y="217.0" font-size="13" fill="#c05621" font-weight="700">no</text>
+<rect x="30" y="230" width="400" height="56" rx="8" fill="#f1f4ff" stroke="#667eea" stroke-width="1.5"/>
+<text x="230.0" y="254.0" font-size="14" text-anchor="middle" fill="#222">Same stem, only the</text>
+<text x="230.0" y="272.0" font-size="14" text-anchor="middle" fill="#222">inflection changed?</text>
+<line x1="430" y1="258.0" x2="556" y2="258.0" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="495.0" y="250.0" font-size="13" text-anchor="middle" fill="#2f855a" font-weight="700">yes</text>
+<rect x="560" y="230" width="250" height="56" rx="8" fill="#e6f7ee" stroke="#2f855a" stroke-width="1.5"/>
+<text x="685.0" y="263.0" font-size="14" font-weight="700" text-anchor="middle" fill="#1c4532">Suffix error</text>
+<line x1="230.0" y1="286" x2="230.0" y2="316" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="240.0" y="307.0" font-size="13" fill="#c05621" font-weight="700">no</text>
+<rect x="30" y="320" width="400" height="56" rx="8" fill="#f1f4ff" stroke="#667eea" stroke-width="1.5"/>
+<text x="230.0" y="353.0" font-size="14" text-anchor="middle" fill="#222">Only a short function word?</text>
+<line x1="430" y1="348.0" x2="556" y2="348.0" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="495.0" y="340.0" font-size="13" text-anchor="middle" fill="#2f855a" font-weight="700">yes</text>
+<rect x="560" y="320" width="250" height="56" rx="8" fill="#e6f7ee" stroke="#2f855a" stroke-width="1.5"/>
+<text x="685.0" y="353.0" font-size="14" font-weight="700" text-anchor="middle" fill="#1c4532">Stop words</text>
+<line x1="230.0" y1="376" x2="230.0" y2="406" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="240.0" y="397.0" font-size="13" fill="#c05621" font-weight="700">no</text>
+<rect x="30" y="410" width="400" height="56" rx="8" fill="#f1f4ff" stroke="#667eea" stroke-width="1.5"/>
+<text x="230.0" y="434.0" font-size="14" text-anchor="middle" fill="#222">An ordinary word swapped for another</text>
+<text x="230.0" y="452.0" font-size="14" text-anchor="middle" fill="#222">real word (usually a sound-alike)?</text>
+<line x1="430" y1="438.0" x2="556" y2="438.0" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="495.0" y="430.0" font-size="13" text-anchor="middle" fill="#2f855a" font-weight="700">yes</text>
+<rect x="560" y="410" width="250" height="56" rx="8" fill="#e6f7ee" stroke="#2f855a" stroke-width="1.5"/>
+<text x="685.0" y="443.0" font-size="14" font-weight="700" text-anchor="middle" fill="#1c4532">Annunciation / Homonym</text>
+<line x1="230.0" y1="466" x2="230.0" y2="496" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="240.0" y="487.0" font-size="13" fill="#c05621" font-weight="700">no</text>
+<rect x="30" y="500" width="400" height="56" rx="8" fill="#f1f4ff" stroke="#667eea" stroke-width="1.5"/>
+<text x="230.0" y="533.0" font-size="14" text-anchor="middle" fill="#222">Output not a real word?</text>
+<line x1="430" y1="528.0" x2="556" y2="528.0" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="495.0" y="520.0" font-size="13" text-anchor="middle" fill="#2f855a" font-weight="700">yes</text>
+<rect x="560" y="500" width="250" height="56" rx="8" fill="#e6f7ee" stroke="#2f855a" stroke-width="1.5"/>
+<text x="685.0" y="533.0" font-size="14" font-weight="700" text-anchor="middle" fill="#1c4532">Nonsense error</text>
+<line x1="230.0" y1="556" x2="230.0" y2="586" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="240.0" y="577.0" font-size="13" fill="#c05621" font-weight="700">no</text>
+<rect x="30" y="590" width="400" height="56" rx="8" fill="#e6f7ee" stroke="#2f855a" stroke-width="1.5"/>
+<text x="230.0" y="616.0" font-size="14" font-weight="700" text-anchor="middle" fill="#1c4532">ASR omission / insertion</text>
+<text x="230.0" y="634.0" font-size="12" text-anchor="middle" fill="#2d5a44">(INS or DEL tags: ordinary words dropped or invented)</text>
+</svg>

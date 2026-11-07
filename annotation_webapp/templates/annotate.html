@@ -244,6 +244,8 @@
         margin-bottom: 15px;
     }
     .severity-rubric strong { color: #222; }
+    .ner-chip { display: inline-block; background: #e8eefc; color: #2c4a9a; border-radius: 10px; padding: 1px 9px; font-size: 0.9em; font-weight: 600; }
+    .ner-none { color: #888; }
     .session-status-badge {
         padding: 6px 14px;
         border-radius: 20px;
@@ -390,7 +392,7 @@
 
             <h3>Select ASR Error Class</h3>
             <div class="taxonomy-grid">
-                <div class="taxonomy-item" data-description="An ORDINARY English word was misheard as another word that sounds like it — through accent, speed, slurring, a mid-sentence pause, or simple phonetic similarity. If the damaged word was a drug, condition, anatomy term or proper noun, use Dictionary error instead. You must play the audio before selecting this. e.g. nausea → nuisance; abdominal pain → abnormal pain; pus → pulse; fainting → painting; cigarette pack → cigarette back.">
+                <div class="taxonomy-item" data-description="An ORDINARY English word was misheard as another word that sounds like it — through accent, speed, slurring, a mid-sentence pause, or simple phonetic similarity. If the damaged word was a drug, condition, anatomy term or proper noun, use Dictionary error instead. A real word swapped for another real word on an ordinary word (worst → worse) is still this label. You must play the audio before selecting this. e.g. nausea → nuisance; abdominal pain → abnormal pain; pus → pulse; fainting → painting; cigarette pack → cigarette back.">
                     <input type="checkbox" name="errorClass" value="annunciation_homonym_errors" id="ec-annunciation_homonym_errors">
                     <label for="ec-annunciation_homonym_errors">Annunciation / Homonym error</label>
                 </div>
@@ -398,24 +400,20 @@
                     <input type="checkbox" name="errorClass" value="stop_words" id="ec-stop_words">
                     <label for="ec-stop_words">Stop words (Add/del/substituted)</label>
                 </div>
-                <div class="taxonomy-item" data-description="Errors caused by substituting an incorrect ending on the intended word. The stem is right; the ending is wrong. e.g. breathless → breathlessness; [SUB:vomit->vomits]; [SUB:nauseated->nauseous]; [SUB:problem->problems].">
+                <div class="taxonomy-item" data-description="Ordinary words only: the stem is right and only the inflection (plural, tense, -ing) is wrong. A medical term with a different ending is Dictionary error, not Suffix. e.g. [SUB:vomit->vomits]; [SUB:problem->problems]; [SUB:complaint->complaints].">
                     <input type="checkbox" name="errorClass" value="suffix_errors" id="ec-suffix_errors">
                     <label for="ec-suffix_errors">Suffix errors</label>
                 </div>
                 
-                <div class="taxonomy-item" data-description="The ASR produced a word NOBODY SAID. Use this only when the insertion is invented. If the speaker did say it and the human transcriber simply left it out, it is a Human Spelling Error instead - that is a gap in the reference, not an ASR error. e.g. [INS:for you]; [INS:one thousand nine]; [INS:of july].">
-                    <input type="checkbox" name="errorClass" value="words_added" id="ec-words_added">
-                    <label for="ec-words_added">Words added</label>
+                <div class="taxonomy-item" data-description="The reference is right, and the ASR dropped or invented ordinary words (insertions and deletions only). Ask: did the speaker say it? If the ASR dropped something the speaker said, or invented something nobody said, use this. If the reference is the one at fault, use Human transcription error. A short function word is Stop words, and a medical term is Dictionary error. e.g. [INS:for you]; [INS:of july]; [DEL:urine]; [DEL:okay and do you take any medications].">
+                    <input type="checkbox" name="errorClass" value="asr_omission_insertion" id="ec-asr_omission_insertion">
+                    <label for="ec-asr_omission_insertion">ASR omission / insertion</label>
                 </div>
-                <div class="taxonomy-item" data-description="A word that was spoken is omitted (cases of deletion). This may also be a chunk of a sentence being deleted. e.g. [DEL:urine]; [DEL:recreational]; [DEL:in]; [DEL:okay and do you take any medications i had a a drug history of thyroxine].">
-                    <input type="checkbox" name="errorClass" value="words_deleted" id="ec-words_deleted">
-                    <label for="ec-words_deleted">Words deleted</label>
-                </div>
-                <div class="taxonomy-item" data-description="Phrases recognised in place of a word missing from the dictionary. Typically a medical entity, a drug name or a proper noun the ASR does not hold. ALSO use this when the ASR turns a non-medical word into a medical one, or a medical word into a non-medical one, e.g. [SUB:daria->diarrhea] or [SUB:ulcer->asthma]. The result sounds similar to, but not always exactly like, the intended word. e.g. naproxen → proxen; metformin → bombetformin; lisinopril → lesetapril; Chidinma → Chidima; Ekiti → Nkita.">
+                <div class="taxonomy-item" data-description="Phrases recognised in place of a word missing from the dictionary. Typically a medical entity, a drug name or a proper noun the ASR does not hold. A medical term stays here even if only the ending changed, e.g. abdominal → abdomen; feverish → fever. ALSO use this when the ASR turns a non-medical word into a medical one, or a medical word into a non-medical one, e.g. [SUB:daria->diarrhea] or [SUB:ulcer->asthma]. The result sounds similar to, but not always exactly like, the intended word. e.g. naproxen → proxen; metformin → bombetformin; lisinopril → lesetapril; Chidinma → Chidima; Ekiti → Nkita.">
                     <input type="checkbox" name="errorClass" value="dictionary_errors" id="ec-dictionary_errors">
                     <label for="ec-dictionary_errors">Dictionary errors</label>
                 </div>
-                <div class="taxonomy-item" data-description="The mistake is in the HUMAN transcript, not the ASR output — the recogniser is right and the human transcriber is wrong. This covers both misspellings in the reference AND words the human failed to transcribe at all that the ASR did capture. Judge these from the text rather than the audio. Insertions are often this: if [INS:alcohol] or [INS:hormone] is a word the speaker really said, the human missed it and this is the right label, NOT words added. e.g. reference 'catherization' → ASR 'catheterization'; reference 'lose' → ASR 'loose'; [INS:alcohol] where the human typed it only once.">
+                <div class="taxonomy-item" data-description="The mistake is in the HUMAN transcript, not the ASR output — the recogniser is right and the human transcriber is wrong. This covers both misspellings in the reference AND words the human failed to transcribe at all that the ASR did capture. Judge these from the text rather than the audio. Insertions are often this: if [INS:alcohol] or [INS:hormone] is a word the speaker really said, the human missed it and this is the right label, NOT ASR omission / insertion. The same goes for a deletion where the reference has words the speaker never said. e.g. reference 'catherization' → ASR 'catheterization'; reference 'lose' → ASR 'loose'; [INS:alcohol] where the human typed it only once.">
                     <input type="checkbox" name="errorClass" value="spelling_errors" id="ec-spelling_errors">
                     <label for="ec-spelling_errors">Human transcription error</label>
                 </div>
@@ -425,7 +423,7 @@
                 </div>
             </div>
             <div id="ecRuleHint" style="display:none; background:#fff6e0; border-left:3px solid #ed8936; padding:8px 12px; margin:-4px 0 10px; font-size:0.86em; color:#7a4a12;"></div>
-            <small style="color:#666; display:block; margin: -8px 0 15px;">Start from the <strong>damaged word</strong>, not the sound. One word in the tag &rarr; one label. Severity 3 is for errors touching a diagnosis, symptom, medication, procedure or a negation.</small>
+            <small style="color:#666; display:block; margin: -8px 0 15px;">Start from the <strong>damaged word</strong>, not the sound. One word in the tag &rarr; one label. Severity: <strong>3 = misleading</strong> (a plausible wrong clinical fact), <strong>2 = missing</strong> (the fact is gone or garbled), <strong>1 = no clinical content</strong>.</small>
 
             <!-- <div style="margin: 15px 0;">
                 <label for="customTaxonomy" style="font-weight: bold; margin-bottom: 5px; display: block;">

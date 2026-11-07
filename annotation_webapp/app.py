@@ -896,7 +896,8 @@ def backfill_medical_flags():
     ingestion time. This updates extra_data['errors'] in place, preserving the
     original error_id/start_idx/etc for every error so previously-submitted
     Annotation rows (which reference error_id) are never orphaned; it only
-    adds/refreshes the is_medical key.
+    adds/refreshes the is_medical key and the ner_type/ner_group/ner_text keys
+    (the NER entity each error sits inside, matched by word position).
     """
     updated_utterances = 0
     updated_errors = 0
@@ -906,8 +907,22 @@ def backfill_medical_flags():
         if not errors:
             continue
         medical_vocab = ErrorExtractor.build_medical_vocab(extra_data.get('human_transcript_ner'))
+        ner_hits = ErrorExtractor._ner_for_errors(
+            extra_data.get('asr_reconstructed') or utt.asr_reconstructed or '',
+            extra_data.get('human_transcript_ner'))
         changed = False
-        for error in errors:
+        for idx, error in enumerate(errors):
+            hit = ner_hits[idx] if idx < len(ner_hits) else None
+            ner = {
+                'ner_type': hit[2] if hit else None,
+                'ner_group': ErrorExtractor.NER_GROUPS.get(hit[2], 'Other') if hit else None,
+                'ner_text': hit[3] if hit else None,
+            }
+            for key, value in ner.items():
+                if error.get(key) != value:
+                    error[key] = value
+                    changed = True
+                    updated_errors += 1
             is_medical = ErrorExtractor._is_medical_error(
                 error.get('error_type'), error.get('error_text', ''), medical_vocab
             )
@@ -922,7 +937,7 @@ def backfill_medical_flags():
             db.session.add(utt)
             updated_utterances += 1
     db.session.commit()
-    print(f"Backfilled is_medical on {updated_errors} error(s) across {updated_utterances} utterance(s).")
+    print(f"Backfilled is_medical/NER fields on {updated_errors} value(s) across {updated_utterances} utterance(s).")
 
 
 @app.cli.command()

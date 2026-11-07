@@ -20,18 +20,22 @@ ROUNDS = {
         ("gemma3n_iaa", "ANN009_gemma.json", "ANN010_gemma.json")],
     2: [("qwen3_iaa2", "ANN009_qwen_round2.json", "ANN010_qwen_round2.json"),
         ("gemma3n_iaa2", "ANN009_gemma_round2.json", "ANN010_gemma_round2.json")],
+    3: [("qwen3_iaa3", "ANN009_qwen_round3.json", "ANN010_qwen_round3.json"),
+        ("gemma3n_iaa3", "ANN009_gemma_round3.json", "ANN010_gemma_round3.json")],
 }
-PAIRS = ROUNDS[int(sys.argv[1])] if len(sys.argv) > 1 else ROUNDS[1]
+ARGS = [a for a in sys.argv[1:] if not a.startswith("--exclude=")]
+EXCLUDE = {u for a in sys.argv[1:] if a.startswith("--exclude=") for u in a.split("=", 1)[1].split(",")}
+PAIRS = ROUNDS[int(ARGS[0])] if ARGS else ROUNDS[1]
 
-CLASSES = ["annunciation_errors", "homonym_errors_rhyming_words", "dictionary_errors",
+CLASSES = ["annunciation_errors", "homonym_errors_rhyming_words", "annunciation_homonym_errors", "dictionary_errors",
            "stop_words", "suffix_errors", "spelling_errors", "nonsense_errors",
-           "words_added", "words_deleted", "critical_errors", "not_an_error"]
+           "words_added", "words_deleted", "asr_omission_insertion", "critical_errors", "not_an_error"]
 
 
 def load(fname):
     d = json.loads((DATA / fname).read_text())
     recs = d["annotations"] if isinstance(d, dict) and "annotations" in d else d
-    return {r["errorId"]: r for r in recs}
+    return {r["errorId"]: r for r in recs if r.get("utteranceId") not in EXCLUDE}
 
 
 def cohen_kappa(a, b, weights=None):

@@ -1,6 +1,6 @@
 """Final IAA report: per-label kappa, overall kappa, severity per level and overall.
 
-    python iaa_report.py [round]
+    python iaa_report.py [round] [--exclude=SESSION_ID,...] [--rule=subset|overlap]
 
 Two taxonomy columns are reported.
 
@@ -23,17 +23,19 @@ from pathlib import Path
 import numpy as np
 
 DATA = Path(__file__).parent / "completed_annotation" / "inter_rater_datasets"
-ROUNDS = {1: "", 2: "_round2"}
-CLASSES = ["annunciation_errors", "homonym_errors_rhyming_words", "dictionary_errors",
+ROUNDS = {1: "", 2: "_round2", 3: "_round3"}
+RULE = next((a.split("=", 1)[1] for a in sys.argv[1:] if a.startswith("--rule=")), "subset")
+EXCLUDE = {u for a in sys.argv[1:] if a.startswith("--exclude=") for u in a.split("=", 1)[1].split(",")}
+CLASSES = ["annunciation_errors", "homonym_errors_rhyming_words", "annunciation_homonym_errors", "dictionary_errors",
            "stop_words", "suffix_errors", "spelling_errors", "nonsense_errors",
-           "words_added", "words_deleted", "critical_errors", "not_an_error"]
+           "words_added", "words_deleted", "asr_omission_insertion", "critical_errors", "not_an_error"]
 SEV_NAME = {0: "0 None", 1: "1 Minor", 2: "2 Moderate", 3: "3 Severe"}
 
 
 def load(fname):
     d = json.loads((DATA / fname).read_text())
     recs = d["annotations"] if isinstance(d, dict) and "annotations" in d else d
-    return {r["errorId"]: r for r in recs}
+    return {r["errorId"]: r for r in recs if r.get("utteranceId") not in EXCLUDE}
 
 
 def kappa(x, y, quadratic=False):
@@ -89,7 +91,8 @@ def band(k):
 
 
 def main():
-    rnd = int(sys.argv[1]) if len(sys.argv) > 1 else 2
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    rnd = int(args[0]) if args else 2
     sfx = ROUNDS[rnd]
     pairs = []
     for m in ["qwen", "gemma"]:
@@ -98,11 +101,16 @@ def main():
 
     la = [set(a["errorClass"]) for a, _ in pairs]
     lb = [set(b["errorClass"]) for _, b in pairs]
-    # union crediting: only where one set strictly contains the other
+    # rule=subset (default): credit only where one set strictly contains the other; both get x|y.
+    # rule=overlap: any shared label is the agreed label; both get x&y, the unshared labels are discarded.
     ua, ub = [], []
     n_credited = 0
     for x, y in zip(la, lb):
-        if x < y or y < x:
+        if RULE == "overlap" and x & y:
+            ua.append(x & y)
+            ub.append(x & y)
+            n_credited += x != y
+        elif RULE == "subset" and (x < y or y < x):
             ua.append(x | y)
             ub.append(x | y)
             n_credited += 1

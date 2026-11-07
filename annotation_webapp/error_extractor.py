@@ -74,6 +74,70 @@ class ErrorExtractor:
             words = re.findall(r"[a-zA-Z']+", error_content.lower())
         return ErrorExtractor._words_overlap_medical_vocab(words, medical_vocab)
 
+    # Short display groups for the Healthcare NLP mention types, so annotators see a
+    # handful of labels rather than 20+ raw type names.
+    NER_GROUPS = {
+        'MEDICINE': 'Medication', 'MED_FORM': 'Medication', 'MED_FREQUENCY': 'Medication',
+        'MED_ROUTE': 'Medication', 'MED_STATUS': 'Medication', 'MED_DOSE': 'Medication',
+        'MED_STRENGTH': 'Medication', 'MED_DURATION': 'Medication', 'MED_UNIT': 'Medication',
+        'PROBLEM': 'Problem',
+        'ANATOMICAL_STRUCTURE': 'Anatomy',
+        'PROCEDURE': 'Procedure/test', 'LABORATORY_DATA': 'Procedure/test',
+        'LAB_RESULT': 'Procedure/test', 'LAB_UNIT': 'Procedure/test', 'LAB_VALUE': 'Procedure/test',
+        'MEDICAL_DEVICE': 'Procedure/test',
+        'BODY_MEASUREMENT': 'Measurement', 'BM_VALUE': 'Measurement', 'BM_UNIT': 'Measurement',
+        'BM_RESULT': 'Measurement', 'BODY_FUNCTION': 'Measurement', 'BF_RESULT': 'Measurement',
+        'SEVERITY': 'Severity',
+        'SUBSTANCE_ABUSE': 'Substance use',
+    }
+
+    @staticmethod
+    def _ner_entities(human_transcript_ner: str):
+        """Plain reference words plus (start, end, type, text) word spans of each NER entity."""
+        plain, entities, pos = [], [], 0
+        text = human_transcript_ner or ''
+        for match in ErrorExtractor._NER_TAG_PATTERN.finditer(text):
+            plain += text[pos:match.start()].split()
+            start = len(plain)
+            plain += match.group(2).split()
+            entities.append((start, len(plain), match.group(1), match.group(2).strip()))
+            pos = match.end()
+        plain += text[pos:].split()
+        return plain, entities
+
+    @staticmethod
+    def _ner_for_errors(asr_text: str, human_transcript_ner: str):
+        """
+        For each error marker in asr_text (in order), the NER entity of the reference it
+        overlaps, matched by word position: None for insertions (no reference word), for
+        errors outside any tagged entity, and for the whole transcript when the tagged text
+        does not line up word-for-word with the reference reconstructed from asr_text.
+        """
+        marker = re.compile(r'\[([A-Z]+):([^\]]+)\]')
+        ref_words, spans, pos = [], [], 0
+        for match in marker.finditer(asr_text):
+            ref_words += asr_text[pos:match.start()].split()
+            kind, body = match.group(1), match.group(2)
+            start = len(ref_words)
+            if kind == 'DEL':
+                ref_words += body.split()
+            elif kind == 'SUB':
+                ref_words += body.split('->')[0].split()
+            spans.append((kind, start, len(ref_words)))
+            pos = match.end()
+        ref_words += asr_text[pos:].split()
+
+        plain, entities = ErrorExtractor._ner_entities(human_transcript_ner)
+        if not entities or plain != ref_words:
+            return [None] * len(spans)
+        found = []
+        for kind, start, end in spans:
+            hit = None
+            if kind != 'INS':
+                hit = next((e for e in entities if e[0] < end and e[1] > start), None)
+            found.append(hit)
+        return found
+
     @staticmethod
     def extract_errors(asr_text: str, human_transcript_ner: str = None) -> List[Dict]:
         """
@@ -98,9 +162,13 @@ class ErrorExtractor:
                 - is_medical: True if the error's text overlaps a tagged medical
                      entity in human_transcript_ner (annotators are only
                      required to annotate is_medical=True errors)
+                - ner_type / ner_group / ner_text: the NER entity (raw type, short
+                     display group, full entity text) the error sits inside, matched
+                     by word position; None for insertions or errors outside any entity
         """
         errors = []
         medical_vocab = ErrorExtractor.build_medical_vocab(human_transcript_ner)
+        ner_hits = ErrorExtractor._ner_for_errors(asr_text, human_transcript_ner)
         
         # Pattern to match [TYPE:content] or [TYPE:before->after]
         pattern = r'\[([A-Z]+):([^\]]+)\]'
@@ -111,6 +179,7 @@ class ErrorExtractor:
             error_match = match.group(0)  # full match including brackets
             
             error_id = str(uuid.uuid4())  # Generate unique ID for this occurrence
+            hit = ner_hits[len(errors)]
             
             errors.append({
                 'error_id': error_id,
@@ -120,7 +189,10 @@ class ErrorExtractor:
                 'position': len(errors),  # Sequential position for this occurrence
                 'start_idx': match.start(),
                 'end_idx': match.end(),
-                'is_medical': ErrorExtractor._is_medical_error(error_type, error_content, medical_vocab)
+                'is_medical': ErrorExtractor._is_medical_error(error_type, error_content, medical_vocab),
+                'ner_type': hit[2] if hit else None,
+                'ner_group': ErrorExtractor.NER_GROUPS.get(hit[2], 'Other') if hit else None,
+                'ner_text': hit[3] if hit else None
             })
         
         return errors
