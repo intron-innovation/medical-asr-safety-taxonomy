@@ -10,10 +10,7 @@ as you go. Based on what went wrong in round 3.
 **Start from the word, not the sound.** Pronunciation explains nearly every ASR error, so
 it is only a label when the damaged word is an ordinary English word.
 
-**Audio glitch comes right after Human transcription error.** It is a fault in the recording at that
-spot: a dropout or silence, a click or pop, a cut-off, distortion, or noise over the speech. Play the
-audio and listen at the error. An accent, or fast, slurred or mumbled speech, is not a glitch (that is
-Annunciation / Homonym). If a glitch hides a medical term, label it Audio glitch, not Dictionary.
+**Audio glitch comes right after Human transcription error.** A fault in the recording at this spot. This includes a dropout, distortion, a click or pop, a cut-off, or a burst of noise over the speech. An accent, or fast, slurred or mumbled speech, is not a glitch. If a glitch hides a medical term, it is still Audio glitch. *e.g. a word cut off mid-syllable; a click or dropout where a word should be.*
 
 **A medical term beats Suffix.** If the damaged word is a drug, condition, symptom,
 anatomy term, procedure or test, it is Dictionary even when only the ending changed.

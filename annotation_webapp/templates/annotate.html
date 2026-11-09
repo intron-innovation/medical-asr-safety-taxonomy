@@ -390,7 +390,7 @@
 
             <h3>Select ASR Error Class</h3>
             <div class="taxonomy-grid">
-                <div class="taxonomy-item" data-description="A fault in the recording at this spot, not in the speaker or the transcript: a dropout or silence, a click or pop, a cut-off, distortion, or a burst of noise over the speech. Play the audio and listen at the error. An accent, fast, slurred or mumbled speech is not a glitch (use Annunciation / Homonym). If a glitch hides a drug or other medical term, this label still wins over Dictionary error. e.g. a word cut off mid-syllable; a click or dropout where a word should be.">
+                <div class="taxonomy-item" data-description="A fault in the recording at this spot. This includes a dropout, distortion, a click or pop, a cut-off, or a burst of noise over the speech. An accent, or fast, slurred or mumbled speech, is not a glitch. If a glitch hides a medical term, it is still Audio glitch. e.g. a word cut off mid-syllable; a click or dropout where a word should be.">
                     <input type="checkbox" name="errorClass" value="audio_glitch" id="ec-audio_glitch">
                     <label for="ec-audio_glitch">Audio glitch</label>
                 </div>
@@ -468,5 +468,5 @@
 {% endblock %}
 
 {% block extra_js %}
-<script src="{{ url_for('static', filename='js/annotate.js') }}?v=20261109a"></script>
+<script src="{{ url_for('static', filename='js/annotate.js') }}?v=20261109b"></script>
 {% endblock %}
