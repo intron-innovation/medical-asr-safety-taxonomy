@@ -23,7 +23,13 @@ from pathlib import Path
 import numpy as np
 
 DATA = Path(__file__).parent / "completed_annotation" / "inter_rater_datasets"
-ROUNDS = {1: "", 2: "_round2", 3: "_round3"}
+ROUNDS = {1: "", 2: "_round2", 3: "_round3", 4: "_round4"}
+# Round 4 file names differ per model; raters default to ANN010 vs ANN011 (ANN009 pending).
+R4_FILES = {"qwen": "{r}_qwen_round4.json", "gemma": None}
+R4_GEMMA = {"ANN010": "ANN010_gemma3n_iaa4_round4.json", "ANN011": "ANN011_gemma3n_round4.json", "ANN009": "ANN009_gemma3n_round4.json"}
+RATERS = next((a.split("=", 1)[1].split(",") for a in sys.argv[1:] if a.startswith("--raters=")), ["ANN009", "ANN010"])
+if 4 in [int(a) for a in sys.argv[1:] if a.isdigit()] and not any(a.startswith("--raters=") for a in sys.argv[1:]):
+    RATERS = ["ANN010", "ANN011"]
 RULE = next((a.split("=", 1)[1] for a in sys.argv[1:] if a.startswith("--rule=")), "subset")
 EXCLUDE = {u for a in sys.argv[1:] if a.startswith("--exclude=") for u in a.split("=", 1)[1].split(",")}
 CLASSES = ["annunciation_errors", "homonym_errors_rhyming_words", "annunciation_homonym_errors", "dictionary_errors",
@@ -96,7 +102,11 @@ def main():
     sfx = ROUNDS[rnd]
     pairs = []
     for m in ["qwen", "gemma"]:
-        A, B = load(f"ANN009_{m}{sfx}.json"), load(f"ANN010_{m}{sfx}.json")
+        if rnd == 4:
+            f = lambda r: R4_FILES["qwen"].format(r=r) if m == "qwen" else R4_GEMMA[r]
+            A, B = load(f(RATERS[0])), load(f(RATERS[1]))
+        else:
+            A, B = load(f"{RATERS[0]}_{m}{sfx}.json"), load(f"{RATERS[1]}_{m}{sfx}.json")
         pairs += [(A[i], B[i]) for i in A if i in B]
 
     la = [set(a["errorClass"]) for a, _ in pairs]
@@ -119,11 +129,11 @@ def main():
             ub.append(y)
 
     print("=" * 96)
-    print(f"IAA REPORT - ROUND {rnd}   ANN009 vs ANN010   n = {len(pairs)} paired errors")
+    print(f"IAA REPORT - ROUND {rnd}   {RATERS[0]} vs {RATERS[1]}   n = {len(pairs)} paired errors")
     print("=" * 96)
 
     print("\nTAXONOMY - kappa per label\n")
-    print(f"  {'category':30}{'ANN009':>8}{'ANN010':>8}{'both':>6}{'strict k':>10}{'union k':>9}   interpretation (union)")
+    print(f"  {'category':30}{RATERS[0]:>8}{RATERS[1]:>8}{'both':>6}{'strict k':>10}{'union k':>9}   interpretation (union)")
     strict, union = [], []
     for c in CLASSES:
         x = [1 if c in s else 0 for s in la]
@@ -154,7 +164,7 @@ def main():
     sb = [b["severity"] for _, b in pairs]
     print("\n" + "=" * 96)
     print("SEVERITY - per level (one vs rest)\n")
-    print(f"  {'level':14}{'ANN009':>8}{'ANN010':>8}{'both':>6}{'either':>8}{'Jaccard':>9}{'kappa':>8}   interpretation")
+    print(f"  {'level':14}{RATERS[0]:>8}{RATERS[1]:>8}{'both':>6}{'either':>8}{'Jaccard':>9}{'kappa':>8}   interpretation")
     for L in sorted(set(sa) | set(sb)):
         x = [1 if v == L else 0 for v in sa]
         y = [1 if v == L else 0 for v in sb]
@@ -171,7 +181,7 @@ def main():
     print(f"    quadratic weighted   {kappa(sa, sb, True):.2f}   {band(kappa(sa, sb, True))}   <- report this one")
     print(f"    Krippendorff alpha   {alpha_ordinal(sa, sb):.2f}")
 
-    print("\n  confusion (rows ANN009, cols ANN010)")
+    print(f"\n  confusion (rows {RATERS[0]}, cols {RATERS[1]})")
     lv = sorted(set(sa) | set(sb))
     print("        " + "".join(f"{v:>7}" for v in lv) + "    total")
     for i in lv:

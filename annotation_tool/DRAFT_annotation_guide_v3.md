@@ -16,31 +16,33 @@ Not deployed.
 
 ```mermaid
 flowchart TD
-    S([Highlighted error]) --> Q1{Play the audio. Does it match what the ASR wrote,<br/>not what the reference says?<br/>i.e. is the reference wrong and the ASR right?}
-    Q1 -- yes --> H[Human transcription error]
-    Q1 -- no --> QA{Is there a fault in the recording at this spot?<br/>a dropout, click, cut-off, distortion or noise<br/>Play the audio}
-    QA -- yes --> AG[Audio glitch]
-    QA -- no --> Q2{Is the damaged word a medical term or a name?<br/>a drug, condition, symptom, body part, test, person or place}
-    Q2 -- yes --> D[Dictionary error]
-    Q2 -- no --> Q3{Is it the same word with only the ending changed?<br/>plural, tense or -ing}
-    Q3 -- yes --> SU[Suffix error]
-    Q3 -- no --> Q4{Is it only a short function word?<br/>a, an, the, of, to, is}
-    Q4 -- yes --> SW[Stop words]
-    Q4 -- no --> Q5{Was an ordinary word swapped for another real word?<br/>usually a sound-alike. Play the audio}
-    Q5 -- yes --> A[Annunciation / Homonym]
-    Q5 -- no --> Q6{Is the output not a real word at all?}
-    Q6 -- yes --> N[Nonsense error]
-    Q6 -- no --> O[ASR omission / insertion<br/>ordinary words dropped or invented]
+    S([Highlighted error]) --> Q1{Is the damaged word a medical term or a name?<br/>a drug, condition, symptom, body part, test, person or place<br/>Even if only the ending changed}
+    Q1 -- yes --> D[Dictionary error]
+    Q1 -- no --> Q2{Is it the same ordinary word with only the ending changed?<br/>plural, tense or -ing}
+    Q2 -- yes --> SU[Suffix error]
+    Q2 -- no --> Q3{Is it only a short function word?<br/>a, an, the, of, to, is}
+    Q3 -- yes --> SW[Stop words]
+    Q3 -- no --> Q4{Is the output not a real word at all?}
+    Q4 -- yes --> N[Nonsense error]
+    Q4 -- no --> AU[/Still no label? Now play the audio/]
+    AU --> Q5{Is the reference clearly wrong and the ASR right?<br/>If the audio is unclear, answer no}
+    Q5 -- yes --> H[Human transcription error]
+    Q5 -- no --> Q6{Is there a fault in the recording at this spot?<br/>a dropout, click, cut-off, distortion or noise}
+    Q6 -- yes --> AG[Audio glitch]
+    Q6 -- no --> Q7{Was an ordinary word swapped for another real word?<br/>usually a sound-alike}
+    Q7 -- yes --> A[Annunciation / Homonym]
+    Q7 -- no --> O[ASR omission / insertion<br/>ordinary words dropped or invented]
 ```
 
 Three things to remember:
 
-- **Start from the word, not the sound.**
-- **A medical term is always Dictionary**, even if only the ending changed
+- **Text first, audio last.** Steps 1 to 4 need no audio. Play it only when none fits.
+- **Unclear audio is not evidence that the reference is wrong.**
+- **A medical term is always Dictionary**, even if only the ending changed, the audio is glitchy, or the reference looks wrong
   (`abdominal→abdomen`).
 - **One word, one label.** Two labels only when two words failed for different reasons.
 
-**Audio glitch:** A fault in the recording at this spot. This includes a dropout, distortion, a click or pop, a cut-off, or a burst of noise over the speech. An accent, or fast, slurred or mumbled speech, is not a glitch. If a glitch hides a medical term, it is still Audio glitch. *e.g. a word cut off mid-syllable; a click or dropout where a word should be.*
+**Audio glitch:** A fault in the recording at this spot. This includes a dropout, distortion, a click or pop, a cut-off, or a burst of noise over the speech. An accent, or fast, slurred or mumbled speech, is not a glitch. If a glitch hides a medical term, label it Dictionary error instead. *e.g. a word cut off mid-syllable; a click or dropout where a word should be.*
 
 ---
 
@@ -64,6 +66,6 @@ number, negation)
 
 ## Before you submit
 
-- Did I follow the chart from the top?
-- Did I play the audio for Human transcription error, Audio glitch and Annunciation / Homonym?
+- Did I follow the chart from the top, text first?
+- Did I play the audio only for the last four labels (Human transcription error, Audio glitch, Annunciation / Homonym, ASR omission / insertion)?
 - Is my severity wrong (3), missing (2), or no clinical content (1)?

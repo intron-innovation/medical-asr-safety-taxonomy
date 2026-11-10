@@ -7,10 +7,11 @@ as you go. Based on what went wrong in round 3.
 
 ## Label rules in more detail
 
-**Start from the word, not the sound.** Pronunciation explains nearly every ASR error, so
-it is only a label when the damaged word is an ordinary English word.
+**Text first, audio last.** Dictionary, Suffix, Stop words and Nonsense are decided from the text alone. Play the audio only when none fits. Hearing messy audio makes "the reference might be wrong" always seem plausible, so unclear audio is never enough for Human transcription error: it needs the audio to clearly show the reference is wrong. A medical term is Dictionary even if the reference looks wrong or a glitch hides it.
 
-**Audio glitch comes right after Human transcription error.** A fault in the recording at this spot. This includes a dropout, distortion, a click or pop, a cut-off, or a burst of noise over the speech. An accent, or fast, slurred or mumbled speech, is not a glitch. If a glitch hides a medical term, it is still Audio glitch. *e.g. a word cut off mid-syllable; a click or dropout where a word should be.*
+Pronunciation explains nearly every ASR error, so it is only a label when the damaged word is an ordinary English word.
+
+**Audio glitch comes after Human transcription error, in the audio-dependent half of the chart.** A fault in the recording at this spot. This includes a dropout, distortion, a click or pop, a cut-off, or a burst of noise over the speech. An accent, or fast, slurred or mumbled speech, is not a glitch. If a glitch hides a medical term, label it Dictionary error instead (text-decidable labels come first). *e.g. a word cut off mid-syllable; a click or dropout where a word should be.*
 
 **A medical term beats Suffix.** If the damaged word is a drug, condition, symptom,
 anatomy term, procedure or test, it is Dictionary even when only the ending changed.

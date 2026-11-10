@@ -22,6 +22,10 @@ ROUNDS = {
         ("gemma3n_iaa2", "ANN009_gemma_round2.json", "ANN010_gemma_round2.json")],
     3: [("qwen3_iaa3", "ANN009_qwen_round3.json", "ANN010_qwen_round3.json"),
         ("gemma3n_iaa3", "ANN009_gemma_round3.json", "ANN010_gemma_round3.json")],
+    # Round 4: ANN010 vs ANN011 (ANN009 pending). Joint session day1_consultation10 is
+    # excluded with --exclude=day1_consultation10; day2_consultation03 is the independent one.
+    4: [("qwen3_iaa4", "ANN010_qwen_round4.json", "ANN011_qwen_round4.json"),
+        ("gemma3n_iaa4", "ANN010_gemma3n_iaa4_round4.json", "ANN011_gemma3n_round4.json")],
 }
 ARGS = [a for a in sys.argv[1:] if not a.startswith("--exclude=")]
 EXCLUDE = {u for a in sys.argv[1:] if a.startswith("--exclude=") for u in a.split("=", 1)[1].split(",")}

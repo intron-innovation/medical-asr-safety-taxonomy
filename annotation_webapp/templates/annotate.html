@@ -390,7 +390,27 @@
 
             <h3>Select ASR Error Class</h3>
             <div class="taxonomy-grid">
-                <div class="taxonomy-item" data-description="A fault in the recording at this spot. This includes a dropout, distortion, a click or pop, a cut-off, or a burst of noise over the speech. An accent, or fast, slurred or mumbled speech, is not a glitch. If a glitch hides a medical term, it is still Audio glitch. e.g. a word cut off mid-syllable; a click or dropout where a word should be.">
+                <div class="taxonomy-item" data-description="Text only, no audio needed. A medical term always lands here, even if the audio is glitchy or the reference looks wrong. Phrases recognised in place of a word missing from the dictionary. Typically a medical entity, a drug name or a proper noun the ASR does not hold. A medical term stays here even if only the ending changed, e.g. abdominal → abdomen; feverish → fever. ALSO use this when the ASR turns a non-medical word into a medical one, or a medical word into a non-medical one, e.g. [SUB:daria->diarrhea] or [SUB:ulcer->asthma]. The result sounds similar to, but not always exactly like, the intended word. e.g. naproxen → proxen; metformin → bombetformin; lisinopril → lesetapril; Chidinma → Chidima; Ekiti → Nkita.">
+                    <input type="checkbox" name="errorClass" value="dictionary_errors" id="ec-dictionary_errors">
+                    <label for="ec-dictionary_errors">Dictionary errors</label>
+                </div>
+                <div class="taxonomy-item" data-description="Ordinary words only: the stem is right and only the inflection (plural, tense, -ing) is wrong. A medical term with a different ending is Dictionary error, not Suffix. e.g. [SUB:vomit->vomits]; [SUB:problem->problems]; [SUB:complaint->complaints].">
+                    <input type="checkbox" name="errorClass" value="suffix_errors" id="ec-suffix_errors">
+                    <label for="ec-suffix_errors">Suffix errors</label>
+                </div>
+                <div class="taxonomy-item" data-description="An error involving a short function word such as a, an, the, has or if, whether added, deleted or substituted. e.g. [SUB:a->the]; [DEL:a]; [SUB:or->so]; [INS:in]; [INS:the]; [DEL:a bit].">
+                    <input type="checkbox" name="errorClass" value="stop_words" id="ec-stop_words">
+                    <label for="ec-stop_words">Stop words (Add/del/substituted)</label>
+                </div>
+                <div class="taxonomy-item" data-description="A recognised word or phrase that does not make grammatical or lexical sense, even after a possible correction has been hypothesised from context. e.g. wisdom teeth → visimteeth; swampy region → iswampimidio; feverish → beverish.">
+                    <input type="checkbox" name="errorClass" value="nonsense_errors" id="ec-nonsense_errors">
+                    <label for="ec-nonsense_errors">Nonsense errors</label>
+                </div>
+                <div class="taxonomy-item" data-description="The mistake is in the HUMAN transcript, not the ASR output — the recogniser is right and the human transcriber is wrong. This covers both misspellings in the reference AND words the human failed to transcribe at all that the ASR did capture. You must play the audio before selecting this. Choose it only when the audio CLEARLY shows the speaker said the ASR's words and the reference's words were not said; if the audio is unclear, do not choose it, because hard to hear is not evidence that the reference is wrong. A medical term is Dictionary error even if the reference looks wrong. Insertions are often this: if [INS:alcohol] or [INS:hormone] is a word the speaker really said, the human missed it and this is the right label, NOT ASR omission / insertion. The same goes for a deletion where the reference has words the speaker never said. e.g. reference 'catherization' → ASR 'catheterization'; reference 'lose' → ASR 'loose'; [INS:alcohol] where the human typed it only once.">
+                    <input type="checkbox" name="errorClass" value="spelling_errors" id="ec-spelling_errors">
+                    <label for="ec-spelling_errors">Human transcription error</label>
+                </div>
+                <div class="taxonomy-item" data-description="A fault in the recording at this spot. This includes a dropout, distortion, a click or pop, a cut-off, or a burst of noise over the speech. An accent, or fast, slurred or mumbled speech, is not a glitch. If a glitch hides a medical term, label it Dictionary error instead. You must play the audio before selecting this. e.g. a word cut off mid-syllable; a click or dropout where a word should be.">
                     <input type="checkbox" name="errorClass" value="audio_glitch" id="ec-audio_glitch">
                     <label for="ec-audio_glitch">Audio glitch</label>
                 </div>
@@ -398,30 +418,9 @@
                     <input type="checkbox" name="errorClass" value="annunciation_homonym_errors" id="ec-annunciation_homonym_errors">
                     <label for="ec-annunciation_homonym_errors">Annunciation / Homonym error</label>
                 </div>
-                <div class="taxonomy-item" data-description="An error involving a short function word such as a, an, the, has or if, whether added, deleted or substituted. e.g. [SUB:a->the]; [DEL:a]; [SUB:or->so]; [INS:in]; [INS:the]; [DEL:a bit].">
-                    <input type="checkbox" name="errorClass" value="stop_words" id="ec-stop_words">
-                    <label for="ec-stop_words">Stop words (Add/del/substituted)</label>
-                </div>
-                <div class="taxonomy-item" data-description="Ordinary words only: the stem is right and only the inflection (plural, tense, -ing) is wrong. A medical term with a different ending is Dictionary error, not Suffix. e.g. [SUB:vomit->vomits]; [SUB:problem->problems]; [SUB:complaint->complaints].">
-                    <input type="checkbox" name="errorClass" value="suffix_errors" id="ec-suffix_errors">
-                    <label for="ec-suffix_errors">Suffix errors</label>
-                </div>
-                
                 <div class="taxonomy-item" data-description="The reference is right, and the ASR dropped or invented ordinary words (insertions and deletions only). Ask: did the speaker say it? If the ASR dropped something the speaker said, or invented something nobody said, use this. If the reference is the one at fault, use Human transcription error. A short function word is Stop words, and a medical term is Dictionary error. e.g. [INS:for you]; [INS:of july]; [DEL:urine]; [DEL:okay and do you take any medications].">
                     <input type="checkbox" name="errorClass" value="asr_omission_insertion" id="ec-asr_omission_insertion">
                     <label for="ec-asr_omission_insertion">ASR omission / insertion</label>
-                </div>
-                <div class="taxonomy-item" data-description="Phrases recognised in place of a word missing from the dictionary. Typically a medical entity, a drug name or a proper noun the ASR does not hold. A medical term stays here even if only the ending changed, e.g. abdominal → abdomen; feverish → fever. ALSO use this when the ASR turns a non-medical word into a medical one, or a medical word into a non-medical one, e.g. [SUB:daria->diarrhea] or [SUB:ulcer->asthma]. The result sounds similar to, but not always exactly like, the intended word. e.g. naproxen → proxen; metformin → bombetformin; lisinopril → lesetapril; Chidinma → Chidima; Ekiti → Nkita.">
-                    <input type="checkbox" name="errorClass" value="dictionary_errors" id="ec-dictionary_errors">
-                    <label for="ec-dictionary_errors">Dictionary errors</label>
-                </div>
-                <div class="taxonomy-item" data-description="The mistake is in the HUMAN transcript, not the ASR output — the recogniser is right and the human transcriber is wrong. This covers both misspellings in the reference AND words the human failed to transcribe at all that the ASR did capture. Judge these from the text rather than the audio. Insertions are often this: if [INS:alcohol] or [INS:hormone] is a word the speaker really said, the human missed it and this is the right label, NOT ASR omission / insertion. The same goes for a deletion where the reference has words the speaker never said. e.g. reference 'catherization' → ASR 'catheterization'; reference 'lose' → ASR 'loose'; [INS:alcohol] where the human typed it only once.">
-                    <input type="checkbox" name="errorClass" value="spelling_errors" id="ec-spelling_errors">
-                    <label for="ec-spelling_errors">Human transcription error</label>
-                </div>
-                <div class="taxonomy-item" data-description="A recognised word or phrase that does not make grammatical or lexical sense, even after a possible correction has been hypothesised from context. e.g. wisdom teeth → visimteeth; swampy region → iswampimidio; feverish → beverish.">
-                    <input type="checkbox" name="errorClass" value="nonsense_errors" id="ec-nonsense_errors">
-                    <label for="ec-nonsense_errors">Nonsense errors</label>
                 </div>
             </div>
             <div id="ecRuleHint" style="display:none; background:#fff6e0; border-left:3px solid #ed8936; padding:8px 12px; margin:-4px 0 10px; font-size:0.86em; color:#7a4a12;"></div>
@@ -468,5 +467,5 @@
 {% endblock %}
 
 {% block extra_js %}
-<script src="{{ url_for('static', filename='js/annotate.js') }}?v=20261109b"></script>
+<script src="{{ url_for('static', filename='js/annotate.js') }}?v=20261109c"></script>
 {% endblock %}

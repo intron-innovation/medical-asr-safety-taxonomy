@@ -1,69 +1,75 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 766" width="840" font-family="Helvetica, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 958" width="840" font-family="Helvetica, Arial, sans-serif">
 <rect width="100%" height="100%" fill="#ffffff"/>
 <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#555"/></marker></defs>
 <text x="30" y="26" font-size="15" font-weight="700" fill="#222">Pick the label: start at the top, stop at the first yes</text>
-<rect x="30" y="50" width="400" height="56" rx="8" fill="#f1f4ff" stroke="#667eea" stroke-width="1.5"/>
-<text x="230.0" y="74.0" font-size="14" text-anchor="middle" fill="#222">Is the reference wrong,</text>
-<text x="230.0" y="92.0" font-size="14" text-anchor="middle" fill="#222">and the ASR right?</text>
-<line x1="430" y1="78.0" x2="556" y2="78.0" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
-<text x="495.0" y="70.0" font-size="13" text-anchor="middle" fill="#2f855a" font-weight="700">yes</text>
-<rect x="560" y="50" width="250" height="56" rx="8" fill="#e6f7ee" stroke="#2f855a" stroke-width="1.5"/>
-<text x="685.0" y="83.0" font-size="14" font-weight="700" text-anchor="middle" fill="#1c4532">Human transcription error</text>
-<line x1="230.0" y1="106" x2="230.0" y2="136" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
-<text x="240.0" y="127.0" font-size="13" fill="#c05621" font-weight="700">no</text>
-<rect x="30" y="140" width="400" height="56" rx="8" fill="#f1f4ff" stroke="#667eea" stroke-width="1.5"/>
-<text x="230.0" y="164.0" font-size="14" text-anchor="middle" fill="#222">Is there a fault in the audio here?</text>
-<text x="230.0" y="182.0" font-size="14" text-anchor="middle" fill="#222">(dropout, click, cut-off). Play the audio.</text>
-<line x1="430" y1="168.0" x2="556" y2="168.0" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
-<text x="495.0" y="160.0" font-size="13" text-anchor="middle" fill="#2f855a" font-weight="700">yes</text>
-<rect x="560" y="140" width="250" height="56" rx="8" fill="#e6f7ee" stroke="#2f855a" stroke-width="1.5"/>
-<text x="685.0" y="173.0" font-size="14" font-weight="700" text-anchor="middle" fill="#1c4532">Audio glitch</text>
-<line x1="230.0" y1="196" x2="230.0" y2="226" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
-<text x="240.0" y="217.0" font-size="13" fill="#c05621" font-weight="700">no</text>
-<rect x="30" y="230" width="400" height="56" rx="8" fill="#f1f4ff" stroke="#667eea" stroke-width="1.5"/>
-<text x="230.0" y="254.0" font-size="14" text-anchor="middle" fill="#222">Is the damaged word a medical</text>
-<text x="230.0" y="272.0" font-size="14" text-anchor="middle" fill="#222">term or a name?</text>
-<line x1="430" y1="258.0" x2="556" y2="258.0" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
-<text x="495.0" y="250.0" font-size="13" text-anchor="middle" fill="#2f855a" font-weight="700">yes</text>
-<rect x="560" y="230" width="250" height="56" rx="8" fill="#e6f7ee" stroke="#2f855a" stroke-width="1.5"/>
-<text x="685.0" y="263.0" font-size="14" font-weight="700" text-anchor="middle" fill="#1c4532">Dictionary error</text>
-<line x1="230.0" y1="286" x2="230.0" y2="316" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
-<text x="240.0" y="307.0" font-size="13" fill="#c05621" font-weight="700">no</text>
-<rect x="30" y="320" width="400" height="56" rx="8" fill="#f1f4ff" stroke="#667eea" stroke-width="1.5"/>
-<text x="230.0" y="344.0" font-size="14" text-anchor="middle" fill="#222">Same stem, only the</text>
-<text x="230.0" y="362.0" font-size="14" text-anchor="middle" fill="#222">inflection changed?</text>
-<line x1="430" y1="348.0" x2="556" y2="348.0" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
-<text x="495.0" y="340.0" font-size="13" text-anchor="middle" fill="#2f855a" font-weight="700">yes</text>
-<rect x="560" y="320" width="250" height="56" rx="8" fill="#e6f7ee" stroke="#2f855a" stroke-width="1.5"/>
-<text x="685.0" y="353.0" font-size="14" font-weight="700" text-anchor="middle" fill="#1c4532">Suffix error</text>
-<line x1="230.0" y1="376" x2="230.0" y2="406" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
-<text x="240.0" y="397.0" font-size="13" fill="#c05621" font-weight="700">no</text>
-<rect x="30" y="410" width="400" height="56" rx="8" fill="#f1f4ff" stroke="#667eea" stroke-width="1.5"/>
-<text x="230.0" y="443.0" font-size="14" text-anchor="middle" fill="#222">Only a short function word?</text>
-<line x1="430" y1="438.0" x2="556" y2="438.0" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
-<text x="495.0" y="430.0" font-size="13" text-anchor="middle" fill="#2f855a" font-weight="700">yes</text>
-<rect x="560" y="410" width="250" height="56" rx="8" fill="#e6f7ee" stroke="#2f855a" stroke-width="1.5"/>
-<text x="685.0" y="443.0" font-size="14" font-weight="700" text-anchor="middle" fill="#1c4532">Stop words</text>
-<line x1="230.0" y1="466" x2="230.0" y2="496" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
-<text x="240.0" y="487.0" font-size="13" fill="#c05621" font-weight="700">no</text>
-<rect x="30" y="500" width="400" height="56" rx="8" fill="#f1f4ff" stroke="#667eea" stroke-width="1.5"/>
-<text x="230.0" y="524.0" font-size="14" text-anchor="middle" fill="#222">An ordinary word swapped for another</text>
-<text x="230.0" y="542.0" font-size="14" text-anchor="middle" fill="#222">real word (usually a sound-alike)?</text>
-<line x1="430" y1="528.0" x2="556" y2="528.0" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
-<text x="495.0" y="520.0" font-size="13" text-anchor="middle" fill="#2f855a" font-weight="700">yes</text>
-<rect x="560" y="500" width="250" height="56" rx="8" fill="#e6f7ee" stroke="#2f855a" stroke-width="1.5"/>
-<text x="685.0" y="533.0" font-size="14" font-weight="700" text-anchor="middle" fill="#1c4532">Annunciation / Homonym</text>
-<line x1="230.0" y1="556" x2="230.0" y2="586" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
-<text x="240.0" y="577.0" font-size="13" fill="#c05621" font-weight="700">no</text>
-<rect x="30" y="590" width="400" height="56" rx="8" fill="#f1f4ff" stroke="#667eea" stroke-width="1.5"/>
-<text x="230.0" y="623.0" font-size="14" text-anchor="middle" fill="#222">Output not a real word?</text>
-<line x1="430" y1="618.0" x2="556" y2="618.0" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
-<text x="495.0" y="610.0" font-size="13" text-anchor="middle" fill="#2f855a" font-weight="700">yes</text>
-<rect x="560" y="590" width="250" height="56" rx="8" fill="#e6f7ee" stroke="#2f855a" stroke-width="1.5"/>
-<text x="685.0" y="623.0" font-size="14" font-weight="700" text-anchor="middle" fill="#1c4532">Nonsense error</text>
+<rect x="30" y="50" width="400" height="64" rx="8" fill="#f1f4ff" stroke="#667eea" stroke-width="1.5"/>
+<text x="230.0" y="69.0" font-size="14" text-anchor="middle" fill="#222">Is the damaged word a medical term or a name?</text>
+<text x="230.0" y="87.0" font-size="14" text-anchor="middle" fill="#222">(drug, condition, symptom, body part, test,</text>
+<text x="230.0" y="105.0" font-size="14" text-anchor="middle" fill="#222">person, place). Even if only the ending changed.</text>
+<line x1="430" y1="82.0" x2="556" y2="82.0" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="495.0" y="74.0" font-size="13" text-anchor="middle" fill="#2f855a" font-weight="700">yes</text>
+<rect x="560" y="50" width="250" height="64" rx="8" fill="#e6f7ee" stroke="#2f855a" stroke-width="1.5"/>
+<text x="685.0" y="87.0" font-size="14" font-weight="700" text-anchor="middle" fill="#1c4532">Dictionary error</text>
+<line x1="230.0" y1="114" x2="230.0" y2="144" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="240.0" y="135.0" font-size="13" fill="#c05621" font-weight="700">no</text>
+<rect x="30" y="148" width="400" height="64" rx="8" fill="#f1f4ff" stroke="#667eea" stroke-width="1.5"/>
+<text x="230.0" y="167.0" font-size="14" text-anchor="middle" fill="#222">Is it the same ordinary word with</text>
+<text x="230.0" y="185.0" font-size="14" text-anchor="middle" fill="#222">only the ending changed?</text>
+<text x="230.0" y="203.0" font-size="14" text-anchor="middle" fill="#222">(plural, tense, -ing)</text>
+<line x1="430" y1="180.0" x2="556" y2="180.0" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="495.0" y="172.0" font-size="13" text-anchor="middle" fill="#2f855a" font-weight="700">yes</text>
+<rect x="560" y="148" width="250" height="64" rx="8" fill="#e6f7ee" stroke="#2f855a" stroke-width="1.5"/>
+<text x="685.0" y="185.0" font-size="14" font-weight="700" text-anchor="middle" fill="#1c4532">Suffix error</text>
+<line x1="230.0" y1="212" x2="230.0" y2="242" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="240.0" y="233.0" font-size="13" fill="#c05621" font-weight="700">no</text>
+<rect x="30" y="246" width="400" height="64" rx="8" fill="#f1f4ff" stroke="#667eea" stroke-width="1.5"/>
+<text x="230.0" y="274.0" font-size="14" text-anchor="middle" fill="#222">Is it only a short function word?</text>
+<text x="230.0" y="292.0" font-size="14" text-anchor="middle" fill="#222">(a, an, the, of, to, is)</text>
+<line x1="430" y1="278.0" x2="556" y2="278.0" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="495.0" y="270.0" font-size="13" text-anchor="middle" fill="#2f855a" font-weight="700">yes</text>
+<rect x="560" y="246" width="250" height="64" rx="8" fill="#e6f7ee" stroke="#2f855a" stroke-width="1.5"/>
+<text x="685.0" y="283.0" font-size="14" font-weight="700" text-anchor="middle" fill="#1c4532">Stop words</text>
+<line x1="230.0" y1="310" x2="230.0" y2="340" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="240.0" y="331.0" font-size="13" fill="#c05621" font-weight="700">no</text>
+<rect x="30" y="344" width="400" height="64" rx="8" fill="#f1f4ff" stroke="#667eea" stroke-width="1.5"/>
+<text x="230.0" y="381.0" font-size="14" text-anchor="middle" fill="#222">Is the output not a real word at all?</text>
+<line x1="430" y1="376.0" x2="556" y2="376.0" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="495.0" y="368.0" font-size="13" text-anchor="middle" fill="#2f855a" font-weight="700">yes</text>
+<rect x="560" y="344" width="250" height="64" rx="8" fill="#e6f7ee" stroke="#2f855a" stroke-width="1.5"/>
+<text x="685.0" y="381.0" font-size="14" font-weight="700" text-anchor="middle" fill="#1c4532">Nonsense error</text>
+<line x1="230.0" y1="408" x2="230.0" y2="438" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="240.0" y="429.0" font-size="13" fill="#c05621" font-weight="700">no</text>
+<rect x="30" y="436" width="780" height="30" rx="6" fill="#fff4e5" stroke="#c05621" stroke-width="1.2"/>
+<text x="420.0" y="456" font-size="14" font-weight="700" text-anchor="middle" fill="#9c4221">Still no label? Now play the audio.</text>
+<rect x="30" y="484" width="400" height="64" rx="8" fill="#f1f4ff" stroke="#667eea" stroke-width="1.5"/>
+<text x="230.0" y="503.0" font-size="14" text-anchor="middle" fill="#222">Is the reference clearly wrong and the ASR right?</text>
+<text x="230.0" y="521.0" font-size="14" text-anchor="middle" fill="#222">(speaker said the ASR's words, not the reference's)</text>
+<text x="230.0" y="539.0" font-size="14" text-anchor="middle" fill="#222">If the audio is unclear, answer no.</text>
+<line x1="430" y1="516.0" x2="556" y2="516.0" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="495.0" y="508.0" font-size="13" text-anchor="middle" fill="#2f855a" font-weight="700">yes</text>
+<rect x="560" y="484" width="250" height="64" rx="8" fill="#e6f7ee" stroke="#2f855a" stroke-width="1.5"/>
+<text x="685.0" y="521.0" font-size="14" font-weight="700" text-anchor="middle" fill="#1c4532">Human transcription error</text>
+<line x1="230.0" y1="548" x2="230.0" y2="578" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="240.0" y="569.0" font-size="13" fill="#c05621" font-weight="700">no</text>
+<rect x="30" y="582" width="400" height="64" rx="8" fill="#f1f4ff" stroke="#667eea" stroke-width="1.5"/>
+<text x="230.0" y="610.0" font-size="14" text-anchor="middle" fill="#222">Is there a fault in the recording at this spot?</text>
+<text x="230.0" y="628.0" font-size="14" text-anchor="middle" fill="#222">(dropout, click, cut-off, distortion, noise)</text>
+<line x1="430" y1="614.0" x2="556" y2="614.0" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="495.0" y="606.0" font-size="13" text-anchor="middle" fill="#2f855a" font-weight="700">yes</text>
+<rect x="560" y="582" width="250" height="64" rx="8" fill="#e6f7ee" stroke="#2f855a" stroke-width="1.5"/>
+<text x="685.0" y="619.0" font-size="14" font-weight="700" text-anchor="middle" fill="#1c4532">Audio glitch</text>
 <line x1="230.0" y1="646" x2="230.0" y2="676" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
 <text x="240.0" y="667.0" font-size="13" fill="#c05621" font-weight="700">no</text>
-<rect x="30" y="680" width="400" height="56" rx="8" fill="#e6f7ee" stroke="#2f855a" stroke-width="1.5"/>
-<text x="230.0" y="706.0" font-size="14" font-weight="700" text-anchor="middle" fill="#1c4532">ASR omission / insertion</text>
-<text x="230.0" y="724.0" font-size="12" text-anchor="middle" fill="#2d5a44">(INS or DEL tags: ordinary words dropped or invented)</text>
+<rect x="30" y="680" width="400" height="64" rx="8" fill="#f1f4ff" stroke="#667eea" stroke-width="1.5"/>
+<text x="230.0" y="708.0" font-size="14" text-anchor="middle" fill="#222">Was an ordinary word swapped for another</text>
+<text x="230.0" y="726.0" font-size="14" text-anchor="middle" fill="#222">real word? (usually a sound-alike)</text>
+<line x1="430" y1="712.0" x2="556" y2="712.0" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="495.0" y="704.0" font-size="13" text-anchor="middle" fill="#2f855a" font-weight="700">yes</text>
+<rect x="560" y="680" width="250" height="64" rx="8" fill="#e6f7ee" stroke="#2f855a" stroke-width="1.5"/>
+<text x="685.0" y="717.0" font-size="14" font-weight="700" text-anchor="middle" fill="#1c4532">Annunciation / Homonym</text>
+<line x1="230.0" y1="744" x2="230.0" y2="774" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="240.0" y="765.0" font-size="13" fill="#c05621" font-weight="700">no</text>
+<rect x="30" y="778" width="400" height="64" rx="8" fill="#e6f7ee" stroke="#2f855a" stroke-width="1.5"/>
+<text x="230.0" y="808.0" font-size="14" font-weight="700" text-anchor="middle" fill="#1c4532">ASR omission / insertion</text>
+<text x="230.0" y="826.0" font-size="12" text-anchor="middle" fill="#2d5a44">(INS or DEL tags: ordinary words dropped or invented)</text>
 </svg>

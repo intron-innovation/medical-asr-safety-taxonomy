@@ -196,6 +196,19 @@ window.addEventListener('load', function() {
         });
     }
 
+    const humanBox = document.getElementById('ec-spelling_errors');
+    if (humanBox) {
+        humanBox.addEventListener('change', function() {
+            if (this.checked && !audioPlayedForCurrentError) {
+                showRuleHint('Human transcription error is a claim about the reference. '
+                    + 'Play the audio first, and choose it only if the audio clearly shows the reference is wrong. '
+                    + 'If the audio is unclear, pick the ASR-error label.');
+            } else if (!this.checked) {
+                clearRuleHint();
+            }
+        });
+    }
+
     const glitchBox = document.getElementById('ec-audio_glitch');
     if (glitchBox) {
         glitchBox.addEventListener('change', function() {
