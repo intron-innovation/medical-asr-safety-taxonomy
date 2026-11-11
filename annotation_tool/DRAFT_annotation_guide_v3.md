@@ -16,10 +16,10 @@ Not deployed.
 
 ```mermaid
 flowchart TD
-    S([Highlighted error]) --> Q1{Is the damaged word a medical term or a name?<br/>a drug, condition, symptom, body part, test, person or place<br/>Even if only the ending changed}
-    Q1 -- yes --> D[Dictionary error]
-    Q1 -- no --> Q2{Is it the same ordinary word with only the ending changed?<br/>plural, tense or -ing}
-    Q2 -- yes --> SU[Suffix error]
+    S([Highlighted error]) --> Q1{Is it the same word with only the ending changed?<br/>plural, tense or -ing/-ed. Medical words too}
+    Q1 -- yes --> SU[Suffix error]
+    Q1 -- no --> Q2{Is the damaged word a medical term or a name?<br/>a drug, condition, symptom, body part, test, person or place<br/>Informal patient words count}
+    Q2 -- yes --> D[Dictionary error]
     Q2 -- no --> Q3{Is it only a short function word?<br/>a, an, the, of, to, is}
     Q3 -- yes --> SW[Stop words]
     Q3 -- no --> Q4{Is the output not a real word at all?}
@@ -38,7 +38,7 @@ Three things to remember:
 
 - **Text first, audio last.** Steps 1 to 4 need no audio. Play it only when none fits.
 - **Unclear audio is not evidence that the reference is wrong.**
-- **A medical term is always Dictionary**, even if only the ending changed, the audio is glitchy, or the reference looks wrong
+- **Same word, only the ending changed → Suffix**, medical or not. **Otherwise a medical term is Dictionary**, even if the audio is glitchy or the reference looks wrong
   (`abdominal→abdomen`).
 - **One word, one label.** Two labels only when two words failed for different reasons.
 
@@ -56,6 +56,8 @@ number, negation)
 - **Yes, and the fact is just missing or garbled** → **2 Moderate**
 
 **3 = misleading. 2 = missing. 1 = no clinical content.**
+
+A run of **5+ words dropped or invented by the ASR** that carries clinical content is **3**. Fillers only is **1**.
 
 | Example | Severity |
 |---|---|

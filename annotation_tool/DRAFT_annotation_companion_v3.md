@@ -13,10 +13,14 @@ Pronunciation explains nearly every ASR error, so it is only a label when the da
 
 **Audio glitch comes after Human transcription error, in the audio-dependent half of the chart.** A fault in the recording at this spot. This includes a dropout, distortion, a click or pop, a cut-off, or a burst of noise over the speech. An accent, or fast, slurred or mumbled speech, is not a glitch. If a glitch hides a medical term, label it Dictionary error instead (text-decidable labels come first). *e.g. a word cut off mid-syllable; a click or dropout where a word should be.*
 
-**A medical term beats Suffix.** If the damaged word is a drug, condition, symptom,
-anatomy term, procedure or test, it is Dictionary even when only the ending changed.
-`abdominal→abdomen`, `feverish→fever`, `palpitations→palpitation` are all Dictionary.
-Suffix is only for ordinary words, inflection only: `complaint→complaints`, `walked→walk`.
+**Same word, only the ending changed → Suffix, even for a medical word.** Plural, tense,
+-ing/-ed: `palpitation→palpitations`, `swelling→swollen`, `fatigue→fatigued`, `complaint→complaints`.
+If the word class changes (`abdominal→abdomen`, `feverish→fever`) it is Dictionary.
+
+**Informal patient words count as medical.** `achy`, `weed`: Dictionary.
+
+**A dropped or invented medical word may take Dictionary and ASR omission / insertion together.**
+This is the one case where a single-word tag takes two labels.
 
 **Real word for real word is still Annunciation / Homonym.** `worst→worse` and
 `drinks→does` are ordinary words. Dictionary is about the kind of word that was damaged,
@@ -101,6 +105,9 @@ If no → **1 Minor**.
 **Always 3:** a medication replaced or lost, a diagnosis replaced, a negation flipped, a
 dose or number changed.
 
+**A long dropped or invented run** (the ASR's doing, not the reference's): 5 or more words that
+carry clinical content is 3; fillers only is 1.
+
 A symptom replaced by a different symptom is 3. A symptom *modifier* lost (worse, mild,
 sudden) is 2 unless it flips the meaning.
 
@@ -126,12 +133,13 @@ believe something false?* Yes → 3. No, they would just be missing something �
 
 | Error | Label | Why |
 |---|---|---|
-| `[SUB:abdominal->abdomen]` | Dictionary | Anatomy term, beats Suffix |
-| `[SUB:feverish->fever]` | Dictionary | Symptom term, beats Suffix |
+| `[SUB:abdominal->abdomen]` | Dictionary | Word class changes |
+| `[SUB:feverish->fever]` | Dictionary | Word class changes |
+| `[SUB:swelling->swollen]` | Suffix | Same word, tense; medical words too |
 | `[SUB:worst->worse]` | Annunciation / Homonym | Ordinary word |
 | `[SUB:drinks->does]` | Annunciation / Homonym | Ordinary word |
 | `[SUB:the air->a year]` | Annunciation / Homonym | Sound-alike phrase; messy audio does not make it a reference error |
-| `[SUB:prescribe medication->prescribed medications]` | Dictionary | Medical term; endings changed |
+| `[SUB:prescribe medication->prescribed medications]` | Suffix | Same words, endings changed |
 | `[SUB:complaint->complaints]` | Suffix | Ordinary word, plural only |
 
 ---
@@ -151,7 +159,8 @@ believe something false?* Yes → 3. No, they would just be missing something �
 ## Changes from v2
 
 - Flowchart for the label order.
-- A medical term beats Suffix; Dictionary is about the word, not the output.
+- Same word with only the ending changed is Suffix, medical or not; Dictionary is about the word, not the output.
+- A run of 5+ words dropped or invented by the ASR with clinical content is severity 3; fillers only is 1.
 - Words added and Words deleted merged into ASR omission / insertion.
 - Deletions added to the Human transcription rule.
 - A rule for fragments and messy speech.

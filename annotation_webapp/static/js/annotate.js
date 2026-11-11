@@ -32,16 +32,25 @@ function damagedWordCount(errorMatch) {
     return count(body);
 }
 
+// A dropped or invented MEDICAL word may take Dictionary and ASR omission / insertion together.
+const PAIRABLE_LABELS = ['dictionary_errors', 'asr_omission_insertion'];
+
 function applyLabelCountRule(errorMatch) {
     const multiAllowed = damagedWordCount(errorMatch) > 1;
+    const isInsDel = /^\[(INS|DEL):/.test((errorMatch || '').trim());
     const boxes = Array.from(document.querySelectorAll('input[name="errorClass"]'));
-    const checked = boxes.filter(b => b.checked && !b.disabled).length;
+    const checkedVals = boxes.filter(b => b.checked && !b.disabled).map(b => b.value);
+    const canPair = isInsDel && checkedVals.length === 1 && PAIRABLE_LABELS.includes(checkedVals[0]);
     boxes.forEach(b => {
         if (b.dataset.typeBlocked === '1') return;      // operation rule already owns this one
-        b.disabled = !multiAllowed && checked >= 1 && !b.checked;
+        let blocked = !multiAllowed && checkedVals.length >= 1 && !b.checked;
+        if (blocked && canPair && PAIRABLE_LABELS.includes(b.value)) blocked = false;
+        b.disabled = blocked;
     });
-    if (!multiAllowed && checked >= 1) {
-        showRuleHint('This tag covers one word, so it takes one label. Untick to choose a different one.');
+    if (!multiAllowed && checkedVals.length >= 1) {
+        showRuleHint(canPair
+            ? 'A dropped or invented medical word may take Dictionary and ASR omission / insertion together.'
+            : 'This tag covers one word, so it takes one label. Untick to choose a different one.');
     }
 }
 
@@ -193,6 +202,25 @@ window.addEventListener('load', function() {
             } else if (!this.checked) {
                 clearRuleHint();
             }
+        });
+    }
+
+    // Skip / rewind and speed controls for the session audio.
+    document.querySelectorAll('.skip-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const a = document.getElementById('sessionAudio');
+            if (!a || !a.src) return;
+            const t = a.currentTime + parseFloat(btn.dataset.skip);
+            a.currentTime = Math.max(0, isFinite(a.duration) ? Math.min(a.duration, t) : t);
+            a.play().catch(() => {});
+        });
+    });
+    const speedSel = document.getElementById('audioSpeed');
+    if (speedSel) {
+        speedSel.addEventListener('change', () => {
+            const a = document.getElementById('sessionAudio');
+            const r = parseFloat(speedSel.value) || 1;
+            if (a) { a.defaultPlaybackRate = r; a.playbackRate = r; }
         });
     }
 
@@ -422,12 +450,16 @@ function loadSessionAudio(utterance) {
     audioEl.pause();
     pendingSeekCharIdx = null;
 
+    const skipBar = document.querySelector('.audio-skip');
+    if (skipBar) skipBar.style.display = audioFile ? '' : 'none';
     if (audioFile) {
         const src = audioFile.startsWith('http')
             ? audioFile
             : `/api/audio?path=${encodeURIComponent(audioFile)}`;
         audioEl.src = src;
         audioEl.load();
+        const sp = document.getElementById('audioSpeed');
+        if (sp) { const r = parseFloat(sp.value) || 1; audioEl.defaultPlaybackRate = r; audioEl.playbackRate = r; }
         audioEl.style.display = '';
         if (unavailableEl) unavailableEl.style.display = 'none';
     } else {

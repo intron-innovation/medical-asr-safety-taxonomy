@@ -32,19 +32,15 @@
             You will annotate safety-related errors in ASR (Automatic Speech Recognition) transcripts of medical conversations.
             The goal of the project is to assess how safe clinical ASR systems are, beyond the automated approach of WER.
             For each error you will rate its clinical severity (scale of 1&ndash;3) and select the taxonomy category that
-            shows where you think the error occurred (taxonomy below). Everything highlighted should mostly be medically
+            suggest the reason why the error occurred (taxonomy below). Everything highlighted should mostly be medically
             relevant words, but many are also ordinary words with no specific clinical meaning.
         </p>
         <p><strong>Your Task:</strong></p>
         <ul class="checklist">
             <li>Click on each highlighted error</li>
-            <li>Choose the ASR Error Class: one label per word (see the chart in section 2). <strong>Decide from the text first.</strong>
-                Most errors can be labelled without the audio. Play it only when the chart tells you to.
-                Clicking an error moves the audio player to that part of the recording</li>
-            <li>Rate the clinical severity (Minor / Moderate / Severe) — you must click one, there is no default
-                <br><strong>A practical test for severity:</strong> "If this went uncorrected, and if you could only
-            read the transcript alone, would it have changed your understanding of the patient's clinical
-            condition?"
+            <li>Choose the ASR Error Class: decide from the text. See <strong>Section 2, ASR Error Class</strong> for details.
+                Most errors can be labelled without the audio. Clicking an error moves the audio player to that part of the recording</li>
+            <li>Rate the clinical severity (Minor / Moderate / Severe): you must select a severity based on the error's potential impact on clinical understanding and patient care. See <strong>Section 5, Severity Guidelines</strong>.
             </li>
             <li>Save to auto-sync to server</li>
         </ul>
@@ -146,9 +142,7 @@
            <a href="https://pubmed.ncbi.nlm.nih.gov/15325329/" target="_blank" rel="noopener noreferrer">Zafar et al. (2004)</a>.</p>
 
         <div class="tip-box">
-            <strong>Rule 1 &mdash; start from the WORD, not the sound.</strong> Pronunciation explains
-            why nearly every ASR error happens, which is exactly why it is a poor label: it fits
-            everything. Ask what <em>kind of word</em> was damaged.
+            <strong>Rule 1 &mdash; start from the WORD, not the sound.</strong> Pronunciation explains nearly every error, so starting from pronunciation will most likely lead to the wrong label. Ask what <em>kind of word</em> was damaged.
             <br><em>[SUB:amlodipine-&gt;pain]</em> &mdash; wrong: "that's a mispronunciation".
             Right: "amlodipine is a drug name" &rarr; <strong>Dictionary error</strong>.
         </div>
@@ -156,37 +150,36 @@
         <div class="tip-box">
             <strong>Rule 2 &mdash; one tag, one label, unless two words were damaged.</strong>
             If the tag covers a single word the form will not let you pick a second.
-            Only a tag spanning two or more damaged words may take more than one label, and only
-            because those words failed for <em>different</em> reasons:
+            Only a tag spanning two or more damaged words may take more than one label. Example:
             <em>[SUB:heartbeat shake-&gt;beating cheek]</em> is Dictionary (heartbeat&rarr;beating)
             <strong>and</strong> Annunciation/Homonym (shake&rarr;cheek).
             Never add a second label to be safe.
+            <br><strong>One exception:</strong> a dropped or invented <em>medical</em> word
+            ([DEL:&hellip;] / [INS:&hellip;]) may take Dictionary and ASR omission / insertion together.
         </div>
 
-        <div class="tip-box">
+        <!-- <div class="tip-box">
             <strong>Rule 3 &mdash; the form enforces two things.</strong>
             <em>ASR omission / insertion</em> applies only to <em>[INS:&hellip;]</em> and
             <em>[DEL:&hellip;]</em>. And <em>Annunciation / Homonym</em> is a claim about how
             the word sounded, <em>Audio glitch</em> is a claim about the recording, and <em>Human transcription error</em> is a claim about the reference, so play the audio before selecting any of the three.
-        </div>
+        </div> -->
 
-        <p>Work down and take the <strong>first</strong> that fits. <strong>Steps 1 to 4 use the text only.</strong> Do not play the audio until none of them fits.</p>
-        <div class="tip-box">
-            <strong>Why text first?</strong> Once you have heard messy audio, &ldquo;the reference might be wrong&rdquo; always seems possible, and different annotators then label the same error differently. A medical term, an ending change, a short function word or a non-word can be labelled from the text. <strong>A medical term is always Dictionary</strong>, even if the audio is glitchy or the reference looks wrong.
-        </div>
+        <p>Work down and take the <strong>first</strong> that fits. <strong>Steps 1 to 4 use the text only.</strong> You don't need to play the audio for these cases.</p>
+
         <img src="{{ url_for('static', filename='img/label_flowchart.svg') }}"
              alt="Flowchart: follow the questions from the top and stop at the first yes"
              style="max-width:100%; height:auto; display:block; margin:10px 0 20px; border:1px solid #e2e8f0; border-radius:8px;">
         <div class="taxonomy-grid">
             <div class="taxonomy-card">
-                <h3>1. Dictionary error</h3>
-                <p>The damaged word was a <strong>drug, condition, anatomy term, procedure, or a proper noun / place / name</strong>. Also when a medical word becomes non-medical, or the reverse. <strong>A medical term stays here even if only the ending changed.</strong></p>
-                <div class="example">amlodipine → pain &nbsp;•&nbsp; naproxen → proxen &nbsp;•&nbsp; cetirizine → trazinia &nbsp;•&nbsp; ulcer → asthma &nbsp;•&nbsp; Ekiti → Nkita &nbsp;•&nbsp; abdominal → abdomen</div>
+                <h3>1. Suffix error</h3>
+                <p>The <strong>same word</strong> with only its ending changed: plural, tense or -ing/-ed. This applies to medical words too. If the word class changes (abdominal &rarr; abdomen), it is Dictionary.</p>
+                <div class="example">[SUB:vomit-&gt;vomits] &nbsp;•&nbsp; [SUB:complaint-&gt;complaints] &nbsp;•&nbsp; [SUB:swelling-&gt;swollen] &nbsp;•&nbsp; [SUB:palpitation-&gt;palpitations] &nbsp;•&nbsp; [SUB:fatigue-&gt;fatigued]</div>
             </div>
             <div class="taxonomy-card">
-                <h3>2. Suffix error</h3>
-                <p><strong>Ordinary</strong> words only: same stem, only the inflection is wrong (plural, tense, -ing). A medical term with a different ending is a Dictionary error.</p>
-                <div class="example">[SUB:vomit-&gt;vomits] &nbsp;•&nbsp; [SUB:problem-&gt;problems] &nbsp;•&nbsp; [SUB:complaint-&gt;complaints]</div>
+                <h3>2. Dictionary error</h3>
+                <p>The damaged word was a <strong>drug, condition, symptom, anatomy term, procedure, or a proper noun / place / name</strong>. Words patients use for these count even if informal (achy, weed). Also when a medical word becomes non-medical, or the reverse, and when a medical word is dropped or invented ([DEL:&hellip;] / [INS:&hellip;]): you may also tick ASR omission / insertion. If only the ending changed, it is Suffix. If the word class changes (abdominal &rarr; abdomen), it is Dictionary.</p>
+                <div class="example">amlodipine → pain &nbsp;•&nbsp; naproxen → proxen &nbsp;•&nbsp; cetirizine → trazinia &nbsp;•&nbsp; ulcer → asthma &nbsp;•&nbsp; Ekiti → Nkita &nbsp;•&nbsp; abdominal → abdomen &nbsp;•&nbsp; [DEL:fatigue]</div>
             </div>
             <div class="taxonomy-card">
                 <h3>3. Stop words</h3>
@@ -218,9 +211,11 @@
             </div>
             <div class="taxonomy-card">
                 <h3>8. ASR omission / insertion</h3>
-                <p><em>[INS:&hellip;]</em> or <em>[DEL:&hellip;]</em> only. The reference is right and the ASR dropped or invented ordinary words. If the reference is the one at fault, use Human transcription error.</p>
+                <p><em>[INS:&hellip;]</em> or <em>[DEL:&hellip;]</em> only. The reference is right and the ASR dropped or invented ordinary words. If the reference is the one at fault, use Human transcription error. A dropped or invented medical word is Dictionary (you may tick both).</p>
                 <div class="example">[INS:for you] &nbsp;•&nbsp; [INS:of july] &nbsp;•&nbsp; [DEL:urine] &nbsp;•&nbsp; [DEL:okay and do you take any medications i had a a drug history of thyroxine]</div>
             </div>
+
+            <div class="taxonomy-card" style="grid-column:1/-1; background:#fff4e5; border-color:#2153c0;"><h3>Helpful Tips</h3><p>There could be cases where the error is a medical term but the cause is obvious from how the speaker said the word. In that case, you can use Annunciation / Homonym error if the error is leaning towards this category.</p></div>
 </div>
     </div>
 
@@ -275,7 +270,8 @@
         </table>
         <ul class="checklist">
             <li><strong>Always 3:</strong> a medication replaced or lost, a diagnosis replaced, a negation flipped, a dose or number changed.</li>
-            <li>A symptom replaced by a different symptom is <strong>3</strong>. A symptom <em>modifier</em> lost (worse, mild, sudden) is <strong>2</strong> unless it flips the meaning.</li>
+            <li><strong>A long run dropped or invented by the ASR:</strong> 5 or more words that carry clinical content is <strong>3</strong>. Fillers only is <strong>1</strong>.</li>
+            
         </ul>
         <div class="tip-box">
             <strong>Stuck between 2 and 3?</strong> Ask: would a clinician reading only this transcript believe something
@@ -286,7 +282,6 @@
             read the transcript alone, would it have changed your understanding of the patient's clinical
             condition?"
         </div>
-        <p>These ratings are inherently subjective — different annotators may rate the same error differently. Use your clinical judgment and be internally consistent.</p>
     </div>
 
     <!-- Section 4: Examples -->

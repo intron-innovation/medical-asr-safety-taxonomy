@@ -23,6 +23,9 @@ from pathlib import Path
 import numpy as np
 
 DATA = Path(__file__).parent / "completed_annotation" / "inter_rater_datasets"
+for _a in sys.argv[1:]:
+    if _a.startswith("--data="):
+        DATA = DATA / _a.split("=", 1)[1]
 ROUNDS = {1: "", 2: "_round2", 3: "_round3", 4: "_round4"}
 # Round 4 file names differ per model; raters default to ANN010 vs ANN011 (ANN009 pending).
 R4_FILES = {"qwen": "{r}_qwen_round4.json", "gemma": None}

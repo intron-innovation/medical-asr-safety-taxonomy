@@ -25,6 +25,12 @@
         white-space: nowrap;
     }
     .audio-bar audio { height: 40px; }
+    .audio-skip { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .skip-btn, #audioSpeed {
+        border: 1px solid #cbd5e0; background: #fff; border-radius: 6px;
+        padding: 5px 9px; font-size: 0.85em; cursor: pointer; color: #333;
+    }
+    .skip-btn:hover, #audioSpeed:hover { background: #f1f4ff; border-color: #667eea; }
     @media (max-width: 600px) {
         .audio-bar { flex-direction: column; align-items: stretch; }
         .audio-bar audio { width: 100%; }
@@ -291,6 +297,17 @@
             <i class="bi bi-headphones"></i> Session Audio
         </div>
         <audio id="sessionAudio" controls preload="metadata" style="flex: 1; max-width: 100%;"></audio>
+        <div class="audio-skip" role="group" aria-label="Skip and speed">
+            <button type="button" class="skip-btn" data-skip="-10" title="Back 10 seconds">&#8634; 10s</button>
+            <button type="button" class="skip-btn" data-skip="-5" title="Back 5 seconds">&#8634; 5s</button>
+            <button type="button" class="skip-btn" data-skip="5" title="Forward 5 seconds">5s &#8635;</button>
+            <button type="button" class="skip-btn" data-skip="10" title="Forward 10 seconds">10s &#8635;</button>
+            <select id="audioSpeed" title="Playback speed" aria-label="Playback speed">
+                <option value="0.75">0.75x</option>
+                <option value="1" selected>1x</option>
+                <option value="1.25">1.25x</option>
+            </select>
+        </div>
         <span id="audioUnavailable" class="text-muted" style="display: none;">No audio available for this session</span>
     </div>
 
@@ -390,13 +407,13 @@
 
             <h3>Select ASR Error Class</h3>
             <div class="taxonomy-grid">
-                <div class="taxonomy-item" data-description="Text only, no audio needed. A medical term always lands here, even if the audio is glitchy or the reference looks wrong. Phrases recognised in place of a word missing from the dictionary. Typically a medical entity, a drug name or a proper noun the ASR does not hold. A medical term stays here even if only the ending changed, e.g. abdominal → abdomen; feverish → fever. ALSO use this when the ASR turns a non-medical word into a medical one, or a medical word into a non-medical one, e.g. [SUB:daria->diarrhea] or [SUB:ulcer->asthma]. The result sounds similar to, but not always exactly like, the intended word. e.g. naproxen → proxen; metformin → bombetformin; lisinopril → lesetapril; Chidinma → Chidima; Ekiti → Nkita.">
-                    <input type="checkbox" name="errorClass" value="dictionary_errors" id="ec-dictionary_errors">
-                    <label for="ec-dictionary_errors">Dictionary errors</label>
-                </div>
-                <div class="taxonomy-item" data-description="Ordinary words only: the stem is right and only the inflection (plural, tense, -ing) is wrong. A medical term with a different ending is Dictionary error, not Suffix. e.g. [SUB:vomit->vomits]; [SUB:problem->problems]; [SUB:complaint->complaints].">
+                <div class="taxonomy-item" data-description="The same word with only its ending changed (plural, tense, -ing/-ed). This applies to medical words too. If the word class changes (abdominal → abdomen) it is Dictionary error. e.g. [SUB:vomit->vomits]; [SUB:complaint->complaints]; [SUB:swelling->swollen]; [SUB:palpitation->palpitations]; [SUB:fatigue->fatigued].">
                     <input type="checkbox" name="errorClass" value="suffix_errors" id="ec-suffix_errors">
                     <label for="ec-suffix_errors">Suffix errors</label>
+                </div>
+                <div class="taxonomy-item" data-description="Text only, no audio needed. Medical terms land here even if the audio is glitchy or the reference looks wrong, unless only the ending changed (then Suffix). Words patients use for a drug, condition or symptom count even if informal (achy, weed). A dropped or invented medical word ([DEL]/[INS]) also lands here; you may also tick ASR omission / insertion. Phrases recognised in place of a word missing from the dictionary. Typically a medical entity, a drug name or a proper noun the ASR does not hold. If only the word class changes it stays here, e.g. abdominal → abdomen; feverish → fever. ALSO use this when the ASR turns a non-medical word into a medical one, or a medical word into a non-medical one, e.g. [SUB:daria->diarrhea] or [SUB:ulcer->asthma]. The result sounds similar to, but not always exactly like, the intended word. e.g. naproxen → proxen; metformin → bombetformin; lisinopril → lesetapril; Chidinma → Chidima; Ekiti → Nkita.">
+                    <input type="checkbox" name="errorClass" value="dictionary_errors" id="ec-dictionary_errors">
+                    <label for="ec-dictionary_errors">Dictionary errors</label>
                 </div>
                 <div class="taxonomy-item" data-description="An error involving a short function word such as a, an, the, has or if, whether added, deleted or substituted. e.g. [SUB:a->the]; [DEL:a]; [SUB:or->so]; [INS:in]; [INS:the]; [DEL:a bit].">
                     <input type="checkbox" name="errorClass" value="stop_words" id="ec-stop_words">
@@ -418,13 +435,13 @@
                     <input type="checkbox" name="errorClass" value="annunciation_homonym_errors" id="ec-annunciation_homonym_errors">
                     <label for="ec-annunciation_homonym_errors">Annunciation / Homonym error</label>
                 </div>
-                <div class="taxonomy-item" data-description="The reference is right, and the ASR dropped or invented ordinary words (insertions and deletions only). Ask: did the speaker say it? If the ASR dropped something the speaker said, or invented something nobody said, use this. If the reference is the one at fault, use Human transcription error. A short function word is Stop words, and a medical term is Dictionary error. e.g. [INS:for you]; [INS:of july]; [DEL:urine]; [DEL:okay and do you take any medications].">
+                <div class="taxonomy-item" data-description="The reference is right, and the ASR dropped or invented ordinary words (insertions and deletions only). Ask: did the speaker say it? If the ASR dropped something the speaker said, or invented something nobody said, use this. If the reference is the one at fault, use Human transcription error. A short function word is Stop words, and a medical word is Dictionary error (you may tick both). e.g. [INS:for you]; [INS:of july]; [DEL:urine]; [DEL:okay and do you take any medications].">
                     <input type="checkbox" name="errorClass" value="asr_omission_insertion" id="ec-asr_omission_insertion">
                     <label for="ec-asr_omission_insertion">ASR omission / insertion</label>
                 </div>
             </div>
             <div id="ecRuleHint" style="display:none; background:#fff6e0; border-left:3px solid #ed8936; padding:8px 12px; margin:-4px 0 10px; font-size:0.86em; color:#7a4a12;"></div>
-            <small style="color:#666; display:block; margin: -8px 0 15px;">Start from the <strong>damaged word</strong>, not the sound. One word in the tag &rarr; one label. Severity: <strong>3 = misleading</strong> (a plausible wrong clinical fact), <strong>2 = missing</strong> (the fact is gone or garbled), <strong>1 = no clinical content</strong>.</small>
+            <small style="color:#666; display:block; margin: -8px 0 15px;">Start from the <strong>damaged word</strong>, not the sound. One word in the tag &rarr; one label (a dropped or invented medical word may take Dictionary and ASR omission / insertion). Severity: <strong>3 = misleading</strong> (a plausible wrong clinical fact), <strong>2 = missing</strong> (the fact is gone or garbled), <strong>1 = no clinical content</strong>. A run of 5+ words dropped or invented by the ASR that carries clinical content = <strong>3</strong>.</small>
 
             <!-- <div style="margin: 15px 0;">
                 <label for="customTaxonomy" style="font-weight: bold; margin-bottom: 5px; display: block;">
@@ -467,5 +484,5 @@
 {% endblock %}
 
 {% block extra_js %}
-<script src="{{ url_for('static', filename='js/annotate.js') }}?v=20261109c"></script>
+<script src="{{ url_for('static', filename='js/annotate.js') }}?v=20261110a"></script>
 {% endblock %}
